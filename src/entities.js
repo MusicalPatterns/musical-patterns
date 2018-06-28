@@ -55,11 +55,22 @@ const entities = [
     // bass
     // buildEntity({notes: notes[3], voice: voices[3], id: 3})
 
+
     // 24 variation entities
+
+    // main descent
     buildEntity({notes: notes[4], voice: voices[4], id: 4}),
+
+    // 3 - 1 backbone
     buildEntity({notes: notes[5], voice: voices[5], id: 5}),
+
+    // first layer
     buildEntity({notes: notes[6], voice: voices[6], id: 6}),
+
+    // second layer
     buildEntity({notes: notes[7], voice: voices[7], id: 7}),
+
+    // third layer
     buildEntity({notes: notes[8], voice: voices[8], id: 8})
 ]
 
