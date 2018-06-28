@@ -1,11 +1,7 @@
 import {entities} from './entities'
+import Time from './time.worker'
 
-let time = 0
-
-const songLoop = () => {
-    requestAnimationFrame(songLoop)
-    time++
-    entities.forEach(entity => entity.update(time))
+const time = new Time()
+time.onmessage = event => {
+    entities.forEach(entity => entity.update(event.data))
 }
-
-songLoop()

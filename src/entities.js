@@ -3,7 +3,7 @@ import voices from './voices'
 import pitches from './pitches'
 
 const BASE_GAIN = 0.1
-const BASE_DURATION = 10
+const BASE_DURATION = 5
 
 const buildEntity = ({notes, voice, id, noteIndex = 0, nextOnset = 0, nextOffset = 0}) => {
     const entity = {
@@ -27,7 +27,6 @@ const buildEntity = ({notes, voice, id, noteIndex = 0, nextOnset = 0, nextOffset
             entity.nextOffset += note.sustain * BASE_DURATION
 
         } else if (time > entity.nextOffset) {
-            console.log('off')
             entity.voice.gainNode.gain.value = 0
             entity.nextOffset -= note.sustain * BASE_DURATION
             entity.nextOffset += note.duration * BASE_DURATION
