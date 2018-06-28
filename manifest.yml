@@ -1,0 +1,4 @@
+---
+applications:
+- memory: 64m
+  buildpack: https://github.com/cloudfoundry/staticfile-buildpack.git

@@ -1,7 +1,8 @@
 {
   "name": "fifteen",
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "deploy": "sh ./bin/deploy.sh"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
