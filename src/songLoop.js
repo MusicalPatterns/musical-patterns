@@ -1,6 +1,7 @@
-import {entities} from './entities'
+import entities from './entities'
 import Time from './time.worker'
 import play from './samples'
+import update from './update'
 
 let lastKick = -5 * 8
 let lastSnare = -5 * 8 * 3
@@ -9,7 +10,7 @@ let lastHihat = -5 * 3
 setTimeout(() => {
 	const time = new Time()
 	time.onmessage = event => {
-		entities.forEach(entity => entity.update(event.data))
+		entities.forEach(entity => update(entity, event.data))
 
 		if (event.data > lastKick + 5 * 8) {
 			lastKick += 5 * 8

@@ -1,13 +1,13 @@
 import context from './context'
 
-const buildVoice = () => {
+const buildVoice = type => {
     const oscillatorNode = context.createOscillator()
     const gainNode = context.createGain()
     gainNode.connect(context.destination)
     gainNode.gain.value = 0
 
     oscillatorNode.connect(gainNode)
-    oscillatorNode.type = 'square'
+    oscillatorNode.type = type
     oscillatorNode.start()
 
     return {
@@ -17,13 +17,13 @@ const buildVoice = () => {
 }
 
 export default [
-    buildVoice(),
-    buildVoice(),
-    buildVoice(),
-    buildVoice(),
-    buildVoice(),
-    buildVoice(),
-    buildVoice(),
-    buildVoice(),
-    buildVoice(),
+    buildVoice('square'),
+    buildVoice('square'),
+    buildVoice('square'),
+    buildVoice('square'),
+    buildVoice('square'),
+    buildVoice('sine'),
+    buildVoice('sawtooth'),
+    buildVoice('triangle'),
+    buildVoice('sawtooth'),
 ]

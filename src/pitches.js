@@ -1,4 +1,4 @@
-const BASE_PITCH = 2000
+import { BASE_PITCH } from './constants'
 
 const pitches = [...Array(50).keys()].map(n => BASE_PITCH / (n + 1) )
 

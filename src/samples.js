@@ -4,7 +4,7 @@ const buffers = {}
 
 const load = sample => {
 	const request = new XMLHttpRequest()
-	request.open('GET', require(`./${sample}.wav`), true)
+	request.open('GET', require(`../samples/${sample}.wav`), true)
 	request.responseType = 'arraybuffer'
 
 	request.onload = () => {
