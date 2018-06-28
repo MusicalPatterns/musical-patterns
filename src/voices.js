@@ -1,10 +1,9 @@
-const AudioContext = window.AudioContext || window.webkitAudioContext
-const audioCtx = new AudioContext()
+import context from './context'
 
 const buildVoice = () => {
-    const oscillatorNode = audioCtx.createOscillator()
-    const gainNode = audioCtx.createGain()
-    gainNode.connect(audioCtx.destination);
+    const oscillatorNode = context.createOscillator()
+    const gainNode = context.createGain()
+    gainNode.connect(context.destination)
     gainNode.gain.value = 0
 
     oscillatorNode.connect(gainNode)
