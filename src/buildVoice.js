@@ -16,14 +16,4 @@ const buildVoice = type => {
     }
 }
 
-export default [
-    buildVoice('square'),
-    buildVoice('square'),
-    buildVoice('square'),
-    buildVoice('square'),
-    buildVoice('square'),
-    buildVoice('sine'),
-    buildVoice('sawtooth'),
-    buildVoice('triangle'),
-    buildVoice('sawtooth'),
-]
+export default buildVoice

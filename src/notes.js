@@ -1,319 +1,137 @@
-const notes = [
-    [
-        // 7
-        {duration: 1, pitch: 13, sustain: .5, gain: .4},
-        {duration: 1, pitch: 13, sustain: .5, gain: .2},
-        {duration: 1, pitch: 13, sustain: .5, gain: .2},
-        {duration: 1, pitch: 13, sustain: .5, gain: .2},
-        {duration: 1, pitch: 13, sustain: .5, gain: .2},
-        {duration: 1, pitch: 13, sustain: .5, gain: .2},
-        {duration: 1, pitch: 13, sustain: .5, gain: .2},
+const standardNote = harmonic => {
+	return {
+		duration: harmonic,
+		pitch: harmonic,
+		sustain: harmonic - 0.1,
+		gain: 1,
+	}
+}
 
-        // 8
-        {duration: 1, pitch: 15, sustain: .5, gain: .3},
-        {duration: 1, pitch: 15, sustain: .5, gain: .15},
-        {duration: 1, pitch: 15, sustain: .5, gain: .15},
-        {duration: 1, pitch: 15, sustain: .5, gain: .15},
-        {duration: 1, pitch: 15, sustain: .5, gain: .15},
-        {duration: 1, pitch: 15, sustain: .5, gain: .15},
-        {duration: 1, pitch: 15, sustain: .5, gain: .15},
-        {duration: 1, pitch: 15, sustain: .5, gain: .15},
+const rest = duration => {
+	return {
+		duration,
+		pitch: 81,
+		sustain: duration - 0.1,
+		gain: 0,
+	}
+}
 
-        // 9
-        {duration: 1, pitch: 17, sustain: .5, gain: .25},
-        {duration: 1, pitch: 17, sustain: .5, gain: .125},
-        {duration: 1, pitch: 17, sustain: .5, gain: .125},
-        {duration: 1, pitch: 17, sustain: .5, gain: .125},
-        {duration: 1, pitch: 17, sustain: .5, gain: .125},
-        {duration: 1, pitch: 17, sustain: .5, gain: .125},
-        {duration: 1, pitch: 17, sustain: .5, gain: .125},
-        {duration: 1, pitch: 17, sustain: .5, gain: .125},
-        {duration: 1, pitch: 17, sustain: .5, gain: .125},
+const notes = {
+	mainDescent: [
+		// 1 bar of 24
+		standardNote(3),
+		standardNote(5),
+		standardNote(7),
+		standardNote(9),
 
-        // 10
-        {duration: 1, pitch: 19, sustain: .5, gain: .2},
-        {duration: 1, pitch: 19, sustain: .5, gain: .1},
-        {duration: 1, pitch: 19, sustain: .5, gain: .1},
-        {duration: 1, pitch: 19, sustain: .5, gain: .1},
-        {duration: 1, pitch: 19, sustain: .5, gain: .1},
-        {duration: 1, pitch: 19, sustain: .5, gain: .1},
-        {duration: 1, pitch: 19, sustain: .5, gain: .1},
-        {duration: 1, pitch: 19, sustain: .5, gain: .1},
-        {duration: 1, pitch: 19, sustain: .5, gain: .1},
-        {duration: 1, pitch: 19, sustain: .5, gain: .1},
+		// 1 bar of 24
+		standardNote(11),
+		standardNote(13),
 
-        // 11
-        {duration: 1, pitch: 21, sustain: .5, gain: .15},
-        {duration: 1, pitch: 21, sustain: .5, gain: .075},
-        {duration: 1, pitch: 21, sustain: .5, gain: .075},
-        {duration: 1, pitch: 21, sustain: .5, gain: .075},
-        {duration: 1, pitch: 21, sustain: .5, gain: .075},
-        {duration: 1, pitch: 21, sustain: .5, gain: .075},
-        {duration: 1, pitch: 21, sustain: .5, gain: .075},
-        {duration: 1, pitch: 21, sustain: .5, gain: .075},
-        {duration: 1, pitch: 21, sustain: .5, gain: .075},
-        {duration: 1, pitch: 21, sustain: .5, gain: .075},
-        {duration: 1, pitch: 21, sustain: .5, gain: .075},
-    ],
-    [
-        // 4
-        {duration: 1, pitch: 7, sustain: .5, gain: 1},
-        {duration: 1, pitch: 7, sustain: .5, gain: .5},
-        {duration: 1, pitch: 7, sustain: .5, gain: .5},
-        {duration: 1, pitch: 7, sustain: .5, gain: .5},
+		// 3 bars of 24
+		standardNote(15),
+		standardNote(17),
+		standardNote(19),
+		standardNote(21),
 
-        // 3
-        {duration: 1, pitch: 5, sustain: .5, gain: 1},
-        {duration: 1, pitch: 5, sustain: .5, gain: .5},
-        {duration: 1, pitch: 5, sustain: .5, gain: .5},
+		// 2 bars of 24
+		standardNote(23),
+		standardNote(25),
+	],
+	backbone: [
+		standardNote(3),
+		standardNote(1),
+	],
+	firstLayer: [
+		// 2 bars of 24
+		rest(15),
+		standardNote(5),
+		rest(7),
+		standardNote(5),
+		rest(3),
+		standardNote(5),
+		rest(3),
+		standardNote(5),
 
-        // 2
-        {duration: 1, pitch: 3, sustain: .5, gain: 1},
-        {duration: 1, pitch: 3, sustain: .5, gain: .5},
+		// 3 bars of 24
+		standardNote(7),
+		standardNote(5),
+		rest(3),
+		standardNote(5),
+		standardNote(7),
+		standardNote(5),
+		standardNote(7),
+		standardNote(5),
+		standardNote(7),
+		standardNote(5),
+		standardNote(7),
+		standardNote(9),
 
-        // 1
-        {duration: 1, pitch: 1, sustain: .5, gain: 3},
+		// 2 bars of 24
+		standardNote(7),
+		standardNote(9),
+		standardNote(7),
+		standardNote(9),
+		standardNote(7),
+		standardNote(9),
+	],
+	secondLayer: [
+		// 1 bar of 24
+		rest(19),
+		standardNote(5),
 
-        // 2
-        {duration: 1, pitch: 3, sustain: .5, gain: 1},
-        {duration: 1, pitch: 3, sustain: .5, gain: .5},
+		// 4 bars of 24
+		rest(27),
+		standardNote(5),
+		standardNote(7),
+		rest(36),
+		standardNote(9),
+		standardNote(7),
+		standardNote(5),
 
-        // 3
-        {duration: 1, pitch: 5, sustain: .5, gain: 1},
-        {duration: 1, pitch: 5, sustain: .5, gain: .5},
-        {duration: 1, pitch: 5, sustain: .5, gain: .5},
-
-
-        // 4
-        {duration: 1, pitch: 7, sustain: .5, gain: 1},
-        {duration: 1, pitch: 7, sustain: .5, gain: .5},
-        {duration: 1, pitch: 7, sustain: .5, gain: .5},
-        {duration: 1, pitch: 7, sustain: .5, gain: .5},
-
-        // 3
-        {duration: 1, pitch: 5, sustain: .5, gain: 1},
-        {duration: 1, pitch: 5, sustain: .5, gain: .5},
-        {duration: 1, pitch: 5, sustain: .5, gain: .5},
-
-        // 2
-        {duration: 1, pitch: 3, sustain: .5, gain: 1},
-        {duration: 1, pitch: 3, sustain: .5, gain: .5},
-
-        // 1
-        {duration: 1, pitch: 1, sustain: .5, gain: 3},
-
-        // 2
-        {duration: 1, pitch: 3, sustain: .5, gain: 1},
-        {duration: 1, pitch: 3, sustain: .5, gain: .5},
-
-        // 3
-        {duration: 1, pitch: 5, sustain: .5, gain: 1},
-        {duration: 1, pitch: 5, sustain: .5, gain: .5},
-        {duration: 1, pitch: 5, sustain: .5, gain: .5},
-
-
-        // 4
-        {duration: 1, pitch: 7, sustain: .5, gain: 1},
-        {duration: 1, pitch: 7, sustain: .5, gain: .5},
-        {duration: 1, pitch: 7, sustain: .5, gain: .5},
-        {duration: 1, pitch: 7, sustain: .5, gain: .5},
-
-        // 5
-        {duration: 1, pitch: 9, sustain: .5, gain: .75},
-        {duration: 1, pitch: 9, sustain: .5, gain: .375},
-        {duration: 1, pitch: 9, sustain: .5, gain: .375},
-        {duration: 1, pitch: 9, sustain: .5, gain: .375},
-        {duration: 1, pitch: 9, sustain: .5, gain: .375},
-
-        // 6
-        {duration: 1, pitch: 11, sustain: .5, gain: .5},
-        {duration: 1, pitch: 11, sustain: .5, gain: .25},
-        {duration: 1, pitch: 11, sustain: .5, gain: .25},
-        {duration: 1, pitch: 11, sustain: .5, gain: .25},
-        {duration: 1, pitch: 11, sustain: .5, gain: .25},
-        {duration: 1, pitch: 11, sustain: .5, gain: .25},
-    ],
-    [
-        // 12
-        {duration: 1, pitch: 23, sustain: .5, gain: .1},
-        {duration: 1, pitch: 23, sustain: .5, gain: .05},
-        {duration: 1, pitch: 23, sustain: .5, gain: .05},
-        {duration: 1, pitch: 23, sustain: .5, gain: .05},
-        {duration: 1, pitch: 23, sustain: .5, gain: .05},
-        {duration: 1, pitch: 23, sustain: .5, gain: .05},
-        {duration: 1, pitch: 23, sustain: .5, gain: .05},
-        {duration: 1, pitch: 23, sustain: .5, gain: .05},
-        {duration: 1, pitch: 23, sustain: .5, gain: .05},
-        {duration: 1, pitch: 23, sustain: .5, gain: .05},
-        {duration: 1, pitch: 23, sustain: .5, gain: .05},
-        {duration: 1, pitch: 23, sustain: .5, gain: .05},
-
-        // 13
-        {duration: 1, pitch: 25, sustain: .5, gain: .08},
-        {duration: 1, pitch: 25, sustain: .5, gain: .04},
-        {duration: 1, pitch: 25, sustain: .5, gain: .04},
-        {duration: 1, pitch: 25, sustain: .5, gain: .04},
-        {duration: 1, pitch: 25, sustain: .5, gain: .04},
-        {duration: 1, pitch: 25, sustain: .5, gain: .04},
-        {duration: 1, pitch: 25, sustain: .5, gain: .04},
-        {duration: 1, pitch: 25, sustain: .5, gain: .04},
-        {duration: 1, pitch: 25, sustain: .5, gain: .04},
-        {duration: 1, pitch: 25, sustain: .5, gain: .04},
-        {duration: 1, pitch: 25, sustain: .5, gain: .04},
-        {duration: 1, pitch: 25, sustain: .5, gain: .04},
-        {duration: 1, pitch: 25, sustain: .5, gain: .04},
-
-        // 14
-        {duration: 1, pitch: 27, sustain: .5, gain: .06},
-        {duration: 1, pitch: 27, sustain: .5, gain: .03},
-        {duration: 1, pitch: 27, sustain: .5, gain: .03},
-        {duration: 1, pitch: 27, sustain: .5, gain: .03},
-        {duration: 1, pitch: 27, sustain: .5, gain: .03},
-        {duration: 1, pitch: 27, sustain: .5, gain: .03},
-        {duration: 1, pitch: 27, sustain: .5, gain: .03},
-        {duration: 1, pitch: 27, sustain: .5, gain: .03},
-        {duration: 1, pitch: 27, sustain: .5, gain: .03},
-        {duration: 1, pitch: 27, sustain: .5, gain: .03},
-        {duration: 1, pitch: 27, sustain: .5, gain: .03},
-        {duration: 1, pitch: 27, sustain: .5, gain: .03},
-        {duration: 1, pitch: 27, sustain: .5, gain: .03},
-        {duration: 1, pitch: 27, sustain: .5, gain: .03},
-
-        // 1
-        {duration: 1, pitch: 1, sustain: .5, gain: 3},
-
-        // 2
-        {duration: 1, pitch: 3, sustain: .5, gain: 1},
-        {duration: 1, pitch: 3, sustain: .5, gain: .5},
-
-        // 3
-        {duration: 1, pitch: 5, sustain: .5, gain: 1},
-        {duration: 1, pitch: 5, sustain: .5, gain: .5},
-        {duration: 1, pitch: 5, sustain: .5, gain: .5},
-    ],
-    [
-        {duration: 1, pitch: 1, sustain: .5, gain: 5},
-        {duration: 2, pitch: 3, sustain: .5, gain: 3},
-
-        {duration: 1, pitch: 1, sustain: .5, gain: 5},
-        {duration: 1, pitch: 3, sustain: .5, gain: 3},
-        {duration: 2, pitch: 5, sustain: .5, gain: 3},
-
-        {duration: 1, pitch: 1, sustain: .5, gain: 5},
-        {duration: 2, pitch: 3, sustain: .5, gain: 3},
-
-        {duration: 1, pitch: 1, sustain: .5, gain: 5},
-        {duration: 1, pitch: 3, sustain: .5, gain: 3},
-        {duration: 1, pitch: 5, sustain: .5, gain: 3},
-        {duration: 2, pitch: 7, sustain: .5, gain: 3},
-    ],
-    // [
-    //     {duration: 1, pitch: 1, sustain: .5, gain: 5},
-    //     {duration: 2, pitch: 3, sustain: .5, gain: 3},
-    // ],
-    [
-        // 24
-        {duration: 3, pitch: 3, sustain: 3 -.1, gain: Math.pow(1.1 ,0)},
-        {duration: 5, pitch: 5, sustain: 5 -.1, gain: Math.pow(1.1 ,1)},
-        {duration: 7, pitch: 7, sustain: 7 -.1, gain: Math.pow(1.1 ,2)},
-        {duration: 9, pitch: 9, sustain: 9 -.1, gain: Math.pow(1.1 ,3)},
-
-        // 24
-        {duration: 11, pitch: 11, sustain: 11 -.1, gain: Math.pow(1.1 ,4)},
-        {duration: 13, pitch: 13, sustain: 13 -.1, gain: Math.pow(1.1 ,5)},
-
-        // 72
-        {duration: 15, pitch: 15, sustain: 15 -.1, gain: Math.pow(1.1 ,6)},
-        {duration: 17, pitch: 17, sustain: 17 -.1, gain: Math.pow(1.1 ,7)},
-        {duration: 19, pitch: 19, sustain: 19 -.1, gain: Math.pow(1.1 ,8)},
-        {duration: 21, pitch: 21, sustain: 21 -.1, gain: Math.pow(1.1 ,9)},
-
-        // 48
-        {duration: 23, pitch: 23, sustain: 23 -.1, gain: Math.pow(1.1 ,10)},
-        {duration: 25, pitch: 25, sustain: 25 -.1, gain: Math.pow(1.1 ,11)},
-    ],
-    [
-        {duration: 3, pitch: 3, sustain: 3 -.1, gain: 1},
-        {duration: 1, pitch: 1, sustain: 1 -.1, gain: 1},
-    ],
-    [
-        // 48
-        {duration: 15, pitch: 49, sustain: .1, gain: 0},
-        {duration: 5, pitch: 5, sustain: 5 -.1, gain: 1 },
-        {duration: 7, pitch: 49, sustain: .1, gain: 0},
-        {duration: 5, pitch: 5, sustain: 5 -.1, gain: 1 },
-        {duration: 3, pitch: 49, sustain: .1, gain: 0},
-        {duration: 5, pitch: 5, sustain: 5 -.1, gain: 1 },
-        {duration: 3, pitch: 49, sustain: .1, gain: 0},
-        {duration: 5, pitch: 5, sustain: 5 -.1, gain: 1 },
-
-        // 72
-        {duration: 7, pitch: 7, sustain: 7 -.1, gain: 1 },
-        {duration: 5, pitch: 5, sustain: 5 -.1, gain: 1 },
-        {duration: 3, pitch: 49, sustain: .1, gain: 0},
-        {duration: 5, pitch: 5, sustain: 5 -.1, gain: 1 },
-        {duration: 7, pitch: 7, sustain: 7 -.1, gain: 1 },
-        {duration: 5, pitch: 5, sustain: 5 -.1, gain: 1 },
-        {duration: 7, pitch: 7, sustain: 7 -.1, gain: 1 },
-        {duration: 5, pitch: 5, sustain: 5 -.1, gain: 1 },
-        {duration: 7, pitch: 7, sustain: 7 -.1, gain: 1 },
-        {duration: 5, pitch: 5, sustain: 5 -.1, gain: 1 },
-        {duration: 7, pitch: 7, sustain: 7 -.1, gain: 1 },
-        {duration: 9, pitch: 9, sustain: 9 -.1, gain: 1 },
-
-        // 48
-        {duration: 7, pitch: 7, sustain: 7 -.1, gain: 1 },
-        {duration: 9, pitch: 9, sustain: 9 -.1, gain: 1 },
-        {duration: 7, pitch: 7, sustain: 7 -.1, gain: 1 },
-        {duration: 9, pitch: 9, sustain: 9 -.1, gain: 1 },
-        {duration: 7, pitch: 7, sustain: 7 -.1, gain: 1 },
-        {duration: 9, pitch: 9, sustain: 9 -.1, gain: 1 },
-    ],
-    [
-        // 24
-        {duration: 19, pitch: 49, sustain: .1, gain: 0},
-        {duration: 5, pitch: 5, sustain: 5 -.1, gain: 1 },
-
-        // 32
-        {duration: 27, pitch: 49, sustain: .1, gain: 0},
-        {duration: 5, pitch: 5, sustain: 5 -.1, gain: 1 },
-
-        // 64
-        {duration: 7, pitch: 7, sustain: 7 -.1, gain: 1 },
-        {duration: 36, pitch: 49, sustain: .1, gain: 0},
-        {duration: 9, pitch: 9, sustain: 9 -.1, gain: 1 },
-        {duration: 7, pitch: 7, sustain: 7 -.1, gain: 1 },
-        {duration: 5, pitch: 5, sustain: 5 -.1, gain: 1 },
-
-        // 48
-        {duration: 7, pitch: 49, sustain: .1, gain: 0},
-        {duration: 5, pitch: 5, sustain: 5 -.1, gain: 1 },
-        {duration: 11, pitch: 49, sustain: .1, gain: 0},
-        {duration: 5, pitch: 5, sustain: 5 -.1, gain: 1 },
-        {duration: 11, pitch: 49, sustain: .1, gain: 0},
-        {duration: 5, pitch: 5, sustain: 5 -.1, gain: 1 },
-        {duration: 4, pitch: 49, sustain: .1, gain: 0},
-    ],
-    [
-        // 116
-        // {duration: 7, pitch: 7, sustain: 7 -.1, gain: 1 },
-        // {duration: 5, pitch: 5, sustain: 5 -.1, gain: 1 },
-        // {duration: 91, pitch: 49, sustain: .1, gain: 0},
-        {duration: 103, pitch: 49, sustain: .1, gain: 0},
-        {duration: 5, pitch: 5, sustain: 5 -.1, gain: 1 },
-        {duration: 3, pitch: 49, sustain: .1, gain: 0},
-        {duration: 5, pitch: 5, sustain: 5 -.1, gain: 1 },
-
-        // 36
-        {duration: 15, pitch: 49, sustain: .1, gain: 0},
-        {duration: 5, pitch: 5, sustain: 5 -.1, gain: 1 },
-        {duration: 11, pitch: 49, sustain: .1, gain: 0},
-        {duration: 5, pitch: 5, sustain: 5 -.1, gain: 1 },
-
-        // 16
-        {duration: 11, pitch: 49, sustain: .1, gain: 0},
-        {duration: 5, pitch: 5, sustain: 5 -.1, gain: 1 },
-    ],
-]
+		// 2 bars of 24
+		rest(7),
+		standardNote(5),
+		rest(11),
+		standardNote(5),
+		rest(11),
+		standardNote(5),
+		rest(4),
+	],
+	thirdLayer: [
+		// 7 bars of 24
+		rest(103),
+		standardNote(5),
+		rest(3),
+		standardNote(5),
+		rest(15),
+		standardNote(5),
+		rest(11),
+		standardNote(5),
+		rest(11),
+		standardNote(5),
+	],
+	continuationOfMainDescent: [
+		// 7 bars of 24
+		standardNote(59),
+		standardNote(61),
+		{
+			duration: 63 - 15,
+			pitch: 63,
+			sustain: 63 - 0.1,
+			gain: 1,
+		},
+	],
+	experimentPartTwo: [
+		// 7 bars of 24
+		standardNote(19),
+		standardNote(21),
+		standardNote(19),
+		standardNote(21),
+		standardNote(19),
+		standardNote(21),
+		rest(48),
+	],
+}
 
 export default notes

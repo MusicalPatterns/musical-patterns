@@ -7,7 +7,7 @@ const update = (entity, time) => {
 	if (time > entity.nextOnset) {
 		entity.voice.oscillatorNode.frequency.value = pitches[note.pitch - 1]
 		entity.voice.gainNode.gain.value = note.gain * BASE_GAIN
-		console.log('entity', entity.id, 'pitch', note.pitch)
+		// console.log('entity', entity.id, 'pitch', note.pitch)
 
 		entity.nextOnset += note.duration * BASE_DURATION
 		entity.nextOffset += note.sustain * BASE_DURATION
@@ -20,7 +20,10 @@ const update = (entity, time) => {
 		entity.noteIndex++
 	}
 
-	if (entity.noteIndex === entity.notes.length) entity.noteIndex = 0
+	if (entity.noteIndex === entity.notes.length) {
+		if (entity.id !== 1) console.log('entity', entity.id, 'looped!')
+		entity.noteIndex = 0
+	}
 }
 
 export default update

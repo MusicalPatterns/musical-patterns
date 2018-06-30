@@ -1,6 +1,6 @@
-const BASE_DURATION = 5
+const BASE_DURATION = 3
 const BASE_GAIN = 0.1
-const BASE_PITCH = 2000
+const BASE_PITCH = 4000
 
 export {
 	BASE_DURATION,
