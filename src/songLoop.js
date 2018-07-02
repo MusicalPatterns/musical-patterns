@@ -15,17 +15,17 @@ setTimeout(() => {
 
 		if (event.data > lastKick + BASE_DURATION * 8) {
 			lastKick += BASE_DURATION * 8
-			play('kick')
+			// play('kick')
 		}
 
 		if (event.data > lastSnare + BASE_DURATION * 8 * 3) {
 			lastSnare += BASE_DURATION * 8 * 3
-			play('snare')
+			// play('snare')
 		}
 
 		if (event.data > lastHihat + BASE_DURATION * 1) {
 			lastHihat += BASE_DURATION * 1
-			play('hihat')
+			// play('hihat')
 		}
 	}
 
