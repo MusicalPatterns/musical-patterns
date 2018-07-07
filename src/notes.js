@@ -1,5 +1,3 @@
-import {threePartsToEachMainDescentStep, threePartsToEachMainDescentStepContinuation, maximumPartsToEachMainDescentStep, maximumPartsToEachMainDescentStepContinuation} from './calculator'
-
 const standardNote = harmonic => {
     return {
         duration: harmonic,
@@ -9,171 +7,31 @@ const standardNote = harmonic => {
     }
 }
 
-const rest = duration => {
-    return {
-        duration,
-        pitch: 81,
-        sustain: duration - 0.1,
-        gain: 0,
-    }
-}
+const threePer = [
+    3,1,3,1,3,1,3,5,3,1,3,5,3,5,3,5,7,5,3,5,7,5,7,5,7,9,7,5,7,9,7,9,7,9,11,9,7,9,11,9,11,9,11,13,11,9,11,13,11,13,11,13,15,13,11,13,15,13,15,13,15,17,15,13,15,17,15,17,15,17,19,17,15,17,19,17,19,17,19,21,19,17,
+]
+const fivePer = [
+    11,13,11,13,11,13,15,13,11,9,7,5,3,5,3,1,3,5,7,9,7,5,3,5,7,5,7,5,7,5,7,5,7,5,7,5,7,9,7,5,3,5,7,9,11,9,7,5,7,9,7,9,7,9,7,9,7,9,7,9,7,9,11,9,7,5,7,9,11,13,11,9,7,9,11,9,11,9,11,9,11,9,11,9,11,9,11,13,11,9,7,9,11,13,15,13,11,9,11,13,
+]
+const sevenPer = [
+    7,9,7,9,11,9,7,5,7,9,7,9,11,13,15,13,11,9,7,5,3,5,7,9,11,13,11,9,7,9,11,9,11,9,11,9,11,9,11,9,11,9,11,9,11,9,11,9,11,13,11,9,11,9,11,9,7,9,7,9,7,5,3,1,3,5,7,9,11,13,11,9,7,5,7,5,7,5,7,9,7,9,7,9,7,9,7,9,7,9,7,9,7,9,7,9,7,9,
+]
+const ninePer = [
+    15,13,11,9,11,9,11,9,7,9,7,9,7,9,7,9,7,5,7,5,7,9,11,13,15,17,15,13,11,9,7,5,3,1,3,5,7,9,7,9,7,9,7,9,7,9,7,9,7,9,7,9,7,9,7,9,7,9,7,9,7,9,11,13,15,17,19,17,15,13,11,9,7,5,7,5,7,5,7,9,11,13,15,17,15,13,11,9,7,5,3,1
+]
+
+const sum = arr => arr.reduce((m, n) => m + n, 0)
 
 const notes = {
-    mainDescent: [
-        // 1 bar of 24
-        standardNote(3),
-        standardNote(5),
-        standardNote(7),
-        standardNote(9),
-
-        // // 1 bar of 24
-        standardNote(11),
-        standardNote(13),
-
-        // 3 bars of 24
-        standardNote(15),
-        standardNote(17),
-        standardNote(19),
-        standardNote(21),
-
-        // // 2 bars of 24
-        standardNote(23),
-        standardNote(25),
-
-        // 5 bars of 24
-        standardNote(27),
-        standardNote(29),
-        standardNote(31),
-        standardNote(33),
-
-        // // 3 bars of 24
-        standardNote(35),
-        standardNote(37),
-
-        // 7 bars of 24
-        standardNote(39),
-        standardNote(41),
-        standardNote(43),
-        standardNote(45),
-
-        // // 4 bars of 24
-        standardNote(47),
-        standardNote(49),
-
-        // 9 bars of 24
-        standardNote(51),
-        standardNote(53),
-        standardNote(55),
-        standardNote(57),
-    ],
-    backbone: [
-        standardNote(3),
-        standardNote(1),
-    ],
-    firstLayer: [
-        // 2 bars of 24
-        rest(15),
-        standardNote(5),
-        rest(7),
-        standardNote(5),
-        rest(3),
-        standardNote(5),
-        rest(3),
-        standardNote(5),
-
-        // 3 bars of 24
-        standardNote(7),
-        standardNote(5),
-        rest(3),
-        standardNote(5),
-        standardNote(7),
-        standardNote(5),
-        standardNote(7),
-        standardNote(5),
-        standardNote(7),
-        standardNote(5),
-        standardNote(7),
-        standardNote(9),
-
-        // 2 bars of 24
-        standardNote(7),
-        standardNote(9),
-        standardNote(7),
-        standardNote(9),
-        standardNote(7),
-        standardNote(9),
-    ],
-    secondLayer: [
-        // 1 bar of 24
-        rest(19),
-        standardNote(5),
-
-        // 4 bars of 24
-        rest(27),
-        standardNote(5),
-        standardNote(7),
-        rest(36),
-        standardNote(9),
-        standardNote(7),
-        standardNote(5),
-
-        // 2 bars of 24
-        rest(7),
-        standardNote(5),
-        rest(11),
-        standardNote(5),
-        rest(11),
-        standardNote(5),
-        rest(4),
-    ],
-    thirdLayer: [
-        // 7 bars of 24
-        rest(103),
-        standardNote(5),
-        rest(3),
-        standardNote(5),
-        rest(15),
-        standardNote(5),
-        rest(11),
-        standardNote(5),
-        rest(11),
-        standardNote(5),
-    ],
-    mainDescentContinuation: [
-        // 5 bars of 24
-        standardNote(59),
-        standardNote(61),
-
-        // // 11 bars of 24
-        standardNote(63),
-        standardNote(65),
-        standardNote(67),
-        standardNote(69),
-
-        // 6 bars of 24
-        standardNote(71),
-        standardNote(73),
-
-        // // 13 bars of 24
-        standardNote(75),
-        standardNote(77),
-        standardNote(79),
-        standardNote(81),
-    ],
-    experimentPartTwo: [
-        // 7 bars of 24
-        standardNote(19),
-        standardNote(21),
-        standardNote(19),
-        standardNote(21),
-        standardNote(19),
-        standardNote(21),
-        rest(48),
-    ],
-    threePartsToEachMainDescentStep: threePartsToEachMainDescentStep.map(standardNote),
-    threePartsToEachMainDescentStepContinuation: threePartsToEachMainDescentStepContinuation.map(standardNote),
-    maximumPartsToEachMainDescentStep: maximumPartsToEachMainDescentStep.map(standardNote),
-    maximumPartsToEachMainDescentStepContinuation: maximumPartsToEachMainDescentStepContinuation.map(standardNote),
+    mainDescent: [...Array(29).keys()].map(n => (n + 1) * 2 - 1).map(standardNote),
+    mainDescentContinuation: [...Array(12).keys()].map(n => (n + 1) * 2 + 57).map(standardNote),
+    threePer: threePer.map(standardNote),
+    fivePer: fivePer.map(standardNote),
+    sevenPer: sevenPer.map(standardNote),
+    ninePer: ninePer.map(standardNote),
+    backbone: [3,1].map(standardNote),
 }
+
+console.log(sum(threePer), sum(fivePer), sum(sevenPer), sum(ninePer))
 
 export default notes

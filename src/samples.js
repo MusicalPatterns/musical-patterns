@@ -18,7 +18,7 @@ const load = sample => {
 const play = sample => {
 	const source = context.createBufferSource()
 	source.buffer = buffers[sample]
-	source.detune.value = -1200
+	// source.detune.value = -1200
 	source.connect(context.destination)
 	source.start(0)
 }
