@@ -85,7 +85,7 @@ let threePartsToEachMainDescentStep = []
 let maximumPartsToEachMainDescentStep = []
 let threePartsToEachMainDescentStepContinuation = []
 let maximumPartsToEachMainDescentStepContinuation = []
-let resultsByCountWithinStep = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
+let resultsByCountWithinStep = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
 
 // main process
 mainDescentSteps.forEach(mainDescentStep => {
@@ -107,8 +107,10 @@ mainDescentSteps.forEach(mainDescentStep => {
         maximumPartsToEachMainDescentStepContinuation = maximumPartsToEachMainDescentStepContinuation.concat(pathsForStep[pathsForStep.length - 1])
     }
     pathsForStep.forEach(pathForStep => {
-        if (resultsByCountWithinStep[pathForStep.length][resultsByCountWithinStep[pathForStep.length].length - 1] !== mainDescentStep) {
-            resultsByCountWithinStep[pathForStep.length].push(mainDescentStep)
+        const thing = resultsByCountWithinStep[pathForStep.length]
+
+        if (thing[thing.length - 1] !== mainDescentStep) {
+            thing.push(mainDescentStep)
         }
     })
 })
