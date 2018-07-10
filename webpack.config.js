@@ -1,4 +1,5 @@
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: './src/songLoop.js',
@@ -14,13 +15,14 @@ module.exports = {
                 exclude: /node_modules/,
                 loader: 'babel-loader',
             },
-			{
-				test: /\.wav/,
-				loader: 'file-loader',
-			},
+            {
+                test: /\.wav/,
+                loader: 'file-loader',
+            },
         ],
     },
     devServer: {
-        contentBase: path.join(__dirname, './dist'),
-    }
+        contentBase: path.join(__dirname, './dist')
+    },
+    plugins: [new HtmlWebpackPlugin()],
 }
