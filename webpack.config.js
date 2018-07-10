@@ -1,4 +1,4 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path')
 
 module.exports = {
     entry: './src/songLoop.js',
@@ -20,7 +20,7 @@ module.exports = {
 			},
         ],
     },
-    plugins: [
-        new HtmlWebpackPlugin(),
-    ],
+    devServer: {
+        contentBase: path.join(__dirname, './dist'),
+    }
 }

@@ -20,7 +20,24 @@ const ninePer = [
     15,13,11,9,11,9,11,9,7,9,7,9,7,9,7,9,7,5,7,5,7,9,11,13,15,17,15,13,11,9,7,5,3,1,3,5,7,9,7,9,7,9,7,9,7,9,7,9,7,9,7,9,7,9,7,9,7,9,7,9,7,9,11,13,15,17,19,17,15,13,11,9,7,5,7,5,7,5,7,9,11,13,15,17,15,13,11,9,7,5,3,1
 ]
 
-const sum = arr => arr.reduce((m, n) => m + n, 0)
+const divideFortyeightByTwelve = [
+    3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,
+]
+const divideFortyeightBySix = [
+    3,5,3,5,3,5,3,5,3,5,3,5,
+]
+const dividFortyeightByFour = [
+    7,5,7,5,7,5,7,5,
+]
+const divideFortyeightByThree = [
+    7,9,7,9,7,9,
+]
+const divideFortyeightByTwo = [
+    11,13,11,13,
+]
+const divideFortyeightByOne = [
+    47,49,
+]
 
 const notes = {
     mainDescent: [...Array(29).keys()].map(n => (n + 1) * 2 - 1).map(standardNote),
@@ -31,7 +48,5 @@ const notes = {
     ninePer: ninePer.map(standardNote),
     backbone: [3,1].map(standardNote),
 }
-
-console.log(sum(threePer), sum(fivePer), sum(sevenPer), sum(ninePer))
 
 export default notes
