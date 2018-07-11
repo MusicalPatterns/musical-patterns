@@ -1,6 +1,6 @@
 import context from './context'
 
-const buffers = {}
+const samples = {}
 
 const load = sample => {
 	const request = new XMLHttpRequest()
@@ -9,22 +9,19 @@ const load = sample => {
 
 	request.onload = () => {
 		context.decodeAudioData(request.response, buffer => {
-			buffers[sample] = buffer
+			samples[sample] = buffer
 		})
 	}
 	request.send()
 }
 
-const play = sample => {
-	const source = context.createBufferSource()
-	source.buffer = buffers[sample]
-	// source.detune.value = -1200
-	source.connect(context.destination)
-	source.start(0)
-}
+[
+	'snare',
+	'kick',
+	'hihat',
+	'piano',
+    'violin',
+	'violin_staccato',
+].forEach(load)
 
-load('snare')
-load('kick')
-load('hihat')
-
-export default play
+export default samples
