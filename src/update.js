@@ -4,7 +4,7 @@ const update = (entity, time) => {
 	const note = entity.notes[entity.noteIndex]
 
 	if (time > entity.nextOnset) {
-		entity.voice.startNote({pitch: note.pitch, gain: note.gain})
+		entity.voice.startNote({pitch: note.pitch, gain: note.gain * entity.voiceGain})
 
 		// console.log('entity', entity.id, 'pitch', note.pitch)
 

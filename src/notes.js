@@ -12,6 +12,10 @@ const standardSampleNote = duration => ({
     gain: .1,
 })
 
+const mainDescent = [...Array(29).keys()].map(n => (n + 1) * 2 - 1)
+
+const mainDescentContinuation = [...Array(12).keys()].map(n => (n + 1) * 2 + 57)
+
 const threePer = [
     3, 1, 3, 1, 3, 1, 3, 5, 3, 1, 3, 5, 3, 5, 3, 5, 7, 5, 3, 5, 7, 5, 7, 5, 7, 9, 7, 5, 7, 9, 7, 9, 7, 9, 11, 9, 7, 9, 11, 9, 11, 9, 11, 13, 11, 9, 11, 13, 11, 13, 11, 13, 15, 13, 11, 13, 15, 13, 15, 13, 15, 17, 15, 13, 15, 17, 15, 17, 15, 17, 19, 17, 15, 17, 19, 17, 19, 17, 19, 21, 19, 17,
 ]
@@ -45,12 +49,12 @@ const divideFortyeightByOne = [
 ]
 
 const notes = {
-    mainDescent: [...Array(29).keys()].map(n => (n + 1) * 2 - 1).map(standardNote),
-    mainDescentContinuation: [...Array(12).keys()].map(n => (n + 1) * 2 + 57).map(standardNote),
-    threePer: threePer.map(standardNote),
+    mainDescent: mainDescent.concat(mainDescentContinuation).map(standardNote),
+    mainDescentContinuation: mainDescentContinuation.concat(mainDescent).map(standardNote),
+    threePer: threePer.concat(ninePer).map(standardNote),
     fivePer: fivePer.map(standardNote),
     sevenPer: sevenPer.map(standardNote),
-    ninePer: ninePer.map(standardNote),
+    ninePer: ninePer.concat(threePer).map(standardNote),
     backbone: [3, 1].map(standardNote),
     kick: [standardSampleNote(8)],
     snare: [standardSampleNote(24)],

@@ -22,6 +22,12 @@ const load = sample => {
 	'piano',
     'violin',
 	'violin_staccato',
+	'trombone',
+	'flute',
+	'cello',
+	'tuba',
+	'trumpet',
+	'doublebass',
 ].forEach(load)
 
 export default samples
