@@ -1,6 +1,5 @@
 import context from './context'
-import {BASE_OSCILLATOR_GAIN, BASE_OSCILLATOR_PITCH} from './constants'
-import pitches from './pitches'
+import {BASE_GAIN, BASE_PITCH} from './constants'
 
 const buildVoice = type => {
     const oscillatorNode = context.createOscillator()
@@ -14,8 +13,8 @@ const buildVoice = type => {
     oscillatorNode.start()
 
     const startNote = ({pitch, gain}) => {
-        oscillatorNode.frequency.value = pitches[pitch - 1] * BASE_OSCILLATOR_PITCH
-        gainNode.gain.value = gain * BASE_OSCILLATOR_GAIN
+        oscillatorNode.frequency.value = pitch * BASE_PITCH
+        gainNode.gain.value = gain * BASE_GAIN
     }
 
     const stopNote = () => gainNode.gain.value = 0

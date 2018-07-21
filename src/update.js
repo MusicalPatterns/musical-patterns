@@ -1,10 +1,15 @@
 import { BASE_DURATION } from './constants'
 
+const OFFSET_FOR_ZERO_INDEXING = 1
+
 const update = (entity, time) => {
 	const note = entity.notes[entity.noteIndex]
 
 	if (time > entity.nextOnset) {
-		entity.voice.startNote({pitch: note.pitch, gain: note.gain * entity.voiceGain})
+		entity.voice.startNote({
+			pitch: entity.pitches[note.pitch - OFFSET_FOR_ZERO_INDEXING],
+			gain: note.gain * entity.voiceGain
+		})
 
 		// console.log('entity', entity.id, 'pitch', note.pitch)
 

@@ -1,9 +1,12 @@
+const C8_FOR_STEPWISE = 4186
+const UMOWCHUWOWIEST_CROSSED_WITH_STEPWISE_BASE_PITCH = 139.56
+
 const BASE_DURATION = 3
-const BASE_OSCILLATOR_GAIN = 0.1
-const BASE_OSCILLATOR_PITCH = 4186.08 * 3/4 // a C, so get other samples to be based in C, the 3/4 is to match the 6 in the base sample pitch
+const BASE_GAIN = 0.1
+const BASE_PITCH = UMOWCHUWOWIEST_CROSSED_WITH_STEPWISE_BASE_PITCH
 
 export {
 	BASE_DURATION,
-    BASE_OSCILLATOR_GAIN,
-    BASE_OSCILLATOR_PITCH,
+    BASE_GAIN,
+    BASE_PITCH,
 }
