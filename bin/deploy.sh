@@ -11,4 +11,4 @@ if [[ $? == 1 ]] ; then
 fi
 
 NODE_ENV=production webpack
-cf zero-downtime-push fifteen -f manifest.yml
+cf zero-downtime-push fun-musical-tool -f manifest.yml

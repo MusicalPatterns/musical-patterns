@@ -1,3 +1,3 @@
-# fifteen
+# Fun Musical Tool
 
-sketch of a song based on stepping up and down (odd) (sub)harmonics while staying aligned to fixed intervals
+beginnings of a tool implementing my [Fun Musical Ideas](https://cmloegcmluin.wordpress.com/2014/08/01/fun-musical-ideas/)

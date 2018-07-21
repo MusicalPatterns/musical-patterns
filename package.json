@@ -1,5 +1,5 @@
 {
-  "name": "fifteen",
+  "name": "fun-musical-tool",
   "scripts": {
     "start": "webpack-dev-server",
     "deploy": "sh ./bin/deploy.sh"
