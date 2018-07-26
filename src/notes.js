@@ -73,6 +73,14 @@ const iest = [0, 2, 3, 4, 5, 0, 2, 3, 4, 5, 0, 2, 3, 4, 5]
 
 const twentyfourRhythm = [1, 0, 3, 1, 0, 3, 1, 0, 3, 0, 5, 1, 0, 3, 1, 0, 3, 1, 0, 3, 0, 5, 0, 7]
 
+const umowAlt = [1, 0, 3, 1, 0, 3, 1, 0, 3, 1, 0, 3, 1, 0, 3]
+
+const chuwowAlt = [1, 0, 3, 1, 0, 3, 0, 1, 0, 3, 1, 0, 3, 0, 5]
+
+const iestAlt = [1, 0, 3, 0, 5, 1, 0, 3, 0, 5, 1, 0, 3, 0, 5]
+
+const twentyfourRhythmAlt = [0, 2, 3, 0, 2, 3, 0, 2, 3, 4, 5, 0, 2, 3, 0, 2, 3, 0, 2, 3, 4, 5, 6, 7]
+
 const umowchuwowiestNotes = sequence([
     chuwow,
     chuwow,
@@ -86,6 +94,21 @@ const umowchuwowiestNotes = sequence([
     twentyfourRhythm,
     twentyfourRhythm,
     twentyfourRhythm,
+]).map(umowchuwowiestNote)
+
+const umowchuwowiestAltNotes = sequence([
+    chuwowAlt,
+    chuwowAlt,
+    chuwowAlt,
+    chuwowAlt,
+    iestAlt,
+    umowAlt,
+    iestAlt,
+    umowAlt,
+    twentyfourRhythmAlt,
+    twentyfourRhythmAlt,
+    twentyfourRhythmAlt,
+    twentyfourRhythmAlt,
 ]).map(umowchuwowiestNote)
 
 const stepwiseForUmowchuwowiestCrossedWithStepwiseNotes = [
@@ -117,12 +140,23 @@ const hihatNotes = hihat.map(unpitchedSampleNote)
 const umowchuwowiestCrossedWithStepwiseOneNotes = sequence([
     umowchuwowiestNotes,
     stepwiseForUmowchuwowiestCrossedWithStepwiseNotes,
-    umowchuwowiestNotes,
+    umowchuwowiestAltNotes,
+    umowchuwowiestAltNotes,
+    stepwiseForUmowchuwowiestCrossedWithStepwiseNotes,
 ])
 const umowchuwowiestCrossedWithStepwiseTwoNotes = sequence([
     umowchuwowiestNotes,
     umowchuwowiestNotes,
+    umowchuwowiestAltNotes,
     stepwiseForUmowchuwowiestCrossedWithStepwiseNotes,
+    stepwiseForUmowchuwowiestCrossedWithStepwiseNotes,
+])
+const umowchuwowiestCrossedWithStepwiseThreeNotes = sequence([
+    umowchuwowiestNotes,
+    stepwiseForUmowchuwowiestCrossedWithStepwiseNotes,
+    umowchuwowiestAltNotes,
+    stepwiseForUmowchuwowiestCrossedWithStepwiseNotes,
+    umowchuwowiestNotes,
 ])
 
 export {
@@ -138,4 +172,5 @@ export {
     hihatNotes,
     umowchuwowiestCrossedWithStepwiseOneNotes,
     umowchuwowiestCrossedWithStepwiseTwoNotes,
+    umowchuwowiestCrossedWithStepwiseThreeNotes,
 }

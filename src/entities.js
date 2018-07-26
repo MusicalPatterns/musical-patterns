@@ -10,11 +10,12 @@ import {
     snareNotes,
     threePerNotes,
     umowchuwowiestCrossedWithStepwiseOneNotes,
-    umowchuwowiestCrossedWithStepwiseTwoNotes
+    umowchuwowiestCrossedWithStepwiseTwoNotes,
+    umowchuwowiestCrossedWithStepwiseThreeNotes,
 } from './notes'
 import buildSampleVoice from './buildSampleVoice'
 import buildVoice from './buildVoice'
-import {harmonicSeriesPitches, subharmonicSeriesPitches, subparticularSeriesPitches} from './pitches'
+import {harmonicSeriesPitches, subharmonicSeriesPitches, subparticularSeriesPitches, dubparticularSeriesPitches} from './pitches'
 import sequence from './sequence'
 
 const stepwiseMainDescent = {
@@ -190,9 +191,9 @@ const stepwiseHihat = {
 
 const umowchuwowiestCrossedWithStepwiseOne = {
     notes: umowchuwowiestCrossedWithStepwiseOneNotes,
-    pitches: harmonicSeriesPitches,
+    pitches: subparticularSeriesPitches,
     voice: buildVoice('square'),
-    voiceGain: 1,
+    voiceGain: .2,
     id: 10,
     noteIndex: 0,
     nextOnset: 0,
@@ -200,10 +201,20 @@ const umowchuwowiestCrossedWithStepwiseOne = {
 }
 const umowchuwowiestCrossedWithStepwiseTwo = {
     notes: umowchuwowiestCrossedWithStepwiseTwoNotes,
-    pitches: subparticularSeriesPitches,
-    voice: buildVoice('square'),
-    voiceGain: 1,
+    pitches: dubparticularSeriesPitches,
+    voice: buildVoice('sawtooth'),
+    voiceGain: .2,
     id: 14,
+    noteIndex: 0,
+    nextOnset: 0,
+    nextOffset: 0,
+}
+const umowchuwowiestCrossedWithStepwiseThree = {
+    notes: umowchuwowiestCrossedWithStepwiseThreeNotes,
+    pitches: harmonicSeriesPitches,
+    voice: buildVoice('sine'),
+    voiceGain: .2,
+    id: 15,
     noteIndex: 0,
     nextOnset: 0,
     nextOffset: 0,
@@ -236,6 +247,7 @@ const stepwisePercussion = [
 const umowchuwowiestCrossedWithStepwise = [
     umowchuwowiestCrossedWithStepwiseOne,
     umowchuwowiestCrossedWithStepwiseTwo,
+    umowchuwowiestCrossedWithStepwiseThree,
 ]
 
 const stepwiseSong = sequence([
