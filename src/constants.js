@@ -1,5 +1,5 @@
-const C8_FOR_STEPWISE = 4186
-const UMOWCHUWOWIEST_CROSSED_WITH_STEPWISE_BASE_PITCH = 440
+import {UMOWCHUWOWIEST_CROSSED_WITH_STEPWISE_BASE_PITCH} from '../songs/umowchuwowiestCrossedWithStepwise/basePitch'
+import {C8_FOR_STEPWISE} from '../songs/stepwise/basePitch'
 
 const BASE_DURATION = 3
 const BASE_GAIN = 0.1
