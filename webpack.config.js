@@ -24,5 +24,7 @@ module.exports = {
     devServer: {
         contentBase: path.join(__dirname, './dist')
     },
-    plugins: [new HtmlWebpackPlugin()],
+    plugins: [new HtmlWebpackPlugin({
+        title: 'Fun Musical Tool',
+    })],
 }

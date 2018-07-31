@@ -81,6 +81,14 @@ const iestAlt = [1, 0, 3, 0, 5, 1, 0, 3, 0, 5, 1, 0, 3, 0, 5]
 
 const twentyfourRhythmAlt = [0, 2, 3, 0, 2, 3, 0, 2, 3, 4, 5, 0, 2, 3, 0, 2, 3, 0, 2, 3, 4, 5, 6, 7]
 
+const umowwwNotes = [0, 2, 3, 0, 2, 3, 0, 2, 3, 0, 2, 3, 0, 2, 3, 0, 2, 3, 0, 2, 3, 0, 2, 3].map(umowchuwowiestNote)
+
+const umowwwAltNotes = [1, 0, 3, 1, 0, 3, 1, 0, 3, 1, 0, 3, 1, 0, 3, 1, 0, 3, 1, 0, 3, 1, 0, 3].map(umowchuwowiestNote)
+
+const umowwwAltAndNotNotes = [0, 2, 3, 1, 0, 3, 0, 2, 3, 1, 0, 3, 0, 2, 3, 1, 0, 3, 0, 2, 3, 1, 0, 3].map(umowchuwowiestNote)
+
+const umowwwRestNotes = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0].map(umowchuwowiestNote)
+
 const umowchuwowiestNotes = sequence([
     chuwow,
     chuwow,
@@ -138,23 +146,35 @@ const snareNotes = snare.map(unpitchedSampleNote)
 const hihatNotes = hihat.map(unpitchedSampleNote)
 
 const umowchuwowiestCrossedWithStepwiseOneNotes = sequence([
+    umowwwNotes,
     umowchuwowiestNotes,
     stepwiseForUmowchuwowiestCrossedWithStepwiseNotes,
+    umowwwRestNotes,
     umowchuwowiestAltNotes,
     umowchuwowiestAltNotes,
+    umowwwRestNotes,
+    umowchuwowiestNotes,
     stepwiseForUmowchuwowiestCrossedWithStepwiseNotes,
 ])
 const umowchuwowiestCrossedWithStepwiseTwoNotes = sequence([
+    umowwwRestNotes,
     umowchuwowiestNotes,
     umowchuwowiestNotes,
+    umowwwAltNotes,
     umowchuwowiestAltNotes,
     stepwiseForUmowchuwowiestCrossedWithStepwiseNotes,
+    umowwwRestNotes,
+    umowchuwowiestAltNotes,
     stepwiseForUmowchuwowiestCrossedWithStepwiseNotes,
 ])
 const umowchuwowiestCrossedWithStepwiseThreeNotes = sequence([
+    umowwwRestNotes,
     umowchuwowiestNotes,
     stepwiseForUmowchuwowiestCrossedWithStepwiseNotes,
+    umowwwRestNotes,
     umowchuwowiestAltNotes,
+    stepwiseForUmowchuwowiestCrossedWithStepwiseNotes,
+    umowwwAltAndNotNotes,
     stepwiseForUmowchuwowiestCrossedWithStepwiseNotes,
     umowchuwowiestNotes,
 ])
