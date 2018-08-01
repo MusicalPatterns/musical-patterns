@@ -37,6 +37,18 @@ const iestAlt = [1, 0, 3, 0, 5, 1, 0, 3, 0, 5, 1, 0, 3, 0, 5]
 
 const twentyfourRhythmAlt = [0, 2, 3, 0, 2, 3, 0, 2, 3, 4, 5, 0, 2, 3, 0, 2, 3, 0, 2, 3, 4, 5, 6, 7]
 
+const umowWithBoom = [1, 2, 3, 0, 2, 3, 0, 2, 3, 0, 2, 3, 0, 2, 3]
+
+const iestWithBoom = [1, 2, 3, 4, 5, 0, 2, 3, 4, 5, 0, 2, 3, 4, 5]
+
+const umowDoubleAlt = [1, 0, 3, 1, 0, 3, 1, 0, 3, 1, 0, 3, 1, 0, 3]
+
+const chuwowDoubleAlt = [1, 0, 3, 1, 0, 3, 0, 5, 1, 0, 3, 0, 5, 0, 7]
+
+const iestDoubleAlt = [1, 0, 3, 0, 5, 0, 7, 0, 1, 0, 3, 0, 5, 0, 7]
+
+const twentyfourRhythmDoubleAlt = [0, 2, 3, 0, 2, 3, 4, 0, 2, 3, 0, 2, 3, 4, 5, 0, 2, 3, 0, 2, 3, 4, 5, 0, 2, 3, 4]
+
 const umowwwNotes = [0, 2, 3, 0, 2, 3, 0, 2, 3, 0, 2, 3, 0, 2, 3, 0, 2, 3, 0, 2, 3, 0, 2, 3].map(umowchuwowiestNote)
 
 const umowwwAltNotes = [1, 0, 3, 1, 0, 3, 1, 0, 3, 1, 0, 3, 1, 0, 3, 1, 0, 3, 1, 0, 3, 1, 0, 3].map(umowchuwowiestNote)
@@ -44,10 +56,6 @@ const umowwwAltNotes = [1, 0, 3, 1, 0, 3, 1, 0, 3, 1, 0, 3, 1, 0, 3, 1, 0, 3, 1,
 const umowwwAltAndNotNotes = [0, 2, 3, 1, 0, 3, 0, 2, 3, 1, 0, 3, 0, 2, 3, 1, 0, 3, 0, 2, 3, 1, 0, 3].map(umowchuwowiestNote)
 
 const umowwwRestNotes = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0].map(umowchuwowiestNote)
-
-const umowWithBoom = [1, 2, 3, 0, 2, 3, 0, 2, 3, 0, 2, 3, 0, 2, 3]
-
-const iestWithBoom = [1, 2, 3, 4, 5, 0, 2, 3, 4, 5, 0, 2, 3, 4, 5]
 
 const umowchuwowiestNotes = sequence([
     chuwow,
@@ -77,6 +85,21 @@ const umowchuwowiestAltNotes = sequence([
     twentyfourRhythmAlt,
     twentyfourRhythmAlt,
     twentyfourRhythmAlt,
+]).map(umowchuwowiestNote)
+
+const umowchuwowiestDoubleAltNotes = sequence([
+    chuwowDoubleAlt,
+    chuwowDoubleAlt,
+    chuwowDoubleAlt,
+    chuwowDoubleAlt,
+    iestDoubleAlt,
+    umowDoubleAlt,
+    iestDoubleAlt,
+    umowDoubleAlt,
+    twentyfourRhythmDoubleAlt,
+    twentyfourRhythmDoubleAlt,
+    twentyfourRhythmDoubleAlt,
+    twentyfourRhythmDoubleAlt,
 ]).map(umowchuwowiestNote)
 
 const stepwiseForUmowchuwowiestCrossedWithStepwiseStepwiseNotes = [
@@ -208,7 +231,7 @@ const umowchuwowiestCrossedWithStepwiseThreeNotes = sequence([
     // season 4
     umowwwAltAndNotNotes,
     stepwiseForUmowchuwowiestCrossedWithStepwiseInbetweenNotes,
-    umowchuwowiestNotes,
+    umowchuwowiestDoubleAltNotes,
 ])
 
 export {
