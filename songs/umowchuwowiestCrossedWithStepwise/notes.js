@@ -1,10 +1,10 @@
 import sequence from '../../src/sequence'
 
-const stepwiseNote = harmonic => ({
-    duration: harmonic,
-    pitch: harmonic,
-    sustain: harmonic - 0.1,
-    gain: 1,
+const stepwiseForUmowchuwowiestNote = harmonic => ({
+    duration: harmonic === 0 ? 1 : harmonic,
+    pitch: harmonic === 0 ? 1 : harmonic,
+    sustain: harmonic === 0 ? 0.9 : harmonic - 0.1,
+    gain: harmonic === 0 ? 0 : 1,
 })
 
 const umowchuwowiestNote = harmonic => ({
@@ -70,7 +70,7 @@ const umowchuwowiestAltNotes = sequence([
 
 const stepwiseForUmowchuwowiestCrossedWithStepwiseStepwiseNotes = [
     3, 4, 3, 2, 1, 2,
-    3, 4, 3, 2, 1, 2,
+    3, 4, 3, 2, 0, 2,
     3, 4, 3, 2, 1, 2,
     3, 4, 3, 2, 3,
     4, 5, 6,
@@ -79,13 +79,13 @@ const stepwiseForUmowchuwowiestCrossedWithStepwiseStepwiseNotes = [
     // that lasts two bars
     9, 7, 5, 3,
     1, 3, 5, 7, 5, 3,
+    0, 3, 5, 7, 5, 3,
     1, 3, 5, 7, 5, 3,
-    1, 3, 5, 7, 5, 3,
-].map(stepwiseNote)
+].map(stepwiseForUmowchuwowiestNote)
 
 const stepwiseForUmowchuwowiestCrossedWithStepwiseUmowchuwowiestNotes = [
     3, 3, 3, 4, 4, 4, 4, 3, 3, 3, 2, 2, 1, 2, 2,
-    3, 3, 3, 4, 4, 4, 4, 3, 3, 3, 2, 2, 1, 2, 2,
+    3, 3, 3, 4, 4, 4, 4, 3, 3, 3, 2, 2, 0, 2, 2,
     3, 3, 3, 4, 4, 4, 4, 3, 3, 3, 2, 2, 1, 2, 2,
     3, 3, 3, 4, 4, 4, 4, 3, 3, 3, 2, 2, 3, 3, 3,
     4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6,
@@ -94,17 +94,17 @@ const stepwiseForUmowchuwowiestCrossedWithStepwiseUmowchuwowiestNotes = [
     10, 10, 10, 10, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11,
     9, 9, 9, 9, 9, 9, 9, 9, 9, 7, 7, 7, 7, 7, 7, 7, 5, 5, 5, 5, 5, 3, 3, 3,
     1, 3, 3, 3, 5, 5, 5, 5, 5, 7, 7, 7, 7, 7, 7, 7, 5, 5, 5, 5, 5, 3, 3, 3,
-    1, 3, 3, 3, 5, 5, 5, 5, 5, 7, 7, 7, 7, 7, 7, 7, 5, 5, 5, 5, 5, 3, 3, 3,
+    0, 3, 3, 3, 5, 5, 5, 5, 5, 7, 7, 7, 7, 7, 7, 7, 5, 5, 5, 5, 5, 3, 3, 3,
     1, 3, 3, 3, 5, 5, 5, 5, 5, 7, 7, 7, 7, 7, 7, 7, 5, 5, 5, 5, 5, 3, 3, 3,
 ].map(umowchuwowiestNote)
 
 const backboneFifteenNotes = [
     1,2,1,2,1,2,1,2,1,2
-].map(stepwiseNote)
+].map(stepwiseForUmowchuwowiestNote)
 
 const backboneTwentyfourNotes = [
     1,3,1,3,1,3,1,3,1,3,1,3,
-].map(stepwiseNote)
+].map(stepwiseForUmowchuwowiestNote)
 
 const rightNumberOfBackboneFifteenNotes = sequence([
     backboneFifteenNotes,
@@ -168,7 +168,7 @@ const umowchuwowiestCrossedWithStepwiseThreeNotes = sequence([
     rightNumberOfBackboneNotes,
     stepwiseForUmowchuwowiestCrossedWithStepwiseStepwiseNotes,
     umowwwAltAndNotNotes,
-    stepwiseForUmowchuwowiestCrossedWithStepwiseUmowchuwowiestNotes,
+    stepwiseForUmowchuwowiestCrossedWithStepwiseStepwiseNotes,
     umowchuwowiestNotes,
 ])
 
