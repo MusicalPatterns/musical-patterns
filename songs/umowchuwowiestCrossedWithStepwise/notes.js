@@ -98,6 +98,37 @@ const stepwiseForUmowchuwowiestCrossedWithStepwiseUmowchuwowiestNotes = [
     1, 3, 3, 3, 5, 5, 5, 5, 5, 7, 7, 7, 7, 7, 7, 7, 5, 5, 5, 5, 5, 3, 3, 3,
 ].map(umowchuwowiestNote)
 
+const backboneFifteenNotes = [
+    1,2,1,2,1,2,1,2,1,2
+].map(stepwiseNote)
+
+const backboneTwentyfourNotes = [
+    1,3,1,3,1,3,1,3,1,3,1,3,
+].map(stepwiseNote)
+
+const rightNumberOfBackboneFifteenNotes = sequence([
+    backboneFifteenNotes,
+    backboneFifteenNotes,
+    backboneFifteenNotes,
+    backboneFifteenNotes,
+    backboneFifteenNotes,
+    backboneFifteenNotes,
+    backboneFifteenNotes,
+    backboneFifteenNotes,
+])
+
+const rightNumberOfBackboneTwentyfourNotes = sequence([
+    backboneTwentyfourNotes,
+    backboneTwentyfourNotes,
+    backboneTwentyfourNotes,
+    backboneTwentyfourNotes,
+])
+
+const rightNumberOfBackboneNotes = sequence([
+    rightNumberOfBackboneFifteenNotes,
+    rightNumberOfBackboneTwentyfourNotes,
+])
+
 const umowchuwowiestCrossedWithStepwiseOneNotes = sequence([
     umowwwNotes,
     umowchuwowiestNotes,
@@ -105,6 +136,9 @@ const umowchuwowiestCrossedWithStepwiseOneNotes = sequence([
     umowwwRestNotes,
     umowchuwowiestAltNotes,
     umowchuwowiestAltNotes,
+    umowwwRestNotes,
+    rightNumberOfBackboneNotes,
+    rightNumberOfBackboneNotes,
     umowwwRestNotes,
     umowchuwowiestNotes,
     stepwiseForUmowchuwowiestCrossedWithStepwiseStepwiseNotes,
@@ -117,6 +151,9 @@ const umowchuwowiestCrossedWithStepwiseTwoNotes = sequence([
     umowchuwowiestAltNotes,
     stepwiseForUmowchuwowiestCrossedWithStepwiseStepwiseNotes,
     umowwwRestNotes,
+    rightNumberOfBackboneNotes,
+    rightNumberOfBackboneNotes,
+    umowwwRestNotes,
     umowchuwowiestAltNotes,
     stepwiseForUmowchuwowiestCrossedWithStepwiseStepwiseNotes,
 ])
@@ -127,6 +164,9 @@ const umowchuwowiestCrossedWithStepwiseThreeNotes = sequence([
     umowwwRestNotes,
     umowchuwowiestAltNotes,
     stepwiseForUmowchuwowiestCrossedWithStepwiseUmowchuwowiestNotes,
+    backboneTwentyfourNotes,
+    rightNumberOfBackboneNotes,
+    stepwiseForUmowchuwowiestCrossedWithStepwiseStepwiseNotes,
     umowwwAltAndNotNotes,
     stepwiseForUmowchuwowiestCrossedWithStepwiseUmowchuwowiestNotes,
     umowchuwowiestNotes,
