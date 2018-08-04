@@ -21,41 +21,147 @@ const inbetweenNote = ([harmonic, duration]) => ({
     gain: 1,
 })
 
-const umow = [0, 2, 3, 0, 2, 3, 0, 2, 3, 0, 2, 3, 0, 2, 3]
+const umow = [
+    0, 2, 3,
+    0, 2, 3,
+    0, 2, 3,
+    0, 2, 3,
+    0, 2, 3,
+]
 
-const chuwow = [0, 2, 3, 0, 2, 3, 4, 0, 2, 3, 0, 2, 3, 4, 5]
+const chuwow = [
+    0, 2, 3,
+    0, 2, 3, 4,
+    0, 2, 3,
+    0, 2, 3, 4, 5,
+]
 
-const iest = [0, 2, 3, 4, 5, 0, 2, 3, 4, 5, 0, 2, 3, 4, 5]
+const iest = [
+    0, 2, 3, 4, 5,
+    0, 2, 3, 4, 5,
+    0, 2, 3, 4, 5,
+]
 
-const twentyfourRhythm = [1, 0, 3, 1, 0, 3, 1, 0, 3, 0, 5, 1, 0, 3, 1, 0, 3, 1, 0, 3, 0, 5, 0, 7]
+const twentyfourRhythm = [
+    1, 0, 3,
+    1, 0, 3,
+    1, 0, 3, 0, 5,
+    1, 0, 3,
+    1, 0, 3,
+    1, 0, 3, 0, 5, 0, 7,
+]
 
-const umowAlt = [1, 0, 3, 1, 0, 3, 1, 0, 3, 1, 0, 3, 1, 0, 3]
+const umowAlt = [
+    1, 0, 3,
+    1, 0, 3,
+    1, 0, 3,
+    1, 0, 3,
+    1, 0, 3,
+]
 
-const chuwowAlt = [1, 0, 3, 1, 0, 3, 0, 1, 0, 3, 1, 0, 3, 0, 5]
+const chuwowAlt = [
+    1, 0, 3,
+    1, 0, 3, 0,
+    1, 0, 3,
+    1, 0, 3, 0, 5,
+]
 
-const iestAlt = [1, 0, 3, 0, 5, 1, 0, 3, 0, 5, 1, 0, 3, 0, 5]
+const iestAlt = [
+    1, 0, 3, 0, 5,
+    1, 0, 3, 0, 5,
+    1, 0, 3, 0, 5,
+]
 
-const twentyfourRhythmAlt = [0, 2, 3, 0, 2, 3, 0, 2, 3, 4, 5, 0, 2, 3, 0, 2, 3, 0, 2, 3, 4, 5, 6, 7]
+const twentyfourRhythmAlt = [
+    0, 2, 3,
+    0, 2, 3,
+    0, 2, 3, 4, 5,
+    0, 2, 3,
+    0, 2, 3,
+    0, 2, 3, 4, 5, 6, 7,
+]
 
-const umowWithBoom = [1, 2, 3, 0, 2, 3, 0, 2, 3, 0, 2, 3, 0, 2, 3]
+const umowWithBoom = [
+    1, 2, 3,
+    0, 2, 3,
+    0, 2, 3,
+    0, 2, 3,
+    0, 2, 3,
+]
 
-const iestWithBoom = [1, 2, 3, 4, 5, 0, 2, 3, 4, 5, 0, 2, 3, 4, 5]
+const iestWithBoom = [
+    1, 2, 3, 4, 5,
+    0, 2, 3, 4, 5,
+    0, 2, 3, 4, 5,
+]
 
-const umowDoubleAlt = [1, 0, 3, 1, 0, 3, 1, 0, 3, 1, 0, 3, 1, 0, 3]
+const umowDoubleAlt = [
+    1, 0, 3,
+    1, 0, 3,
+    1, 0, 3,
+    1, 0, 3,
+    1, 0, 3,
+]
 
-const chuwowDoubleAlt = [1, 0, 3, 1, 0, 3, 0, 5, 1, 0, 3, 0, 5, 0, 7]
+const chuwowDoubleAlt = [
+    1, 0, 3,
+    1, 0, 3, 0, 5,
+    1, 0, 3, 0, 5, 0, 7,
+]
 
-const iestDoubleAlt = [1, 0, 3, 0, 5, 0, 7, 0, 1, 0, 3, 0, 5, 0, 7]
+const iestDoubleAlt = [
+    1, 0, 3, 0, 5, 0, 7, 0,
+    1, 0, 3, 0, 5, 0, 7,
+]
 
-const twentyfourRhythmDoubleAlt = [0, 2, 3, 0, 2, 3, 4, 0, 2, 3, 0, 2, 3, 4, 5, 0, 2, 3, 0, 2, 3, 4, 5, 0, 2, 3, 4]
+const twentyfourRhythmDoubleAlt = [
+    0, 2, 3,
+    0, 2, 3, 4,
+    0, 2, 3, 4, 5,
+    0, 2, 3,
+    0, 2, 3, 4, 5,
+    0, 2, 3, 4,
+]
 
-const umowwwNotes = [0, 2, 3, 0, 2, 3, 0, 2, 3, 0, 2, 3, 0, 2, 3, 0, 2, 3, 0, 2, 3, 0, 2, 3].map(umowchuwowiestNote)
+const umowwwNotes = [
+    0, 2, 3,
+    0, 2, 3,
+    0, 2, 3,
+    0, 2, 3,
+    0, 2, 3,
+    0, 2, 3,
+    0, 2, 3,
+    0, 2, 3,
+].map(umowchuwowiestNote)
 
-const umowwwAltNotes = [1, 0, 3, 1, 0, 3, 1, 0, 3, 1, 0, 3, 1, 0, 3, 1, 0, 3, 1, 0, 3, 1, 0, 3].map(umowchuwowiestNote)
+const umowwwAltNotes = [
+    1, 0, 3,
+    1, 0, 3,
+    1, 0, 3,
+    1, 0, 3,
+    1, 0, 3,
+    1, 0, 3,
+    1, 0, 3,
+    1, 0, 3,
+].map(umowchuwowiestNote)
 
-const umowwwAltAndNotNotes = [0, 2, 3, 1, 0, 3, 0, 2, 3, 1, 0, 3, 0, 2, 3, 1, 0, 3, 0, 2, 3, 1, 0, 3].map(umowchuwowiestNote)
+const umowwwAltAndNotNotes = [
+    0, 2, 3,
+    1, 0, 3,
+    0, 2, 3,
+    1, 0, 3,
+    0, 2, 3,
+    1, 0, 3,
+    0, 2, 3,
+    1, 0, 3,
+].map(umowchuwowiestNote)
 
-const umowwwRestNotes = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0].map(umowchuwowiestNote)
+const umowwwRestNotes = [
+    0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0,
+].map(umowchuwowiestNote)
 
 const umowchuwowiestNotes = sequence([
     chuwow,
@@ -103,57 +209,77 @@ const umowchuwowiestDoubleAltNotes = sequence([
 ]).map(umowchuwowiestNote)
 
 const stepwiseForUmowchuwowiestCrossedWithStepwiseStepwiseNotes = [
+    // noodling in 15 and escape
     3, 4, 3, 2, 1, 2,
     3, 4, 3, 2, 1, 2,
     3, 4, 3, 2, 1, 2,
     3, 4, 3, 2, 3,
+    // ascent in 15
     4, 5, 6,
     7, 8,
     9, 10, 11,
-    // that lasts two bars
+    // (above spreads across bars)
+    // inscape and noodling in 24
     9, 7, 5, 3,
     1, 3, 5, 7, 5, 3,
     1, 3, 5, 7, 5, 3,
     1, 3, 5, 7, 5, 3,
+    // no ascent in 24 ...?
 ].map(stepwiseForUmowchuwowiestNote)
 
 const stepwiseForUmowchuwowiestCrossedWithStepwiseInbetweenNotes = [
+    // noodling in 15 and escape
     [3, 1], [3, 2], [4, 1], [4, 2], [4, 1], [3, 2], [3, 1], [2, 2], [1, 1], [2, 2],
     [3, 1], [3, 2], [4, 1], [4, 2], [4, 1], [3, 2], [3, 1], [2, 2], [1, 1], [2, 2],
     [3, 1], [3, 2], [4, 1], [4, 2], [4, 1], [3, 2], [3, 1], [2, 2], [1, 1], [2, 2],
     [3, 1], [3, 2], [4, 1], [4, 2], [4, 1], [3, 2], [3, 1], [2, 2], [3, 1], [3, 2],
+    // ascent in 15
     [4, 1], [4, 2], [4, 1], [5, 2], [5, 1], [5, 2], [6, 1], [6, 2], [6, 1], [6, 2],
     [7, 1], [7, 2], [7, 1], [7, 2], [7, 1], [8, 2], [8, 1], [8, 2], [8, 1], [8, 2],
     [9, 1], [9, 2], [9, 1], [9, 2], [9, 1], [9, 2], [10, 1], [10, 2], [10, 1], [10, 2],
     [10, 1], [10, 2], [10, 1], [11, 2], [11, 1], [11, 2], [11, 1], [11, 2], [11, 1], [11, 2],
-
+    // inscape and noodling in 24
     [9, 1], [9, 3], [9, 1], [9, 3], [9, 1], [7, 3], [7, 1], [7, 3], [5, 1], [5, 3], [5, 1], [3, 3],
     [1, 1], [3, 3], [5, 1], [5, 3], [5, 1], [7, 3], [7, 1], [7, 3], [5, 1], [5, 3], [5, 1], [3, 3],
     [1, 1], [3, 3], [5, 1], [5, 3], [5, 1], [7, 3], [7, 1], [7, 3], [5, 1], [5, 3], [5, 1], [3, 3],
     [1, 1], [3, 3], [5, 1], [5, 3], [5, 1], [7, 3], [7, 1], [7, 3], [5, 1], [5, 3], [5, 1], [3, 3],
+    // no ascent in 24 ...?
 ].map(inbetweenNote)
 
 const stepwiseForUmowchuwowiestCrossedWithStepwiseUmowchuwowiestNotes = [
+    // noodling in 15 and escape
     3, 3, 3, 4, 4, 4, 4, 3, 3, 3, 2, 2, 1, 2, 2,
     3, 3, 3, 4, 4, 4, 4, 3, 3, 3, 2, 2, 1, 2, 2,
     3, 3, 3, 4, 4, 4, 4, 3, 3, 3, 2, 2, 1, 2, 2,
     3, 3, 3, 4, 4, 4, 4, 3, 3, 3, 2, 2, 3, 3, 3,
+    // ascent in 15
     4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6,
     7, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 8, 8, 8,
     9, 9, 9, 9, 9, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10,
     10, 10, 10, 10, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11,
+    // inscape and noodling in 24
     9, 9, 9, 9, 9, 9, 9, 9, 9, 7, 7, 7, 7, 7, 7, 7, 5, 5, 5, 5, 5, 3, 3, 3,
     1, 3, 3, 3, 5, 5, 5, 5, 5, 7, 7, 7, 7, 7, 7, 7, 5, 5, 5, 5, 5, 3, 3, 3,
     1, 3, 3, 3, 5, 5, 5, 5, 5, 7, 7, 7, 7, 7, 7, 7, 5, 5, 5, 5, 5, 3, 3, 3,
     1, 3, 3, 3, 5, 5, 5, 5, 5, 7, 7, 7, 7, 7, 7, 7, 5, 5, 5, 5, 5, 3, 3, 3,
+    // no ascent in 24 ...?
 ].map(umowchuwowiestNote)
 
 const backboneFifteenNotes = [
-    1,2,1,2,1,2,1,2,1,2
+    1,2,
+    1,2,
+    1,2,
+    1,2,
+    1,2,
 ].map(stepwiseForUmowchuwowiestNote)
 
 const backboneTwentyfourNotes = [
-    1,3,1,3,1,3,1,3,1,3,1,3,
+    1,3,
+    1,3,
+    1,3,
+    1,3,
+    1,3,
+    1,3,
 ].map(stepwiseForUmowchuwowiestNote)
 
 const rightNumberOfBackboneFifteenNotes = sequence([
