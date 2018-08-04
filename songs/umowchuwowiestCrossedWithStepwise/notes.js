@@ -334,6 +334,68 @@ const backboneTwentyfourNotesShiftedInspiredAlt = [
     1, 3, 1, 3, 1,
 ].map(stepwiseForUmowchuwowiestNote)
 
+const backboneFifteenNotesHigher = [
+    2,3,
+    2,3,
+    2,3,
+].map(stepwiseForUmowchuwowiestNote)
+
+const backboneFifteenNotesHigherAndHigher = [
+    7,8,
+].map(stepwiseForUmowchuwowiestNote)
+
+const backboneTwentyfourNotesHigher = [
+    3,5,
+    3,5,
+    3,5,
+].map(stepwiseForUmowchuwowiestNote)
+
+const backboneTwentyfourNotesHigherAndHigher = [
+    11,13,
+].map(stepwiseForUmowchuwowiestNote)
+
+const setOfBackbones = sequence([
+    backboneFifteenNotes,
+    backboneFifteenNotes,
+    backboneFifteenNotes,
+    backboneFifteenNotes,
+    backboneFifteenNotes,
+    backboneTwentyfourNotes,
+    backboneTwentyfourNotes,
+    backboneTwentyfourNotes,
+    backboneTwentyfourNotes,
+    backboneTwentyfourNotes,
+    backboneTwentyfourNotes,
+])
+
+const setOfBackbonesHigher = sequence([
+    backboneFifteenNotesHigher,
+    backboneFifteenNotesHigher,
+    backboneFifteenNotesHigher,
+    backboneFifteenNotesHigher,
+    backboneFifteenNotesHigher,
+    backboneTwentyfourNotesHigher,
+    backboneTwentyfourNotesHigher,
+    backboneTwentyfourNotesHigher,
+    backboneTwentyfourNotesHigher,
+    backboneTwentyfourNotesHigher,
+    backboneTwentyfourNotesHigher,
+])
+
+const setOfBackbonesHigherAndHigher = sequence([
+    backboneFifteenNotesHigherAndHigher,
+    backboneFifteenNotesHigherAndHigher,
+    backboneFifteenNotesHigherAndHigher,
+    backboneFifteenNotesHigherAndHigher,
+    backboneFifteenNotesHigherAndHigher,
+    backboneTwentyfourNotesHigherAndHigher,
+    backboneTwentyfourNotesHigherAndHigher,
+    backboneTwentyfourNotesHigherAndHigher,
+    backboneTwentyfourNotesHigherAndHigher,
+    backboneTwentyfourNotesHigherAndHigher,
+    backboneTwentyfourNotesHigherAndHigher,
+])
+
 const shiftedRhythm = sequence([
     backboneFifteenNotesShiftedInspired,
     backboneFifteenNotesShiftedInspired,
@@ -379,16 +441,17 @@ const umowchuwowiestCrossedWithStepwiseOneNotes = sequence([
     umowwwRestNotes,
     umowchuwowiestAltNotes,
     umowchuwowiestAltNotes,
+    umowchuwowiestDoubleAltNotes,
     // season 3
     umowwwRestNotes,
     rightNumberOfBackboneNotes,
     rightNumberOfBackboneNotes,
     shiftedRhythm,
     // season 4
-    umowchuwowiestDoubleAltNotes,
     umowwwRestNotes,
     umowchuwowiestNotes,
     stepwiseForUmowchuwowiestCrossedWithStepwiseUmowchuwowiestNotes,
+    setOfBackbonesHigherAndHigher,
 ])
 const umowchuwowiestCrossedWithStepwiseTwoNotes = sequence([
     // season 1
@@ -399,16 +462,17 @@ const umowchuwowiestCrossedWithStepwiseTwoNotes = sequence([
     umowwwAltNotes,
     umowchuwowiestAltNotes,
     stepwiseForUmowchuwowiestCrossedWithStepwiseStepwiseNotes,
+    umowchuwowiestDoubleAltNotes,
     // season 3
     umowwwRestNotes,
     rightNumberOfBackboneNotes,
     rightNumberOfBackboneNotes,
     shiftedSingSong,
     // season 4
-    umowchuwowiestDoubleAltNotes,
     umowwwRestNotes,
     umowchuwowiestAltNotes,
     stepwiseForUmowchuwowiestCrossedWithStepwiseInbetweenNotes,
+    setOfBackbones,
 ])
 const umowchuwowiestCrossedWithStepwiseThreeNotes = sequence([
     // season 1
@@ -419,16 +483,17 @@ const umowchuwowiestCrossedWithStepwiseThreeNotes = sequence([
     umowwwRestNotes,
     umowchuwowiestAltNotes,
     stepwiseForUmowchuwowiestCrossedWithStepwiseStepwiseNotesDelayedHarmonic,
+    umowchuwowiestDoubleAltNotes,
     // season 3
     backboneTwentyfourNotes,
     rightNumberOfBackboneNotes,
     stepwiseForUmowchuwowiestCrossedWithStepwiseInbetweenNotes,
     shiftedSingSong,
     // season 4
-    umowchuwowiestDoubleAltNotes,
     umowwwAltAndNotNotes,
     umowchuwowiestDoubleAltNotes,
     stepwiseForUmowchuwowiestCrossedWithStepwiseStepwiseNotes,
+    setOfBackbonesHigher,
 ])
 
 export {
