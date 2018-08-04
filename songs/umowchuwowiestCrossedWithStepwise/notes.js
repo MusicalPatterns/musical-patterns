@@ -218,7 +218,7 @@ const stepwiseForUmowchuwowiestCrossedWithStepwiseStepwiseNotes = [
     4, 5, 6,
     7, 8,
     9, 10, 11,
-    // (above spreads across bars)
+    // (above spreads across 2 bars)
     // inscape and noodling in 24
     9, 7, 5, 3,
     1, 3, 5, 7, 5, 3,
@@ -265,6 +265,19 @@ const stepwiseForUmowchuwowiestCrossedWithStepwiseUmowchuwowiestNotes = [
     // no ascent in 24 ...?
 ].map(umowchuwowiestNote)
 
+const shiftedSingSong = [
+    2, 1, 2, 1, 2, 1, 2, 1, 2, 1,
+    2, 1, 2, 1, 2, 3,    4,
+    3,    2, 1, 2, 1, 2, 1, 2, 1,
+    3, 5, 7, 9,
+    11, 13,
+    15, 17, 19, 21,
+    // (this spreads across 3 bars)
+    // (this spreads across 3 bars)
+    23, 25,
+    // (this spreads across 2 bars)
+].map(stepwiseForUmowchuwowiestNote)
+
 const backboneFifteenNotes = [
     1,2,
     1,2,
@@ -281,6 +294,39 @@ const backboneTwentyfourNotes = [
     1,3,
     1,3,
 ].map(stepwiseForUmowchuwowiestNote)
+
+const backboneFifteenNotesShiftedInspired = [
+    2,1,
+    5,1,
+    2,4,
+].map(stepwiseForUmowchuwowiestNote)
+
+const backboneTwentyfourNotesShiftedInspired = [
+    3, 1,
+    3, 1,
+    3, 4, 5,
+    4,
+].map(stepwiseForUmowchuwowiestNote)
+
+const backboneTwentyfourNotesShiftedInspiredAlt = [
+    4,
+    7,
+    4,
+    1, 3, 1, 3, 1,
+].map(stepwiseForUmowchuwowiestNote)
+
+const shiftedRhythm = sequence([
+    backboneFifteenNotesShiftedInspired,
+    backboneFifteenNotesShiftedInspired,
+    backboneFifteenNotesShiftedInspired,
+    backboneTwentyfourNotesShiftedInspired,
+    backboneTwentyfourNotesShiftedInspired,
+    backboneTwentyfourNotesShiftedInspired,
+    backboneTwentyfourNotesShiftedInspired,
+    backboneTwentyfourNotesShiftedInspiredAlt,
+    backboneTwentyfourNotesShiftedInspiredAlt,
+    backboneTwentyfourNotesShiftedInspiredAlt,
+])
 
 const rightNumberOfBackboneFifteenNotes = sequence([
     backboneFifteenNotes,
@@ -318,6 +364,7 @@ const umowchuwowiestCrossedWithStepwiseOneNotes = sequence([
     umowwwRestNotes,
     rightNumberOfBackboneNotes,
     rightNumberOfBackboneNotes,
+    shiftedRhythm,
     // season 4
     umowwwRestNotes,
     umowchuwowiestNotes,
@@ -336,6 +383,7 @@ const umowchuwowiestCrossedWithStepwiseTwoNotes = sequence([
     umowwwRestNotes,
     rightNumberOfBackboneNotes,
     rightNumberOfBackboneNotes,
+    shiftedSingSong,
     // season 4
     umowwwRestNotes,
     umowchuwowiestAltNotes,
@@ -354,6 +402,7 @@ const umowchuwowiestCrossedWithStepwiseThreeNotes = sequence([
     backboneTwentyfourNotes,
     rightNumberOfBackboneNotes,
     stepwiseForUmowchuwowiestCrossedWithStepwiseInbetweenNotes,
+    shiftedSingSong,
     // season 4
     umowwwAltAndNotNotes,
     stepwiseForUmowchuwowiestCrossedWithStepwiseInbetweenNotes,
