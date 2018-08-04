@@ -227,6 +227,25 @@ const stepwiseForUmowchuwowiestCrossedWithStepwiseStepwiseNotes = [
     // no ascent in 24 ...?
 ].map(stepwiseForUmowchuwowiestNote)
 
+const stepwiseForUmowchuwowiestCrossedWithStepwiseStepwiseNotesDelayedHarmonic = [
+    // noodling in 15 and escape
+    3, 4, 3, 2, 1, 2,
+    3, 4, 3, 2, 1, 2,
+    3, 4, 3, 2, 1, 2,
+    3, 4, 3, 2, 1, 2,
+    // ascent in 15
+    3, 4, 3, 2, 3,
+    4, 5, 6,
+    7, 8,
+    9, 6,
+    // inscape and noodling in 24
+    9, 7, 5, 3,
+    1, 3, 5, 7, 5, 3,
+    1, 3, 5, 7, 5, 3,
+    1, 3, 5, 7, 5, 3,
+    // no ascent in 24 ...?
+].map(stepwiseForUmowchuwowiestNote)
+
 const stepwiseForUmowchuwowiestCrossedWithStepwiseInbetweenNotes = [
     // noodling in 15 and escape
     [3, 1], [3, 2], [4, 1], [4, 2], [4, 1], [3, 2], [3, 1], [2, 2], [1, 1], [2, 2],
@@ -397,7 +416,7 @@ const umowchuwowiestCrossedWithStepwiseThreeNotes = sequence([
     // season 2
     umowwwRestNotes,
     umowchuwowiestAltNotes,
-    stepwiseForUmowchuwowiestCrossedWithStepwiseUmowchuwowiestNotes,
+    stepwiseForUmowchuwowiestCrossedWithStepwiseStepwiseNotesDelayedHarmonic,
     // season 3
     backboneTwentyfourNotes,
     rightNumberOfBackboneNotes,
