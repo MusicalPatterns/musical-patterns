@@ -3,17 +3,18 @@
   "scripts": {
     "start": "webpack-dev-server",
     "deploy": "sh ./bin/deploy.sh",
-    "test": "babel-node ./test/run.js"
+    "test": "sh ./bin/test.sh"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.5",
-    "babel-preset-env": "^1.7.0",
+    "@types/jasmine": "^2.8.8",
+    "@types/webaudioapi": "0.0.27",
+    "awesome-typescript-loader": "^5.2.0",
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.2.0",
     "jasmine": "^3.1.0",
     "jsdom": "^11.12.0",
+    "ts-node": "^7.0.0",
+    "typescript": "^3.0.1",
     "webpack": "^4.16.3",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.5",

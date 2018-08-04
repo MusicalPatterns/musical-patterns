@@ -1,7 +1,7 @@
-import buildVoice from '../../../src/buildVoice'
+import buildVoice from '../../src/buildVoice'
 
 describe('build voice', () => {
     it('has this test', () => {
-        buildVoice()
+        buildVoice({})
     })
 })

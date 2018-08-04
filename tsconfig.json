@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "module": "esnext",
+    "target": "es5",
+    "downlevelIteration": true,
+    "lib": [ "es2017", "dom" ],
+    "noImplicitReturns": true,
+//    "strict": true,
+    "pretty": true,
+    "sourceMap": true,
+    "typeRoots": [ "./node_modules/@types" ],
+    "skipLibCheck": true
+  }
+}

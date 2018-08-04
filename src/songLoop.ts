@@ -1,5 +1,5 @@
 import entities from './entities'
-import Time from './time.worker'
+import Time from './workers/time.worker'
 import update from './update'
 
 setTimeout(() => {

@@ -2,9 +2,9 @@ import context from './context'
 
 const samples = {}
 
-const load = sample => {
+const load = async sample => {
 	const request = new XMLHttpRequest()
-	request.open('GET', require(`../samples/${sample}.wav`), true)
+	request.open('GET', await import(`../samples/${sample}.wav`), true)
 	request.responseType = 'arraybuffer'
 
 	request.onload = () => {

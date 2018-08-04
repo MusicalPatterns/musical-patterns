@@ -16,4 +16,4 @@ const mockAudioContext = {
     createGain: () => mockGain,
 }
 
-global.window.AudioContext = () => mockAudioContext
+export default mockAudioContext
