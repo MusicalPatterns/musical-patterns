@@ -385,9 +385,10 @@ const umowchuwowiestCrossedWithStepwiseOneNotes = sequence([
     rightNumberOfBackboneNotes,
     shiftedRhythm,
     // season 4
+    umowchuwowiestDoubleAltNotes,
     umowwwRestNotes,
     umowchuwowiestNotes,
-    stepwiseForUmowchuwowiestCrossedWithStepwiseStepwiseNotes,
+    stepwiseForUmowchuwowiestCrossedWithStepwiseUmowchuwowiestNotes,
 ])
 const umowchuwowiestCrossedWithStepwiseTwoNotes = sequence([
     // season 1
@@ -404,9 +405,10 @@ const umowchuwowiestCrossedWithStepwiseTwoNotes = sequence([
     rightNumberOfBackboneNotes,
     shiftedSingSong,
     // season 4
+    umowchuwowiestDoubleAltNotes,
     umowwwRestNotes,
     umowchuwowiestAltNotes,
-    stepwiseForUmowchuwowiestCrossedWithStepwiseStepwiseNotes,
+    stepwiseForUmowchuwowiestCrossedWithStepwiseInbetweenNotes,
 ])
 const umowchuwowiestCrossedWithStepwiseThreeNotes = sequence([
     // season 1
@@ -423,9 +425,10 @@ const umowchuwowiestCrossedWithStepwiseThreeNotes = sequence([
     stepwiseForUmowchuwowiestCrossedWithStepwiseInbetweenNotes,
     shiftedSingSong,
     // season 4
-    umowwwAltAndNotNotes,
-    stepwiseForUmowchuwowiestCrossedWithStepwiseInbetweenNotes,
     umowchuwowiestDoubleAltNotes,
+    umowwwAltAndNotNotes,
+    umowchuwowiestDoubleAltNotes,
+    stepwiseForUmowchuwowiestCrossedWithStepwiseStepwiseNotes,
 ])
 
 export {
