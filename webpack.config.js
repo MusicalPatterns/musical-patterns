@@ -7,12 +7,11 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.worker\.js$/,
+                test: /\.worker\.ts$/,
                 loader: 'worker-loader',
             },
             {
                 test: /\.ts$/,
-                exclude: /node_modules/,
                 loader: 'awesome-typescript-loader',
             },
             {

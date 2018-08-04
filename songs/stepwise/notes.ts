@@ -1,18 +1,21 @@
 import sequence from '../../src/sequence'
+import {Note} from '../../src/types'
 
-const stepwiseNote = harmonic => ({
-    duration: harmonic,
-    pitch: harmonic,
-    sustain: harmonic - 0.1,
-    gain: 1,
-})
+const stepwiseNote: (harmonic: number) => Note =
+    (harmonic: number): Note => ({
+        duration: harmonic,
+        pitch: harmonic,
+        sustain: harmonic - 0.1,
+        gain: 1,
+    })
 
-const unpitchedSampleNote = duration => ({
-    duration,
-    pitch: 1,
-    sustain: duration - 0.1,
-    gain: .1,
-})
+const unpitchedSampleNote: (duration: number) => Note =
+    (duration: number): Note => ({
+        duration,
+        pitch: 1,
+        sustain: duration - 0.1,
+        gain: .1,
+    })
 
 const mainDescent = [...Array(29).keys()].map(n => (n + 1) * 2 - 1)
 
@@ -28,7 +31,7 @@ const sevenPer = [
     7, 9, 7, 9, 11, 9, 7, 5, 7, 9, 7, 9, 11, 13, 15, 13, 11, 9, 7, 5, 3, 5, 7, 9, 11, 13, 11, 9, 7, 9, 11, 9, 11, 9, 11, 9, 11, 9, 11, 9, 11, 9, 11, 9, 11, 9, 11, 9, 11, 13, 11, 9, 11, 9, 11, 9, 7, 9, 7, 9, 7, 5, 3, 1, 3, 5, 7, 9, 11, 13, 11, 9, 7, 5, 7, 5, 7, 5, 7, 9, 7, 9, 7, 9, 7, 9, 7, 9, 7, 9, 7, 9, 7, 9, 7, 9, 7, 9,
 ]
 const ninePer = [
-    15, 13, 11, 9, 11, 9, 11, 9, 7, 9, 7, 9, 7, 9, 7, 9, 7, 5, 7, 5, 7, 9, 11, 13, 15, 17, 15, 13, 11, 9, 7, 5, 3, 1, 3, 5, 7, 9, 7, 9, 7, 9, 7, 9, 7, 9, 7, 9, 7, 9, 7, 9, 7, 9, 7, 9, 7, 9, 7, 9, 7, 9, 11, 13, 15, 17, 19, 17, 15, 13, 11, 9, 7, 5, 7, 5, 7, 5, 7, 9, 11, 13, 15, 17, 15, 13, 11, 9, 7, 5, 3, 1
+    15, 13, 11, 9, 11, 9, 11, 9, 7, 9, 7, 9, 7, 9, 7, 9, 7, 5, 7, 5, 7, 9, 11, 13, 15, 17, 15, 13, 11, 9, 7, 5, 3, 1, 3, 5, 7, 9, 7, 9, 7, 9, 7, 9, 7, 9, 7, 9, 7, 9, 7, 9, 7, 9, 7, 9, 7, 9, 7, 9, 7, 9, 11, 13, 15, 17, 19, 17, 15, 13, 11, 9, 7, 5, 7, 5, 7, 5, 7, 9, 11, 13, 15, 17, 15, 13, 11, 9, 7, 5, 3, 1,
 ]
 const backbone = [3, 1]
 

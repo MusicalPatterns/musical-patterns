@@ -6,3 +6,6 @@ start:
 
 deploy:
 	./bin/deploy.sh
+
+test:
+	./bin/test.sh

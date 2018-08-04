@@ -1,25 +1,29 @@
 import sequence from '../../src/sequence'
+import {Note} from '../../src/types'
 
-const stepwiseForUmowchuwowiestNote = harmonic => ({
-    duration: harmonic === 0 ? 1 : harmonic,
-    pitch: harmonic === 0 ? 1 : harmonic,
-    sustain: harmonic === 0 ? 0.9 : harmonic - 0.1,
-    gain: harmonic === 0 ? 0 : 1,
-})
+const stepwiseForUmowchuwowiestNote: (harmonic: number) => Note =
+    (harmonic: number) => ({
+        duration: harmonic === 0 ? 1 : harmonic,
+        pitch: harmonic === 0 ? 1 : harmonic,
+        sustain: harmonic === 0 ? 0.9 : harmonic - 0.1,
+        gain: harmonic === 0 ? 0 : 1,
+    })
 
-const umowchuwowiestNote = harmonic => ({
-    duration: 1,
-    pitch: harmonic === 0 ? 1 : harmonic,
-    sustain: 0.9,
-    gain: harmonic === 0 ? 0 : 1,
-})
+const umowchuwowiestNote: (harmonic: number) => Note =
+    (harmonic: number) => ({
+        duration: 1,
+        pitch: harmonic === 0 ? 1 : harmonic,
+        sustain: 0.9,
+        gain: harmonic === 0 ? 0 : 1,
+    })
 
-const inbetweenNote = ([harmonic, duration]) => ({
-    duration,
-    pitch: harmonic,
-    sustain: duration - 0.1,
-    gain: 1,
-})
+const inbetweenNote: (harmonicAndDuration: number[]) => Note =
+    ([harmonic, duration]: number[]): Note => ({
+        duration,
+        pitch: harmonic,
+        sustain: duration - 0.1,
+        gain: 1,
+    })
 
 const umow = [
     0, 2, 3,
@@ -286,8 +290,8 @@ const stepwiseForUmowchuwowiestCrossedWithStepwiseUmowchuwowiestNotes = [
 
 const shiftedSingSong = [
     2, 1, 2, 1, 2, 1, 2, 1, 2, 1,
-    2, 1, 2, 1, 2, 3,    4,
-    3,    2, 1, 2, 1, 2, 1, 2, 1,
+    2, 1, 2, 1, 2, 3, 4,
+    3, 2, 1, 2, 1, 2, 1, 2, 1,
     3, 5, 7, 9,
     11, 13,
     15, 17, 19, 21,
@@ -298,26 +302,26 @@ const shiftedSingSong = [
 ].map(stepwiseForUmowchuwowiestNote)
 
 const backboneFifteenNotes = [
-    1,2,
-    1,2,
-    1,2,
-    1,2,
-    1,2,
+    1, 2,
+    1, 2,
+    1, 2,
+    1, 2,
+    1, 2,
 ].map(stepwiseForUmowchuwowiestNote)
 
 const backboneTwentyfourNotes = [
-    1,3,
-    1,3,
-    1,3,
-    1,3,
-    1,3,
-    1,3,
+    1, 3,
+    1, 3,
+    1, 3,
+    1, 3,
+    1, 3,
+    1, 3,
 ].map(stepwiseForUmowchuwowiestNote)
 
 const backboneFifteenNotesShiftedInspired = [
-    2,1,
-    5,1,
-    2,4,
+    2, 1,
+    5, 1,
+    2, 4,
 ].map(stepwiseForUmowchuwowiestNote)
 
 const backboneTwentyfourNotesShiftedInspired = [
@@ -335,23 +339,23 @@ const backboneTwentyfourNotesShiftedInspiredAlt = [
 ].map(stepwiseForUmowchuwowiestNote)
 
 const backboneFifteenNotesHigher = [
-    2,3,
-    2,3,
-    2,3,
+    2, 3,
+    2, 3,
+    2, 3,
 ].map(stepwiseForUmowchuwowiestNote)
 
 const backboneFifteenNotesHigherAndHigher = [
-    7,8,
+    7, 8,
 ].map(stepwiseForUmowchuwowiestNote)
 
 const backboneTwentyfourNotesHigher = [
-    3,5,
-    3,5,
-    3,5,
+    3, 5,
+    3, 5,
+    3, 5,
 ].map(stepwiseForUmowchuwowiestNote)
 
 const backboneTwentyfourNotesHigherAndHigher = [
-    11,13,
+    11, 13,
 ].map(stepwiseForUmowchuwowiestNote)
 
 const setOfBackbones = sequence([
