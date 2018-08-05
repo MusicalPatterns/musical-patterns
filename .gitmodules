@@ -1,3 +1,6 @@
 [submodule "songs/zdaubyaos"]
 	path = songs/zdaubyaos
 	url = git@github.com:FunMusicalIdeas/zdaubyaos.git
+[submodule "songs/stepwise"]
+	path = songs/stepwise
+	url = git@github.com:FunMusicalIdeas/stepwise.git
