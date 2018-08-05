@@ -1,4 +1,4 @@
-import { ZDAUBYAOS_BASE_PITCH } from '../songs/zdaubyaos/basePitch'
+import { ZDAUBYAOS_BASE_PITCH } from '../songs/zdaubyaos/src/basePitch'
 
 const BASE_DURATION: number = 3
 const BASE_GAIN: number = 0.1

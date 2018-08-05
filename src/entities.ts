@@ -1,4 +1,4 @@
-import { zdaubyaos } from '../songs/zdaubyaos/songs'
+import { zdaubyaos } from '../songs/zdaubyaos/src/songs'
 import sequence from './sequence'
 import { Entity } from './types'
 
