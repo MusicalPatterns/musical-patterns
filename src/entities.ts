@@ -1,10 +1,10 @@
 import sequence from './sequence'
-import {umowchuwowiestCrossedWithStepwise} from '../songs/umowchuwowiestCrossedWithStepwise/entities'
+import {zdaubyaos} from '../songs/zdaubyaos/entities'
 import {stepwiseSong} from '../songs/stepwise/entities'
 
 const entities = sequence([
     // stepwiseSong,
-    umowchuwowiestCrossedWithStepwise,
+    zdaubyaos,
 ])
 
 export default entities
