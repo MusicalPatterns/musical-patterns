@@ -12,3 +12,6 @@ test:
 
 push:
 	./bin/push.sh
+
+pull:
+	./bin/pull.sh
