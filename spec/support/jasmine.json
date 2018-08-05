@@ -1,10 +1,10 @@
 {
-  "spec_dir": "spec",
   "spec_files": [
-    "src/**/*.test.ts"
+    "spec/src/**/*.test.ts",
+    "songs/**/*.test.ts"
   ],
   "helpers": [
-    "support/**/*.ts"
+    "spec/support/**/*.ts"
   ],
   "stopSpecOnExpectationFailure": false
 }
