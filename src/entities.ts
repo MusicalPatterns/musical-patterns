@@ -1,9 +1,8 @@
+import { zdaubyaos } from '../songs/zdaubyaos/songs'
 import sequence from './sequence'
-import {zdaubyaos} from '../songs/zdaubyaos/entities'
-import {stepwiseSong} from '../songs/stepwise/entities'
+import { Entity } from './types'
 
-const entities = sequence([
-    // stepwiseSong,
+const entities: Entity[] = sequence([
     zdaubyaos,
 ])
 

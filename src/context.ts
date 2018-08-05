@@ -1,3 +1,3 @@
-const context = new AudioContext()
+const context: AudioContext = new AudioContext()
 
 export default context

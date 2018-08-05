@@ -3,15 +3,17 @@ import context from './context'
 const samples: { [index: string]: AudioBuffer } = {}
 
 const load: (sample: string) => void =
-    async (sample: string) => {
-        const request = new XMLHttpRequest()
-        request.open('GET', await import(`../samples/${sample}.wav`), true)
+    async (sample: string): Promise<void> => {
+        const request: XMLHttpRequest = new XMLHttpRequest()
+        const url: string = await import(`../samples/${sample}.wav`) as string
+        request.open('GET', url, true)
         request.responseType = 'arraybuffer'
 
-        request.onload = () => {
-            context.decodeAudioData(request.response, buffer => {
+        request.onload = (): void => {
+            const audioData: ArrayBuffer = request.response as ArrayBuffer
+            context.decodeAudioData(audioData, (buffer: AudioBuffer): void => {
                 samples[sample] = buffer
-            })
+            }).then().catch()
         }
         request.send()
     }

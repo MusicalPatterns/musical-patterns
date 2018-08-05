@@ -1,7 +1,12 @@
+// tslint:disable:no-any
 const worker: Worker = self as any
 
-let time = 0
+const ATOMIC_UNIT_OF_TIME: number = 50
 
-setInterval(() => worker.postMessage(time++), 50)
+let time: number = 0
 
-export default null as any
+setInterval((): void => {
+    worker.postMessage(time++)
+},          ATOMIC_UNIT_OF_TIME)
+
+export default undefined as any

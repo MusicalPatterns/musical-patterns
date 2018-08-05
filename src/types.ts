@@ -1,34 +1,44 @@
-type Note = {
-    pitch: number,
-    gain: number,
+interface Note {
     duration: number,
+    gain: number,
+    pitch: number,
     sustain: number,
 }
 
-type NoteToPlay = {
-    pitch: number,
+interface NoteToPlay {
     gain: number,
+    pitch: number,
 }
 
 type StartNote = (note: NoteToPlay) => void
 
 type StopNote = () => void
 
-type Voice = {
+interface Voice {
     startNote: StartNote,
     stopNote: StopNote,
 }
 
-type Entity = {
-    voice: Voice,
-    notes: Note[],
-    noteIndex: number,
-    nextOnset: number,
-    pitches: number[],
-    voiceGain: number,
-    duration: number,
-    sustain: number,
+interface Entity {
     nextOffset: number,
+    nextOnset: number,
+    noteIndex: number,
+    notes: Note[],
+    pitches: number[],
+    voice: Voice,
+    voiceGain: number,
+}
+
+type Song = Entity[]
+
+interface ProtoEntity {
+    nextOffset?: number,
+    nextOnset?: number,
+    noteIndex?: number,
+    notes: Note[],
+    pitches: number[],
+    voice: Voice,
+    voiceGain?: number,
 }
 
 export {
@@ -36,5 +46,8 @@ export {
     Note,
     NoteToPlay,
     StartNote,
+    StopNote,
     Entity,
+    Song,
+    ProtoEntity,
 }

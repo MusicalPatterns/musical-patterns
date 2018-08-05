@@ -1,3 +1,5 @@
+.PHONY: lint
+
 setup:
 	./bin/setup.sh
 
@@ -15,3 +17,6 @@ push:
 
 pull:
 	./bin/pull.sh
+
+lint:
+	./bin/lint.sh

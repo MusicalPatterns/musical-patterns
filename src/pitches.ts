@@ -1,8 +1,8 @@
 import numbers from './numbers'
 
-const subharmonicSeriesPitches = numbers.map(n => 1 / n )
+const subharmonicSeriesPitches: number[] = numbers.map((n: number): number => 1 / n)
 
-const harmonicSeriesPitches = numbers.map(n => n)
+const harmonicSeriesPitches: number[] = numbers.map((n: number): number => n)
 
 export {
     subharmonicSeriesPitches,
