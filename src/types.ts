@@ -1,7 +1,7 @@
 interface Note {
     duration: number,
     gain: number,
-    pitch: number,
+    pitchIndex: number,
     sustain: number,
 }
 

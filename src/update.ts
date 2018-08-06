@@ -2,6 +2,7 @@ import { BASE_DURATION } from './constants'
 import { Entity, Note } from './types'
 
 const OFFSET_FOR_ZERO_INDEXING: number = 1
+const FALL_BACK_PITCH: number = 1
 
 const update: (entity: Entity, time: number) => void =
     (entity: Entity, time: number): void => {
@@ -10,7 +11,7 @@ const update: (entity: Entity, time: number) => void =
         if (time > entity.nextOnset) {
             entity.voice.startNote({
                 gain: note.gain * entity.voiceGain,
-                pitch: entity.pitches[note.pitch - OFFSET_FOR_ZERO_INDEXING],
+                pitch: entity.pitches[note.pitchIndex - OFFSET_FOR_ZERO_INDEXING] || FALL_BACK_PITCH,
             })
 
             entity.nextOnset += note.duration * BASE_DURATION
