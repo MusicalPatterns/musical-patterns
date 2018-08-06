@@ -1,10 +1,7 @@
-import { zdaubyaos } from '../songs/zdaubyaos/src/songs'
 import buildEntity from './buildEntity'
-import sequence from './sequence'
-import { Entity, Song } from './types'
+import song from './song'
+import { Entity } from './types'
 
-const entities: Entity[] = sequence([
-    zdaubyaos,
-].map((song: Song): Entity[] => song.map(buildEntity)))
+const entities: Entity[] = song.entityConfigs.map(buildEntity)
 
 export default entities

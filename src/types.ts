@@ -44,7 +44,10 @@ interface EntityConfig {
     voiceGain?: number,
 }
 
-type Song = EntityConfig[]
+interface Song {
+    basePitch: number,
+    entityConfigs: EntityConfig[]
+}
 
 export {
     Voice,

@@ -1,8 +1,5 @@
-import { ZDAUBYAOS_BASE_PITCH } from '../songs/zdaubyaos/src/basePitch'
-
 const BASE_DURATION: number = 3
 const BASE_GAIN: number = 0.1
-const BASE_PITCH: number = ZDAUBYAOS_BASE_PITCH
 
 const SILENT: number = 0
 const PLACEHOLDER_PITCH_TO_AVOID_NULL_POINTER_ISSUES: number = 1
@@ -13,7 +10,6 @@ const HARMONIC_SHIFT: number = 0
 export {
     BASE_DURATION,
     BASE_GAIN,
-    BASE_PITCH,
     PLACEHOLDER_PITCH_TO_AVOID_NULL_POINTER_ISSUES,
     SILENT,
     SEPARATION_FOR_NEIGHBORING_NOTES,
