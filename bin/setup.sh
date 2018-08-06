@@ -2,6 +2,8 @@
 
 set -e
 
+git submodule update --init --recursive
+
 if [[ $OSTYPE == darwin* ]] ; then
     if hash brew 2>/dev/null; then
         printf "Homebrew found.\n"
