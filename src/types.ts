@@ -29,17 +29,22 @@ interface Entity {
     voiceGain: number,
 }
 
-type Song = Entity[]
+interface VoiceConfig {
+    timbre: string,
+    voiceType: string,
+}
 
-interface ProtoEntity {
+interface EntityConfig {
     nextOffset?: number,
     nextOnset?: number,
     noteIndex?: number,
     notes: Note[],
     pitches: number[],
-    voice: Voice,
+    voiceConfig: VoiceConfig,
     voiceGain?: number,
 }
+
+type Song = EntityConfig[]
 
 export {
     Voice,
@@ -49,5 +54,5 @@ export {
     StopNote,
     Entity,
     Song,
-    ProtoEntity,
+    EntityConfig,
 }
