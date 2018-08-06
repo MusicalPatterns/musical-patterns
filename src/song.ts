@@ -3,6 +3,6 @@ import { stepwise } from '../songs/stepwise/src/songs'
 import { zdaubyaos } from '../songs/zdaubyaos/src/songs'
 import { Song } from './types'
 
-const song: Song = zdaubyaos
+const song: Song = stepwise
 
 export default song

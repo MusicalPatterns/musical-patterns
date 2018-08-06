@@ -2,10 +2,12 @@ import context from './context'
 
 const samples: { [index: string]: AudioBuffer } = {}
 
+declare const require: any
+
 const load: (sample: string) => void =
     async (sample: string): Promise<void> => {
         const request: XMLHttpRequest = new XMLHttpRequest()
-        const url: string = await import(`../samples/${sample}.wav`) as string
+        const url: string = require(`../samples/${sample}.wav`) as string
         request.open('GET', url, true)
         request.responseType = 'arraybuffer'
 
