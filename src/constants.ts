@@ -7,6 +7,8 @@ const SEPARATION_FOR_NEIGHBORING_NOTES: number = 0.1
 
 const HARMONIC_SHIFT: number = 0
 
+const CENTS_PER_OCTAVE: number = 1200
+
 export {
     BASE_DURATION,
     BASE_GAIN,
@@ -14,4 +16,5 @@ export {
     SILENT,
     SEPARATION_FOR_NEIGHBORING_NOTES,
     HARMONIC_SHIFT,
+    CENTS_PER_OCTAVE,
 }
