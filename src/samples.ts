@@ -2,7 +2,7 @@ import context from './context'
 
 const samples: { [index: string]: AudioBuffer } = {}
 
-declare const require: (_: string) => string
+declare const require: (modulePath: string) => string
 
 const load: (sample: string) => void =
     async (sample: string): Promise<void> => {

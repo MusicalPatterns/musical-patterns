@@ -5,7 +5,7 @@ import {
 } from './constants'
 import { Note } from './types'
 
-const rest: (_: number) => Note[] =
+const rest: (duration: number) => Note[] =
     (duration: number): Note[] =>
         [{
             duration,

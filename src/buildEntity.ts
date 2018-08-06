@@ -2,7 +2,7 @@ import buildSampleVoice from './buildSampleVoice'
 import buildVoice from './buildVoice'
 import { Entity, EntityConfig } from './types'
 
-const buildEntity: (_: EntityConfig) => Entity =
+const buildEntity: (entityConfig: EntityConfig) => Entity =
     ({
          nextOffset = 0,
          nextOnset = 0,
