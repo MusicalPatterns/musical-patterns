@@ -1,9 +1,9 @@
-import { CENTS_PER_OCTAVE } from './constants'
-import context from './context'
-import samples from './samples'
-import shiftCents from './shiftCents'
-import song from './song'
-import { NoteToPlay, StartNote, StopNote, Voice } from './types'
+import { CENTS_PER_OCTAVE } from '../constants'
+import context from '../context'
+import samples from '../samples'
+import song from '../song'
+import { NoteToPlay, StartNote, StopNote, Voice } from '../types'
+import shiftCents from '../utilities/shiftCents'
 
 const START_SOURCE_AT_BEGINNING: number = 0
 const INITIAL_SAMPLE_ADJUST_PITCH: number = 0

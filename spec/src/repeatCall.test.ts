@@ -1,4 +1,4 @@
-import repeatCall from '../../src/repeatCall'
+import repeatCall from '../../src/utilities/repeatCall'
 
 describe('repeat call', () => {
     it('concats x copies of the array a function returns together', () => {

@@ -1,6 +1,6 @@
+import { Entity, EntityConfig } from '../types'
 import buildSampleVoice from './buildSampleVoice'
 import buildVoice from './buildVoice'
-import { Entity, EntityConfig } from './types'
 
 const buildEntity: (entityConfig: EntityConfig) => Entity =
     ({

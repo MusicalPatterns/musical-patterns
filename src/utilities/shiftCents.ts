@@ -1,4 +1,4 @@
-import { CENTS_PER_OCTAVE } from './constants'
+import { CENTS_PER_OCTAVE } from '../constants'
 
 const shiftCents: (frequencyOne: number, frequencyTwo: number) => number =
     (frequencyOne: number, frequencyTwo: number): number =>

@@ -1,4 +1,4 @@
-import calculateDuration from '../../src/calculateDuration'
+import calculateDuration from '../../src/utilities/calculateDuration'
 
 describe('calculateDuration', () => {
     it('totals the durations of the notes', () => {

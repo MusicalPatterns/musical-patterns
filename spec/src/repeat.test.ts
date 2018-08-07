@@ -1,4 +1,4 @@
-import repeat from '../../src/repeat'
+import repeat from '../../src/utilities/repeat'
 
 describe('repeat', () => {
     it('concats x copies of an array together', () => {

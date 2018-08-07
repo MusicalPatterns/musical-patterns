@@ -2,7 +2,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: './src/songLoop.ts',
+    entry: './src/perform/songLoop.ts',
     mode: 'none',
     module: {
         rules: [

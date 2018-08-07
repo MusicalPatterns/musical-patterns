@@ -1,7 +1,7 @@
-import { BASE_GAIN } from './constants'
-import context from './context'
-import song from './song'
-import { NoteToPlay, StartNote, StopNote, Voice } from './types'
+import { BASE_GAIN } from '../constants'
+import context from '../context'
+import song from '../song'
+import { NoteToPlay, StartNote, StopNote, Voice } from '../types'
 
 const buildVoice: (type: OscillatorType) => Voice =
     (type: OscillatorType): Voice => {

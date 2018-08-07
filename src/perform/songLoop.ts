@@ -1,7 +1,7 @@
-import entities from './entities'
-import { Entity } from './types'
+import entities from '../compile/entities'
+import { Entity } from '../types'
+import Time from './time.worker'
 import update from './update'
-import Time from './workers/time.worker'
 
 // tslint:disable-next-line:no-unsafe-any
 const time: Worker = new Time()

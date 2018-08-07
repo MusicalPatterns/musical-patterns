@@ -1,5 +1,5 @@
-import { Notes } from '../songs/zdaubyaos/src/types'
-import { Note } from './types'
+import { Notes } from '../../songs/zdaubyaos/src/types'
+import { Note } from '../types'
 
 const calculateDuration: (notes: Notes) => number =
     (notes: Notes): number =>

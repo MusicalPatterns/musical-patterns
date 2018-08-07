@@ -1,4 +1,4 @@
-import shiftCents from '../../src/shiftCents'
+import shiftCents from '../../src/utilities/shiftCents'
 
 describe('shift cents', () => {
     it('gives the number of cents required to shift by to change from the first frequency to the second', () => {

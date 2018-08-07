@@ -1,5 +1,5 @@
-import { BASE_DURATION } from './constants'
-import { Entity, Note } from './types'
+import { BASE_DURATION } from '../constants'
+import { Entity, Note } from '../types'
 
 const OFFSET_FOR_ZERO_INDEXING: number = 1
 const FALL_BACK_PITCH: number = 1
