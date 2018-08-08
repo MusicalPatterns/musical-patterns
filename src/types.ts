@@ -58,6 +58,9 @@ enum Timbre {
     TRUMPET = 'trumpet',
     TUBA = 'tuba',
     VIOLIN = 'violin',
+    SNARE = 'snare',
+    KICK = 'kick',
+    HIHAT = 'hihat',
 }
 
 export {

@@ -47,6 +47,15 @@ const sampleData: {[x in Timbre]: SampleData} = {
     [Timbre.VIOLIN]: {
         centsAdjustment: NO_SHIFT,
     },
+    [Timbre.SNARE]: {
+        centsAdjustment: NO_SHIFT,
+    },
+    [Timbre.KICK]: {
+        centsAdjustment: NO_SHIFT,
+},
+    [Timbre.HIHAT]: {
+        centsAdjustment: NO_SHIFT,
+    },
 }
 
 const buildSampleVoice: (type: Timbre) => Voice =
