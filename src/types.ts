@@ -1,16 +1,16 @@
 import { EntityConfig } from './compile/types'
-import { Frequency } from './utilities/nominalTypes'
+import { Frequency, Scalar } from './utilities/nominalTypes'
 
 interface Note {
     duration: number,
-    gain: number,
+    gain: Scalar,
     pitchIndex: number,
     sustain: number,
 }
 
 interface NoteToPlay {
-    gain: number,
-    pitch: number,
+    gain: Scalar,
+    pitch: Scalar,
 }
 
 type StartNote = (note: NoteToPlay) => void
@@ -27,9 +27,9 @@ interface Entity {
     nextOnset: number,
     noteIndex: number,
     notes: Note[],
-    pitches: number[],
+    pitches: Scalar[],
     voice: Voice,
-    voiceGain: number,
+    voiceGain: Scalar,
 }
 
 enum VoiceType {
@@ -46,7 +46,7 @@ enum OscillatorName {
 }
 
 interface Song {
-    basePitch: Frequency,
+    baseFrequency: Frequency,
     entityConfigs: EntityConfig[]
 }
 

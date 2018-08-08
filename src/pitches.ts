@@ -1,9 +1,10 @@
-import { HARMONIC_SHIFT } from './constants'
+import { Scalar } from './utilities/nominalTypes'
 import numbers from './utilities/numbers'
+import * as to from './utilities/to'
 
-const subharmonicSeriesPitches: number[] = numbers.map((n: number): number => 1 / (n + HARMONIC_SHIFT))
+const subharmonicSeriesPitches: Scalar[] = numbers.map((n: number): Scalar => to.Scalar(1 / n))
 
-const harmonicSeriesPitches: number[] = numbers.map((n: number): number => (n + HARMONIC_SHIFT))
+const harmonicSeriesPitches: Scalar[] = numbers.map((n: number): Scalar => to.Scalar(n))
 
 export {
     subharmonicSeriesPitches,

@@ -1,4 +1,5 @@
 import { Note, OscillatorName, Timbre, VoiceType } from '../types'
+import { Scalar } from '../utilities/nominalTypes'
 
 interface VoiceConfig {
     timbre: Timbre | OscillatorName,
@@ -10,9 +11,9 @@ interface EntityConfig {
     nextOnset?: number,
     noteIndex?: number,
     notes: Note[],
-    pitches: number[],
+    pitches: Scalar[],
     voiceConfig: VoiceConfig,
-    voiceGain?: number,
+    voiceGain?: Scalar,
 }
 
 export {

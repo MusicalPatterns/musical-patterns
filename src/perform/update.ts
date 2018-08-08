@@ -1,8 +1,11 @@
 import { BASE_DURATION } from '../constants'
 import { Entity, Note } from '../types'
+import { Scalar } from '../utilities/nominalTypes'
+import scale from '../utilities/scale'
 
 const OFFSET_FOR_ZERO_INDEXING: number = 1
-const FALL_BACK_PITCH: number = 1
+// tslint:disable-next-line:no-any no-magic-numbers
+const FALL_BACK_PITCH: Scalar = 1 as any
 
 const update: (entity: Entity, time: number) => void =
     (entity: Entity, time: number): void => {
@@ -10,7 +13,7 @@ const update: (entity: Entity, time: number) => void =
 
         if (time > entity.nextOnset) {
             entity.voice.startNote({
-                gain: note.gain * entity.voiceGain,
+                gain: scale(note.gain, entity.voiceGain),
                 pitch: entity.pitches[note.pitchIndex - OFFSET_FOR_ZERO_INDEXING] || FALL_BACK_PITCH,
             })
 

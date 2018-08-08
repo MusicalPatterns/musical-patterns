@@ -1,7 +1,21 @@
-import shiftCents from '../../src/utilities/shiftCents'
+import * as cents from '../../src/utilities/cents'
+import * as to from '../../src/utilities/to'
+import { Cents } from '../../src/utilities/nominalTypes'
 
-describe('shift cents', () => {
-    it('gives the number of cents required to shift by to change from the first frequency to the second', () => {
-        expect(shiftCents(523.25, 4186)).toEqual(3600)
+describe('cents', () => {
+    describe('#pitchToCents', () => {
+        it('gives the cents value of the pitch', () => {
+            const actual: Cents = cents.pitchToCents(to.Scalar(3 / 2))
+
+            expect(actual).toEqual(to.Cents(701.9550008653874))
+        })
+    })
+
+    describe('#centsToShiftFromOneFrequencyToAnother', () => {
+        it('gives the number of cents required to shift by to change from the first frequency to the second', () => {
+            const actual: Cents = cents.centsToShiftFromOneFrequencyToAnother(to.Frequency(523.25), to.Frequency(4186))
+
+            expect(actual).toEqual(to.Cents(3600))
+        })
     })
 })
