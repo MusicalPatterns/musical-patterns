@@ -1,3 +1,5 @@
+import { EntityConfig } from './compile/types'
+
 interface Note {
     duration: number,
     gain: number,
@@ -42,23 +44,8 @@ enum OscillatorName {
     CUSTOM = 'custom',
 }
 
-interface VoiceConfig {
-    timbre: Timbre | OscillatorName,
-    voiceType: VoiceType,
-}
-
-interface EntityConfig {
-    nextOffset?: number,
-    nextOnset?: number,
-    noteIndex?: number,
-    notes: Note[],
-    pitches: number[],
-    voiceConfig: VoiceConfig,
-    voiceGain?: number,
-}
-
 interface Song {
-    basePitch: number,
+    basePitch: Frequency,
     entityConfigs: EntityConfig[]
 }
 
@@ -76,6 +63,18 @@ enum Timbre {
     HIHAT = 'hihat',
 }
 
+interface Cents extends Number {
+    _CentsBrand: string,
+}
+
+interface Frequency extends Number {
+    _FrequencyBrand: string,
+}
+
+interface Semitones extends Number {
+    _SemitonesBrand: string,
+}
+
 export {
     Voice,
     Note,
@@ -84,8 +83,10 @@ export {
     StopNote,
     Entity,
     Song,
-    EntityConfig,
     Timbre,
     VoiceType,
     OscillatorName,
+    Cents,
+    Frequency,
+    Semitones,
 }

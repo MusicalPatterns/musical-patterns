@@ -4,12 +4,14 @@ import { Timbre } from './types'
 // @ts-ignore
 const samples: { [x in Timbre]: AudioBuffer } = {}
 
-declare const require: (modulePath: string) => string
+type ModulePath = string
+
+declare const require: (modulePath: ModulePath) => string
 
 const load: (timbre: Timbre) => void =
     async (timbre: Timbre): Promise<void> => {
         const request: XMLHttpRequest = new XMLHttpRequest()
-        const url: string = require(`../samples/${timbre}.wav`)
+        const url: ModulePath = require(`../samples/${timbre}.wav`)
         request.open('GET', url, true)
         request.responseType = 'arraybuffer'
 
