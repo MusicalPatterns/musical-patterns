@@ -1,4 +1,4 @@
-import { Entity, EntityConfig } from '../types'
+import { Entity, EntityConfig, Timbre } from '../types'
 import buildSampleVoice from './buildSampleVoice'
 import buildVoice from './buildVoice'
 
@@ -18,7 +18,7 @@ const buildEntity: (entityConfig: EntityConfig) => Entity =
             noteIndex,
             notes,
             pitches,
-            voice: voiceType === 'sample' ? buildSampleVoice(timbre) : buildVoice(timbre as OscillatorType),
+            voice: voiceType === 'sample' ? buildSampleVoice(timbre as Timbre) : buildVoice(timbre as OscillatorType),
             voiceGain,
         })
 

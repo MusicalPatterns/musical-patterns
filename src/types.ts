@@ -49,6 +49,17 @@ interface Song {
     entityConfigs: EntityConfig[]
 }
 
+enum Timbre {
+    CELLO = 'cello',
+    DOUBLEBASS = 'doublebass',
+    FLUTE = 'flute',
+    PIANO = 'piano',
+    TROMBONE = 'trombone',
+    TRUMPET = 'trumpet',
+    TUBA = 'tuba',
+    VIOLIN = 'violin',
+}
+
 export {
     Voice,
     Note,
@@ -58,4 +69,5 @@ export {
     Entity,
     Song,
     EntityConfig,
+    Timbre,
 }
