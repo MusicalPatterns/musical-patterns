@@ -29,9 +29,22 @@ interface Entity {
     voiceGain: number,
 }
 
+enum VoiceType {
+    OSCILLATOR = 'oscillator',
+    SAMPLE = 'sample',
+}
+
+enum OscillatorName {
+    SQUARE = 'square',
+    SINE = 'sine',
+    SAWTOOTH = 'sawtooth',
+    TRIANGLE = 'triangle',
+    CUSTOM = 'custom',
+}
+
 interface VoiceConfig {
-    timbre: string,
-    voiceType: string,
+    timbre: Timbre | OscillatorName,
+    voiceType: VoiceType,
 }
 
 interface EntityConfig {
@@ -73,4 +86,6 @@ export {
     Song,
     EntityConfig,
     Timbre,
+    VoiceType,
+    OscillatorName,
 }

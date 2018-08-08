@@ -1,7 +1,8 @@
 import context from './context'
 import { Timbre } from './types'
 
-const samples: { [index: string]: AudioBuffer } = {}
+// @ts-ignore
+const samples: { [x in Timbre]: AudioBuffer } = {}
 
 declare const require: (modulePath: string) => string
 
