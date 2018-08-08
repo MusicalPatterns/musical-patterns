@@ -8,7 +8,7 @@ const buildEntity: (entityConfig: EntityConfig) => Entity =
     ({
          nextOffset = to.Time(0),
          nextOnset = to.Time(0),
-         noteIndex = 0,
+         noteIndex = to.Index(0),
          notes,
          pitches,
          voiceConfig: {voiceType, timbre},

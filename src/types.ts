@@ -1,10 +1,10 @@
 import { EntityConfig } from './compile/types'
-import { Frequency, Scalar, Time } from './utilities/nominalTypes'
+import { Frequency, Index, Scalar, Time } from './utilities/nominalTypes'
 
 interface Note {
     duration: Time,
     gain: Scalar,
-    pitchIndex: number,
+    pitchIndex: Index,
     sustain: Time,
 }
 
@@ -25,7 +25,7 @@ interface Voice {
 interface Entity {
     nextOffset: Time,
     nextOnset: Time,
-    noteIndex: number,
+    noteIndex: Index,
     notes: Note[],
     pitches: Scalar[],
     voice: Voice,

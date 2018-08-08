@@ -22,6 +22,10 @@ interface Time extends Number {
     _TimeBrand: string,
 }
 
+interface Index extends Number {
+    _IndexBrand: string,
+}
+
 export {
     Cents,
     Frequency,
@@ -29,4 +33,5 @@ export {
     Scalar,
     Offset,
     Time,
+    Index,
 }

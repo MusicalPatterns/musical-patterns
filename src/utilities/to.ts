@@ -1,6 +1,6 @@
 // tslint:disable:variable-name no-any
 
-import { Cents, Frequency, Offset, Scalar, Semitones, Time } from './nominalTypes'
+import { Cents, Frequency, Index, Offset, Scalar, Semitones, Time } from './nominalTypes'
 
 const Cents: (cents: number) => Cents =
     (cents: number): Cents => cents as any
@@ -20,6 +20,9 @@ const Offset: (offset: number) => Offset =
 const Time: (duration: number) => Time =
     (duration: number): Time => duration as any
 
+const Index: (index: number) => Index =
+    (index: number): Index => index as any
+
 export {
     Cents,
     Frequency,
@@ -27,4 +30,5 @@ export {
     Scalar,
     Offset,
     Time,
+    Index,
 }
