@@ -18,10 +18,15 @@ interface Offset extends Number {
     _OffsetBrand: string,
 }
 
+interface Time extends Number {
+    _TimeBrand: string,
+}
+
 export {
     Cents,
     Frequency,
     Semitones,
     Scalar,
     Offset,
+    Time,
 }

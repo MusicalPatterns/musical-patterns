@@ -6,8 +6,8 @@ import { EntityConfig } from './types'
 
 const buildEntity: (entityConfig: EntityConfig) => Entity =
     ({
-         nextOffset = 0,
-         nextOnset = 0,
+         nextOffset = to.Time(0),
+         nextOnset = to.Time(0),
          noteIndex = 0,
          notes,
          pitches,

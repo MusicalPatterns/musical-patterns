@@ -1,13 +1,14 @@
 import entities from '../compile/entities'
 import { Entity } from '../types'
-import Time from './time.worker'
+import { Time } from '../utilities/nominalTypes'
+import Clock from './clock.worker'
 import update from './update'
 
 // tslint:disable-next-line:no-unsafe-any
-const time: Worker = new Time()
+const clock: Worker = new Clock()
 
-time.onmessage = (event: MessageEvent): void => {
-    const updatedTime: number = event.data as number
+clock.onmessage = (event: MessageEvent): void => {
+    const updatedTime: Time = event.data as Time
     entities.forEach((entity: Entity): void => {
         update(entity, updatedTime)
     })
