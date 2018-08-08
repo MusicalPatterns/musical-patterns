@@ -1,5 +1,5 @@
 import { CENTS_PER_OCTAVE } from '../constants'
-import { Cents, Frequency } from '../types'
+import { Cents, Frequency } from '../utilities/nominalTypes'
 import * as from from './from'
 import * as to from './to'
 

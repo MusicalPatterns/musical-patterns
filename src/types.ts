@@ -1,4 +1,5 @@
 import { EntityConfig } from './compile/types'
+import { Frequency } from './utilities/nominalTypes'
 
 interface Note {
     duration: number,
@@ -63,18 +64,6 @@ enum Timbre {
     HIHAT = 'hihat',
 }
 
-interface Cents extends Number {
-    _CentsBrand: string,
-}
-
-interface Frequency extends Number {
-    _FrequencyBrand: string,
-}
-
-interface Semitones extends Number {
-    _SemitonesBrand: string,
-}
-
 export {
     Voice,
     Note,
@@ -86,7 +75,4 @@ export {
     Timbre,
     VoiceType,
     OscillatorName,
-    Cents,
-    Frequency,
-    Semitones,
 }

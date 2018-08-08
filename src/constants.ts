@@ -1,6 +1,6 @@
 // tslint:disable no-any no-magic-numbers
 
-import { Cents } from './types'
+import { Cents } from './utilities/nominalTypes'
 
 const BASE_DURATION: number = 3
 const BASE_GAIN: number = 0.1
