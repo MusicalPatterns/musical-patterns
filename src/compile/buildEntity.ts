@@ -6,8 +6,8 @@ import { EntityConfig } from './types'
 
 const buildEntity: (entityConfig: EntityConfig) => Entity =
     ({
-         nextOffset = to.Time(0),
-         nextOnset = to.Time(0),
+         nextEnd = to.Time(0),
+         nextStart = to.Time(0),
          noteIndex = to.Index(0),
          notes,
          pitches,
@@ -19,8 +19,8 @@ const buildEntity: (entityConfig: EntityConfig) => Entity =
             buildOscillatorVoice(timbre as OscillatorType)
 
         return {
-            nextOffset,
-            nextOnset,
+            nextEnd,
+            nextStart,
             noteIndex,
             notes,
             pitches,

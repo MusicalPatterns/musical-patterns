@@ -15,20 +15,20 @@ const update: (entity: Entity, time: Time) => void =
     (entity: Entity, time: Time): void => {
         const note: Note = entity.notes[from.Index(entity.noteIndex)]
 
-        if (time > entity.nextOnset) {
+        if (time > entity.nextStart) {
             entity.voice.startNote({
                 gain: scale(note.gain, entity.voiceGain),
                 pitch: entity.pitches[offset(from.Index(note.pitchIndex), OFFSET_FOR_ZERO_INDEXING)] || FALL_BACK_PITCH,
             })
 
-            entity.nextOnset = offset(entity.nextOnset, to.Offset(from.Time(scale(note.duration, BASE_DURATION))))
-            entity.nextOffset = offset(entity.nextOffset, to.Offset(from.Time(scale(note.sustain, BASE_DURATION))))
+            entity.nextStart = offset(entity.nextStart, to.Offset(from.Time(scale(note.duration, BASE_DURATION))))
+            entity.nextEnd = offset(entity.nextEnd, to.Offset(from.Time(scale(note.sustain, BASE_DURATION))))
 
-        } else if (time > entity.nextOffset) {
+        } else if (time > entity.nextEnd) {
             entity.voice.stopNote()
 
             const rawUndo: number = from.Time(note.duration) - from.Time(note.sustain)
-            entity.nextOffset = offset(entity.nextOffset, to.Offset(scale(rawUndo, BASE_DURATION)))
+            entity.nextEnd = offset(entity.nextEnd, to.Offset(scale(rawUndo, BASE_DURATION)))
 
             entity.noteIndex = to.Index(from.Index(entity.noteIndex) + 1)
         }

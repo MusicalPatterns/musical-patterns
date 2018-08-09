@@ -23,8 +23,8 @@ interface Voice {
 }
 
 interface Entity {
-    nextOffset: Time,
-    nextOnset: Time,
+    nextEnd: Time,
+    nextStart: Time,
     noteIndex: Index,
     notes: Note[],
     pitches: Scalar[],

@@ -7,8 +7,8 @@ interface VoiceConfig {
 }
 
 interface EntityConfig {
-    nextOffset?: Time,
-    nextOnset?: Time,
+    nextEnd?: Time,
+    nextStart?: Time,
     noteIndex?: Index,
     notes: Note[],
     pitches: Scalar[],
