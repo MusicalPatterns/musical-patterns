@@ -1,5 +1,5 @@
 const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
     entry: './src/perform/songLoop.ts',
@@ -21,7 +21,7 @@ module.exports = {
         ],
     },
     resolve: {
-        extensions: [ ".ts", ".js" ]
+        extensions: ['.ts', '.js']
     },
     devServer: {
         contentBase: path.join(__dirname, './dist')
