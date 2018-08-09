@@ -1,6 +1,6 @@
 import * as cents from '../../src/utilities/cents'
-import * as to from '../../src/utilities/to'
 import { Cents } from '../../src/utilities/nominalTypes'
+import * as to from '../../src/utilities/to'
 
 describe('cents', () => {
     describe('#pitchToCents', () => {

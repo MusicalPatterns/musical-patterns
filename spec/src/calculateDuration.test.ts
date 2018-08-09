@@ -1,28 +1,31 @@
+import { Notes } from '../../songs/zdaubyaos/src/types'
 import calculateDuration from '../../src/utilities/calculateDuration'
+import * as from from '../../src/utilities/from'
+import * as to from '../../src/utilities/to'
 
 describe('calculateDuration', () => {
     it('totals the durations of the notes', () => {
-        const notes = [
+        const notes: Notes = [
             {
-                duration: 3,
-                gain: 1,
-                pitch: 1,
-                sustain: 1,
+                duration: to.Time(3),
+                gain: to.Scalar(1),
+                pitchIndex: to.Index(1),
+                sustain: to.Time(1),
             },
             {
-                duration: 4,
-                gain: 1,
-                pitch: 1,
-                sustain: 1,
+                duration: to.Time(4),
+                gain: to.Scalar(1),
+                pitchIndex: to.Index(1),
+                sustain: to.Time(1),
             },
             {
-                duration: 3,
-                gain: 1,
-                pitch: 1,
-                sustain: 1,
-            }
+                duration: to.Time(3),
+                gain: to.Scalar(1),
+                pitchIndex: to.Index(1),
+                sustain: to.Time(1),
+            },
         ]
 
-        expect(calculateDuration(notes)).toBe(10)
+        expect(from.Time(calculateDuration(notes))).toBe(10)
     })
 })

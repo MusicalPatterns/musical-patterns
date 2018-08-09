@@ -2,4 +2,5 @@
 
 set -e
 
-ts-node -O '{"module": "commonjs"}' ./node_modules/jasmine/bin/jasmine.js
+tsc -p ./spec/tsconfig.json --noEmit
+ts-node -P ./spec/tsconfig.json ./node_modules/jasmine/bin/jasmine.js
