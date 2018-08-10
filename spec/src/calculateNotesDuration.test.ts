@@ -1,9 +1,9 @@
 import { Notes } from '../../songs/zdaubyaos/src/types'
-import calculateDuration from '../../src/utilities/calculateDuration'
+import calculateNotesDuration from '../../src/utilities/calculateNotesDuration'
 import * as from from '../../src/utilities/from'
 import * as to from '../../src/utilities/to'
 
-describe('calculateDuration', () => {
+describe('calculate notes duration', () => {
     it('totals the durations of the notes', () => {
         const notes: Notes = [
             {
@@ -29,6 +29,6 @@ describe('calculateDuration', () => {
             },
         ]
 
-        expect(from.Time(calculateDuration(notes))).toBe(10)
+        expect(from.Time(calculateNotesDuration(notes))).toBe(10)
     })
 })
