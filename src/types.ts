@@ -5,6 +5,7 @@ interface Note {
     duration: Time,
     gain: Scalar,
     pitchIndex: Index,
+    scaleIndex: Index,
     sustain: Time,
 }
 
@@ -27,7 +28,6 @@ interface Entity {
     nextStart: Time,
     noteIndex: Index,
     notes: Note[],
-    pitches: Scalar[],
     voice: Voice,
     voiceGain: Scalar,
 }
@@ -45,9 +45,12 @@ enum OscillatorName {
     CUSTOM = 'custom',
 }
 
+type Scale = Scalar[]
+
 interface Song {
     baseFrequency: Frequency,
     entityConfigs: EntityConfig[]
+    scales: Scale[],
 }
 
 enum Timbre {
@@ -75,4 +78,5 @@ export {
     Timbre,
     VoiceType,
     OscillatorName,
+    Scale,
 }

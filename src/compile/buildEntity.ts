@@ -10,7 +10,6 @@ const buildEntity: (entityConfig: EntityConfig) => Entity =
          nextStart = to.Time(0),
          noteIndex = to.Index(0),
          notes,
-         pitches,
          voiceConfig: {voiceType, timbre},
          voiceGain = to.Scalar(1),
      }: EntityConfig): Entity => {
@@ -23,7 +22,6 @@ const buildEntity: (entityConfig: EntityConfig) => Entity =
             nextStart,
             noteIndex,
             notes,
-            pitches,
             voice,
             voiceGain,
         }

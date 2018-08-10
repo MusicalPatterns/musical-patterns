@@ -14,6 +14,7 @@ const rest: (duration: Time) => Note[] =
             duration,
             gain: SILENT,
             pitchIndex: PLACEHOLDER_PITCH_INDEX_TO_AVOID_NULL_POINTER_ISSUES,
+            scaleIndex: to.Index(0),
             sustain: to.Time(from.Time(duration) - from.Time(SEPARATION_FOR_NEIGHBORING_NOTES)),
         }]
 

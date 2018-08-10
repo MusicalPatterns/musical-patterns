@@ -11,7 +11,6 @@ interface EntityConfig {
     nextStart?: Time,
     noteIndex?: Index,
     notes: Note[],
-    pitches: Scalar[],
     voiceConfig: VoiceConfig,
     voiceGain?: Scalar,
 }

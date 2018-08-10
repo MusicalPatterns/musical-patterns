@@ -10,18 +10,21 @@ describe('calculateDuration', () => {
                 duration: to.Time(3),
                 gain: to.Scalar(1),
                 pitchIndex: to.Index(1),
+                scaleIndex: to.Index(0),
                 sustain: to.Time(1),
             },
             {
                 duration: to.Time(4),
                 gain: to.Scalar(1),
                 pitchIndex: to.Index(1),
+                scaleIndex: to.Index(0),
                 sustain: to.Time(1),
             },
             {
                 duration: to.Time(3),
                 gain: to.Scalar(1),
                 pitchIndex: to.Index(1),
+                scaleIndex: to.Index(0),
                 sustain: to.Time(1),
             },
         ]
