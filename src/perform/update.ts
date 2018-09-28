@@ -30,9 +30,10 @@ const update: (entity: Entity, rawTime: Time, atomicTime: Time) => void =
         if (time > entity.nextStart) {
             const pitchScale: Scale = song.scales[from.Index(note.scaleIndex)]
 
+            const basePitch: Scalar = pitchScale[offset(from.Index(note.pitchIndex), OFFSET_FOR_ZERO_INDEXING)]
             entity.voice.startNote({
                 gain: scale(note.gain, entity.voiceGain),
-                pitch: scale(pitchScale[offset(from.Index(note.pitchIndex), OFFSET_FOR_ZERO_INDEXING)] || FALL_BACK_PITCH, note.pitchScalar),
+                pitch: scale(basePitch || FALL_BACK_PITCH, note.pitchScalar),
             })
 
             entity.nextEnd = offset(entity.nextStart, to.Offset(from.Time(scale(note.sustain, BASE_DURATION))))
