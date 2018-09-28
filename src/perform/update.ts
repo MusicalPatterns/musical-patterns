@@ -32,7 +32,7 @@ const update: (entity: Entity, rawTime: Time, atomicTime: Time) => void =
 
             entity.voice.startNote({
                 gain: scale(note.gain, entity.voiceGain),
-                pitch: pitchScale[offset(from.Index(note.pitchIndex), OFFSET_FOR_ZERO_INDEXING)] || FALL_BACK_PITCH,
+                pitch: scale(pitchScale[offset(from.Index(note.pitchIndex), OFFSET_FOR_ZERO_INDEXING)] || FALL_BACK_PITCH, note.pitchScalar),
             })
 
             entity.nextEnd = offset(entity.nextStart, to.Offset(from.Time(scale(note.sustain, BASE_DURATION))))
