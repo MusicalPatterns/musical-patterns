@@ -4,3 +4,6 @@
 [submodule "songs/stepwise"]
 	path = songs/stepwise
 	url = git@github.com:FunMusicalIdeas/stepwise.git
+[submodule "songs/hafuhafu"]
+	path = songs/hafuhafu
+	url = git@github.com:FunMusicalIdeas/hafuhafu.git
