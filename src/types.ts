@@ -9,6 +9,8 @@ interface Note {
     sustain: Time,
 }
 
+type Notes = Note[]
+
 interface NoteToPlay {
     gain: Scalar,
     pitch: Scalar,
@@ -79,4 +81,5 @@ export {
     VoiceType,
     OscillatorName,
     Scale,
+    Notes,
 }

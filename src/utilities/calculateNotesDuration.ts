@@ -1,5 +1,4 @@
-import { Notes } from '../../songs/zdaubyaos/src/types'
-import { Note } from '../types'
+import { Note, Notes } from '../types'
 import * as from from './from'
 import { Time } from './nominalTypes'
 import * as to from './to'
