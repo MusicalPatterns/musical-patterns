@@ -1,9 +1,12 @@
 // tslint:disable:no-any
 const worker: Worker = self as any
 
+let initialTimestamp: number = 0
+
 const mainLoop: (timestamp: number) => void =
     (timestamp: number): void => {
-        worker.postMessage(timestamp)
+        if (!initialTimestamp) { initialTimestamp = timestamp }
+        worker.postMessage(timestamp - initialTimestamp)
         requestAnimationFrame(mainLoop)
     }
 
