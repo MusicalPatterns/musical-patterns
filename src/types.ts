@@ -5,6 +5,7 @@ interface Note {
     duration: Time,
     gain: Scalar,
     pitchIndex: Index,
+    pitchScalar: Scalar,
     scaleIndex: Index,
     sustain: Time,
 }
