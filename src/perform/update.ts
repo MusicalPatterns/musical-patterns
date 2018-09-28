@@ -1,3 +1,4 @@
+import { TimeType } from '../compile/types'
 import { BASE_DURATION } from '../constants'
 import song from '../song'
 import { Entity, Note, Scale } from '../types'
@@ -6,7 +7,6 @@ import { Offset, Scalar, Time } from '../utilities/nominalTypes'
 import offset from '../utilities/offset'
 import scale from '../utilities/scale'
 import * as to from '../utilities/to'
-import {TimeType} from '../compile/types'
 
 // tslint:disable-next-line:no-any no-magic-numbers
 const OFFSET_FOR_ZERO_INDEXING: Offset = -1 as any

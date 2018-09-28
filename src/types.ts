@@ -1,5 +1,5 @@
-import {EntityConfig, TimeType} from './compile/types'
-import {Frequency, Index, Scalar, Time} from './utilities/nominalTypes'
+import { EntityConfig, TimeType } from './compile/types'
+import { Frequency, Index, Scalar, Time } from './utilities/nominalTypes'
 
 interface Note {
     duration: Time,
