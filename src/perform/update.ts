@@ -6,14 +6,17 @@ import { Offset, Scalar, Time } from '../utilities/nominalTypes'
 import offset from '../utilities/offset'
 import scale from '../utilities/scale'
 import * as to from '../utilities/to'
+import {TimeType} from '../compile/types'
 
 // tslint:disable-next-line:no-any no-magic-numbers
 const OFFSET_FOR_ZERO_INDEXING: Offset = -1 as any
 // tslint:disable-next-line:no-any no-magic-numbers
 const FALL_BACK_PITCH: Scalar = 1 as any
 
-const update: (entity: Entity, time: Time) => void =
-    (entity: Entity, time: Time): void => {
+const update: (entity: Entity, rawTime: Time, atomicTime: Time) => void =
+    (entity: Entity, rawTime: Time, atomicTime: Time): void => {
+        const time: Time = entity.timeType === TimeType.RAW ? rawTime : atomicTime
+
         const note: Note = entity.notes[from.Index(entity.noteIndex)]
 
         if (time > entity.nextEnd) {

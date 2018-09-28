@@ -2,7 +2,7 @@
 
 import { Cents, Index, Scalar, Time } from './utilities/nominalTypes'
 
-const BASE_DURATION: Scalar = 3 as any
+const BASE_DURATION: Scalar = 7 as any
 const BASE_GAIN: Scalar = 0.1 as any
 
 const SILENT: Scalar = 0 as any
