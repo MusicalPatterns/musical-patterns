@@ -16,6 +16,14 @@ const update: (entity: Entity, time: Time) => void =
     (entity: Entity, time: Time): void => {
         const note: Note = entity.notes[from.Index(entity.noteIndex)]
 
+        if (time > entity.nextEnd) {
+            entity.voice.stopNote()
+        }
+
+        if (from.Index(entity.noteIndex) === entity.notes.length) {
+            entity.noteIndex = to.Index(0)
+        }
+
         if (time > entity.nextStart) {
             const pitchScale: Scale = song.scales[from.Index(note.scaleIndex)]
 
@@ -24,20 +32,10 @@ const update: (entity: Entity, time: Time) => void =
                 pitch: pitchScale[offset(from.Index(note.pitchIndex), OFFSET_FOR_ZERO_INDEXING)] || FALL_BACK_PITCH,
             })
 
+            entity.nextEnd = offset(entity.nextStart, to.Offset(from.Time(scale(note.sustain, BASE_DURATION))))
             entity.nextStart = offset(entity.nextStart, to.Offset(from.Time(scale(note.duration, BASE_DURATION))))
-            entity.nextEnd = offset(entity.nextEnd, to.Offset(from.Time(scale(note.sustain, BASE_DURATION))))
-
-        } else if (time > entity.nextEnd) {
-            entity.voice.stopNote()
-
-            const rawUndo: number = from.Time(note.duration) - from.Time(note.sustain)
-            entity.nextEnd = offset(entity.nextEnd, to.Offset(scale(rawUndo, BASE_DURATION)))
 
             entity.noteIndex = to.Index(from.Index(entity.noteIndex) + 1)
-        }
-
-        if (from.Index(entity.noteIndex) === entity.notes.length) {
-            entity.noteIndex = to.Index(0)
         }
     }
 
