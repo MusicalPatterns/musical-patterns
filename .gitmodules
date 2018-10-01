@@ -7,3 +7,6 @@
 [submodule "songs/hafuhafu"]
 	path = songs/hafuhafu
 	url = git@github.com:FunMusicalIdeas/hafuhafu.git
+[submodule "songs/xelt-dleudef-aet-naelnaemeugz"]
+	path = songs/xelt-dleudef-aet-naelnaemeugz
+	url = git@github.com:FunMusicalIdeas/xelt-dleudef-aet-naelnaemeugz.git
