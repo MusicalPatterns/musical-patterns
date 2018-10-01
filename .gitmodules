@@ -10,3 +10,6 @@
 [submodule "songs/xelt-dleudef-aet-naelnaemeugz"]
 	path = songs/xelt-dleudef-aet-naelnaemeugz
 	url = git@github.com:FunMusicalIdeas/xelt-dleudef-aet-naelnaemeugz.git
+[submodule "songs/beaten-path"]
+	path = songs/beaten-path
+	url = git@github.com:FunMusicalIdeas/beaten-path.git
