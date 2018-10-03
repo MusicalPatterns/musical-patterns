@@ -19,14 +19,12 @@ const reducer: (state: State | undefined, action: Action) => State =
                 })
 
                 const song: Song = songs[data]
-                const stateWithNewSong: State = state.set('song', song)
-
                 const entities: Entity[] = song.entityConfigs.map((entityConfig: EntityConfig): Entity =>
                     buildEntity(entityConfig, song))
 
                 songLoop()
 
-                return stateWithNewSong.set('entities', entities)
+                return state.set('entities', entities)
             }
             case ActionType.UPDATE: {
                 const {rawTime, atomicTime} = data as Times

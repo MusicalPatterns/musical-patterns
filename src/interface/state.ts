@@ -1,14 +1,11 @@
 import { Map } from 'immutable'
-import { Entity, Song } from '../types'
-import * as to from '../utilities/to'
+import { Entity } from '../types'
 
 interface RawState {
     entities: Entity[],
-    song: Song,
 }
 
 type AllowedValue =
-    Song |
     Entity[]
 
 type MapTypeAllowedData<DataType> = {
@@ -29,16 +26,8 @@ const createTypedMap: <DataType extends MapTypeAllowedData<DataType>>(data: Data
     // tslint:disable-next-line:no-any no-unsafe-any
     <DataType extends MapTypeAllowedData<DataType>>(data: DataType): TypedMap<DataType> => Map(data) as any
 
-const nonSong: Song = {
-    baseFrequency: to.Frequency(0),
-    entityConfigs: [],
-    name: '',
-    scales: [],
-}
-
 const rawState: RawState = {
     entities: [],
-    song: nonSong,
 }
 
 const initialState: State = createTypedMap(rawState)
