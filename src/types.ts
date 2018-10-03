@@ -31,6 +31,7 @@ interface Entity {
     nextStart: Time,
     noteIndex: Index,
     notes: Note[],
+    scales: Scale[],
     timeType: TimeType,
     voice: Voice,
     voiceGain: Scalar,
@@ -53,7 +54,8 @@ type Scale = Scalar[]
 
 interface Song {
     baseFrequency: Frequency,
-    entityConfigs: EntityConfig[]
+    entityConfigs: EntityConfig[],
+    name: string,
     scales: Scale[],
 }
 
@@ -71,6 +73,11 @@ enum Timbre {
     HIHAT = 'hihat',
 }
 
+interface Times {
+    atomicTime: Time,
+    rawTime: Time,
+}
+
 export {
     Voice,
     Note,
@@ -84,4 +91,5 @@ export {
     OscillatorName,
     Scale,
     Notes,
+    Times,
 }

@@ -1,6 +1,5 @@
 import { TimeType } from '../compile/types'
 import { BASE_DURATION } from '../constants'
-import song from '../song'
 import { Entity, Note, Scale } from '../types'
 import * as from from '../utilities/from'
 import { Offset, Scalar, Time } from '../utilities/nominalTypes'
@@ -28,7 +27,7 @@ const update: (entity: Entity, rawTime: Time, atomicTime: Time) => void =
         }
 
         if (time > entity.nextStart) {
-            const pitchScale: Scale = song.scales[from.Index(note.scaleIndex)]
+            const pitchScale: Scale = entity.scales[from.Index(note.scaleIndex)]
 
             const basePitch: Scalar = pitchScale[offset(from.Index(note.pitchIndex), OFFSET_FOR_ZERO_INDEXING)]
             entity.voice.startNote({

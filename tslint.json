@@ -51,6 +51,7 @@
     "defocus": true,
     "no-namespace": false,
     "newline-per-chained-call": false,
-    "no-dynamic-delete": false
+    "no-dynamic-delete": false,
+    "no-implicit-dependencies": [true, "dev"]
   }
 }

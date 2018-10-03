@@ -2,7 +2,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-    entry: './src/perform/songLoop.ts',
+    entry: './src/index.tsx',
     mode: 'none',
     module: {
         rules: [
@@ -11,7 +11,7 @@ module.exports = {
                 loader: 'worker-loader',
             },
             {
-                test: /\.ts$/,
+                test: /\.tsx?$/,
                 loader: 'awesome-typescript-loader',
             },
             {
@@ -21,7 +21,7 @@ module.exports = {
         ],
     },
     resolve: {
-        extensions: ['.ts', '.js']
+        extensions: ['.ts', '.tsx', '.js']
     },
     devServer: {
         contentBase: path.join(__dirname, './dist')

@@ -1,12 +1,11 @@
 import { BASE_GAIN, SILENT } from '../constants'
 import context from '../context'
-import song from '../song'
-import { NoteToPlay, StartNote, StopNote, Voice } from '../types'
+import { NoteToPlay, Song, StartNote, StopNote, Voice } from '../types'
 import * as from from '../utilities/from'
 import scale from '../utilities/scale'
 
-const buildOscillatorVoice: (type: OscillatorType) => Voice =
-    (type: OscillatorType): Voice => {
+const buildOscillatorVoice: (type: OscillatorType, song: Song) => Voice =
+    (type: OscillatorType, song: Song): Voice => {
         const oscillatorNode: OscillatorNode = context.createOscillator()
 
         const gainNode: GainNode = context.createGain()
