@@ -5,17 +5,20 @@ import { Time } from '../utilities/nominalTypes'
 import * as to from '../utilities/to'
 import Clock from './clock.worker'
 
-const songLoop: () => void = (): void => {
-    // tslint:disable-next-line:no-unsafe-any
-    const clock: Worker = new Clock()
+// tslint:disable-next-line:no-unsafe-any
+let clock: Worker = new Clock()
 
+const songLoop: () => void = (): void => {
     let atomicTime: Time = to.Time(0)
+
+    clock.terminate()
+
+    // tslint:disable-next-line:no-unsafe-any
+    clock = new Clock()
 
     clock.onmessage = (event: MessageEvent): void => {
         atomicTime = to.Time(from.Time(atomicTime) + 1)
-
         const rawTime: Time = event.data as Time
-
         store.dispatch({type: ActionType.UPDATE, data: {rawTime, atomicTime}})
     }
 }

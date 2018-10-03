@@ -2,6 +2,7 @@ import buildEntity from '../compile/buildEntity'
 import { EntityConfig } from '../compile/types'
 import { songLoop } from '../perform/songLoop'
 import update from '../perform/update'
+import { songs } from '../song'
 import { Entity, Song, Times } from '../types'
 import { Action, ActionType } from './actions'
 import { initialState, State } from './state'
@@ -13,7 +14,11 @@ const reducer: (state: State | undefined, action: Action) => State =
 
         switch (type) {
             case ActionType.CHOOSE_SONG: {
-                const song: Song = data as Song
+                state.get('entities').forEach((entity: Entity): void => {
+                    entity.voice.stopNote()
+                })
+
+                const song: Song = songs[data]
                 const stateWithNewSong: State = state.set('song', song)
 
                 const entities: Entity[] = song.entityConfigs.map((entityConfig: EntityConfig): Entity =>

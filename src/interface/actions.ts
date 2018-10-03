@@ -1,4 +1,5 @@
-import { Song, Times } from '../types'
+import { SongName } from '../song'
+import { Times } from '../types'
 
 enum ActionType {
     CHOOSE_SONG = 'choose song',
@@ -10,7 +11,7 @@ interface ActionObject {
 }
 
 interface ChooseSongAction extends ActionObject {
-    data: Song,
+    data: SongName,
     type: ActionType.CHOOSE_SONG,
 }
 
