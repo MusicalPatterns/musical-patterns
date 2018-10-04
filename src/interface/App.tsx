@@ -1,26 +1,28 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
-import { songs } from '../song'
 import { Dispatch } from 'redux'
 import { ActionType } from './actions'
-import { SyntheticEvent } from 'react'
+import AppPresenter from './AppPresenter'
+import { State } from './state'
+import { AppPropsFromDispatch, AppPropsFromState } from './types'
 
-interface AppProps {
-    onChange: (event: SyntheticEvent<HTMLSelectElement>) => void,
-}
+const RADIX: number = 10
 
-const mapDispatchToProps = (dispatch: Dispatch): AppProps => ({
-    onChange: (event: any) => {
-        dispatch({type: ActionType.CHOOSE_SONG, data: event.target.value})
-    }
-})
+const mapStateToProps: (state: State) => AppPropsFromState =
+    (state: State): AppPropsFromState => ({
+        config: state.get('config'),
+    })
 
-export default connect(null, mapDispatchToProps)(({onChange}: AppProps) => {
-    return (
-        <select {...{onChange}}>
-            {Object.values(songs).map((song, key) => {
-                return <option {...{key}}>{song.name}</option>
-            })}
-        </select>
-    )
-})
+const mapDispatchToProps: (dispatch: Dispatch) => AppPropsFromDispatch =
+    (dispatch: Dispatch): AppPropsFromDispatch => ({
+        handleConfigChange: (event: React.SyntheticEvent<HTMLInputElement>, configKey: string): void => {
+            const target: HTMLInputElement = event.target as HTMLInputElement
+            dispatch({type: ActionType.UPDATE_SONG_CONFIG, data: {configKey, value: parseInt(target.value, RADIX)}})
+        },
+        handleSongChange: (event: React.SyntheticEvent<HTMLSelectElement>): void => {
+            const target: HTMLSelectElement = event.target as HTMLSelectElement
+            dispatch({type: ActionType.CHOOSE_SONG, data: target.value})
+        },
+    })
+
+export default connect(mapStateToProps, mapDispatchToProps)(AppPresenter)

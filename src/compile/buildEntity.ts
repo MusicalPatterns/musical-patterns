@@ -1,4 +1,5 @@
-import { Entity, Song, Timbre, Voice, VoiceType } from '../types'
+import { Song } from '../songTypes'
+import { Entity, Timbre, Voice, VoiceType } from '../types'
 import * as to from '../utilities/to'
 import buildOscillatorVoice from './buildOscillatorVoice'
 import buildSampleVoice from './buildSampleVoice'

@@ -1,5 +1,5 @@
-import { EntityConfig, TimeType } from './compile/types'
-import { Frequency, Index, Scalar, Time } from './utilities/nominalTypes'
+import { TimeType } from './compile/types'
+import { Index, Scalar, Time } from './utilities/nominalTypes'
 
 interface Note {
     duration: Time,
@@ -52,13 +52,6 @@ enum OscillatorName {
 
 type Scale = Scalar[]
 
-interface Song {
-    baseFrequency: Frequency,
-    entityConfigs: EntityConfig[],
-    name: string,
-    scales: Scale[],
-}
-
 enum Timbre {
     CELLO = 'cello',
     DOUBLEBASS = 'doublebass',
@@ -85,7 +78,6 @@ export {
     StartNote,
     StopNote,
     Entity,
-    Song,
     Timbre,
     VoiceType,
     OscillatorName,

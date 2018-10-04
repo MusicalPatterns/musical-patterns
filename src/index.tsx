@@ -1,12 +1,12 @@
 import * as React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import App from './interface/App'
 import { ActionType } from './interface/actions'
+import App from './interface/App'
 import { store } from './interface/store'
-import { SongName } from './song'
+import { SongName } from './songTypes'
 
-const root = document.createElement('div')
+const root: HTMLDivElement = document.createElement('div')
 document.body.appendChild(root)
 store.subscribe(() => render(<Provider store={store}><App/></Provider>, root))
 

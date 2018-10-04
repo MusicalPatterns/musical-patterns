@@ -1,6 +1,7 @@
 import { BASE_GAIN, SILENT } from '../constants'
 import context from '../context'
-import { NoteToPlay, Song, StartNote, StopNote, Voice } from '../types'
+import { Song } from '../songTypes'
+import { NoteToPlay, StartNote, StopNote, Voice } from '../types'
 import * as from from '../utilities/from'
 import scale from '../utilities/scale'
 

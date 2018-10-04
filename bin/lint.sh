@@ -2,4 +2,4 @@
 
 set -e
 
-tslint '**/*.ts' -e **/node_modules/** --fix --project tsconfig.json
+tslint '**/*.ts{,x}' -e **/node_modules/** --fix --project tsconfig.json

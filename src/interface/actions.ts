@@ -1,9 +1,10 @@
-import { SongName } from '../song'
+import { SongName } from '../songTypes'
 import { Times } from '../types'
 
 enum ActionType {
     CHOOSE_SONG = 'choose song',
     UPDATE = 'update',
+    UPDATE_SONG_CONFIG = 'update song config',
 }
 
 interface ActionObject {
@@ -20,11 +21,23 @@ interface UpdateAction extends ActionObject {
     type: ActionType.UPDATE,
 }
 
+interface UpdateSongConfigData {
+    configKey: string,
+    value: number,
+}
+
+interface UpdateSongConfigAction extends ActionObject {
+    data: UpdateSongConfigData,
+    type: ActionType.UPDATE_SONG_CONFIG,
+}
+
 type Action =
     ChooseSongAction |
-    UpdateAction
+    UpdateAction |
+    UpdateSongConfigAction
 
 export {
     Action,
     ActionType,
+    UpdateSongConfigData,
 }

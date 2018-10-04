@@ -1,12 +1,19 @@
 import { Map } from 'immutable'
+import { SongName } from '../songTypes'
 import { Entity } from '../types'
 
+interface Config {[index: string]: number}
+
 interface RawState {
+    config: Config,
     entities: Entity[],
+    songName: SongName,
 }
 
 type AllowedValue =
-    Entity[]
+    Entity[] |
+    Config |
+    SongName
 
 type MapTypeAllowedData<DataType> = {
     [K in keyof DataType]: AllowedValue
@@ -27,7 +34,9 @@ const createTypedMap: <DataType extends MapTypeAllowedData<DataType>>(data: Data
     <DataType extends MapTypeAllowedData<DataType>>(data: DataType): TypedMap<DataType> => Map(data) as any
 
 const rawState: RawState = {
+    config: {},
     entities: [],
+    songName: SongName.BEATEN_PATH,
 }
 
 const initialState: State = createTypedMap(rawState)
@@ -35,4 +44,5 @@ const initialState: State = createTypedMap(rawState)
 export {
     State,
     initialState,
+    Config,
 }
