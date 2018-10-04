@@ -22,11 +22,11 @@ export default ({config, handleConfigChange, handleSongChange}: AppProps): JSX.E
 
     return (
         <div>
-            <h3>idea selection</h3>
+            <h3>song selection</h3>
             <select {...{onChange: handleSongChange}}>
                 {options}
             </select>
-            <h3>idea config</h3>
+            <h3>song config</h3>
             {Object.keys(config).length ? createConfiguration(config, handleConfigChange) : 'no configuration'}
         </div>
 
