@@ -1,7 +1,7 @@
+import { Notes } from '../../src/types'
 import calculateNotesDuration from '../../src/utilities/calculateNotesDuration'
 import * as from from '../../src/utilities/from'
 import * as to from '../../src/utilities/to'
-import { Notes } from '../../src/types'
 
 describe('calculate notes duration', () => {
     it('totals the durations of the notes', () => {

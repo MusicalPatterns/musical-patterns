@@ -17,6 +17,7 @@ const mapDispatchToProps: (dispatch: Dispatch) => AppPropsFromDispatch =
     (dispatch: Dispatch): AppPropsFromDispatch => ({
         handleConfigChange: (event: React.SyntheticEvent<HTMLInputElement>, configKey: string): void => {
             const target: HTMLInputElement = event.target as HTMLInputElement
+            if (target.value === '') { return }
             dispatch({type: ActionType.UPDATE_SONG_CONFIG, data: {configKey, value: parseInt(target.value, RADIX)}})
         },
         handleSongChange: (event: React.SyntheticEvent<HTMLSelectElement>): void => {
