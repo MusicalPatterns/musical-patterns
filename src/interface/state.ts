@@ -11,8 +11,8 @@ interface RawState {
 }
 
 type AllowedValue =
-    Entity[] |
     Config |
+    Entity[] |
     SongName
 
 type MapTypeAllowedData<DataType> = {

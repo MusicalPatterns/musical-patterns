@@ -14,8 +14,8 @@ enum SongName {
 
 interface Song {
     baseFrequency: Frequency,
-    compile?: (config: Config) => Entity[],
-    config?: Config,
+    compile: (song: Song) => Promise<Entity[]>,
+    config: Config,
     entityConfigs: EntityConfig[],
     formattedName: string,
     name: SongName,

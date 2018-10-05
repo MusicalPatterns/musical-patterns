@@ -8,10 +8,22 @@ type ModulePath = string
 
 declare const require: (modulePath: ModulePath) => string
 
+const getTimbreUrl: (timbre: Timbre) => ModulePath =
+    (timbre: Timbre): ModulePath => {
+        let inTest: boolean = false
+        Object.keys(require).forEach((key: string): void => {
+            if (key === 'extensions') {
+                inTest = true
+            }
+        })
+
+        return inTest ? '' : require(`../samples/${timbre}.wav`)
+    }
+
 const load: (timbre: Timbre) => void =
     async (timbre: Timbre): Promise<void> => {
         const request: XMLHttpRequest = new XMLHttpRequest()
-        const url: ModulePath = require(`../samples/${timbre}.wav`)
+        const url: ModulePath = getTimbreUrl(timbre)
         request.open('GET', url, true)
         request.responseType = 'arraybuffer'
 

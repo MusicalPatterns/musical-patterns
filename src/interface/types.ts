@@ -1,24 +1,31 @@
 import * as React from 'react'
+import { SongName } from '../songTypes'
+import { Entity } from '../types'
 import { Config } from './state'
 
 interface AppPropsFromState {
     config: Config,
+    entities: Entity[],
+    songName: SongName,
 }
 
-type HandleConfigChange = (event: React.SyntheticEvent<HTMLInputElement>, configKey: string) => void
+type HandleConfigChangeEvent =
+    (event: React.SyntheticEvent<HTMLInputElement>, configKey: string, entities: Entity[], songName: SongName) => void
 
-type HandleSongChange = (event: React.SyntheticEvent<HTMLSelectElement>) => void
+type HandleSongChangeEvent =
+    (event: React.SyntheticEvent<HTMLSelectElement>, entities: Entity[]) => void
 
 interface AppPropsFromDispatch {
-    handleConfigChange: HandleConfigChange,
-    handleSongChange: HandleSongChange,
+    handleConfigChangeEvent: HandleConfigChangeEvent,
+    handleSongChangeEvent: HandleSongChangeEvent,
 }
 
 interface AppProps extends AppPropsFromState, AppPropsFromDispatch {
 }
 
 export {
-    HandleConfigChange,
+    HandleConfigChangeEvent,
+    HandleSongChangeEvent,
     AppProps,
     AppPropsFromState,
     AppPropsFromDispatch,

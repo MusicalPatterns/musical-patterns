@@ -1,43 +1,30 @@
-import { SongName } from '../songTypes'
-import { Times } from '../types'
+import { Song } from '../songTypes'
+import { Entity } from '../types'
 
 enum ActionType {
-    CHOOSE_SONG = 'choose song',
-    UPDATE = 'update',
-    UPDATE_SONG_CONFIG = 'update song config',
+    SET_CONFIG_AND_NAME_FROM_SONG = 'set config and name from song',
+    SET_ENTITIES = 'set entities',
 }
 
 interface ActionObject {
     type: ActionType,
 }
 
-interface ChooseSongAction extends ActionObject {
-    data: SongName,
-    type: ActionType.CHOOSE_SONG,
+interface SetConfigAndNameFromSongAction extends ActionObject {
+    data: Song,
+    type: ActionType.SET_CONFIG_AND_NAME_FROM_SONG,
 }
 
-interface UpdateAction extends ActionObject {
-    data: Times,
-    type: ActionType.UPDATE,
-}
-
-interface UpdateSongConfigData {
-    configKey: string,
-    value: number,
-}
-
-interface UpdateSongConfigAction extends ActionObject {
-    data: UpdateSongConfigData,
-    type: ActionType.UPDATE_SONG_CONFIG,
+interface SetEntities extends ActionObject {
+    data: Entity[],
+    type: ActionType.SET_ENTITIES,
 }
 
 type Action =
-    ChooseSongAction |
-    UpdateAction |
-    UpdateSongConfigAction
+    SetConfigAndNameFromSongAction |
+    SetEntities
 
 export {
     Action,
     ActionType,
-    UpdateSongConfigData,
 }

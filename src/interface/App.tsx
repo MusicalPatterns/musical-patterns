@@ -1,8 +1,12 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
 import { Dispatch } from 'redux'
-import { ActionType } from './actions'
+import { songs } from '../song'
+import { Song, SongName } from '../songTypes'
+import { Entity } from '../types'
 import AppPresenter from './AppPresenter'
+import { handleConfigChange } from './handleConfigChange'
+import { handleSongChange } from './handleSongChange'
 import { State } from './state'
 import { AppPropsFromDispatch, AppPropsFromState } from './types'
 
@@ -11,18 +15,35 @@ const RADIX: number = 10
 const mapStateToProps: (state: State) => AppPropsFromState =
     (state: State): AppPropsFromState => ({
         config: state.get('config'),
+        entities: state.get('entities'),
+        songName: state.get('songName'),
     })
 
 const mapDispatchToProps: (dispatch: Dispatch) => AppPropsFromDispatch =
     (dispatch: Dispatch): AppPropsFromDispatch => ({
-        handleConfigChange: (event: React.SyntheticEvent<HTMLInputElement>, configKey: string): void => {
+        handleConfigChangeEvent: async (
+            event: React.SyntheticEvent<HTMLInputElement>,
+            configKey: string,
+            entities: Entity[],
+            songName: SongName,
+        ): Promise<void> => {
             const target: HTMLInputElement = event.target as HTMLInputElement
-            if (target.value === '') { return }
-            dispatch({type: ActionType.UPDATE_SONG_CONFIG, data: {configKey, value: parseInt(target.value, RADIX)}})
+            if (target.value === '') {
+                return
+            }
+            const updateSongConfigData: number = parseInt(target.value, RADIX)
+
+            await handleConfigChange(dispatch, updateSongConfigData, entities, songName, configKey)
         },
-        handleSongChange: (event: React.SyntheticEvent<HTMLSelectElement>): void => {
+        handleSongChangeEvent: async (
+            event: React.SyntheticEvent<HTMLSelectElement>,
+            entities: Entity[],
+        ): Promise<void> => {
             const target: HTMLSelectElement = event.target as HTMLSelectElement
-            dispatch({type: ActionType.CHOOSE_SONG, data: target.value})
+            const songName: SongName = target.value as SongName
+            const song: Song = songs[songName]
+
+            await handleSongChange(dispatch, song, entities)
         },
     })
 

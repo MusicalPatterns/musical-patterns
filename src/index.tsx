@@ -1,13 +1,17 @@
 import * as React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import { ActionType } from './interface/actions'
+import { createStore, Store } from 'redux'
+import { beatenPath } from '../songs/beaten-path/src/songs'
 import App from './interface/App'
-import { store } from './interface/store'
-import { SongName } from './songTypes'
+import { handleSongChange } from './interface/handleSongChange'
+import { reducer } from './interface/reducer'
 
 const root: HTMLDivElement = document.createElement('div')
 document.body.appendChild(root)
+
+const store: Store = createStore(reducer)
 store.subscribe(() => render(<Provider store={store}><App/></Provider>, root))
 
-store.dispatch({type: ActionType.CHOOSE_SONG, data: SongName.BEATEN_PATH})
+// tslint:disable-next-line:no-floating-promises
+handleSongChange(store.dispatch, beatenPath, [])

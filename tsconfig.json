@@ -12,8 +12,11 @@
     "strict": true,
     "pretty": true,
     "sourceMap": true,
-    "typeRoots": [
-      "./node_modules/@types"
+    "types": [
+      "jasmine",
+      "react",
+      "react-dom",
+      "react-redux"
     ],
     "skipLibCheck": true,
     "jsx": "react"
