@@ -5,7 +5,6 @@ import { initialState, State } from './state'
 
 const reducer: (state: State | undefined, action: Action) => State =
     (state: State = initialState, action: Action): State => {
-
         switch (action.type) {
             case ActionType.SET_CONFIG_AND_NAME_FROM_SONG: {
                 const song: Song = action.data

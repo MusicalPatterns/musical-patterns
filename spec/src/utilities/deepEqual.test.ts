@@ -1,4 +1,4 @@
-import { deepEqual } from '../../src/utilities/deepEqual'
+import { deepEqual } from '../../../src/utilities/deepEqual'
 
 describe('deep equal', () => {
     it('works', () => {

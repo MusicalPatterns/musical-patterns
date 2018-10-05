@@ -32,4 +32,6 @@ const buildEntity: (entityConfig: EntityConfig, song: Song) => Entity =
         }
     }
 
-export default buildEntity
+export {
+    buildEntity,
+}

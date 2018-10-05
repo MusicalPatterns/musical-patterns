@@ -1,6 +1,6 @@
 import { Song } from '../songTypes'
 import { Entity } from '../types'
-import buildEntity from './buildEntity'
+import { buildEntity } from './buildEntity'
 import { EntityConfig } from './types'
 
 const defaultSongCompile: (song: Song) => Promise<Entity[]> =
