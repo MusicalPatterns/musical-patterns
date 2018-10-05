@@ -1,19 +1,19 @@
 import * as React from 'react'
 import { SongName } from '../songTypes'
-import { Entity } from '../types'
+import { Entities } from '../types'
 import { Config } from './state'
 
 interface AppPropsFromState {
     config: Config,
-    entities: Entity[],
+    entities: Entities,
     songName: SongName,
 }
 
 type HandleConfigChangeEvent =
-    (event: React.SyntheticEvent<HTMLInputElement>, configKey: string, entities: Entity[], songName: SongName) => void
+    (event: React.SyntheticEvent<HTMLInputElement>, configKey: string, entities: Entities, songName: SongName) => void
 
 type HandleSongChangeEvent =
-    (event: React.SyntheticEvent<HTMLSelectElement>, entities: Entity[]) => void
+    (event: React.SyntheticEvent<HTMLSelectElement>, entities: Entities) => void
 
 interface AppPropsFromDispatch {
     handleConfigChangeEvent: HandleConfigChangeEvent,

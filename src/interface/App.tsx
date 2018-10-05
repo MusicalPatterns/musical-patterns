@@ -1,16 +1,18 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
 import { Dispatch } from 'redux'
+import { Core } from '../../songs/beaten-path/src/types'
+import * as beatenPathFrom from '../../songs/beaten-path/src/utilities/from'
+import * as beatenPathTo from '../../songs/beaten-path/src/utilities/to'
+import { DECIMAL } from '../constants'
 import { songs } from '../song'
 import { Song, SongName } from '../songTypes'
-import { Entity } from '../types'
+import { Entities } from '../types'
 import AppPresenter from './AppPresenter'
 import { handleConfigChange } from './handleConfigChange'
 import { handleSongChange } from './handleSongChange'
 import { State } from './state'
 import { AppPropsFromDispatch, AppPropsFromState } from './types'
-
-const RADIX: number = 10
 
 const mapStateToProps: (state: State) => AppPropsFromState =
     (state: State): AppPropsFromState => ({
@@ -24,20 +26,21 @@ const mapDispatchToProps: (dispatch: Dispatch) => AppPropsFromDispatch =
         handleConfigChangeEvent: async (
             event: React.SyntheticEvent<HTMLInputElement>,
             configKey: string,
-            entities: Entity[],
+            entities: Entities,
             songName: SongName,
         ): Promise<void> => {
             const target: HTMLInputElement = event.target as HTMLInputElement
-            if (target.value === '') {
+
+            const updateSongConfigData: Core = beatenPathTo.Core(parseInt(target.value, DECIMAL))
+            if (!(beatenPathFrom.Core(updateSongConfigData) > 1)) {
                 return
             }
-            const updateSongConfigData: number = parseInt(target.value, RADIX)
 
             await handleConfigChange(dispatch, updateSongConfigData, entities, songName, configKey)
         },
         handleSongChangeEvent: async (
             event: React.SyntheticEvent<HTMLSelectElement>,
-            entities: Entity[],
+            entities: Entities,
         ): Promise<void> => {
             const target: HTMLSelectElement = event.target as HTMLSelectElement
             const songName: SongName = target.value as SongName

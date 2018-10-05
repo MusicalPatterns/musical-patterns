@@ -30,12 +30,14 @@ interface Entity {
     nextEnd: Time,
     nextStart: Time,
     noteIndex: Index,
-    notes: Note[],
-    scales: Scale[],
+    notes: Notes,
+    scales: Scales,
     timeType: TimeType,
     voice: Voice,
     voiceGain: Scalar,
 }
+
+type Entities = Entity[]
 
 enum VoiceType {
     OSCILLATOR = 'oscillator',
@@ -51,6 +53,7 @@ enum OscillatorName {
 }
 
 type Scale = Scalar[]
+type Scales = Scale[]
 
 enum Timbre {
     CELLO = 'cello',
@@ -82,6 +85,8 @@ export {
     VoiceType,
     OscillatorName,
     Scale,
+    Scales,
     Notes,
     Times,
+    Entities,
 }

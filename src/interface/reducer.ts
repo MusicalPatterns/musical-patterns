@@ -1,5 +1,5 @@
 import { Song } from '../songTypes'
-import { Entity } from '../types'
+import { Entities } from '../types'
 import { Action, ActionType } from './actions'
 import { initialState, State } from './state'
 
@@ -14,7 +14,7 @@ const reducer: (state: State | undefined, action: Action) => State =
                 return stateWithUpdatedSongName.set('config', song.config || {})
             }
             case ActionType.SET_ENTITIES: {
-                const entities: Entity[] = action.data
+                const entities: Entities = action.data
 
                 return state.set('entities', entities)
             }

@@ -1,4 +1,4 @@
-import { Note, OscillatorName, Timbre, VoiceType } from '../types'
+import { Notes, OscillatorName, Timbre, VoiceType } from '../types'
 import { Index, Scalar, Time } from '../utilities/nominalTypes'
 
 interface VoiceConfig {
@@ -15,7 +15,7 @@ interface EntityConfig {
     nextEnd?: Time,
     nextStart?: Time,
     noteIndex?: Index,
-    notes?: Note[],
+    notes?: Notes,
     timeType?: TimeType,
     voiceConfig?: VoiceConfig,
     voiceGain?: Scalar,

@@ -1,6 +1,6 @@
 import { EntityConfig } from './compile/types'
 import { Config } from './interface/state'
-import { Entity, Scale } from './types'
+import { Entities, Scales } from './types'
 import { Frequency } from './utilities/nominalTypes'
 
 enum SongName {
@@ -14,12 +14,12 @@ enum SongName {
 
 interface Song {
     baseFrequency: Frequency,
-    compile: (song: Song) => Promise<Entity[]>,
+    compile: (song: Song) => Promise<Entities>,
     config: Config,
     entityConfigs: EntityConfig[],
     formattedName: string,
     name: SongName,
-    scales: Scale[],
+    scales: Scales,
 }
 
 export {

@@ -12,7 +12,11 @@ const SEPARATION_FOR_NEIGHBORING_NOTES: Time = 0.1 as any
 const CENTS_PER_OCTAVE: Cents = 1200 as any
 const CENTS_PER_SEMITONE: Cents = 100 as any
 
-const MAX_GAIN: Scalar = 1 as any
+const FULL_GAIN: Scalar = 1 as any
+
+const ONE: number = 1
+const TWO: number = 2
+const DECIMAL: number = 10
 
 export {
     BASE_DURATION,
@@ -22,5 +26,8 @@ export {
     SEPARATION_FOR_NEIGHBORING_NOTES,
     CENTS_PER_OCTAVE,
     CENTS_PER_SEMITONE,
-    MAX_GAIN,
+    FULL_GAIN,
+    ONE,
+    TWO,
+    DECIMAL,
 }

@@ -1,7 +1,8 @@
 import { Dispatch } from 'redux'
+import { Core } from '../../songs/beaten-path/src/types'
 import { songs } from '../song'
 import { Song, SongName } from '../songTypes'
-import { Entity } from '../types'
+import { Entities } from '../types'
 import { ActionType } from './actions'
 import { recompileAndRestart } from './recompileAndRestart'
 import { Config } from './state'
@@ -9,15 +10,15 @@ import { stopPreviousSong } from './stopPreviousSong'
 
 const handleConfigChange: (
     dispatch: Dispatch,
-    updateSongConfigData: number,
-    entities: Entity[],
+    updateSongConfigData: Core,
+    entities: Entities,
     songName: SongName,
     configKey: string,
 ) => Promise<void> =
     async (
         dispatch: Dispatch,
-        updateSongConfigData: number,
-        entities: Entity[],
+        updateSongConfigData: Core,
+        entities: Entities,
         songName: SongName,
         configKey: string,
     ): Promise<void> => {

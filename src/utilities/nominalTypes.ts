@@ -26,12 +26,22 @@ interface Index extends Number {
     _IndexBrand: string,
 }
 
+interface Count extends Number {
+    _CountBrand: string,
+}
+
+interface Power extends Number {
+    _PowerBrand: string,
+}
+
 export {
     Cents,
+    Count,
     Frequency,
     Semitones,
     Scalar,
     Offset,
     Time,
     Index,
+    Power,
 }

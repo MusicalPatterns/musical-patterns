@@ -1,18 +1,19 @@
 import { Map } from 'immutable'
+import { Core } from '../../songs/beaten-path/src/types'
 import { SongName } from '../songTypes'
-import { Entity } from '../types'
+import { Entities } from '../types'
 
-interface Config {[index: string]: number}
+interface Config {[index: string]: Core}
 
 interface RawState {
     config: Config,
-    entities: Entity[],
+    entities: Entities,
     songName: SongName,
 }
 
 type AllowedValue =
     Config |
-    Entity[] |
+    Entities |
     SongName
 
 type MapTypeAllowedData<DataType> = {
@@ -29,7 +30,7 @@ interface TypedMap<DataType extends MapTypeAllowedData<DataType>> extends Map<st
 
 type State = TypedMap<RawState>
 
-const createTypedMap: <DataType extends MapTypeAllowedData<DataType>>(data: DataType) => TypedMap<DataType> =
+const immutablizeState: <DataType extends MapTypeAllowedData<DataType>>(data: DataType) => TypedMap<DataType> =
     // tslint:disable-next-line:no-any no-unsafe-any
     <DataType extends MapTypeAllowedData<DataType>>(data: DataType): TypedMap<DataType> => Map(data) as any
 
@@ -39,10 +40,11 @@ const rawState: RawState = {
     songName: SongName.BEATEN_PATH,
 }
 
-const initialState: State = createTypedMap(rawState)
+const initialState: State = immutablizeState(rawState)
 
 export {
     State,
     initialState,
     Config,
+    immutablizeState,
 }

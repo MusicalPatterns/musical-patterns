@@ -1,9 +1,10 @@
 // tslint:disable:no-unsafe-any
 
 import * as React from 'react'
+import { Core } from '../../songs/beaten-path/src/types'
 import { songs } from '../song'
 import { Song, SongName } from '../songTypes'
-import { Entity } from '../types'
+import { Entities } from '../types'
 import { Config } from './state'
 import { AppProps, HandleConfigChangeEvent } from './types'
 
@@ -11,17 +12,17 @@ const NO_CONFIGURATION_MESSAGE: string = 'no configuration'
 
 const createConfiguration: (
     config: Config,
-    entities: Entity[],
+    entities: Entities,
     handleConfigChangeEvent: HandleConfigChangeEvent,
     songName: SongName,
 ) => JSX.Element[] =
     (
         config: Config,
-        entities: Entity[],
+        entities: Entities,
         handleConfigChangeEvent: HandleConfigChangeEvent,
         songName: SongName,
     ): JSX.Element[] =>
-        Object.entries(config).map(([configKey, configValue]: [string, number], key: number): JSX.Element =>
+        Object.entries(config).map(([configKey, configValue]: [string, Core], key: number): JSX.Element =>
             (
                 <div {...{key}}>{configKey}<input
                     onChange={(event: React.SyntheticEvent<HTMLInputElement>): void => {
