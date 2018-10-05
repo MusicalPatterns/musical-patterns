@@ -9,14 +9,23 @@ const reducer: (state: State | undefined, action: Action) => State =
             case ActionType.SET_CONFIG_AND_NAME_FROM_SONG: {
                 const song: Song = action.data
 
-                const stateWithUpdatedSongName: State = state.set('songName', song.name)
+                const stateWithUpdatedSongName: State = state
+                    .set('songName', song.name)
 
-                return stateWithUpdatedSongName.set('config', song.config || {})
+                const stateWithUpdatedSongNameAndCustomConfig: State = stateWithUpdatedSongName
+                    .set('customConfig', song.customConfig)
+
+                const stateWithUpdatedSongNameAndCustomConfigAndStandardConfig: State =
+                    stateWithUpdatedSongNameAndCustomConfig
+                        .set('standardConfig', song.standardConfig)
+
+                return stateWithUpdatedSongNameAndCustomConfigAndStandardConfig
             }
             case ActionType.SET_ENTITIES: {
                 const entities: Entities = action.data
 
-                return state.set('entities', entities)
+                return state
+                    .set('entities', entities)
             }
             default: {
                 return state

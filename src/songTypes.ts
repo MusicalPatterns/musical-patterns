@@ -1,5 +1,5 @@
+import { Core } from '../songs/beaten-path/src/types'
 import { EntityConfig } from './compile/types'
-import { Config } from './interface/state'
 import { Entities, Scales } from './types'
 import { Frequency } from './utilities/nominalTypes'
 
@@ -12,17 +12,33 @@ enum SongName {
     ZDAUBYAOS = 'zdaubyaos',
 }
 
+interface CustomConfig {
+    [index: string]: Core,
+}
+
+type CustomConfigEntry = [string, Core]
+
+interface StandardConfig {
+    [index: string]: Frequency,
+}
+
+type StandardConfigEntry = [string, Frequency]
+
 interface Song {
-    baseFrequency: Frequency,
     compile: (song: Song) => Promise<Entities>,
-    config: Config,
+    customConfig: CustomConfig,
     entityConfigs: EntityConfig[],
     formattedName: string,
     name: SongName,
     scales: Scales,
+    standardConfig: StandardConfig,
 }
 
 export {
     Song,
     SongName,
+    StandardConfig,
+    StandardConfigEntry,
+    CustomConfig,
+    CustomConfigEntry,
 }

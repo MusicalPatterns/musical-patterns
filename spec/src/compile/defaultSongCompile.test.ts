@@ -14,15 +14,17 @@ describe('default song compile', () => {
         const testEntityConfig: EntityConfig = {
         }
         const testSong: Song = {
-            baseFrequency: to.Frequency(0),
             compile: defaultSongCompile,
-            config: {},
+            customConfig: {},
             entityConfigs: [
                 testEntityConfig,
             ],
             formattedName: '',
             name: SongName.XELT_DLEUDEF_AET_NAELNAEMEUGZ,
             scales: [],
+            standardConfig: {
+                baseFrequency: to.Frequency(0),
+            },
         }
 
         await defaultSongCompile(testSong)

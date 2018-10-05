@@ -1,31 +1,30 @@
 import { Dispatch } from 'redux'
-import { Core } from '../../songs/beaten-path/src/types'
 import { songs } from '../song'
-import { Song, SongName } from '../songTypes'
+import { Song, SongName, StandardConfig } from '../songTypes'
 import { Entities } from '../types'
+import { Frequency } from '../utilities/nominalTypes'
 import { ActionType } from './actions'
 import { recompileAndRestart } from './recompileAndRestart'
-import { Config } from './state'
 import { stopPreviousSong } from './stopPreviousSong'
 
-const handleConfigChange: (
+const handleStandardConfigChange: (
     dispatch: Dispatch,
-    updateSongConfigData: Core,
+    updateStandardConfigData: Frequency,
     entities: Entities,
     songName: SongName,
-    configKey: string,
+    standardConfigKey: string,
 ) => Promise<void> =
     async (
         dispatch: Dispatch,
-        updateSongConfigData: Core,
+        updateStandardConfigData: Frequency,
         entities: Entities,
         songName: SongName,
-        configKey: string,
+        standardConfigKey: string,
     ): Promise<void> => {
-        const configChanges: Config = {[configKey]: updateSongConfigData}
+        const standardConfigChanges: StandardConfig = {[standardConfigKey]: updateStandardConfigData}
         const baseSong: Song = songs[songName]
-        const updatedConfig: Config = {...baseSong.config, ...configChanges}
-        const newSong: Song = {...baseSong, config: updatedConfig}
+        const updatedStanardConfig: StandardConfig = {...baseSong.standardConfig, ...standardConfigChanges}
+        const newSong: Song = {...baseSong, standardConfig: updatedStanardConfig}
 
         stopPreviousSong(entities)
 
@@ -35,5 +34,5 @@ const handleConfigChange: (
     }
 
 export {
-    handleConfigChange,
+    handleStandardConfigChange,
 }

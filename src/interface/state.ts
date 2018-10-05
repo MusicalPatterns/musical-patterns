@@ -1,20 +1,19 @@
 import { Map } from 'immutable'
-import { Core } from '../../songs/beaten-path/src/types'
-import { SongName } from '../songTypes'
+import { CustomConfig, SongName, StandardConfig } from '../songTypes'
 import { Entities } from '../types'
 
-interface Config {[index: string]: Core}
-
 interface RawState {
-    config: Config,
+    customConfig: CustomConfig,
     entities: Entities,
     songName: SongName,
+    standardConfig: StandardConfig,
 }
 
 type AllowedValue =
-    Config |
+    CustomConfig |
     Entities |
-    SongName
+    SongName |
+    StandardConfig
 
 type MapTypeAllowedData<T> = {
     [K in keyof T]: AllowedValue
@@ -35,9 +34,10 @@ const immutablizeState: <T extends MapTypeAllowedData<T>>(data: T) => TypedMap<T
     <T extends MapTypeAllowedData<T>>(data: T): TypedMap<T> => Map(data) as any
 
 const rawState: RawState = {
-    config: {},
+    customConfig: {},
     entities: [],
     songName: SongName.BEATEN_PATH,
+    standardConfig: {},
 }
 
 const initialState: State = immutablizeState(rawState)
@@ -45,6 +45,5 @@ const initialState: State = immutablizeState(rawState)
 export {
     State,
     initialState,
-    Config,
     immutablizeState,
 }
