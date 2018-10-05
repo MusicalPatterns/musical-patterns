@@ -16,23 +16,23 @@ type AllowedValue =
     Entities |
     SongName
 
-type MapTypeAllowedData<DataType> = {
-    [K in keyof DataType]: AllowedValue
+type MapTypeAllowedData<T> = {
+    [K in keyof T]: AllowedValue
 }
 
-interface TypedMap<DataType extends MapTypeAllowedData<DataType>> extends Map<string, AllowedValue> {
-    get<K extends keyof DataType>(key: K, notSetValue?: DataType[K]): DataType[K]
+interface TypedMap<T extends MapTypeAllowedData<T>> extends Map<string, AllowedValue> {
+    get<K extends keyof T>(key: K, notSetValue?: T[K]): T[K]
 
-    set<K extends keyof DataType>(key: K, value: DataType[K]): this
+    set<K extends keyof T>(key: K, value: T[K]): this
 
-    toJS(): DataType
+    toJS(): T
 }
 
 type State = TypedMap<RawState>
 
-const immutablizeState: <DataType extends MapTypeAllowedData<DataType>>(data: DataType) => TypedMap<DataType> =
+const immutablizeState: <T extends MapTypeAllowedData<T>>(data: T) => TypedMap<T> =
     // tslint:disable-next-line:no-any no-unsafe-any
-    <DataType extends MapTypeAllowedData<DataType>>(data: DataType): TypedMap<DataType> => Map(data) as any
+    <T extends MapTypeAllowedData<T>>(data: T): TypedMap<T> => Map(data) as any
 
 const rawState: RawState = {
     config: {},

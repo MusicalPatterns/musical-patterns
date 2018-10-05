@@ -3,7 +3,7 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore, Store } from 'redux'
 import { beatenPath } from '../songs/beaten-path/src/songs'
-import App from './interface/App'
+import App from './components/App'
 import { handleSongChange } from './interface/handleSongChange'
 import { reducer } from './interface/reducer'
 

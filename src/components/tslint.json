@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "../../tslint.json"
+  ],
+  "rules": {
+    "variable-name": false,
+    "no-unsafe-any": false
+  }
+}
