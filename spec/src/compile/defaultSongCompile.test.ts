@@ -1,8 +1,8 @@
 import * as buildEntity from '../../../src/compile/buildEntity'
 import { defaultSongCompile } from '../../../src/compile/defaultSongCompile'
 import { EntityConfig } from '../../../src/compile/types'
-import { Song, SongName } from '../../../src/songTypes'
-import * as to from '../../../src/utilities/to'
+import { Song } from '../../../src/songTypes'
+import { mockSong } from '../../support/mockSong'
 
 describe('default song compile', () => {
     let buildEntitySpy: jasmine.Spy
@@ -11,21 +11,8 @@ describe('default song compile', () => {
     })
 
     it('returns built entities', async (done: DoneFn) => {
-        const testEntityConfig: EntityConfig = {
-        }
-        const testSong: Song = {
-            compile: defaultSongCompile,
-            customConfig: {},
-            entityConfigs: [
-                testEntityConfig,
-            ],
-            formattedName: '',
-            name: SongName.XELT_DLEUDEF_AET_NAELNAEMEUGZ,
-            scales: [],
-            standardConfig: {
-                baseFrequency: to.Frequency(0),
-            },
-        }
+        const testEntityConfig: EntityConfig = {}
+        const testSong: Song = {...mockSong, entityConfigs: [testEntityConfig]}
 
         await defaultSongCompile(testSong)
 

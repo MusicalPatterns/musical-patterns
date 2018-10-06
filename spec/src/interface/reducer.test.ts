@@ -1,32 +1,18 @@
-import { buildEntity } from '../../../src/compile/buildEntity'
-import { defaultSongCompile } from '../../../src/compile/defaultSongCompile'
 import { ActionType, SetEntities } from '../../../src/interface/actions'
 import { reducer } from '../../../src/interface/reducer'
 import { immutablizeState, State } from '../../../src/interface/state'
-import { Song, SongName } from '../../../src/songTypes'
-import { Entities, Entity } from '../../../src/types'
-import * as to from '../../../src/utilities/to'
+import { Entities } from '../../../src/types'
+import { mockEntity } from '../../support/mockEntity'
+import { mockSong } from '../../support/mockSong'
 
 describe('reducer', () => {
     it('sets entities', () => {
-        const testSong: Song = {
-            compile: defaultSongCompile,
-            customConfig: {},
-            entityConfigs: [],
-            formattedName: '',
-            name: SongName.HAFUHAFU,
-            scales: [],
-            standardConfig: {
-                baseFrequency: to.Frequency(0),
-            },
-        }
         const state: State = immutablizeState({
             entities: [],
-            song: testSong,
+            song: mockSong,
         })
-        const testEntity: Entity = buildEntity({}, testSong)
 
-        const newEntities: Entities = [testEntity]
+        const newEntities: Entities = [mockEntity]
         const action: SetEntities = {
             data: newEntities,
             type: ActionType.SET_ENTITIES,
@@ -36,7 +22,7 @@ describe('reducer', () => {
 
         const expectedState: State = immutablizeState({
             entities: newEntities,
-            song: testSong,
+            song: mockSong,
         })
         expect(newState.toJS()).toEqual(expectedState.toJS())
     })

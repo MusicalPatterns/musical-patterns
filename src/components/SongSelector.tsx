@@ -4,7 +4,7 @@ import { Song } from '../songTypes'
 import { SongSelectorProps } from './types'
 
 const SongSelector: (songSelectorProps: SongSelectorProps) => JSX.Element =
-    ({handleSongChangeEvent, entities}: SongSelectorProps): JSX.Element => {
+    ({handleSongChangeEvent, entities, song: currentSong}: SongSelectorProps): JSX.Element => {
         const options: JSX.Element[] = Object.values(songs).map((song: Song, key: number): JSX.Element =>
             <option {...{key, value: song.name}}>{song.formattedName}</option>)
 
@@ -19,6 +19,9 @@ const SongSelector: (songSelectorProps: SongSelectorProps) => JSX.Element =
                 <select {...{onChange}}>
                     {options}
                 </select>
+                <div>
+                    {currentSong.description}
+                </div>
             </div>
         )
     }

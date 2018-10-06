@@ -27,6 +27,7 @@ type StandardConfigEntry = [string, Frequency]
 interface Song {
     compile: (song: Song) => Promise<Entities>,
     customConfig: CustomConfig,
+    description: string,
     entityConfigs: EntityConfig[],
     formattedName: string,
     name: SongName,

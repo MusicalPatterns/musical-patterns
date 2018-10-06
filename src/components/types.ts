@@ -38,6 +38,7 @@ interface StandardConfigSelectorProps {
 interface SongSelectorProps {
     entities: Entities,
     handleSongChangeEvent: HandleSongChangeEvent,
+    song: Song,
 }
 
 interface CustomConfigOptionProps {

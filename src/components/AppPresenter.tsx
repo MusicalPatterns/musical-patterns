@@ -17,6 +17,7 @@ const AppPresenter: (appProps: AppProps) => JSX.Element =
         const songSelectorProps: SongSelectorProps = {
             entities,
             handleSongChangeEvent,
+            song,
         }
         const standardConfigSelectorProps: StandardConfigSelectorProps = {
             entities,
@@ -33,6 +34,7 @@ const AppPresenter: (appProps: AppProps) => JSX.Element =
 
         return (
             <div>
+                <h1>Fun Musical Ideas</h1>
                 <SongSelector {...songSelectorProps}/>
                 <StandardConfigSelector {...standardConfigSelectorProps}/>
                 <CustomConfigSelector {...customConfigSelectorProps}/>
