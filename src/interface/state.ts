@@ -1,19 +1,16 @@
 import { Map } from 'immutable'
-import { CustomConfig, SongName, StandardConfig } from '../songTypes'
+import { beatenPath } from '../../songs/beaten-path/src/songs'
+import { Song } from '../songTypes'
 import { Entities } from '../types'
 
 interface RawState {
-    customConfig: CustomConfig,
     entities: Entities,
-    songName: SongName,
-    standardConfig: StandardConfig,
+    song: Song,
 }
 
 type AllowedValue =
-    CustomConfig |
     Entities |
-    SongName |
-    StandardConfig
+    Song
 
 type MapTypeAllowedData<T> = {
     [K in keyof T]: AllowedValue
@@ -34,10 +31,8 @@ const immutablizeState: <T extends MapTypeAllowedData<T>>(data: T) => TypedMap<T
     <T extends MapTypeAllowedData<T>>(data: T): TypedMap<T> => Map(data) as any
 
 const rawState: RawState = {
-    customConfig: {},
     entities: [],
-    songName: SongName.BEATEN_PATH,
-    standardConfig: {},
+    song: beatenPath,
 }
 
 const initialState: State = immutablizeState(rawState)

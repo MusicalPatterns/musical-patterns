@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { CustomConfigEntry } from '../songTypes'
+import { CustomConfig, CustomConfigEntry } from '../songTypes'
 import CustomConfigOption from './CustomConfigOption'
 import { CustomConfigSelectorProps } from './types'
 
@@ -9,7 +9,8 @@ const CustomConfigSelector: (customConfigSelectorProps: CustomConfigSelectorProp
     (customConfigSelectorProps: CustomConfigSelectorProps): JSX.Element => {
         let customConfigSelector: JSX.Element[] = NO_CONFIGURATION_FALLBACK
 
-        const customConfigEntries: CustomConfigEntry[] = Object.entries(customConfigSelectorProps.customConfig)
+        const customConfig: CustomConfig = customConfigSelectorProps.song.customConfig
+        const customConfigEntries: CustomConfigEntry[] = Object.entries(customConfig)
         if (!!customConfigEntries.length) {
             customConfigSelector = customConfigEntries.map(
                 (customConfigEntry: CustomConfigEntry, key: number): JSX.Element =>

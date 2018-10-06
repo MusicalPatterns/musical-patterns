@@ -9,12 +9,6 @@ import * as to from '../../../src/utilities/to'
 
 describe('reducer', () => {
     it('sets entities', () => {
-        const state: State = immutablizeState({
-            customConfig: {},
-            entities: [],
-            songName: SongName.HAFUHAFU,
-            standardConfig: {},
-        })
         const testSong: Song = {
             compile: defaultSongCompile,
             customConfig: {},
@@ -26,6 +20,10 @@ describe('reducer', () => {
                 baseFrequency: to.Frequency(0),
             },
         }
+        const state: State = immutablizeState({
+            entities: [],
+            song: testSong,
+        })
         const testEntity: Entity = buildEntity({}, testSong)
 
         const newEntities: Entities = [testEntity]
@@ -37,10 +35,8 @@ describe('reducer', () => {
         const newState: State = reducer(state, action)
 
         const expectedState: State = immutablizeState({
-            customConfig: {},
             entities: newEntities,
-            songName: SongName.HAFUHAFU,
-            standardConfig: {},
+            song: testSong,
         })
         expect(newState.toJS()).toEqual(expectedState.toJS())
     })

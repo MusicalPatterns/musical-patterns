@@ -5,17 +5,26 @@ const StandardConfigOption: (standardConfigOptionProps: StandardConfigOptionProp
     (standardConfigOptionProps: StandardConfigOptionProps): JSX.Element => {
         const {standardConfigEntry, standardConfigSelectorProps} = standardConfigOptionProps
         const [standardConfigKey, standardConfigValue] = standardConfigEntry
-        const {entities, handleStandardConfigChangeEvent, songName} = standardConfigSelectorProps
+        const {
+            song,
+            entities,
+            handleStandardConfigChangeEvent,
+            handleConfigSubmitEvent,
+        } = standardConfigSelectorProps
         const onChange: (event: React.SyntheticEvent<HTMLInputElement>) => void =
             (event: React.SyntheticEvent<HTMLInputElement>): void => {
-                handleStandardConfigChangeEvent(event, standardConfigKey, entities, songName)
+                handleStandardConfigChangeEvent(event, standardConfigKey, song)
+            }
+        const onKeyPress: (event: React.KeyboardEvent) => void =
+            (event: React.KeyboardEvent): void => {
+                handleConfigSubmitEvent(event, entities, song)
             }
         const value: string = standardConfigValue.toString()
 
         return (
             <div>
                 {standardConfigKey}
-                <input {...{onChange, value}}/>
+                <input {...{onChange, onKeyPress, value}}/>
             </div>
         )
     }

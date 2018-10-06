@@ -5,17 +5,26 @@ const CustomConfigOption: (customConfigOptionProps: CustomConfigOptionProps) => 
     (customConfigOptionProps: CustomConfigOptionProps): JSX.Element => {
         const {customConfigEntry, customConfigSelectorProps} = customConfigOptionProps
         const [customConfigKey, customConfigValue] = customConfigEntry
-        const {entities, handleCustomConfigChangeEvent, songName} = customConfigSelectorProps
+        const {
+            song,
+            entities,
+            handleCustomConfigChangeEvent,
+            handleConfigSubmitEvent,
+        } = customConfigSelectorProps
         const onChange: (event: React.SyntheticEvent<HTMLInputElement>) => void =
             (event: React.SyntheticEvent<HTMLInputElement>): void => {
-                handleCustomConfigChangeEvent(event, customConfigKey, entities, songName)
+                handleCustomConfigChangeEvent(event, customConfigKey, song)
+            }
+        const onKeyPress: (event: React.KeyboardEvent) => void =
+            (event: React.KeyboardEvent): void => {
+                handleConfigSubmitEvent(event, entities, song)
             }
         const value: string = customConfigValue.toString()
 
         return (
             <div>
                 {customConfigKey}
-                <input {...{onChange, value}}/>
+                <input {...{onChange, onKeyPress, value}}/>
             </div>
         )
     }

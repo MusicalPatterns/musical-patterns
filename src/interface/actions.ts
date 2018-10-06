@@ -2,7 +2,7 @@ import { Song } from '../songTypes'
 import { Entities } from '../types'
 
 enum ActionType {
-    SET_CONFIG_AND_NAME_FROM_SONG = 'set config and name from song',
+    SET_SONG = 'set song',
     SET_ENTITIES = 'set entities',
 }
 
@@ -10,9 +10,9 @@ interface ActionObject {
     type: ActionType,
 }
 
-interface SetConfigAndNameFromSongAction extends ActionObject {
+interface SetSong extends ActionObject {
     data: Song,
-    type: ActionType.SET_CONFIG_AND_NAME_FROM_SONG,
+    type: ActionType.SET_SONG,
 }
 
 interface SetEntities extends ActionObject {
@@ -21,7 +21,7 @@ interface SetEntities extends ActionObject {
 }
 
 type Action =
-    SetConfigAndNameFromSongAction |
+    SetSong |
     SetEntities
 
 export {

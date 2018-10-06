@@ -1,52 +1,39 @@
-import { CustomConfig, CustomConfigEntry, SongName, StandardConfig, StandardConfigEntry } from '../songTypes'
+import {
+    HandleConfigChangeEvent,
+    HandleConfigSubmitEvent,
+    HandleSongChangeEvent,
+} from '../interface/types'
+import { CustomConfigEntry, Song, StandardConfigEntry } from '../songTypes'
 import { Entities } from '../types'
 
 interface AppPropsFromState {
-    customConfig: CustomConfig,
     entities: Entities,
-    songName: SongName,
-    standardConfig: StandardConfig,
+    song: Song,
 }
 
 interface AppPropsFromDispatch {
-    handleCustomConfigChangeEvent: HandleCustomConfigChangeEvent,
+    handleConfigSubmitEvent: HandleConfigSubmitEvent,
+    handleCustomConfigChangeEvent: HandleConfigChangeEvent,
     handleSongChangeEvent: HandleSongChangeEvent,
-    handleStandardConfigChangeEvent: HandleStandardConfigChangeEvent,
+    handleStandardConfigChangeEvent: HandleConfigChangeEvent,
 }
 
 interface AppProps extends AppPropsFromState, AppPropsFromDispatch {
 }
 
 interface CustomConfigSelectorProps {
-    customConfig: CustomConfig,
     entities: Entities,
-    handleCustomConfigChangeEvent: HandleCustomConfigChangeEvent,
-    songName: SongName,
+    handleConfigSubmitEvent: HandleConfigSubmitEvent,
+    handleCustomConfigChangeEvent: HandleConfigChangeEvent,
+    song: Song,
 }
 
 interface StandardConfigSelectorProps {
     entities: Entities,
-    handleStandardConfigChangeEvent: HandleStandardConfigChangeEvent,
-    songName: SongName,
-    standardConfig: StandardConfig,
+    handleConfigSubmitEvent: HandleConfigSubmitEvent,
+    handleStandardConfigChangeEvent: HandleConfigChangeEvent,
+    song: Song,
 }
-
-type HandleCustomConfigChangeEvent = (
-    event: React.SyntheticEvent<HTMLInputElement>,
-    customConfigKey: string,
-    entities: Entities,
-    songName: SongName,
-) => void
-
-type HandleStandardConfigChangeEvent = (
-    event: React.SyntheticEvent<HTMLInputElement>,
-    standardConfigKey: string,
-    entities: Entities,
-    songName: SongName,
-) => void
-
-type HandleSongChangeEvent =
-    (event: React.SyntheticEvent<HTMLSelectElement>, entities: Entities) => void
 
 interface SongSelectorProps {
     entities: Entities,
@@ -64,8 +51,6 @@ interface StandardConfigOptionProps {
 }
 
 export {
-    HandleCustomConfigChangeEvent,
-    HandleSongChangeEvent,
     AppProps,
     AppPropsFromState,
     AppPropsFromDispatch,
