@@ -15,7 +15,7 @@ const handleStandardConfigChange: (
         standardConfigKey: string,
         song: Song,
     ): void => {
-        const standardConfigChanges: StandardConfig = {[standardConfigKey]: updateStandardConfigData}
+        const standardConfigChanges: Partial<StandardConfig> = {[standardConfigKey]: updateStandardConfigData}
         const updatedStandardConfig: StandardConfig = {...song.standardConfig, ...standardConfigChanges}
         const newSong: Song = {...song, standardConfig: updatedStandardConfig}
 

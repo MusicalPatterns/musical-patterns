@@ -1,7 +1,7 @@
 import { Core } from '../songs/beaten-path/src/types'
 import { EntityConfig } from './compile/types'
 import { Entities, Scales } from './types'
-import { Frequency } from './utilities/nominalTypes'
+import { Frequency, Scalar } from './utilities/nominalTypes'
 
 enum SongName {
     BEATEN_PATH = 'beaten path',
@@ -19,7 +19,8 @@ interface CustomConfig {
 type CustomConfigEntry = [string, Core]
 
 interface StandardConfig {
-    [index: string]: Frequency,
+    baseFrequency: Frequency,
+    durationScalar: Scalar,
 }
 
 type StandardConfigEntry = [string, Frequency]

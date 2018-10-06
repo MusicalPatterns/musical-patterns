@@ -1,8 +1,9 @@
 import { Song } from '../songTypes'
-import { Entity, OscillatorName, Timbre, Voice, VoiceType } from '../types'
+import { Entity, Note, OscillatorName, Timbre, Voice, VoiceType } from '../types'
 import * as to from '../utilities/to'
 import buildOscillatorVoice from './buildOscillatorVoice'
 import buildSampleVoice from './buildSampleVoice'
+import scaleDuration from './scaleDuration'
 import { EntityConfig, TimeType } from './types'
 
 const buildEntity: (entityConfig: EntityConfig, song: Song) => Entity =
@@ -24,7 +25,7 @@ const buildEntity: (entityConfig: EntityConfig, song: Song) => Entity =
             nextEnd,
             nextStart,
             noteIndex,
-            notes,
+            notes: notes.map((note: Note): Note => scaleDuration(note, song.standardConfig.durationScalar)),
             scales: song.scales,
             timeType,
             voice,

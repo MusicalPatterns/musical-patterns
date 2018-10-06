@@ -12,6 +12,7 @@ const mockSong: Song = {
     scales: [],
     standardConfig: {
         baseFrequency: to.Frequency(0),
+        durationScalar: to.Scalar(1),
     },
 }
 
