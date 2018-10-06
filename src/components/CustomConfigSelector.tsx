@@ -3,7 +3,7 @@ import { CustomConfig, CustomConfigEntry } from '../songTypes'
 import CustomConfigOption from './CustomConfigOption'
 import { CustomConfigSelectorProps } from './types'
 
-const NO_CONFIGURATION_FALLBACK: JSX.Element[] = [<span key={0}>no configuration</span>]
+const NO_CONFIGURATION_FALLBACK: JSX.Element[] = [ <span key={0}>no configuration</span> ]
 
 const CustomConfigSelector: (customConfigSelectorProps: CustomConfigSelectorProps) => JSX.Element =
     (customConfigSelectorProps: CustomConfigSelectorProps): JSX.Element => {
@@ -14,7 +14,7 @@ const CustomConfigSelector: (customConfigSelectorProps: CustomConfigSelectorProp
         if (!!customConfigEntries.length) {
             customConfigSelector = customConfigEntries.map(
                 (customConfigEntry: CustomConfigEntry, key: number): JSX.Element =>
-                    <CustomConfigOption {...{customConfigEntry, key, customConfigSelectorProps}}/>,
+                    <CustomConfigOption {...{ customConfigEntry, key, customConfigSelectorProps }}/>,
             )
         }
 

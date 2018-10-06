@@ -4,6 +4,6 @@ import * as to from './utilities/to'
 
 const rest: (duration: Time) => Contour =
     (duration: Time): Contour =>
-        [[to.Index(0), duration]]
+        [ [ to.Index(0), duration ] ]
 
 export default rest

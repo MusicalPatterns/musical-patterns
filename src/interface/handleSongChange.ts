@@ -9,7 +9,7 @@ const handleSongChange: (dispatch: Dispatch, song: Song, entities: Entities) => 
     async (dispatch: Dispatch, song: Song, entities: Entities): Promise<void> => {
         stopPreviousSong(entities)
 
-        dispatch({type: ActionType.SET_SONG, data: song})
+        dispatch({ type: ActionType.SET_SONG, data: song })
 
         await recompileAndRestart(song, dispatch)
     }

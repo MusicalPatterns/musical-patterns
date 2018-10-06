@@ -15,11 +15,11 @@ const handleCustomConfigChange: (
         customConfigKey: string,
         song: Song,
     ): void => {
-        const customConfigChanges: CustomConfig = {[customConfigKey]: updateCustomConfigData}
-        const updatedCustomConfig: CustomConfig = {...song.customConfig, ...customConfigChanges}
-        const newSong: Song = {...song, customConfig: updatedCustomConfig}
+        const customConfigChanges: CustomConfig = { [customConfigKey]: updateCustomConfigData }
+        const updatedCustomConfig: CustomConfig = { ...song.customConfig, ...customConfigChanges }
+        const newSong: Song = { ...song, customConfig: updatedCustomConfig }
 
-        dispatch({type: ActionType.SET_SONG, data: newSong})
+        dispatch({ type: ActionType.SET_SONG, data: newSong })
     }
 
 export {

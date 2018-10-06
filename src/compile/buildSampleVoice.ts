@@ -24,7 +24,7 @@ const buildSampleVoice: (type: Timbre, song: Song) => Voice =
 
         let source: AudioBufferSourceNode
 
-        const startNote: StartNote = ({pitch, gain}: NoteToPlay): void => {
+        const startNote: StartNote = ({ pitch, gain }: NoteToPlay): void => {
             source = context.createBufferSource()
             source.buffer = samples[type]
 

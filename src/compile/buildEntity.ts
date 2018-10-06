@@ -13,7 +13,7 @@ const buildEntity: (entityConfig: EntityConfig, song: Song) => Entity =
          noteIndex = to.Index(0),
          notes = [],
          timeType = TimeType.ATOMIC,
-         voiceConfig: {voiceType, timbre} = {voiceType: VoiceType.OSCILLATOR, timbre: OscillatorName.SQUARE},
+         voiceConfig: { voiceType, timbre } = { voiceType: VoiceType.OSCILLATOR, timbre: OscillatorName.SQUARE },
          voiceGain = to.Scalar(1),
      }: EntityConfig,
      song: Song): Entity => {

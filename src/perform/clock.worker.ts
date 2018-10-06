@@ -5,7 +5,9 @@ let initialTimestamp: number = 0
 
 const mainLoop: (timestamp: number) => void =
     (timestamp: number): void => {
-        if (!initialTimestamp) { initialTimestamp = timestamp }
+        if (!initialTimestamp) {
+            initialTimestamp = timestamp
+        }
         worker.postMessage(timestamp - initialTimestamp)
         requestAnimationFrame(mainLoop)
     }

@@ -12,7 +12,7 @@ describe('reducer', () => {
             song: mockSong,
         })
 
-        const newEntities: Entities = [mockEntity]
+        const newEntities: Entities = [ mockEntity ]
         const action: SetEntities = {
             data: newEntities,
             type: ActionType.SET_ENTITIES,

@@ -7,7 +7,7 @@ import { ActionType } from './actions'
 const recompileAndRestart: (song: Song, dispatch: Dispatch) => Promise<void> =
     async (song: Song, dispatch: Dispatch): Promise<void> => {
         const entities: Entities = await song.compile(song)
-        dispatch({type: ActionType.SET_ENTITIES, data: entities})
+        dispatch({ type: ActionType.SET_ENTITIES, data: entities })
         songLoop(entities)
     }
 

@@ -4,9 +4,9 @@ import { Song } from '../songTypes'
 import { SongSelectorProps } from './types'
 
 const SongSelector: (songSelectorProps: SongSelectorProps) => JSX.Element =
-    ({handleSongChangeEvent, entities, song: currentSong}: SongSelectorProps): JSX.Element => {
+    ({ handleSongChangeEvent, entities, song: currentSong }: SongSelectorProps): JSX.Element => {
         const options: JSX.Element[] = Object.values(songs).map((song: Song, key: number): JSX.Element =>
-            <option {...{key, value: song.name}}>{song.formattedName}</option>)
+            <option {...{ key, value: song.name }}>{song.formattedName}</option>)
 
         const onChange: (event: React.SyntheticEvent<HTMLSelectElement>) => void =
             (event: React.SyntheticEvent<HTMLSelectElement>): void => {
@@ -16,7 +16,7 @@ const SongSelector: (songSelectorProps: SongSelectorProps) => JSX.Element =
         return (
             <div>
                 <h3>song selection</h3>
-                <select {...{onChange}}>
+                <select {...{ onChange }}>
                     {options}
                 </select>
                 <div>

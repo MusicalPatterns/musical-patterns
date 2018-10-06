@@ -15,7 +15,8 @@ const testIsCloseTo: <T>(numberOne: T, numberTwo: T, negative?: boolean) => bool
 
         if (!negative && !isClose) {
             fail(`expected ${numberOne} to be close to ${numberTwo}`)
-        } else if (negative && isClose) {
+        }
+        else if (negative && isClose) {
             fail(`expected ${numberOne} not to be close to ${numberTwo}`)
         }
 

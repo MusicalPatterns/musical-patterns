@@ -3,8 +3,8 @@ import { StandardConfigOptionProps } from './types'
 
 const StandardConfigOption: (standardConfigOptionProps: StandardConfigOptionProps) => JSX.Element =
     (standardConfigOptionProps: StandardConfigOptionProps): JSX.Element => {
-        const {standardConfigEntry, standardConfigSelectorProps} = standardConfigOptionProps
-        const [standardConfigKey, standardConfigValue] = standardConfigEntry
+        const { standardConfigEntry, standardConfigSelectorProps } = standardConfigOptionProps
+        const [ standardConfigKey, standardConfigValue ] = standardConfigEntry
         const {
             song,
             entities,
@@ -24,7 +24,7 @@ const StandardConfigOption: (standardConfigOptionProps: StandardConfigOptionProp
         return (
             <div>
                 {standardConfigKey}
-                <input {...{onChange, onKeyPress, value}}/>
+                <input {...{ onChange, onKeyPress, value }}/>
             </div>
         )
     }

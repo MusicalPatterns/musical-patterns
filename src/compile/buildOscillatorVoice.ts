@@ -17,7 +17,7 @@ const buildOscillatorVoice: (type: OscillatorType, song: Song) => Voice =
         oscillatorNode.type = type
         oscillatorNode.start()
 
-        const startNote: StartNote = ({pitch, gain}: NoteToPlay): void => {
+        const startNote: StartNote = ({ pitch, gain }: NoteToPlay): void => {
             oscillatorNode.frequency.value = scale(from.Frequency(song.standardConfig.baseFrequency), pitch)
             gainNode.gain.value = from.Scalar(scale(gain, BASE_GAIN))
         }

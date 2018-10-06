@@ -3,8 +3,8 @@ import { CustomConfigOptionProps } from './types'
 
 const CustomConfigOption: (customConfigOptionProps: CustomConfigOptionProps) => JSX.Element =
     (customConfigOptionProps: CustomConfigOptionProps): JSX.Element => {
-        const {customConfigEntry, customConfigSelectorProps} = customConfigOptionProps
-        const [customConfigKey, customConfigValue] = customConfigEntry
+        const { customConfigEntry, customConfigSelectorProps } = customConfigOptionProps
+        const [ customConfigKey, customConfigValue ] = customConfigEntry
         const {
             song,
             entities,
@@ -24,7 +24,7 @@ const CustomConfigOption: (customConfigOptionProps: CustomConfigOptionProps) => 
         return (
             <div>
                 {customConfigKey}
-                <input {...{onChange, onKeyPress, value}}/>
+                <input {...{ onChange, onKeyPress, value }}/>
             </div>
         )
     }

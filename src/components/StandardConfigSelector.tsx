@@ -8,7 +8,7 @@ const StandardConfigSelector: (standardConfigSelectorProps: StandardConfigSelect
         const standardConfig: StandardConfig = standardConfigSelectorProps.song.standardConfig
         const standardConfigSelector: JSX.Element[] = Object.entries(standardConfig).map(
             (standardConfigEntry: StandardConfigEntry, key: number): JSX.Element =>
-                <StandardConfigOption {...{standardConfigEntry, key, standardConfigSelectorProps}} />,
+                <StandardConfigOption {...{ standardConfigEntry, key, standardConfigSelectorProps }} />,
         )
 
         return (

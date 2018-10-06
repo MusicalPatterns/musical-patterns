@@ -5,6 +5,6 @@ import * as to from './to'
 
 const calculateNotesDuration: (notes: Notes) => Time =
     (notes: Notes): Time =>
-        notes.reduce((m: Time, {duration}: Note) => to.Time(from.Time(m) + from.Time(duration)), to.Time(0))
+        notes.reduce((m: Time, { duration }: Note) => to.Time(from.Time(m) + from.Time(duration)), to.Time(0))
 
 export default calculateNotesDuration

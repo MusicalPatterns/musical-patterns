@@ -18,7 +18,7 @@ const deepEqual: (_: any, __: any) => boolean =
                 return false
             }
             else if (typeof b === 'object') {
-                return Object.entries(a).every(([key, value]: [string, any]): boolean =>
+                return Object.entries(a).every(([ key, value ]: [string, any]): boolean =>
                     deepEqual(value, b[key]))
             }
             else {

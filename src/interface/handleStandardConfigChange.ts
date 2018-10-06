@@ -15,11 +15,11 @@ const handleStandardConfigChange: (
         standardConfigKey: string,
         song: Song,
     ): void => {
-        const standardConfigChanges: Partial<StandardConfig> = {[standardConfigKey]: updateStandardConfigData}
-        const updatedStandardConfig: StandardConfig = {...song.standardConfig, ...standardConfigChanges}
-        const newSong: Song = {...song, standardConfig: updatedStandardConfig}
+        const standardConfigChanges: Partial<StandardConfig> = { [standardConfigKey]: updateStandardConfigData }
+        const updatedStandardConfig: StandardConfig = { ...song.standardConfig, ...standardConfigChanges }
+        const newSong: Song = { ...song, standardConfig: updatedStandardConfig }
 
-        dispatch({type: ActionType.SET_SONG, data: newSong})
+        dispatch({ type: ActionType.SET_SONG, data: newSong })
     }
 
 export {

@@ -12,7 +12,7 @@ describe('default song compile', () => {
 
     it('returns built entities', async (done: DoneFn) => {
         const testEntityConfig: EntityConfig = {}
-        const testSong: Song = {...mockSong, entityConfigs: [testEntityConfig]}
+        const testSong: Song = { ...mockSong, entityConfigs: [ testEntityConfig ] }
 
         await defaultSongCompile(testSong)
 
