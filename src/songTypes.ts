@@ -13,7 +13,8 @@ enum SongName {
 }
 
 interface CustomConfig {
-    [index: string]: Core,
+    // tslint:disable-next-line:no-any
+    [index: string]: any,
 }
 
 type CustomConfigEntry = [string, Core]
@@ -31,6 +32,7 @@ interface Song {
     description: string,
     entityConfigs: EntityConfig[],
     formattedName: string,
+    handleCustomConfigChange: (customConfigKey: string, customConfigValue: string) => Partial<CustomConfig>,
     name: SongName,
     scales: Scales,
     standardConfig: StandardConfig,

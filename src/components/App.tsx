@@ -1,8 +1,6 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
 import { Dispatch } from 'redux'
-import { Core } from '../../songs/beaten-path/src/types'
-import * as beatenPathTo from '../../songs/beaten-path/src/utilities/to'
 import { DECIMAL } from '../constants'
 import { handleConfigSubmit } from '../interface/handleConfigSubmit'
 import { handleCustomConfigChange } from '../interface/handleCustomConfigChange'
@@ -36,10 +34,9 @@ const mapDispatchToProps: (dispatch: Dispatch) => AppPropsFromDispatch =
         },
         handleCustomConfigChangeEvent: (event: React.SyntheticEvent, customConfigKey: string, song: Song): void => {
             const target: HTMLInputElement = event.target as HTMLInputElement
+            const customConfigValue: string = target.value
 
-            const updateCustomConfigData: Core = beatenPathTo.Core(parseInt(target.value, DECIMAL) || 0)
-
-            handleCustomConfigChange(dispatch, updateCustomConfigData, customConfigKey, song)
+            handleCustomConfigChange(dispatch, customConfigKey, customConfigValue, song)
         },
         handleSongChangeEvent: async (event: React.SyntheticEvent, entities: Entities): Promise<void> => {
             const target: HTMLSelectElement = event.target as HTMLSelectElement

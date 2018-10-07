@@ -1,21 +1,21 @@
 import { Dispatch } from 'redux'
-import { Core } from '../../songs/beaten-path/src/types'
 import { CustomConfig, Song } from '../songTypes'
 import { ActionType } from './actions'
 
 const handleCustomConfigChange: (
     dispatch: Dispatch,
-    updateCustomConfigData: Core,
     customConfigKey: string,
+    customConfigValue: string,
     song: Song,
 ) => void =
     (
         dispatch: Dispatch,
-        updateCustomConfigData: Core,
         customConfigKey: string,
+        customConfigValue: string,
         song: Song,
     ): void => {
-        const customConfigChanges: CustomConfig = { [customConfigKey]: updateCustomConfigData }
+        const customConfigChanges: Partial<CustomConfig> =
+            song.handleCustomConfigChange(customConfigKey, customConfigValue)
         const updatedCustomConfig: CustomConfig = { ...song.customConfig, ...customConfigChanges }
         const newSong: Song = { ...song, customConfig: updatedCustomConfig }
 

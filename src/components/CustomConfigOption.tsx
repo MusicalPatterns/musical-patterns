@@ -19,7 +19,7 @@ const CustomConfigOption: (customConfigOptionProps: CustomConfigOptionProps) => 
             (event: React.KeyboardEvent): void => {
                 handleConfigSubmitEvent(event, entities, song)
             }
-        const value: string = customConfigValue.toString()
+        const value: string = JSON.stringify(customConfigValue)
 
         return (
             <div>

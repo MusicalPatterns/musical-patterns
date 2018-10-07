@@ -19,7 +19,7 @@ const StandardConfigOption: (standardConfigOptionProps: StandardConfigOptionProp
             (event: React.KeyboardEvent): void => {
                 handleConfigSubmitEvent(event, entities, song)
             }
-        const value: string = standardConfigValue.toString()
+        const value: string = JSON.stringify(standardConfigValue)
 
         return (
             <div>
