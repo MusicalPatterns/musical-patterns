@@ -3,7 +3,7 @@ import { Entities } from '../types'
 
 type HandleConfigChangeEvent = (
     event: React.SyntheticEvent<HTMLInputElement>,
-    standardConfigKey: string,
+    configKey: string,
     song: Song,
 ) => void
 

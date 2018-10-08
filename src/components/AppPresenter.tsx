@@ -1,16 +1,14 @@
 import * as React from 'react'
-import CustomConfigSelector from './CustomConfigSelector'
+import ConfigSelector from './ConfigSelector'
 import SongSelector from './SongSelector'
-import StandardConfigSelector from './StandardConfigSelector'
-import { AppProps, CustomConfigSelectorProps, SongSelectorProps, StandardConfigSelectorProps } from './types'
+import { AppProps, ConfigSelectorProps, SongSelectorProps } from './types'
 
 const AppPresenter: (appProps: AppProps) => JSX.Element =
     (appProps: AppProps): JSX.Element => {
         const {
             entities,
+            handleConfigChangeEvent,
             handleConfigSubmitEvent,
-            handleCustomConfigChangeEvent,
-            handleStandardConfigChangeEvent,
             handleSongChangeEvent,
             song,
         } = appProps
@@ -19,16 +17,10 @@ const AppPresenter: (appProps: AppProps) => JSX.Element =
             handleSongChangeEvent,
             song,
         }
-        const standardConfigSelectorProps: StandardConfigSelectorProps = {
+        const configSelectorProps: ConfigSelectorProps = {
             entities,
+            handleConfigChangeEvent,
             handleConfigSubmitEvent,
-            handleStandardConfigChangeEvent,
-            song,
-        }
-        const customConfigSelectorProps: CustomConfigSelectorProps = {
-            entities,
-            handleConfigSubmitEvent,
-            handleCustomConfigChangeEvent,
             song,
         }
 
@@ -36,8 +28,7 @@ const AppPresenter: (appProps: AppProps) => JSX.Element =
             <div>
                 <h1>Fun Musical Ideas</h1>
                 <SongSelector {...songSelectorProps}/>
-                <StandardConfigSelector {...standardConfigSelectorProps}/>
-                <CustomConfigSelector {...customConfigSelectorProps}/>
+                <ConfigSelector {...configSelectorProps}/>
             </div>
         )
     }

@@ -19,7 +19,7 @@ const buildSampleVoice: (type: Timbre, song: Song) => Voice =
     (type: Timbre, song: Song): Voice => {
         const basePitchShift: Cents = centsToShiftFromOneFrequencyToAnother(
             AVERAGE_SAMPLE_PITCH_OF_C5,
-            song.standardConfig.baseFrequency,
+            song.config.baseFrequency,
         )
 
         let source: AudioBufferSourceNode

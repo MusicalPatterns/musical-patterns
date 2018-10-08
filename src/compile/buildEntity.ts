@@ -25,7 +25,7 @@ const buildEntity: (entityConfig: EntityConfig, song: Song) => Entity =
             nextEnd,
             nextStart,
             noteIndex,
-            notes: notes.map((note: Note): Note => scaleDuration(note, song.standardConfig.durationScalar)),
+            notes: notes.map((note: Note): Note => scaleDuration(note, song.config.durationScalar)),
             scales: song.scales,
             timeType,
             voice,

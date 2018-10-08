@@ -3,7 +3,7 @@ import {
     HandleConfigSubmitEvent,
     HandleSongChangeEvent,
 } from '../interface/types'
-import { CustomConfigEntry, Song, StandardConfigEntry } from '../songTypes'
+import { Song } from '../songTypes'
 import { Entities } from '../types'
 
 interface AppPropsFromState {
@@ -12,26 +12,18 @@ interface AppPropsFromState {
 }
 
 interface AppPropsFromDispatch {
+    handleConfigChangeEvent: HandleConfigChangeEvent,
     handleConfigSubmitEvent: HandleConfigSubmitEvent,
-    handleCustomConfigChangeEvent: HandleConfigChangeEvent,
     handleSongChangeEvent: HandleSongChangeEvent,
-    handleStandardConfigChangeEvent: HandleConfigChangeEvent,
 }
 
 interface AppProps extends AppPropsFromState, AppPropsFromDispatch {
 }
 
-interface CustomConfigSelectorProps {
+interface ConfigSelectorProps {
     entities: Entities,
+    handleConfigChangeEvent: HandleConfigChangeEvent,
     handleConfigSubmitEvent: HandleConfigSubmitEvent,
-    handleCustomConfigChangeEvent: HandleConfigChangeEvent,
-    song: Song,
-}
-
-interface StandardConfigSelectorProps {
-    entities: Entities,
-    handleConfigSubmitEvent: HandleConfigSubmitEvent,
-    handleStandardConfigChangeEvent: HandleConfigChangeEvent,
     song: Song,
 }
 
@@ -41,23 +33,16 @@ interface SongSelectorProps {
     song: Song,
 }
 
-interface CustomConfigOptionProps {
-    customConfigEntry: CustomConfigEntry,
-    customConfigSelectorProps: CustomConfigSelectorProps,
-}
-
-interface StandardConfigOptionProps {
-    standardConfigEntry: StandardConfigEntry,
-    standardConfigSelectorProps: StandardConfigSelectorProps,
+interface ConfigOptionProps {
+    configEntry: [string, string],
+    configSelectorProps: ConfigSelectorProps,
 }
 
 export {
     AppProps,
     AppPropsFromState,
     AppPropsFromDispatch,
-    CustomConfigSelectorProps,
-    StandardConfigSelectorProps,
-    StandardConfigOptionProps,
     SongSelectorProps,
-    CustomConfigOptionProps,
+    ConfigOptionProps,
+    ConfigSelectorProps,
 }

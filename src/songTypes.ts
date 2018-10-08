@@ -1,4 +1,4 @@
-import { Core } from '../songs/beaten-path/src/types'
+import { Dispatch } from 'redux'
 import { EntityConfig } from './compile/types'
 import { Entities, Scales } from './types'
 import { Frequency, Scalar } from './utilities/nominalTypes'
@@ -12,37 +12,26 @@ enum SongName {
     ZDAUBYAOS = 'zdaubyaos',
 }
 
-interface CustomConfig {
+interface Config {
+    baseFrequency: Frequency,
+    durationScalar: Scalar,
     // tslint:disable-next-line:no-any
     [index: string]: any,
 }
 
-type CustomConfigEntry = [string, Core]
-
-interface StandardConfig {
-    baseFrequency: Frequency,
-    durationScalar: Scalar,
-}
-
-type StandardConfigEntry = [string, Frequency]
-
 interface Song {
     compile: (song: Song) => Promise<Entities>,
-    customConfig: CustomConfig,
+    config: Config,
     description: string,
     entityConfigs: EntityConfig[],
     formattedName: string,
-    handleCustomConfigChange: (customConfigKey: string, customConfigValue: string) => Partial<CustomConfig>,
+    handleConfigChange: (dispatch: Dispatch, configKey: string, configValue: string, song: Song) => void,
     name: SongName,
     scales: Scales,
-    standardConfig: StandardConfig,
 }
 
 export {
     Song,
     SongName,
-    StandardConfig,
-    StandardConfigEntry,
-    CustomConfig,
-    CustomConfigEntry,
+    Config,
 }
