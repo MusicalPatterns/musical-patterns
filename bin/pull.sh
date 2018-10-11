@@ -12,4 +12,7 @@ export -f pull_if_needed
 
 pull_if_needed
 npm i || true
+
+git submodule update --init --recursive
+git submodule foreach git checkout master
 git submodule foreach pull_if_needed
