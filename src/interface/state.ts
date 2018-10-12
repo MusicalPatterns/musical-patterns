@@ -1,7 +1,6 @@
 import { Map } from 'immutable'
 import { Song } from '../songTypes'
 import { Entities } from '../types'
-import { emptySong } from './emptySong'
 
 interface InterfaceConfig {
     [index: string]: string,
@@ -16,8 +15,7 @@ interface RawState {
     entities: Entities,
     interfaceConfig: InterfaceConfig,
     invalidInputs: InterfaceConfigStates,
-    isNoSongSelected: boolean,
-    song: Song,
+    song?: Song,
     unsubmittedInputs: InterfaceConfigStates,
 }
 
@@ -51,8 +49,7 @@ const rawState: RawState = {
     entities: [],
     interfaceConfig: {},
     invalidInputs: {},
-    isNoSongSelected: true,
-    song: emptySong,
+    song: undefined,
     unsubmittedInputs: {},
 }
 

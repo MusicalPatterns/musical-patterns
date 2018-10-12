@@ -13,8 +13,7 @@ interface AppPropsFromState {
     entities: Entities,
     interfaceConfig: InterfaceConfig,
     invalidInputs: InterfaceConfigStates,
-    isNoSongSelected: boolean,
-    song: Song,
+    song?: Song,
     unsubmittedInputs: InterfaceConfigStates,
 }
 
@@ -43,7 +42,6 @@ interface ConfigSelectorProps {
 interface SongSelectorProps {
     entities: Entities,
     handleSongChangeEvent: HandleSongChangeEvent,
-    song: Song,
 }
 
 type InterfaceConfigEntry = [string, string]

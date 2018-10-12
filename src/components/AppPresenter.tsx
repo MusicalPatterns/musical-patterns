@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { emptySong } from '../interface/emptySong'
 import ConfigSelector from './ConfigSelector'
 import SongSelector from './SongSelector'
 import { AppProps, ConfigSelectorProps, SongSelectorProps } from './types'
@@ -14,14 +15,12 @@ const AppPresenter: (appProps: AppProps) => JSX.Element =
             handleSongChangeEvent,
             interfaceConfig,
             invalidInputs,
-            isNoSongSelected,
             song,
             unsubmittedInputs,
         } = appProps
         const songSelectorProps: SongSelectorProps = {
             entities,
             handleSongChangeEvent,
-            song,
         }
         const configSelectorProps: ConfigSelectorProps = {
             actualCurrentConfig,
@@ -31,7 +30,7 @@ const AppPresenter: (appProps: AppProps) => JSX.Element =
             handleConfigSubmitEvent,
             interfaceConfig,
             invalidInputs,
-            song,
+            song: song || emptySong,
             unsubmittedInputs,
         }
 
@@ -39,7 +38,13 @@ const AppPresenter: (appProps: AppProps) => JSX.Element =
             <div>
                 <h1>Fun Musical Ideas</h1>
                 <SongSelector {...songSelectorProps}/>
-                {isNoSongSelected || <ConfigSelector {...configSelectorProps}/>}
+
+                {song && <div>
+                    <div>
+                        {song.description}
+                    </div>
+                    <ConfigSelector {...configSelectorProps}/>
+                </div>}
             </div>
         )
     }

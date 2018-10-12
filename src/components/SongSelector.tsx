@@ -4,10 +4,10 @@ import { Song } from '../songTypes'
 import { SongSelectorProps } from './types'
 
 const SongSelector: (songSelectorProps: SongSelectorProps) => JSX.Element =
-    ({ handleSongChangeEvent, entities, song: currentSong }: SongSelectorProps): JSX.Element => {
+    ({ handleSongChangeEvent, entities }: SongSelectorProps): JSX.Element => {
         const options: JSX.Element[] = Object.values(songs).map((song: Song, key: number): JSX.Element =>
             <option {...{ key, value: song.name }}>{song.formattedName}</option>)
-        options.unshift(<option value='' selected hidden disabled>please select a song</option>)
+        options.unshift(<option key='-1' value='' hidden disabled>please select a song</option>)
 
         const onChange: (event: React.SyntheticEvent<HTMLSelectElement>) => void =
             (event: React.SyntheticEvent<HTMLSelectElement>): void => {
@@ -17,12 +17,9 @@ const SongSelector: (songSelectorProps: SongSelectorProps) => JSX.Element =
         return (
             <div>
                 <h3>song selection</h3>
-                <select {...{ onChange }}>
+                <select {...{ onChange, defaultValue: '' }}>
                     {options}
                 </select>
-                <div>
-                    {currentSong.description}
-                </div>
             </div>
         )
     }
