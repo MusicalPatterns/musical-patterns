@@ -8,40 +8,33 @@ import {
     HandleSongChangeEvent,
 } from '../ui/types'
 
-interface AppPropsFromState {
-    displayedConfig: StringifiedConfig,
-    entities: Entities,
-    invalidConfigInputs: StringifiedConfigStates,
+interface AppProps {
     song?: Song,
-    submittedConfig: StringifiedConfig,
-    unsubmittedConfigInputs: StringifiedConfigStates,
 }
 
-interface AppPropsFromDispatch {
-    handleConfigBlurEvent: HandleConfigBlurEvent,
-    handleConfigChangeEvent: HandleConfigChangeEvent,
-    handleConfigSubmitEvent: HandleConfigSubmitEvent,
+interface SongSelectorPropsFromState {
+    entities: Entities,
+}
+interface SongSelectorPropsFromDispatch {
     handleSongChangeEvent: HandleSongChangeEvent,
 }
-
-interface AppProps extends AppPropsFromState, AppPropsFromDispatch {
+interface SongSelectorProps extends SongSelectorPropsFromState, SongSelectorPropsFromDispatch {
 }
 
-interface ConfigSelectorProps {
+interface ConfigSelectorPropsFromState {
     displayedConfig: StringifiedConfig,
     entities: Entities,
-    handleConfigBlurEvent: HandleConfigBlurEvent,
-    handleConfigChangeEvent: HandleConfigChangeEvent,
-    handleConfigSubmitEvent: HandleConfigSubmitEvent,
     invalidConfigInputs: StringifiedConfigStates,
     song: Song,
     submittedConfig: StringifiedConfig,
     unsubmittedConfigInputs: StringifiedConfigStates,
 }
-
-interface SongSelectorProps {
-    entities: Entities,
-    handleSongChangeEvent: HandleSongChangeEvent,
+interface ConfigSelectorPropsFromDispatch {
+    handleConfigBlurEvent: HandleConfigBlurEvent,
+    handleConfigChangeEvent: HandleConfigChangeEvent,
+    handleConfigSubmitEvent: HandleConfigSubmitEvent,
+}
+interface ConfigSelectorProps extends ConfigSelectorPropsFromState, ConfigSelectorPropsFromDispatch {
 }
 
 interface ConfigOptionProps {
@@ -53,9 +46,11 @@ interface ConfigOptionProps {
 
 export {
     AppProps,
-    AppPropsFromState,
-    AppPropsFromDispatch,
-    SongSelectorProps,
-    ConfigOptionProps,
     ConfigSelectorProps,
+    ConfigSelectorPropsFromState,
+    ConfigSelectorPropsFromDispatch,
+    ConfigOptionProps,
+    SongSelectorProps,
+    SongSelectorPropsFromState,
+    SongSelectorPropsFromDispatch,
 }

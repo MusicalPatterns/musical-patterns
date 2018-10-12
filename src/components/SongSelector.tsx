@@ -1,7 +1,33 @@
 import * as React from 'react'
+import { connect } from 'react-redux'
+import { Dispatch } from 'redux'
 import { songs } from '../song'
-import { Song } from '../songTypes'
-import { SongSelectorProps } from './types'
+import { Song, SongName } from '../songTypes'
+import { handleSongChange } from '../ui/handleSongChange'
+import { State } from '../ui/state'
+import {
+    HandleSongChangeEventParameters,
+} from '../ui/types'
+import {
+    SongSelectorProps,
+    SongSelectorPropsFromDispatch,
+    SongSelectorPropsFromState,
+} from './types'
+
+const mapStateToProps: (state: State) => SongSelectorPropsFromState =
+    (state: State): SongSelectorPropsFromState => ({
+        entities: state.get('entities'),
+    })
+
+const mapDispatchToProps: (dispatch: Dispatch) => SongSelectorPropsFromDispatch =
+    (dispatch: Dispatch): SongSelectorPropsFromDispatch => ({
+        handleSongChangeEvent: async ({ event, entities }: HandleSongChangeEventParameters): Promise<void> => {
+            const target: HTMLSelectElement = event.target as HTMLSelectElement
+            const songName: SongName = target.value as SongName
+
+            await handleSongChange({ dispatch, songName, entities })
+        },
+    })
 
 const SongSelector: (songSelectorProps: SongSelectorProps) => JSX.Element =
     ({ handleSongChangeEvent, entities }: SongSelectorProps): JSX.Element => {
@@ -24,4 +50,4 @@ const SongSelector: (songSelectorProps: SongSelectorProps) => JSX.Element =
         )
     }
 
-export default SongSelector
+export default connect(mapStateToProps, mapDispatchToProps)(SongSelector)
