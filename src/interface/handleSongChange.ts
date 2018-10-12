@@ -11,7 +11,7 @@ const handleSongChange: (handleSongChangeParameters: HandleSongChangeParameters)
 
         stopPreviousSong(entities)
 
-        dispatch({ type: ActionType.SET_SONG_AND_INTERFACE_CONFIG_FROM_SONG, data: song })
+        dispatch({ type: ActionType.SET_SONG_AND_STRINGIFIED_CONFIGS_FROM_SONG, data: song })
 
         await recompileAndRestart(song, dispatch)
     }

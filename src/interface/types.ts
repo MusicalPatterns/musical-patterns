@@ -2,41 +2,41 @@ import * as React from 'react'
 import { Dispatch } from 'redux'
 import { Song, SongName } from '../songTypes'
 import { Entities } from '../types'
-import { InterfaceConfig, InterfaceConfigStates } from './state'
+import { StringifiedConfig, StringifiedConfigStates } from './state'
 
 interface HandleConfigChangeParameters {
     configKey: string,
     configValue: string,
     dispatch: Dispatch,
-    interfaceConfig: InterfaceConfig,
-    invalidInputs: InterfaceConfigStates,
+    displayedConfig: StringifiedConfig,
+    invalidConfigInputs: StringifiedConfigStates,
 }
 interface HandleConfigChangeEventParameters {
     configKey: string,
+    displayedConfig: StringifiedConfig,
     event: React.SyntheticEvent<HTMLInputElement>,
-    interfaceConfig: InterfaceConfig,
-    invalidInputs: InterfaceConfigStates,
+    invalidConfigInputs: StringifiedConfigStates,
 }
 type HandleConfigChangeEvent = (handleConfigChangeEventParameters: HandleConfigChangeEventParameters) => void
 
 interface HandleConfigSubmitParameters {
-    actualCurrentConfig: InterfaceConfig,
     configKey: string,
     configValue: string,
     dispatch: Dispatch,
     entities: Entities,
-    invalidInputs: InterfaceConfigStates,
+    invalidConfigInputs: StringifiedConfigStates,
     song: Song,
-    unsubmittedInputs: InterfaceConfigStates,
+    submittedConfig: StringifiedConfig,
+    unsubmittedConfigInputs: StringifiedConfigStates,
 }
 interface HandleConfigSubmitEventParameters {
-    actualCurrentConfig: InterfaceConfig,
     configKey: string,
     entities: Entities,
     event: React.KeyboardEvent,
-    invalidInputs: InterfaceConfigStates,
+    invalidConfigInputs: StringifiedConfigStates,
     song: Song,
-    unsubmittedInputs: InterfaceConfigStates,
+    submittedConfig: StringifiedConfig,
+    unsubmittedConfigInputs: StringifiedConfigStates,
 }
 type HandleConfigSubmitEvent = (handleConfigSubmitEventParameters: HandleConfigSubmitEventParameters) => void
 
@@ -52,17 +52,17 @@ interface HandleSongChangeEventParameters {
 type HandleSongChangeEvent = (handleSongChangeEventParameters: HandleSongChangeEventParameters) => void
 
 interface HandleConfigBlurParameters {
-    actualCurrentConfig: InterfaceConfig,
     configKey: string,
     configValue: string,
     dispatch: Dispatch,
-    unsubmittedInputs: InterfaceConfigStates,
+    submittedConfig: StringifiedConfig,
+    unsubmittedConfigInputs: StringifiedConfigStates,
 }
 interface HandleConfigBlurEventParameters {
-    actualCurrentConfig: InterfaceConfig,
     configKey: string,
     event: React.SyntheticEvent<HTMLInputElement>,
-    unsubmittedInputs: InterfaceConfigStates,
+    submittedConfig: StringifiedConfig,
+    unsubmittedConfigInputs: StringifiedConfigStates,
 }
 type HandleConfigBlurEvent = (handleConfigBlurEventParameters: HandleConfigBlurEventParameters) => void
 

@@ -1,19 +1,18 @@
-import { InterfaceConfigEntry } from '../components/types'
 import { Config } from '../songTypes'
 import * as to from '../utilities/to'
-import { InterfaceConfig } from './state'
+import { StringifiedConfig, StringifiedConfigEntry } from './state'
 
 const configDefaults: Config = {
     baseFrequency: to.Frequency(0),
     durationScalar: to.Scalar(1),
 }
 
-const destringifyConfig: (interfaceConfig: InterfaceConfig) => Config =
-    (interfaceConfig: InterfaceConfig): Config =>
+const destringifyConfig: (displayedConfig: StringifiedConfig) => Config =
+    (displayedConfig: StringifiedConfig): Config =>
         Object
-            .entries(interfaceConfig)
+            .entries(displayedConfig)
             .reduce(
-                (destringifiedConfig: Config, [ key, val ]: InterfaceConfigEntry): Config =>
+                (destringifiedConfig: Config, [ key, val ]: StringifiedConfigEntry): Config =>
                     ({ ...destringifiedConfig, [key]: JSON.parse(val) }),
                 configDefaults,
             )

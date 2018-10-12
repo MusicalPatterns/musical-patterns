@@ -1,17 +1,17 @@
 import { Config } from '../songTypes'
-import { InterfaceConfig } from './state'
+import { StringifiedConfig } from './state'
 
-const interfaceConfigDefaults: InterfaceConfig = {
+const displayedConfigDefaults: StringifiedConfig = {
 }
 
-const stringifyConfig: (config: Config) => InterfaceConfig =
-    (config: Config): InterfaceConfig =>
+const stringifyConfig: (config: Config) => StringifiedConfig =
+    (config: Config): StringifiedConfig =>
         Object
             .entries(config)
             .reduce(
-                (stringifiedConfig: InterfaceConfig, [ key, val ]: [string, string]): InterfaceConfig =>
+                (stringifiedConfig: StringifiedConfig, [ key, val ]: [string, string]): StringifiedConfig =>
                     ({ ...stringifiedConfig, [key]: JSON.stringify(val) }),
-                interfaceConfigDefaults,
+                displayedConfigDefaults,
             )
 
 export {

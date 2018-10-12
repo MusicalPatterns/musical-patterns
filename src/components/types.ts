@@ -1,4 +1,4 @@
-import { InterfaceConfig, InterfaceConfigStates } from '../interface/state'
+import { StringifiedConfig, StringifiedConfigEntry, StringifiedConfigStates } from '../interface/state'
 import {
     HandleConfigBlurEvent,
     HandleConfigChangeEvent,
@@ -9,12 +9,12 @@ import { Song } from '../songTypes'
 import { Entities } from '../types'
 
 interface AppPropsFromState {
-    actualCurrentConfig: InterfaceConfig,
+    displayedConfig: StringifiedConfig,
     entities: Entities,
-    interfaceConfig: InterfaceConfig,
-    invalidInputs: InterfaceConfigStates,
+    invalidConfigInputs: StringifiedConfigStates,
     song?: Song,
-    unsubmittedInputs: InterfaceConfigStates,
+    submittedConfig: StringifiedConfig,
+    unsubmittedConfigInputs: StringifiedConfigStates,
 }
 
 interface AppPropsFromDispatch {
@@ -28,15 +28,15 @@ interface AppProps extends AppPropsFromState, AppPropsFromDispatch {
 }
 
 interface ConfigSelectorProps {
-    actualCurrentConfig: InterfaceConfig,
+    displayedConfig: StringifiedConfig,
     entities: Entities,
     handleConfigBlurEvent: HandleConfigBlurEvent,
     handleConfigChangeEvent: HandleConfigChangeEvent,
     handleConfigSubmitEvent: HandleConfigSubmitEvent,
-    interfaceConfig: InterfaceConfig,
-    invalidInputs: InterfaceConfigStates,
+    invalidConfigInputs: StringifiedConfigStates,
     song: Song,
-    unsubmittedInputs: InterfaceConfigStates,
+    submittedConfig: StringifiedConfig,
+    unsubmittedConfigInputs: StringifiedConfigStates,
 }
 
 interface SongSelectorProps {
@@ -44,10 +44,8 @@ interface SongSelectorProps {
     handleSongChangeEvent: HandleSongChangeEvent,
 }
 
-type InterfaceConfigEntry = [string, string]
-
 interface ConfigOptionProps {
-    configEntry: InterfaceConfigEntry,
+    configEntry: StringifiedConfigEntry,
     configSelectorProps: ConfigSelectorProps,
     invalid: boolean,
     unsubmitted: boolean,
@@ -60,5 +58,4 @@ export {
     SongSelectorProps,
     ConfigOptionProps,
     ConfigSelectorProps,
-    InterfaceConfigEntry,
 }

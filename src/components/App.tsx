@@ -19,39 +19,39 @@ const SUBMIT: string = 'Enter'
 
 const mapStateToProps: (state: State) => AppPropsFromState =
     (state: State): AppPropsFromState => ({
-        actualCurrentConfig: state.get('actualCurrentConfig'),
+        displayedConfig: state.get('displayedConfig'),
         entities: state.get('entities'),
-        interfaceConfig: state.get('interfaceConfig'),
-        invalidInputs: state.get('invalidInputs'),
+        invalidConfigInputs: state.get('invalidConfigInputs'),
         song: state.get('song'),
-        unsubmittedInputs: state.get('unsubmittedInputs'),
+        submittedConfig: state.get('submittedConfig'),
+        unsubmittedConfigInputs: state.get('unsubmittedConfigInputs'),
     })
 
 const mapDispatchToProps: (dispatch: Dispatch) => AppPropsFromDispatch =
     (dispatch: Dispatch): AppPropsFromDispatch => ({
         handleConfigBlurEvent: async (parameters: HandleConfigBlurEventParameters): Promise<void> => {
-            const { configKey, event, actualCurrentConfig, unsubmittedInputs } = parameters
+            const { configKey, event, submittedConfig, unsubmittedConfigInputs } = parameters
             const target: HTMLInputElement = event.target as HTMLInputElement
             const configValue: string = target.value
 
-            handleConfigBlur({ configKey, configValue, dispatch, actualCurrentConfig, unsubmittedInputs })
+            handleConfigBlur({ configKey, configValue, dispatch, submittedConfig, unsubmittedConfigInputs })
         },
         handleConfigChangeEvent: (parameters: HandleConfigChangeEventParameters): void => {
-            const { event, configKey, interfaceConfig, invalidInputs } = parameters
+            const { event, configKey, displayedConfig, invalidConfigInputs } = parameters
             const target: HTMLInputElement = event.target as HTMLInputElement
             const configValue: string = target.value
 
-            handleConfigChange({ dispatch, configKey, configValue, interfaceConfig, invalidInputs })
+            handleConfigChange({ dispatch, configKey, configValue, displayedConfig, invalidConfigInputs })
         },
         handleConfigSubmitEvent: async (parameters: HandleConfigSubmitEventParameters): Promise<void> => {
             const {
+                configKey,
                 event,
                 entities,
+                invalidConfigInputs,
                 song,
-                configKey,
-                actualCurrentConfig,
-                invalidInputs,
-                unsubmittedInputs,
+                submittedConfig,
+                unsubmittedConfigInputs,
             } = parameters
 
             if (event.key !== SUBMIT) {
@@ -61,14 +61,14 @@ const mapDispatchToProps: (dispatch: Dispatch) => AppPropsFromDispatch =
             const configValue: string = target.value
 
             await handleConfigSubmit({
-                actualCurrentConfig,
                 configKey,
                 configValue,
                 dispatch,
                 entities,
-                invalidInputs,
+                invalidConfigInputs,
                 song,
-                unsubmittedInputs,
+                submittedConfig,
+                unsubmittedConfigInputs,
             })
         },
         handleSongChangeEvent: async ({ event, entities }: HandleSongChangeEventParameters): Promise<void> => {

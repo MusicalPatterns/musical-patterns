@@ -8,12 +8,12 @@ import { mockEntity } from '../../support/mockEntity'
 describe('reducer', () => {
     it('sets entities', () => {
         const state: State = immutablizeState({
-            actualCurrentConfig: {},
+            submittedConfig: {},
             entities: [],
-            interfaceConfig: {},
-            invalidInputs: {},
+            displayedConfig: {},
+            invalidConfigInputs: {},
             song: emptySong,
-            unsubmittedInputs: {},
+            unsubmittedConfigInputs: {},
         })
 
         const newEntities: Entities = [ mockEntity ]
@@ -25,12 +25,12 @@ describe('reducer', () => {
         const newState: State = reducer(state, action)
 
         const expectedState: State = immutablizeState({
-            actualCurrentConfig: {},
+            submittedConfig: {},
             entities: newEntities,
-            interfaceConfig: {},
-            invalidInputs: {},
+            displayedConfig: {},
+            invalidConfigInputs: {},
             song: emptySong,
-            unsubmittedInputs: {},
+            unsubmittedConfigInputs: {},
         })
         expect(newState.toJS()).toEqual(expectedState.toJS())
     })

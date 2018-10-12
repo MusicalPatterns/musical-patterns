@@ -3,40 +3,43 @@ import { deepEqual } from '../utilities/deepEqual'
 import { ActionType } from './actions'
 import { destringifyConfig } from './destringifyConfig'
 import { recompileAndRestart } from './recompileAndRestart'
-import { InterfaceConfig, InterfaceConfigStates } from './state'
+import { StringifiedConfig, StringifiedConfigStates } from './state'
 import { stopPreviousSong } from './stopPreviousSong'
 import { HandleConfigSubmitParameters } from './types'
 
 const handleConfigSubmit: (handleConfigSubmitParameters: HandleConfigSubmitParameters) => Promise<void> =
     async (handleConfigSubmitParameters: HandleConfigSubmitParameters): Promise<void> => {
         const {
-            actualCurrentConfig,
+            submittedConfig,
             configKey,
             configValue,
             dispatch,
             entities,
-            invalidInputs,
+            invalidConfigInputs,
             song,
-            unsubmittedInputs,
+            unsubmittedConfigInputs,
         } = handleConfigSubmitParameters
 
-        const updatedConfig: InterfaceConfig = { ...actualCurrentConfig, [ configKey ]: configValue }
-        if (deepEqual(actualCurrentConfig, updatedConfig)) {
+        const updatedConfig: StringifiedConfig = { ...submittedConfig, [ configKey ]: configValue }
+        if (deepEqual(submittedConfig, updatedConfig)) {
             return
         }
 
         try {
             const newSong: Song = { ...song, config: destringifyConfig(updatedConfig) }
             stopPreviousSong(entities)
-            dispatch({ type: ActionType.SET_ACTUAL_CURRENT_CONFIG, data: updatedConfig })
+            dispatch({ type: ActionType.SET_SUBMITTED_CONFIG, data: updatedConfig })
 
-            const updatedUnsubmittedInputs: InterfaceConfigStates = { ...unsubmittedInputs, [ configKey ]: false }
+            const updatedUnsubmittedInputs: StringifiedConfigStates = {
+                ...unsubmittedConfigInputs,
+                [ configKey ]: false,
+            }
             dispatch({ type: ActionType.SET_UNSUBMITTED_INPUTS, data: updatedUnsubmittedInputs })
 
             await recompileAndRestart(newSong, dispatch)
         }
         catch (e) {
-            const updatedInvalidInputs: InterfaceConfigStates = { ...invalidInputs, [ configKey ]: true }
+            const updatedInvalidInputs: StringifiedConfigStates = { ...invalidConfigInputs, [ configKey ]: true }
             dispatch({ type: ActionType.SET_INVALID_INPUTS, data: updatedInvalidInputs })
         }
     }

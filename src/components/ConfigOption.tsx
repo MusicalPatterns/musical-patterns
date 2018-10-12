@@ -6,35 +6,35 @@ const ConfigOption: (configOptionProps: ConfigOptionProps) => JSX.Element =
         const { configEntry, configSelectorProps, invalid, unsubmitted } = configOptionProps
         const [ configKey, configValue ] = configEntry
         const {
-            song,
+            displayedConfig,
             entities,
-            actualCurrentConfig,
-            interfaceConfig,
             handleConfigChangeEvent,
             handleConfigSubmitEvent,
             handleConfigBlurEvent,
-            invalidInputs,
-            unsubmittedInputs,
+            invalidConfigInputs,
+            song,
+            submittedConfig,
+            unsubmittedConfigInputs,
         } = configSelectorProps
         const onChange: (event: React.SyntheticEvent<HTMLInputElement>) => void =
             (event: React.SyntheticEvent<HTMLInputElement>): void => {
-                handleConfigChangeEvent({ configKey, event, interfaceConfig, invalidInputs })
+                handleConfigChangeEvent({ configKey, event, displayedConfig, invalidConfigInputs })
             }
         const onKeyPress: (event: React.KeyboardEvent) => void =
             (event: React.KeyboardEvent): void => {
                 handleConfigSubmitEvent({
-                    actualCurrentConfig,
                     configKey,
                     entities,
                     event,
-                    invalidInputs,
+                    invalidConfigInputs,
                     song,
-                    unsubmittedInputs,
+                    submittedConfig,
+                    unsubmittedConfigInputs,
                 })
             }
         const onBlur: (event: React.SyntheticEvent<HTMLInputElement>) => void =
             (event: React.SyntheticEvent<HTMLInputElement>): void => {
-                handleConfigBlurEvent({ configKey, event, actualCurrentConfig, unsubmittedInputs })
+                handleConfigBlurEvent({ configKey, event, submittedConfig, unsubmittedConfigInputs })
             }
         const className: string = invalid ? 'invalid' : unsubmitted ? 'unsubmitted' : ''
 

@@ -1,15 +1,16 @@
 import * as React from 'react'
+import { StringifiedConfigEntry } from '../interface/state'
 import ConfigOption from './ConfigOption'
-import { ConfigSelectorProps, InterfaceConfigEntry } from './types'
+import { ConfigSelectorProps } from './types'
 
 const ConfigSelector: (configSelectorProps: ConfigSelectorProps) => JSX.Element =
     (configSelectorProps: ConfigSelectorProps): JSX.Element => {
-        const { interfaceConfig, invalidInputs, unsubmittedInputs } = configSelectorProps
-        const configSelector: JSX.Element[] = Object.keys(interfaceConfig).sort().map(
-            (interfaceConfigKey: string, key: number): JSX.Element => {
-                const configEntry: InterfaceConfigEntry = [ interfaceConfigKey, interfaceConfig[interfaceConfigKey] ]
-                const invalid: boolean = invalidInputs[ interfaceConfigKey ]
-                const unsubmitted: boolean = unsubmittedInputs[ interfaceConfigKey ]
+        const { displayedConfig, invalidConfigInputs, unsubmittedConfigInputs } = configSelectorProps
+        const configSelector: JSX.Element[] = Object.keys(displayedConfig).sort().map(
+            (displayedConfigKey: string, key: number): JSX.Element => {
+                const configEntry: StringifiedConfigEntry = [ displayedConfigKey, displayedConfig[displayedConfigKey] ]
+                const invalid: boolean = invalidConfigInputs[ displayedConfigKey ]
+                const unsubmitted: boolean = unsubmittedConfigInputs[ displayedConfigKey ]
 
                 return <ConfigOption {...{ configEntry, key, configSelectorProps, invalid, unsubmitted }} />
             },

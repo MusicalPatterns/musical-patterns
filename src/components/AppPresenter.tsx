@@ -7,31 +7,31 @@ import { AppProps, ConfigSelectorProps, SongSelectorProps } from './types'
 const AppPresenter: (appProps: AppProps) => JSX.Element =
     (appProps: AppProps): JSX.Element => {
         const {
-            actualCurrentConfig,
+            displayedConfig,
             entities,
             handleConfigBlurEvent,
             handleConfigChangeEvent,
             handleConfigSubmitEvent,
             handleSongChangeEvent,
-            interfaceConfig,
-            invalidInputs,
+            invalidConfigInputs,
             song,
-            unsubmittedInputs,
+            submittedConfig,
+            unsubmittedConfigInputs,
         } = appProps
         const songSelectorProps: SongSelectorProps = {
             entities,
             handleSongChangeEvent,
         }
         const configSelectorProps: ConfigSelectorProps = {
-            actualCurrentConfig,
+            displayedConfig,
             entities,
             handleConfigBlurEvent,
             handleConfigChangeEvent,
             handleConfigSubmitEvent,
-            interfaceConfig,
-            invalidInputs,
+            invalidConfigInputs,
             song: song || emptySong,
-            unsubmittedInputs,
+            submittedConfig,
+            unsubmittedConfigInputs,
         }
 
         return (
