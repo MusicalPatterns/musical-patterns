@@ -1,14 +1,17 @@
-import { Dispatch } from 'redux'
-import { Song } from '../songTypes'
-import { Entities } from '../types'
+import { Config, Song } from '../songTypes'
+import { destringifyConfig } from './destringifyConfig'
 import { recompileAndRestart } from './recompileAndRestart'
 import { stopPreviousSong } from './stopPreviousSong'
+import { HandleConfigSubmitParameters } from './types'
 
-const handleConfigSubmit: (dispatch: Dispatch, entities: Entities, song: Song) => Promise<void> =
-    async (dispatch: Dispatch, entities: Entities, song: Song): Promise<void> => {
+const handleConfigSubmit: (handleConfigSubmitParameters: HandleConfigSubmitParameters) => Promise<void> =
+    async ({ dispatch, entities, song, interfaceConfig }: HandleConfigSubmitParameters): Promise<void> => {
         stopPreviousSong(entities)
 
-        await recompileAndRestart(song, dispatch)
+        const updatedConfig: Config = destringifyConfig(interfaceConfig)
+        const newSong: Song = { ...song, config: updatedConfig }
+
+        await recompileAndRestart(newSong, dispatch)
     }
 
 export {

@@ -1,9 +1,9 @@
-import { Dispatch } from 'redux'
 import { EntityConfig } from './compile/types'
 import { Entities, Scales } from './types'
 import { Frequency, Scalar } from './utilities/nominalTypes'
 
 enum SongName {
+    _EMPTY_SONG = '',
     BEATEN_PATH = 'beaten path',
     HAFUHAFU = 'hafuhafu',
     HAFUHAFU_WITH_PITCH_CIRCULARITY = 'hafuhafu with pitch circularity',
@@ -25,7 +25,6 @@ interface Song {
     description: string,
     entityConfigs: EntityConfig[],
     formattedName: string,
-    handleConfigChange: (dispatch: Dispatch, configKey: string, configValue: string, song: Song) => void,
     name: SongName,
     scales: Scales,
 }

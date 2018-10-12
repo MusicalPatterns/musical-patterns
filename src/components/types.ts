@@ -2,12 +2,14 @@ import {
     HandleConfigChangeEvent,
     HandleConfigSubmitEvent,
     HandleSongChangeEvent,
+    InterfaceConfig,
 } from '../interface/types'
 import { Song } from '../songTypes'
 import { Entities } from '../types'
 
 interface AppPropsFromState {
     entities: Entities,
+    interfaceConfig: InterfaceConfig,
     song: Song,
 }
 
@@ -24,6 +26,7 @@ interface ConfigSelectorProps {
     entities: Entities,
     handleConfigChangeEvent: HandleConfigChangeEvent,
     handleConfigSubmitEvent: HandleConfigSubmitEvent,
+    interfaceConfig: InterfaceConfig,
     song: Song,
 }
 
@@ -33,8 +36,10 @@ interface SongSelectorProps {
     song: Song,
 }
 
+type InterfaceConfigEntry = [string, string]
+
 interface ConfigOptionProps {
-    configEntry: [string, string],
+    configEntry: InterfaceConfigEntry,
     configSelectorProps: ConfigSelectorProps,
 }
 
@@ -45,4 +50,5 @@ export {
     SongSelectorProps,
     ConfigOptionProps,
     ConfigSelectorProps,
+    InterfaceConfigEntry,
 }

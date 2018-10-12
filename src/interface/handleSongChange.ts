@@ -1,15 +1,13 @@
-import { Dispatch } from 'redux'
-import { Song } from '../songTypes'
-import { Entities } from '../types'
 import { ActionType } from './actions'
 import { recompileAndRestart } from './recompileAndRestart'
 import { stopPreviousSong } from './stopPreviousSong'
+import { HandleSongChangeParameters } from './types'
 
-const handleSongChange: (dispatch: Dispatch, song: Song, entities: Entities) => Promise<void> =
-    async (dispatch: Dispatch, song: Song, entities: Entities): Promise<void> => {
+const handleSongChange: (handleSongChangeParameters: HandleSongChangeParameters) => Promise<void> =
+    async ({ dispatch, song, entities }: HandleSongChangeParameters): Promise<void> => {
         stopPreviousSong(entities)
 
-        dispatch({ type: ActionType.SET_SONG, data: song })
+        dispatch({ type: ActionType.SET_SONG_AND_INTERFACE_CONFIG_FROM_SONG, data: song })
 
         await recompileAndRestart(song, dispatch)
     }

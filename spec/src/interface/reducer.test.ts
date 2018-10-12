@@ -1,15 +1,16 @@
 import { ActionType, SetEntities } from '../../../src/interface/actions'
+import { emptySong } from '../../../src/interface/emptySong'
 import { reducer } from '../../../src/interface/reducer'
 import { immutablizeState, State } from '../../../src/interface/state'
 import { Entities } from '../../../src/types'
 import { mockEntity } from '../../support/mockEntity'
-import { mockSong } from '../../support/mockSong'
 
 describe('reducer', () => {
     it('sets entities', () => {
         const state: State = immutablizeState({
             entities: [],
-            song: mockSong,
+            interfaceConfig: {},
+            song: emptySong,
         })
 
         const newEntities: Entities = [ mockEntity ]
@@ -22,7 +23,8 @@ describe('reducer', () => {
 
         const expectedState: State = immutablizeState({
             entities: newEntities,
-            song: mockSong,
+            interfaceConfig: {},
+            song: emptySong,
         })
         expect(newState.toJS()).toEqual(expectedState.toJS())
     })

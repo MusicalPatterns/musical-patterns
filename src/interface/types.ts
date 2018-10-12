@@ -1,23 +1,59 @@
+import * as React from 'react'
+import { Dispatch } from 'redux'
 import { Song } from '../songTypes'
 import { Entities } from '../types'
 
-type HandleConfigChangeEvent = (
-    event: React.SyntheticEvent<HTMLInputElement>,
-    configKey: string,
-    song: Song,
-) => void
+interface InterfaceConfig {
+    [index: string]: string,
+}
 
-type HandleConfigSubmitEvent = (
+interface HandleConfigChangeParameters {
+    configKey: string,
+    configValue: string,
+    dispatch: Dispatch,
+    interfaceConfig: InterfaceConfig,
+}
+interface HandleConfigChangeEventParameters {
+    configKey: string,
+    event: React.SyntheticEvent<HTMLInputElement>,
+    interfaceConfig: InterfaceConfig,
+}
+type HandleConfigChangeEvent = (handleConfigChangeEventParameters: HandleConfigChangeEventParameters) => void
+
+interface HandleConfigSubmitParameters {
+    dispatch: Dispatch,
+    entities: Entities,
+    interfaceConfig: InterfaceConfig,
+    song: Song,
+}
+interface HandleConfigSubmitEventParameters {
+    entities: Entities,
     event: React.KeyboardEvent,
+    interfaceConfig: InterfaceConfig,
+    song: Song,
+}
+type HandleConfigSubmitEvent = (handleConfigSubmitEventParameters: HandleConfigSubmitEventParameters) => void
+
+interface HandleSongChangeParameters {
+    dispatch: Dispatch,
     entities: Entities,
     song: Song,
-) => void
-
-type HandleSongChangeEvent =
-    (event: React.SyntheticEvent<HTMLSelectElement>, entities: Entities) => void
+}
+interface HandleSongChangeEventParameters {
+    entities: Entities
+    event: React.SyntheticEvent<HTMLSelectElement>,
+}
+type HandleSongChangeEvent = (handleSongChangeEventParameters: HandleSongChangeEventParameters) => void
 
 export {
+    InterfaceConfig,
     HandleConfigChangeEvent,
-    HandleSongChangeEvent,
+    HandleConfigChangeEventParameters,
+    HandleConfigChangeParameters,
     HandleConfigSubmitEvent,
+    HandleConfigSubmitEventParameters,
+    HandleConfigSubmitParameters,
+    HandleSongChangeEvent,
+    HandleSongChangeEventParameters,
+    HandleSongChangeParameters,
 }

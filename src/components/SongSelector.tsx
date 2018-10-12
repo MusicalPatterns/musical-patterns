@@ -10,7 +10,7 @@ const SongSelector: (songSelectorProps: SongSelectorProps) => JSX.Element =
 
         const onChange: (event: React.SyntheticEvent<HTMLSelectElement>) => void =
             (event: React.SyntheticEvent<HTMLSelectElement>): void => {
-                handleSongChangeEvent(event, entities)
+                handleSongChangeEvent({ event, entities })
             }
 
         return (

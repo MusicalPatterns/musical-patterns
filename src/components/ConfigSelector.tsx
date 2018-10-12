@@ -1,14 +1,17 @@
 import * as React from 'react'
-import { Config } from '../songTypes'
+import { InterfaceConfig } from '../interface/types'
 import ConfigOption from './ConfigOption'
-import { ConfigSelectorProps } from './types'
+import { ConfigSelectorProps, InterfaceConfigEntry } from './types'
 
 const ConfigSelector: (configSelectorProps: ConfigSelectorProps) => JSX.Element =
     (configSelectorProps: ConfigSelectorProps): JSX.Element => {
-        const config: Config = configSelectorProps.song.config
-        const configSelector: JSX.Element[] = Object.entries(config).map(
-            (configEntry: [string, string], key: number): JSX.Element =>
-                <ConfigOption {...{ configEntry, key, configSelectorProps }} />,
+        const interfaceConfig: InterfaceConfig = configSelectorProps.interfaceConfig
+        const configSelector: JSX.Element[] = Object.keys(interfaceConfig).sort().map(
+            (interfaceConfigKey: string, key: number): JSX.Element => {
+                const configEntry: InterfaceConfigEntry = [ interfaceConfigKey, interfaceConfig[interfaceConfigKey] ]
+
+                return <ConfigOption {...{ configEntry, key, configSelectorProps }} />
+            },
         )
 
         return (

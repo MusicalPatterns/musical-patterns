@@ -1,8 +1,8 @@
-import { defaultSongCompile } from '../../src/compile/defaultSongCompile'
-import { Song, SongName } from '../../src/songTypes'
-import * as to from '../../src/utilities/to'
+import { defaultSongCompile } from '../compile/defaultSongCompile'
+import { Song, SongName } from '../songTypes'
+import * as to from '../utilities/to'
 
-const mockSong: Song = {
+const emptySong: Song = {
     compile: defaultSongCompile,
     config: {
         baseFrequency: to.Frequency(0),
@@ -16,5 +16,5 @@ const mockSong: Song = {
 }
 
 export {
-    mockSong,
+    emptySong,
 }

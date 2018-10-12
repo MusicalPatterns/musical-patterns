@@ -10,6 +10,7 @@ const AppPresenter: (appProps: AppProps) => JSX.Element =
             handleConfigChangeEvent,
             handleConfigSubmitEvent,
             handleSongChangeEvent,
+            interfaceConfig,
             song,
         } = appProps
         const songSelectorProps: SongSelectorProps = {
@@ -21,6 +22,7 @@ const AppPresenter: (appProps: AppProps) => JSX.Element =
             entities,
             handleConfigChangeEvent,
             handleConfigSubmitEvent,
+            interfaceConfig,
             song,
         }
 
