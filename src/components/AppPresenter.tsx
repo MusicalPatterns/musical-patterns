@@ -6,6 +6,7 @@ import { AppProps, ConfigSelectorProps, SongSelectorProps } from './types'
 const AppPresenter: (appProps: AppProps) => JSX.Element =
     (appProps: AppProps): JSX.Element => {
         const {
+            actualCurrentConfig,
             entities,
             handleConfigChangeEvent,
             handleConfigSubmitEvent,
@@ -19,6 +20,7 @@ const AppPresenter: (appProps: AppProps) => JSX.Element =
             song,
         }
         const configSelectorProps: ConfigSelectorProps = {
+            actualCurrentConfig,
             entities,
             handleConfigChangeEvent,
             handleConfigSubmitEvent,

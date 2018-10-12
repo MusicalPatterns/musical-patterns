@@ -3,6 +3,7 @@ import { Entities } from '../types'
 import { InterfaceConfig } from './types'
 
 enum ActionType {
+    SET_ACTUAL_CURRENT_CONFIG = 'set actual current config',
     SET_SONG_AND_INTERFACE_CONFIG_FROM_SONG = 'set song and interface config from song',
     SET_INTERFACE_CONFIG = 'set interface config',
     SET_ENTITIES = 'set entities',
@@ -10,6 +11,11 @@ enum ActionType {
 
 interface ActionObject {
     type: ActionType,
+}
+
+interface SetActualCurrentConfig extends ActionObject {
+    data: InterfaceConfig,
+    type: ActionType.SET_ACTUAL_CURRENT_CONFIG,
 }
 
 interface SetSongAndInterfaceConfigFromSong extends ActionObject {
@@ -28,6 +34,7 @@ interface SetEntities extends ActionObject {
 }
 
 type Action =
+    SetActualCurrentConfig |
     SetSongAndInterfaceConfigFromSong |
     SetInterfaceConfig |
     SetEntities

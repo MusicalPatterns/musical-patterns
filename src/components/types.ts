@@ -8,6 +8,7 @@ import { Song } from '../songTypes'
 import { Entities } from '../types'
 
 interface AppPropsFromState {
+    actualCurrentConfig: InterfaceConfig,
     entities: Entities,
     interfaceConfig: InterfaceConfig,
     song: Song,
@@ -23,6 +24,7 @@ interface AppProps extends AppPropsFromState, AppPropsFromDispatch {
 }
 
 interface ConfigSelectorProps {
+    actualCurrentConfig: InterfaceConfig,
     entities: Entities,
     handleConfigChangeEvent: HandleConfigChangeEvent,
     handleConfigSubmitEvent: HandleConfigSubmitEvent,

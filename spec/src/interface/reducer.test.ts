@@ -8,6 +8,7 @@ import { mockEntity } from '../../support/mockEntity'
 describe('reducer', () => {
     it('sets entities', () => {
         const state: State = immutablizeState({
+            actualCurrentConfig: {},
             entities: [],
             interfaceConfig: {},
             song: emptySong,
@@ -22,6 +23,7 @@ describe('reducer', () => {
         const newState: State = reducer(state, action)
 
         const expectedState: State = immutablizeState({
+            actualCurrentConfig: {},
             entities: newEntities,
             interfaceConfig: {},
             song: emptySong,

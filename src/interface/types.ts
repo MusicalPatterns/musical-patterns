@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Dispatch } from 'redux'
-import { Song } from '../songTypes'
+import { Song, SongName } from '../songTypes'
 import { Entities } from '../types'
 
 interface InterfaceConfig {
@@ -21,15 +21,18 @@ interface HandleConfigChangeEventParameters {
 type HandleConfigChangeEvent = (handleConfigChangeEventParameters: HandleConfigChangeEventParameters) => void
 
 interface HandleConfigSubmitParameters {
+    actualCurrentConfig: InterfaceConfig,
+    configKey: string,
+    configValue: string,
     dispatch: Dispatch,
     entities: Entities,
-    interfaceConfig: InterfaceConfig,
     song: Song,
 }
 interface HandleConfigSubmitEventParameters {
+    actualCurrentConfig: InterfaceConfig,
+    configKey: string,
     entities: Entities,
     event: React.KeyboardEvent,
-    interfaceConfig: InterfaceConfig,
     song: Song,
 }
 type HandleConfigSubmitEvent = (handleConfigSubmitEventParameters: HandleConfigSubmitEventParameters) => void
@@ -37,7 +40,7 @@ type HandleConfigSubmitEvent = (handleConfigSubmitEventParameters: HandleConfigS
 interface HandleSongChangeParameters {
     dispatch: Dispatch,
     entities: Entities,
-    song: Song,
+    songName: SongName,
 }
 interface HandleSongChangeEventParameters {
     entities: Entities

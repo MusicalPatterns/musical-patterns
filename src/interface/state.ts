@@ -5,6 +5,7 @@ import { emptySong } from './emptySong'
 import { InterfaceConfig } from './types'
 
 interface RawState {
+    actualCurrentConfig: InterfaceConfig,
     entities: Entities,
     interfaceConfig: InterfaceConfig,
     song: Song,
@@ -34,6 +35,7 @@ const immutablizeState: <T extends MapTypeAllowedData<T>>(data: T) => TypedMap<T
     <T extends MapTypeAllowedData<T>>(data: T): TypedMap<T> => Map(data) as any
 
 const rawState: RawState = {
+    actualCurrentConfig: {},
     entities: [],
     interfaceConfig: {},
     song: emptySong,

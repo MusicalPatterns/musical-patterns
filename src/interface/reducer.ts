@@ -11,9 +11,18 @@ const reducer: (state: State | undefined, action: Action) => State =
             case ActionType.SET_SONG_AND_INTERFACE_CONFIG_FROM_SONG: {
                 const song: Song = action.data
 
+                const stringifiedConfig: InterfaceConfig = stringifyConfig(song.config)
+
                 return state
                     .set('song', song)
-                    .set('interfaceConfig', stringifyConfig(song.config))
+                    .set('interfaceConfig', stringifiedConfig)
+                    .set('actualCurrentConfig', stringifiedConfig)
+            }
+            case ActionType.SET_ACTUAL_CURRENT_CONFIG: {
+                const actualCurrentConfig: InterfaceConfig = action.data
+
+                return state
+                    .set('actualCurrentConfig', actualCurrentConfig)
             }
             case ActionType.SET_INTERFACE_CONFIG: {
                 const interfaceConfig: InterfaceConfig = action.data
