@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { emptySong } from '../interface/emptySong'
+import { emptySong } from '../ui/emptySong'
 import ConfigSelector from './ConfigSelector'
 import SongSelector from './SongSelector'
 import { AppProps, ConfigSelectorProps, SongSelectorProps } from './types'

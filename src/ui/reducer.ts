@@ -1,7 +1,7 @@
 import { Song } from '../songTypes'
 import { Entities } from '../types'
 import { Action, ActionType } from './actions'
-import { initialState, State, StringifiedConfig, StringifiedConfigStates } from './state'
+import { initialState, State, StringifiedConfig, StringifiedConfigStates, UI } from './state'
 import { stringifyConfig } from './stringifyConfig'
 
 const reducer: (state: State | undefined, action: Action) => State =
@@ -11,23 +11,31 @@ const reducer: (state: State | undefined, action: Action) => State =
                 const song: Song = action.data
 
                 const stringifiedConfig: StringifiedConfig = stringifyConfig(song.config)
+                const ui: UI = state.get('ui')
+                const updatedUI: UI = { ...ui, displayedConfig: stringifiedConfig, submittedConfig: stringifiedConfig }
 
                 return state
                     .set('song', song)
-                    .set('displayedConfig', stringifiedConfig)
-                    .set('submittedConfig', stringifiedConfig)
+                    .set('ui', updatedUI)
+
             }
             case ActionType.SET_SUBMITTED_CONFIG: {
                 const submittedConfig: StringifiedConfig = action.data
 
+                const ui: UI = state.get('ui')
+                const updatedUI: UI = { ...ui, submittedConfig }
+
                 return state
-                    .set('submittedConfig', submittedConfig)
+                    .set('ui', updatedUI)
             }
             case ActionType.SET_STRINGIFIED_CONFIG: {
                 const displayedConfig: StringifiedConfig = action.data
 
+                const ui: UI = state.get('ui')
+                const updatedUI: UI = { ...ui, displayedConfig }
+
                 return state
-                    .set('displayedConfig', displayedConfig)
+                    .set('ui', updatedUI)
             }
             case ActionType.SET_ENTITIES: {
                 const entities: Entities = action.data
@@ -38,14 +46,20 @@ const reducer: (state: State | undefined, action: Action) => State =
             case ActionType.SET_INVALID_INPUTS: {
                 const invalidConfigInputs: StringifiedConfigStates = action.data
 
+                const ui: UI = state.get('ui')
+                const updatedUI: UI = { ...ui, invalidConfigInputs }
+
                 return state
-                    .set('invalidConfigInputs', invalidConfigInputs)
+                    .set('ui', updatedUI)
             }
             case ActionType.SET_UNSUBMITTED_INPUTS: {
                 const unsubmittedConfigInputs: StringifiedConfigStates = action.data
 
+                const ui: UI = state.get('ui')
+                const updatedUI: UI = { ...ui, unsubmittedConfigInputs }
+
                 return state
-                    .set('unsubmittedConfigInputs', unsubmittedConfigInputs)
+                    .set('ui', updatedUI)
             }
             default: {
                 return state

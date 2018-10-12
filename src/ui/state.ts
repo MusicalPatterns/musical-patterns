@@ -2,31 +2,33 @@ import { Map } from 'immutable'
 import { Song } from '../songTypes'
 import { Entities } from '../types'
 
-type StringifiedConfigEntry = [string, string]
+type StringifiedConfigEntry = [ string, string ]
 
 interface StringifiedConfig {
-    [index: string]: string,
+    [ index: string ]: string,
 }
 
 interface StringifiedConfigStates {
-    [index: string]: boolean,
+    [ index: string ]: boolean,
+}
+
+interface UI {
+    displayedConfig: StringifiedConfig,
+    invalidConfigInputs: StringifiedConfigStates,
+    submittedConfig: StringifiedConfig,
+    unsubmittedConfigInputs: StringifiedConfigStates,
 }
 
 interface RawState {
-    displayedConfig: StringifiedConfig,
     entities: Entities,
-    invalidConfigInputs: StringifiedConfigStates,
     song?: Song,
-    submittedConfig: StringifiedConfig,
-    unsubmittedConfigInputs: StringifiedConfigStates,
+    ui: UI,
 }
 
 type AllowedValue =
     Entities |
     Song |
-    StringifiedConfig |
-    StringifiedConfigStates |
-    boolean
+    UI
 
 type MapTypeAllowedData<T> = {
     [K in keyof T]: AllowedValue
@@ -47,12 +49,14 @@ const immutablizeState: <T extends MapTypeAllowedData<T>>(data: T) => TypedMap<T
     <T extends MapTypeAllowedData<T>>(data: T): TypedMap<T> => Map(data) as any
 
 const rawState: RawState = {
-    displayedConfig: {},
     entities: [],
-    invalidConfigInputs: {},
     song: undefined,
-    submittedConfig: {},
-    unsubmittedConfigInputs: {},
+    ui: {
+        displayedConfig: {},
+        invalidConfigInputs: {},
+        submittedConfig: {},
+        unsubmittedConfigInputs: {},
+    },
 }
 
 const initialState: State = immutablizeState(rawState)
@@ -63,5 +67,6 @@ export {
     State,
     initialState,
     immutablizeState,
+    UI,
     StringifiedConfigEntry,
 }

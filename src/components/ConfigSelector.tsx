@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { StringifiedConfigEntry } from '../interface/state'
+import { StringifiedConfigEntry } from '../ui/state'
 import ConfigOption from './ConfigOption'
 import { ConfigSelectorProps } from './types'
 

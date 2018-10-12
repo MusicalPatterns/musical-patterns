@@ -1,19 +1,21 @@
-import { ActionType, SetEntities } from '../../../src/interface/actions'
-import { emptySong } from '../../../src/interface/emptySong'
-import { reducer } from '../../../src/interface/reducer'
-import { immutablizeState, State } from '../../../src/interface/state'
 import { Entities } from '../../../src/types'
+import { ActionType, SetEntities } from '../../../src/ui/actions'
+import { emptySong } from '../../../src/ui/emptySong'
+import { reducer } from '../../../src/ui/reducer'
+import { immutablizeState, State } from '../../../src/ui/state'
 import { mockEntity } from '../../support/mockEntity'
 
 describe('reducer', () => {
     it('sets entities', () => {
         const state: State = immutablizeState({
-            submittedConfig: {},
             entities: [],
-            displayedConfig: {},
-            invalidConfigInputs: {},
             song: emptySong,
-            unsubmittedConfigInputs: {},
+            ui: {
+                displayedConfig: {},
+                invalidConfigInputs: {},
+                submittedConfig: {},
+                unsubmittedConfigInputs: {},
+            },
         })
 
         const newEntities: Entities = [ mockEntity ]
@@ -25,12 +27,14 @@ describe('reducer', () => {
         const newState: State = reducer(state, action)
 
         const expectedState: State = immutablizeState({
-            submittedConfig: {},
             entities: newEntities,
-            displayedConfig: {},
-            invalidConfigInputs: {},
             song: emptySong,
-            unsubmittedConfigInputs: {},
+            ui: {
+                displayedConfig: {},
+                invalidConfigInputs: {},
+                submittedConfig: {},
+                unsubmittedConfigInputs: {},
+            },
         })
         expect(newState.toJS()).toEqual(expectedState.toJS())
     })

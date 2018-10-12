@@ -1,12 +1,12 @@
-import { StringifiedConfig, StringifiedConfigEntry, StringifiedConfigStates } from '../interface/state'
+import { Song } from '../songTypes'
+import { Entities } from '../types'
+import { StringifiedConfig, StringifiedConfigEntry, StringifiedConfigStates } from '../ui/state'
 import {
     HandleConfigBlurEvent,
     HandleConfigChangeEvent,
     HandleConfigSubmitEvent,
     HandleSongChangeEvent,
-} from '../interface/types'
-import { Song } from '../songTypes'
-import { Entities } from '../types'
+} from '../ui/types'
 
 interface AppPropsFromState {
     displayedConfig: StringifiedConfig,

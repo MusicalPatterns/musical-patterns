@@ -1,31 +1,40 @@
 import { connect } from 'react-redux'
 import { Dispatch } from 'redux'
-import { handleConfigBlur } from '../interface/handleConfigBlur'
-import { handleConfigChange } from '../interface/handleConfigChange'
-import { handleConfigSubmit } from '../interface/handleConfigSubmit'
-import { handleSongChange } from '../interface/handleSongChange'
-import { State } from '../interface/state'
+import { SongName } from '../songTypes'
+import { handleConfigBlur } from '../ui/handleConfigBlur'
+import { handleConfigChange } from '../ui/handleConfigChange'
+import { handleConfigSubmit } from '../ui/handleConfigSubmit'
+import { handleSongChange } from '../ui/handleSongChange'
+import { State, UI } from '../ui/state'
 import {
     HandleConfigBlurEventParameters,
     HandleConfigChangeEventParameters,
     HandleConfigSubmitEventParameters,
     HandleSongChangeEventParameters,
-} from '../interface/types'
-import { SongName } from '../songTypes'
+} from '../ui/types'
 import AppPresenter from './AppPresenter'
 import { AppPropsFromDispatch, AppPropsFromState } from './types'
 
 const SUBMIT: string = 'Enter'
 
 const mapStateToProps: (state: State) => AppPropsFromState =
-    (state: State): AppPropsFromState => ({
-        displayedConfig: state.get('displayedConfig'),
-        entities: state.get('entities'),
-        invalidConfigInputs: state.get('invalidConfigInputs'),
-        song: state.get('song'),
-        submittedConfig: state.get('submittedConfig'),
-        unsubmittedConfigInputs: state.get('unsubmittedConfigInputs'),
-    })
+    (state: State): AppPropsFromState => {
+        const {
+            displayedConfig,
+            invalidConfigInputs,
+            submittedConfig,
+            unsubmittedConfigInputs,
+        }: UI = state.get('ui')
+
+        return {
+            displayedConfig,
+            entities: state.get('entities'),
+            invalidConfigInputs,
+            song: state.get('song'),
+            submittedConfig,
+            unsubmittedConfigInputs,
+        }
+    }
 
 const mapDispatchToProps: (dispatch: Dispatch) => AppPropsFromDispatch =
     (dispatch: Dispatch): AppPropsFromDispatch => ({
