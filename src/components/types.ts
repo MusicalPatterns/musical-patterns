@@ -1,5 +1,6 @@
-import { InterfaceConfig, InterfaceConfigValidities } from '../interface/state'
+import { InterfaceConfig, InterfaceConfigStates } from '../interface/state'
 import {
+    HandleConfigBlurEvent,
     HandleConfigChangeEvent,
     HandleConfigSubmitEvent,
     HandleSongChangeEvent,
@@ -11,11 +12,13 @@ interface AppPropsFromState {
     actualCurrentConfig: InterfaceConfig,
     entities: Entities,
     interfaceConfig: InterfaceConfig,
-    invalidInputs: InterfaceConfigValidities,
+    invalidInputs: InterfaceConfigStates,
     song: Song,
+    unsubmittedInputs: InterfaceConfigStates,
 }
 
 interface AppPropsFromDispatch {
+    handleConfigBlurEvent: HandleConfigBlurEvent,
     handleConfigChangeEvent: HandleConfigChangeEvent,
     handleConfigSubmitEvent: HandleConfigSubmitEvent,
     handleSongChangeEvent: HandleSongChangeEvent,
@@ -27,11 +30,13 @@ interface AppProps extends AppPropsFromState, AppPropsFromDispatch {
 interface ConfigSelectorProps {
     actualCurrentConfig: InterfaceConfig,
     entities: Entities,
+    handleConfigBlurEvent: HandleConfigBlurEvent,
     handleConfigChangeEvent: HandleConfigChangeEvent,
     handleConfigSubmitEvent: HandleConfigSubmitEvent,
     interfaceConfig: InterfaceConfig,
-    invalidInputs: InterfaceConfigValidities,
+    invalidInputs: InterfaceConfigStates,
     song: Song,
+    unsubmittedInputs: InterfaceConfigStates,
 }
 
 interface SongSelectorProps {
@@ -46,6 +51,7 @@ interface ConfigOptionProps {
     configEntry: InterfaceConfigEntry,
     configSelectorProps: ConfigSelectorProps,
     invalid: boolean,
+    unsubmitted: boolean,
 }
 
 export {

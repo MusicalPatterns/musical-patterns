@@ -7,7 +7,7 @@ interface InterfaceConfig {
     [index: string]: string,
 }
 
-interface InterfaceConfigValidities {
+interface InterfaceConfigStates {
     [index: string]: boolean,
 }
 
@@ -15,15 +15,16 @@ interface RawState {
     actualCurrentConfig: InterfaceConfig,
     entities: Entities,
     interfaceConfig: InterfaceConfig,
-    invalidInputs: InterfaceConfigValidities,
+    invalidInputs: InterfaceConfigStates,
     song: Song,
+    unsubmittedInputs: InterfaceConfigStates,
 }
 
 type AllowedValue =
     Entities |
     Song |
     InterfaceConfig |
-    InterfaceConfigValidities
+    InterfaceConfigStates
 
 type MapTypeAllowedData<T> = {
     [K in keyof T]: AllowedValue
@@ -49,13 +50,14 @@ const rawState: RawState = {
     interfaceConfig: {},
     invalidInputs: {},
     song: emptySong,
+    unsubmittedInputs: {},
 }
 
 const initialState: State = immutablizeState(rawState)
 
 export {
     InterfaceConfig,
-    InterfaceConfigValidities,
+    InterfaceConfigStates,
     State,
     initialState,
     immutablizeState,

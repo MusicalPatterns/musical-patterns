@@ -1,7 +1,7 @@
 import { Song } from '../songTypes'
 import { Entities } from '../types'
 import { Action, ActionType } from './actions'
-import { initialState, InterfaceConfig, InterfaceConfigValidities, State } from './state'
+import { initialState, InterfaceConfig, InterfaceConfigStates, State } from './state'
 import { stringifyConfig } from './stringifyConfig'
 
 const reducer: (state: State | undefined, action: Action) => State =
@@ -38,8 +38,8 @@ const reducer: (state: State | undefined, action: Action) => State =
             case ActionType.MARK_INPUT_INVALID: {
                 const inputName: string = action.data
 
-                const invalidInputs: InterfaceConfigValidities = state.get('invalidInputs')
-                const updatedInvalidInputs: InterfaceConfigValidities = { ...invalidInputs, [ inputName ]: true }
+                const invalidInputs: InterfaceConfigStates = state.get('invalidInputs')
+                const updatedInvalidInputs: InterfaceConfigStates = { ...invalidInputs, [ inputName ]: true }
 
                 return state
                     .set('invalidInputs', updatedInvalidInputs)
@@ -47,11 +47,29 @@ const reducer: (state: State | undefined, action: Action) => State =
             case ActionType.MARK_INPUT_VALID: {
                 const inputName: string = action.data
 
-                const invalidInputs: InterfaceConfigValidities = state.get('invalidInputs')
-                const updatedInvalidInputs: InterfaceConfigValidities = { ...invalidInputs, [ inputName ]: false }
+                const invalidInputs: InterfaceConfigStates = state.get('invalidInputs')
+                const updatedInvalidInputs: InterfaceConfigStates = { ...invalidInputs, [ inputName ]: false }
 
                 return state
                     .set('invalidInputs', updatedInvalidInputs)
+            }
+            case ActionType.MARK_INPUT_UNSUBMITTED: {
+                const inputName: string = action.data
+
+                const unsubmittedInputs: InterfaceConfigStates = state.get('unsubmittedInputs')
+                const updatedUnsubmittedInputs: InterfaceConfigStates = { ...unsubmittedInputs, [ inputName ]: true }
+
+                return state
+                    .set('unsubmittedInputs', updatedUnsubmittedInputs)
+            }
+            case ActionType.MARK_INPUT_SUBMITTED: {
+                const inputName: string = action.data
+
+                const unsubmittedInputs: InterfaceConfigStates = state.get('unsubmittedInputs')
+                const updatedUnsubmittedInputs: InterfaceConfigStates = { ...unsubmittedInputs, [ inputName ]: false }
+
+                return state
+                    .set('unsubmittedInputs', updatedUnsubmittedInputs)
             }
             default: {
                 return state

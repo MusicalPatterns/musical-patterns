@@ -9,6 +9,8 @@ enum ActionType {
     SET_ENTITIES = 'set entities',
     MARK_INPUT_INVALID = 'mark input invalid',
     MARK_INPUT_VALID = 'mark input valid',
+    MARK_INPUT_UNSUBMITTED = 'mark input unsubmitted',
+    MARK_INPUT_SUBMITTED = 'mark input submitted',
 }
 
 interface ActionObject {
@@ -45,13 +47,25 @@ interface MarkInputValid extends ActionObject {
     type: ActionType.MARK_INPUT_VALID,
 }
 
+interface MarkInputUnsubmitted extends ActionObject {
+    data: string,
+    type: ActionType.MARK_INPUT_UNSUBMITTED,
+}
+
+interface MarkInputSubmitted extends ActionObject {
+    data: string,
+    type: ActionType.MARK_INPUT_SUBMITTED,
+}
+
 type Action =
     SetActualCurrentConfig |
     SetSongAndInterfaceConfigFromSong |
     SetInterfaceConfig |
     SetEntities |
     MarkInputInvalid |
-    MarkInputValid
+    MarkInputValid |
+    MarkInputUnsubmitted |
+    MarkInputSubmitted
 
 export {
     Action,

@@ -1,11 +1,12 @@
 import { connect } from 'react-redux'
 import { Dispatch } from 'redux'
+import { handleConfigBlur } from '../interface/handleConfigBlur'
 import { handleConfigChange } from '../interface/handleConfigChange'
 import { handleConfigSubmit } from '../interface/handleConfigSubmit'
 import { handleSongChange } from '../interface/handleSongChange'
 import { State } from '../interface/state'
 import {
-    HandleConfigChangeEventParameters,
+    HandleConfigBlurEventParameters, HandleConfigChangeEventParameters,
     HandleConfigSubmitEventParameters,
     HandleSongChangeEventParameters,
 } from '../interface/types'
@@ -22,10 +23,18 @@ const mapStateToProps: (state: State) => AppPropsFromState =
         interfaceConfig: state.get('interfaceConfig'),
         invalidInputs: state.get('invalidInputs'),
         song: state.get('song'),
+        unsubmittedInputs: state.get('unsubmittedInputs'),
     })
 
 const mapDispatchToProps: (dispatch: Dispatch) => AppPropsFromDispatch =
     (dispatch: Dispatch): AppPropsFromDispatch => ({
+        handleConfigBlurEvent: async (parameters: HandleConfigBlurEventParameters): Promise<void> => {
+            const { configKey, event, actualCurrentConfig } = parameters
+            const target: HTMLInputElement = event.target as HTMLInputElement
+            const configValue: string = target.value
+
+            handleConfigBlur({ configKey, configValue, dispatch, actualCurrentConfig })
+        },
         handleConfigChangeEvent: ({ event, configKey, interfaceConfig }: HandleConfigChangeEventParameters): void => {
             const target: HTMLInputElement = event.target as HTMLInputElement
             const configValue: string = target.value

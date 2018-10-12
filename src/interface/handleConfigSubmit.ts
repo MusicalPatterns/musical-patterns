@@ -20,6 +20,7 @@ const handleConfigSubmit: (handleConfigSubmitParameters: HandleConfigSubmitParam
             const newSong: Song = { ...song, config: destringifyConfig(updatedConfig) }
             stopPreviousSong(entities)
             dispatch({ type: ActionType.SET_ACTUAL_CURRENT_CONFIG, data: updatedConfig })
+            dispatch({ type: ActionType.MARK_INPUT_SUBMITTED, data: configKey })
             await recompileAndRestart(newSong, dispatch)
         }
         catch (e) {

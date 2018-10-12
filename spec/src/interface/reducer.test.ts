@@ -13,6 +13,7 @@ describe('reducer', () => {
             interfaceConfig: {},
             invalidInputs: {},
             song: emptySong,
+            unsubmittedInputs: {},
         })
 
         const newEntities: Entities = [ mockEntity ]
@@ -29,6 +30,7 @@ describe('reducer', () => {
             interfaceConfig: {},
             invalidInputs: {},
             song: emptySong,
+            unsubmittedInputs: {},
         })
         expect(newState.toJS()).toEqual(expectedState.toJS())
     })

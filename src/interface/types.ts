@@ -45,6 +45,21 @@ interface HandleSongChangeEventParameters {
 }
 type HandleSongChangeEvent = (handleSongChangeEventParameters: HandleSongChangeEventParameters) => void
 
+interface HandleConfigBlurParameters {
+    actualCurrentConfig: InterfaceConfig,
+    configKey: string,
+    configValue: string,
+    dispatch: Dispatch,
+}
+interface HandleConfigBlurEventParameters {
+    actualCurrentConfig: InterfaceConfig,
+    configKey: string,
+    entities: Entities,
+    event: React.SyntheticEvent<HTMLInputElement>,
+    song: Song,
+}
+type HandleConfigBlurEvent = (handleConfigBlurEventParameters: HandleConfigBlurEventParameters) => void
+
 export {
     HandleConfigChangeEvent,
     HandleConfigChangeEventParameters,
@@ -55,4 +70,7 @@ export {
     HandleSongChangeEvent,
     HandleSongChangeEventParameters,
     HandleSongChangeParameters,
+    HandleConfigBlurEvent,
+    HandleConfigBlurEventParameters,
+    HandleConfigBlurParameters,
 }

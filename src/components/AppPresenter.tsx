@@ -8,12 +8,14 @@ const AppPresenter: (appProps: AppProps) => JSX.Element =
         const {
             actualCurrentConfig,
             entities,
+            handleConfigBlurEvent,
             handleConfigChangeEvent,
             handleConfigSubmitEvent,
             handleSongChangeEvent,
             interfaceConfig,
             invalidInputs,
             song,
+            unsubmittedInputs,
         } = appProps
         const songSelectorProps: SongSelectorProps = {
             entities,
@@ -23,11 +25,13 @@ const AppPresenter: (appProps: AppProps) => JSX.Element =
         const configSelectorProps: ConfigSelectorProps = {
             actualCurrentConfig,
             entities,
+            handleConfigBlurEvent,
             handleConfigChangeEvent,
             handleConfigSubmitEvent,
             interfaceConfig,
             invalidInputs,
             song,
+            unsubmittedInputs,
         }
 
         return (

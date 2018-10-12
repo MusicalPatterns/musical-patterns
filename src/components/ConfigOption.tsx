@@ -3,7 +3,7 @@ import { ConfigOptionProps } from './types'
 
 const ConfigOption: (configOptionProps: ConfigOptionProps) => JSX.Element =
     (configOptionProps: ConfigOptionProps): JSX.Element => {
-        const { configEntry, configSelectorProps, invalid } = configOptionProps
+        const { configEntry, configSelectorProps, invalid, unsubmitted } = configOptionProps
         const [ configKey, configValue ] = configEntry
         const {
             song,
@@ -12,6 +12,7 @@ const ConfigOption: (configOptionProps: ConfigOptionProps) => JSX.Element =
             interfaceConfig,
             handleConfigChangeEvent,
             handleConfigSubmitEvent,
+            handleConfigBlurEvent,
         } = configSelectorProps
         const onChange: (event: React.SyntheticEvent<HTMLInputElement>) => void =
             (event: React.SyntheticEvent<HTMLInputElement>): void => {
@@ -21,12 +22,16 @@ const ConfigOption: (configOptionProps: ConfigOptionProps) => JSX.Element =
             (event: React.KeyboardEvent): void => {
                 handleConfigSubmitEvent({ configKey, entities, event, actualCurrentConfig, song })
             }
-        const className: string = invalid ? 'invalid' : ''
+        const className: string = invalid ? 'invalid' : unsubmitted ? 'unsubmitted' : ''
+        const onBlur: (event: React.SyntheticEvent<HTMLInputElement>) => void =
+            (event: React.SyntheticEvent<HTMLInputElement>): void => {
+                handleConfigBlurEvent({ configKey, entities, event, actualCurrentConfig, song })
+            }
 
         return (
             <div>
                 {configKey}
-                <input {...{ onChange, onKeyPress, value: configValue, className }}/>
+                <input {...{ onChange, onKeyPress, value: configValue, className, onBlur }}/>
             </div>
         )
     }
