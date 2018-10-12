@@ -13,20 +13,30 @@ const ConfigOption: (configOptionProps: ConfigOptionProps) => JSX.Element =
             handleConfigChangeEvent,
             handleConfigSubmitEvent,
             handleConfigBlurEvent,
+            invalidInputs,
+            unsubmittedInputs,
         } = configSelectorProps
         const onChange: (event: React.SyntheticEvent<HTMLInputElement>) => void =
             (event: React.SyntheticEvent<HTMLInputElement>): void => {
-                handleConfigChangeEvent({ configKey, event, interfaceConfig })
+                handleConfigChangeEvent({ configKey, event, interfaceConfig, invalidInputs })
             }
         const onKeyPress: (event: React.KeyboardEvent) => void =
             (event: React.KeyboardEvent): void => {
-                handleConfigSubmitEvent({ configKey, entities, event, actualCurrentConfig, song })
+                handleConfigSubmitEvent({
+                    actualCurrentConfig,
+                    configKey,
+                    entities,
+                    event,
+                    invalidInputs,
+                    song,
+                    unsubmittedInputs,
+                })
             }
-        const className: string = invalid ? 'invalid' : unsubmitted ? 'unsubmitted' : ''
         const onBlur: (event: React.SyntheticEvent<HTMLInputElement>) => void =
             (event: React.SyntheticEvent<HTMLInputElement>): void => {
-                handleConfigBlurEvent({ configKey, entities, event, actualCurrentConfig, song })
+                handleConfigBlurEvent({ configKey, event, actualCurrentConfig, unsubmittedInputs })
             }
+        const className: string = invalid ? 'invalid' : unsubmitted ? 'unsubmitted' : ''
 
         return (
             <div>

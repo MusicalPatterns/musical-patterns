@@ -6,7 +6,8 @@ import { handleConfigSubmit } from '../interface/handleConfigSubmit'
 import { handleSongChange } from '../interface/handleSongChange'
 import { State } from '../interface/state'
 import {
-    HandleConfigBlurEventParameters, HandleConfigChangeEventParameters,
+    HandleConfigBlurEventParameters,
+    HandleConfigChangeEventParameters,
     HandleConfigSubmitEventParameters,
     HandleSongChangeEventParameters,
 } from '../interface/types'
@@ -29,27 +30,46 @@ const mapStateToProps: (state: State) => AppPropsFromState =
 const mapDispatchToProps: (dispatch: Dispatch) => AppPropsFromDispatch =
     (dispatch: Dispatch): AppPropsFromDispatch => ({
         handleConfigBlurEvent: async (parameters: HandleConfigBlurEventParameters): Promise<void> => {
-            const { configKey, event, actualCurrentConfig } = parameters
+            const { configKey, event, actualCurrentConfig, unsubmittedInputs } = parameters
             const target: HTMLInputElement = event.target as HTMLInputElement
             const configValue: string = target.value
 
-            handleConfigBlur({ configKey, configValue, dispatch, actualCurrentConfig })
+            handleConfigBlur({ configKey, configValue, dispatch, actualCurrentConfig, unsubmittedInputs })
         },
-        handleConfigChangeEvent: ({ event, configKey, interfaceConfig }: HandleConfigChangeEventParameters): void => {
+        handleConfigChangeEvent: (parameters: HandleConfigChangeEventParameters): void => {
+            const { event, configKey, interfaceConfig, invalidInputs } = parameters
             const target: HTMLInputElement = event.target as HTMLInputElement
             const configValue: string = target.value
 
-            handleConfigChange({ dispatch, configKey, configValue, interfaceConfig })
+            handleConfigChange({ dispatch, configKey, configValue, interfaceConfig, invalidInputs })
         },
         handleConfigSubmitEvent: async (parameters: HandleConfigSubmitEventParameters): Promise<void> => {
-            const { event, entities, song, configKey, actualCurrentConfig } = parameters
+            const {
+                event,
+                entities,
+                song,
+                configKey,
+                actualCurrentConfig,
+                invalidInputs,
+                unsubmittedInputs,
+            } = parameters
+
             if (event.key !== SUBMIT) {
                 return
             }
             const target: HTMLInputElement = event.target as HTMLInputElement
             const configValue: string = target.value
 
-            await handleConfigSubmit({ dispatch, configKey, configValue, entities, actualCurrentConfig, song })
+            await handleConfigSubmit({
+                actualCurrentConfig,
+                configKey,
+                configValue,
+                dispatch,
+                entities,
+                invalidInputs,
+                song,
+                unsubmittedInputs,
+            })
         },
         handleSongChangeEvent: async ({ event, entities }: HandleSongChangeEventParameters): Promise<void> => {
             const target: HTMLSelectElement = event.target as HTMLSelectElement

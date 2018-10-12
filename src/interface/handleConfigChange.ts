@@ -1,13 +1,14 @@
 import { ActionType } from './actions'
-import { InterfaceConfig } from './state'
+import { InterfaceConfig, InterfaceConfigStates } from './state'
 import { HandleConfigChangeParameters } from './types'
 
 const handleConfigChange: (handleConfigChangeParameters: HandleConfigChangeParameters) => void =
-    ({ dispatch, configKey, configValue, interfaceConfig }: HandleConfigChangeParameters): void => {
-        const updatedInterfaceConfig: InterfaceConfig = { ...interfaceConfig, ...{ [configKey]: configValue } }
-
+    ({ dispatch, configKey, configValue, interfaceConfig, invalidInputs }: HandleConfigChangeParameters): void => {
+        const updatedInterfaceConfig: InterfaceConfig = { ...interfaceConfig, ...{ [ configKey ]: configValue } }
         dispatch({ type: ActionType.SET_INTERFACE_CONFIG, data: updatedInterfaceConfig })
-        dispatch({ type: ActionType.MARK_INPUT_VALID, data: configKey })
+
+        const updatedInvalidInputs: InterfaceConfigStates = { ...invalidInputs, [ configKey ]: false }
+        dispatch({ type: ActionType.SET_INVALID_INPUTS, data: updatedInvalidInputs })
     }
 
 export {

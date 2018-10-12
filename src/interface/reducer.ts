@@ -35,41 +35,17 @@ const reducer: (state: State | undefined, action: Action) => State =
                 return state
                     .set('entities', entities)
             }
-            case ActionType.MARK_INPUT_INVALID: {
-                const inputName: string = action.data
-
-                const invalidInputs: InterfaceConfigStates = state.get('invalidInputs')
-                const updatedInvalidInputs: InterfaceConfigStates = { ...invalidInputs, [ inputName ]: true }
+            case ActionType.SET_INVALID_INPUTS: {
+                const invalidInputs: InterfaceConfigStates = action.data
 
                 return state
-                    .set('invalidInputs', updatedInvalidInputs)
+                    .set('invalidInputs', invalidInputs)
             }
-            case ActionType.MARK_INPUT_VALID: {
-                const inputName: string = action.data
-
-                const invalidInputs: InterfaceConfigStates = state.get('invalidInputs')
-                const updatedInvalidInputs: InterfaceConfigStates = { ...invalidInputs, [ inputName ]: false }
+            case ActionType.SET_UNSUBMITTED_INPUTS: {
+                const unsubmittedInputs: InterfaceConfigStates = action.data
 
                 return state
-                    .set('invalidInputs', updatedInvalidInputs)
-            }
-            case ActionType.MARK_INPUT_UNSUBMITTED: {
-                const inputName: string = action.data
-
-                const unsubmittedInputs: InterfaceConfigStates = state.get('unsubmittedInputs')
-                const updatedUnsubmittedInputs: InterfaceConfigStates = { ...unsubmittedInputs, [ inputName ]: true }
-
-                return state
-                    .set('unsubmittedInputs', updatedUnsubmittedInputs)
-            }
-            case ActionType.MARK_INPUT_SUBMITTED: {
-                const inputName: string = action.data
-
-                const unsubmittedInputs: InterfaceConfigStates = state.get('unsubmittedInputs')
-                const updatedUnsubmittedInputs: InterfaceConfigStates = { ...unsubmittedInputs, [ inputName ]: false }
-
-                return state
-                    .set('unsubmittedInputs', updatedUnsubmittedInputs)
+                    .set('unsubmittedInputs', unsubmittedInputs)
             }
             default: {
                 return state

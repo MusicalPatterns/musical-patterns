@@ -1,15 +1,18 @@
 import { ActionType } from './actions'
+import { InterfaceConfigStates } from './state'
 import { HandleConfigBlurParameters } from './types'
 
 const handleConfigBlur: (handleConfigBlurParameters: HandleConfigBlurParameters) => void =
-    ({ configKey, configValue, dispatch, actualCurrentConfig }: HandleConfigBlurParameters): void => {
+    (handleConfigBlurParameters: HandleConfigBlurParameters): void => {
+        const { configKey, configValue, dispatch, actualCurrentConfig, unsubmittedInputs } = handleConfigBlurParameters
         const existingValue: string = actualCurrentConfig[ configKey ]
-        if (existingValue === configValue) {
-            dispatch({ type: ActionType.MARK_INPUT_SUBMITTED, data: configKey })
+
+        const updatedUnsubmittedInputs: InterfaceConfigStates = {
+            ...unsubmittedInputs,
+            [ configKey ]: existingValue !== configValue,
         }
-        else {
-            dispatch({ type: ActionType.MARK_INPUT_UNSUBMITTED, data: configKey })
-        }
+
+        dispatch({ type: ActionType.SET_UNSUBMITTED_INPUTS, data: updatedUnsubmittedInputs })
     }
 
 export {

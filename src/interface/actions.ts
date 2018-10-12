@@ -1,16 +1,14 @@
 import { Song } from '../songTypes'
 import { Entities } from '../types'
-import { InterfaceConfig } from './state'
+import { InterfaceConfig, InterfaceConfigStates } from './state'
 
 enum ActionType {
     SET_ACTUAL_CURRENT_CONFIG = 'set actual current config',
     SET_SONG_AND_INTERFACE_CONFIG_FROM_SONG = 'set song and interface config from song',
     SET_INTERFACE_CONFIG = 'set interface config',
     SET_ENTITIES = 'set entities',
-    MARK_INPUT_INVALID = 'mark input invalid',
-    MARK_INPUT_VALID = 'mark input valid',
-    MARK_INPUT_UNSUBMITTED = 'mark input unsubmitted',
-    MARK_INPUT_SUBMITTED = 'mark input submitted',
+    SET_INVALID_INPUTS = 'set invalid inputs',
+    SET_UNSUBMITTED_INPUTS = 'set unsubmitted inputs',
 }
 
 interface ActionObject {
@@ -37,24 +35,14 @@ interface SetEntities extends ActionObject {
     type: ActionType.SET_ENTITIES,
 }
 
-interface MarkInputInvalid extends ActionObject {
-    data: string,
-    type: ActionType.MARK_INPUT_INVALID,
+interface SetInvalidInputs extends ActionObject {
+    data: InterfaceConfigStates,
+    type: ActionType.SET_INVALID_INPUTS,
 }
 
-interface MarkInputValid extends ActionObject {
-    data: string,
-    type: ActionType.MARK_INPUT_VALID,
-}
-
-interface MarkInputUnsubmitted extends ActionObject {
-    data: string,
-    type: ActionType.MARK_INPUT_UNSUBMITTED,
-}
-
-interface MarkInputSubmitted extends ActionObject {
-    data: string,
-    type: ActionType.MARK_INPUT_SUBMITTED,
+interface SetUnsubmittedInputs extends ActionObject {
+    data: InterfaceConfigStates,
+    type: ActionType.SET_UNSUBMITTED_INPUTS,
 }
 
 type Action =
@@ -62,10 +50,8 @@ type Action =
     SetSongAndInterfaceConfigFromSong |
     SetInterfaceConfig |
     SetEntities |
-    MarkInputInvalid |
-    MarkInputValid |
-    MarkInputUnsubmitted |
-    MarkInputSubmitted
+    SetInvalidInputs |
+    SetUnsubmittedInputs
 
 export {
     Action,
