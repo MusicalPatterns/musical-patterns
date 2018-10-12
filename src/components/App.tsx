@@ -20,6 +20,7 @@ const mapStateToProps: (state: State) => AppPropsFromState =
         actualCurrentConfig: state.get('actualCurrentConfig'),
         entities: state.get('entities'),
         interfaceConfig: state.get('interfaceConfig'),
+        invalidInputs: state.get('invalidInputs'),
         song: state.get('song'),
     })
 

@@ -18,6 +18,14 @@ module.exports = {
                 test: /\.wav/,
                 loader: 'file-loader',
             },
+            {
+                test: /\.scss$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'sass-loader',
+                ],
+            },
         ],
     },
     resolve: {

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { InterfaceConfig } from '../interface/types'
+import { InterfaceConfig } from '../interface/state'
 import ConfigOption from './ConfigOption'
 import { ConfigSelectorProps, InterfaceConfigEntry } from './types'
 
@@ -9,8 +9,9 @@ const ConfigSelector: (configSelectorProps: ConfigSelectorProps) => JSX.Element 
         const configSelector: JSX.Element[] = Object.keys(interfaceConfig).sort().map(
             (interfaceConfigKey: string, key: number): JSX.Element => {
                 const configEntry: InterfaceConfigEntry = [ interfaceConfigKey, interfaceConfig[interfaceConfigKey] ]
+                const invalid: boolean = configSelectorProps.invalidInputs[ interfaceConfigKey ]
 
-                return <ConfigOption {...{ configEntry, key, configSelectorProps }} />
+                return <ConfigOption {...{ configEntry, key, configSelectorProps, invalid }} />
             },
         )
 

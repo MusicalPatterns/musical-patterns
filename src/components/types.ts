@@ -1,8 +1,8 @@
+import { InterfaceConfig, InterfaceConfigValidities } from '../interface/state'
 import {
     HandleConfigChangeEvent,
     HandleConfigSubmitEvent,
     HandleSongChangeEvent,
-    InterfaceConfig,
 } from '../interface/types'
 import { Song } from '../songTypes'
 import { Entities } from '../types'
@@ -11,6 +11,7 @@ interface AppPropsFromState {
     actualCurrentConfig: InterfaceConfig,
     entities: Entities,
     interfaceConfig: InterfaceConfig,
+    invalidInputs: InterfaceConfigValidities,
     song: Song,
 }
 
@@ -29,6 +30,7 @@ interface ConfigSelectorProps {
     handleConfigChangeEvent: HandleConfigChangeEvent,
     handleConfigSubmitEvent: HandleConfigSubmitEvent,
     interfaceConfig: InterfaceConfig,
+    invalidInputs: InterfaceConfigValidities,
     song: Song,
 }
 
@@ -43,6 +45,7 @@ type InterfaceConfigEntry = [string, string]
 interface ConfigOptionProps {
     configEntry: InterfaceConfigEntry,
     configSelectorProps: ConfigSelectorProps,
+    invalid: boolean,
 }
 
 export {

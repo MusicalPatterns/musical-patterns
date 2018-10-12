@@ -1,9 +1,8 @@
 import { Song } from '../songTypes'
 import { Entities } from '../types'
 import { Action, ActionType } from './actions'
-import { initialState, State } from './state'
+import { initialState, InterfaceConfig, InterfaceConfigValidities, State } from './state'
 import { stringifyConfig } from './stringifyConfig'
-import { InterfaceConfig } from './types'
 
 const reducer: (state: State | undefined, action: Action) => State =
     (state: State = initialState, action: Action): State => {
@@ -35,6 +34,24 @@ const reducer: (state: State | undefined, action: Action) => State =
 
                 return state
                     .set('entities', entities)
+            }
+            case ActionType.MARK_INPUT_INVALID: {
+                const inputName: string = action.data
+
+                const invalidInputs: InterfaceConfigValidities = state.get('invalidInputs')
+                const updatedInvalidInputs: InterfaceConfigValidities = { ...invalidInputs, [ inputName ]: true }
+
+                return state
+                    .set('invalidInputs', updatedInvalidInputs)
+            }
+            case ActionType.MARK_INPUT_VALID: {
+                const inputName: string = action.data
+
+                const invalidInputs: InterfaceConfigValidities = state.get('invalidInputs')
+                const updatedInvalidInputs: InterfaceConfigValidities = { ...invalidInputs, [ inputName ]: false }
+
+                return state
+                    .set('invalidInputs', updatedInvalidInputs)
             }
             default: {
                 return state

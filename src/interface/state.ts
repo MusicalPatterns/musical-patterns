@@ -2,19 +2,28 @@ import { Map } from 'immutable'
 import { Song } from '../songTypes'
 import { Entities } from '../types'
 import { emptySong } from './emptySong'
-import { InterfaceConfig } from './types'
+
+interface InterfaceConfig {
+    [index: string]: string,
+}
+
+interface InterfaceConfigValidities {
+    [index: string]: boolean,
+}
 
 interface RawState {
     actualCurrentConfig: InterfaceConfig,
     entities: Entities,
     interfaceConfig: InterfaceConfig,
+    invalidInputs: InterfaceConfigValidities,
     song: Song,
 }
 
 type AllowedValue =
     Entities |
     Song |
-    InterfaceConfig
+    InterfaceConfig |
+    InterfaceConfigValidities
 
 type MapTypeAllowedData<T> = {
     [K in keyof T]: AllowedValue
@@ -38,12 +47,15 @@ const rawState: RawState = {
     actualCurrentConfig: {},
     entities: [],
     interfaceConfig: {},
+    invalidInputs: {},
     song: emptySong,
 }
 
 const initialState: State = immutablizeState(rawState)
 
 export {
+    InterfaceConfig,
+    InterfaceConfigValidities,
     State,
     initialState,
     immutablizeState,

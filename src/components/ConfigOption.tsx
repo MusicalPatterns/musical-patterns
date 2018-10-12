@@ -3,7 +3,7 @@ import { ConfigOptionProps } from './types'
 
 const ConfigOption: (configOptionProps: ConfigOptionProps) => JSX.Element =
     (configOptionProps: ConfigOptionProps): JSX.Element => {
-        const { configEntry, configSelectorProps } = configOptionProps
+        const { configEntry, configSelectorProps, invalid } = configOptionProps
         const [ configKey, configValue ] = configEntry
         const {
             song,
@@ -21,11 +21,12 @@ const ConfigOption: (configOptionProps: ConfigOptionProps) => JSX.Element =
             (event: React.KeyboardEvent): void => {
                 handleConfigSubmitEvent({ configKey, entities, event, actualCurrentConfig, song })
             }
+        const className: string = invalid ? 'invalid' : ''
 
         return (
             <div>
                 {configKey}
-                <input {...{ onChange, onKeyPress, value: configValue }}/>
+                <input {...{ onChange, onKeyPress, value: configValue, className }}/>
             </div>
         )
     }

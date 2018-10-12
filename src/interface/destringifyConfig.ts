@@ -1,7 +1,7 @@
 import { InterfaceConfigEntry } from '../components/types'
 import { Config } from '../songTypes'
 import * as to from '../utilities/to'
-import { InterfaceConfig } from './types'
+import { InterfaceConfig } from './state'
 
 const configDefaults: Config = {
     baseFrequency: to.Frequency(0),

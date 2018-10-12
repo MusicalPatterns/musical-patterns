@@ -1,5 +1,5 @@
 import { Config } from '../songTypes'
-import { InterfaceConfig } from './types'
+import { InterfaceConfig } from './state'
 
 const interfaceConfigDefaults: InterfaceConfig = {
 }

@@ -2,6 +2,8 @@ import * as React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore, Store } from 'redux'
+// tslint:disable-next-line:no-import-side-effect
+import '../styles/main.scss'
 import App from './components/App'
 import { handleSongChange } from './interface/handleSongChange'
 import { reducer } from './interface/reducer'

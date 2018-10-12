@@ -11,6 +11,7 @@ describe('reducer', () => {
             actualCurrentConfig: {},
             entities: [],
             interfaceConfig: {},
+            invalidInputs: {},
             song: emptySong,
         })
 
@@ -26,6 +27,7 @@ describe('reducer', () => {
             actualCurrentConfig: {},
             entities: newEntities,
             interfaceConfig: {},
+            invalidInputs: {},
             song: emptySong,
         })
         expect(newState.toJS()).toEqual(expectedState.toJS())

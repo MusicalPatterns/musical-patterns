@@ -2,10 +2,7 @@ import * as React from 'react'
 import { Dispatch } from 'redux'
 import { Song, SongName } from '../songTypes'
 import { Entities } from '../types'
-
-interface InterfaceConfig {
-    [index: string]: string,
-}
+import { InterfaceConfig } from './state'
 
 interface HandleConfigChangeParameters {
     configKey: string,
@@ -49,7 +46,6 @@ interface HandleSongChangeEventParameters {
 type HandleSongChangeEvent = (handleSongChangeEventParameters: HandleSongChangeEventParameters) => void
 
 export {
-    InterfaceConfig,
     HandleConfigChangeEvent,
     HandleConfigChangeEventParameters,
     HandleConfigChangeParameters,
