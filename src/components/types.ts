@@ -13,6 +13,7 @@ interface AppPropsFromState {
     entities: Entities,
     interfaceConfig: InterfaceConfig,
     invalidInputs: InterfaceConfigStates,
+    isNoSongSelected: boolean,
     song: Song,
     unsubmittedInputs: InterfaceConfigStates,
 }

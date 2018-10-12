@@ -14,6 +14,7 @@ const AppPresenter: (appProps: AppProps) => JSX.Element =
             handleSongChangeEvent,
             interfaceConfig,
             invalidInputs,
+            isNoSongSelected,
             song,
             unsubmittedInputs,
         } = appProps
@@ -38,7 +39,7 @@ const AppPresenter: (appProps: AppProps) => JSX.Element =
             <div>
                 <h1>Fun Musical Ideas</h1>
                 <SongSelector {...songSelectorProps}/>
-                <ConfigSelector {...configSelectorProps}/>
+                {isNoSongSelected || <ConfigSelector {...configSelectorProps}/>}
             </div>
         )
     }

@@ -16,6 +16,7 @@ interface RawState {
     entities: Entities,
     interfaceConfig: InterfaceConfig,
     invalidInputs: InterfaceConfigStates,
+    isNoSongSelected: boolean,
     song: Song,
     unsubmittedInputs: InterfaceConfigStates,
 }
@@ -24,7 +25,8 @@ type AllowedValue =
     Entities |
     Song |
     InterfaceConfig |
-    InterfaceConfigStates
+    InterfaceConfigStates |
+    boolean
 
 type MapTypeAllowedData<T> = {
     [K in keyof T]: AllowedValue
@@ -49,6 +51,7 @@ const rawState: RawState = {
     entities: [],
     interfaceConfig: {},
     invalidInputs: {},
+    isNoSongSelected: true,
     song: emptySong,
     unsubmittedInputs: {},
 }

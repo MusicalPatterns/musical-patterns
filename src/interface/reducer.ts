@@ -16,6 +16,7 @@ const reducer: (state: State | undefined, action: Action) => State =
                     .set('song', song)
                     .set('interfaceConfig', stringifiedConfig)
                     .set('actualCurrentConfig', stringifiedConfig)
+                    .set('isNoSongSelected', false)
             }
             case ActionType.SET_ACTUAL_CURRENT_CONFIG: {
                 const actualCurrentConfig: InterfaceConfig = action.data

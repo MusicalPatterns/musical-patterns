@@ -22,6 +22,7 @@ const mapStateToProps: (state: State) => AppPropsFromState =
         entities: state.get('entities'),
         interfaceConfig: state.get('interfaceConfig'),
         invalidInputs: state.get('invalidInputs'),
+        isNoSongSelected: state.get('isNoSongSelected'),
         song: state.get('song'),
         unsubmittedInputs: state.get('unsubmittedInputs'),
     })

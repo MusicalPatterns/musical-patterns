@@ -5,9 +5,7 @@ import { createStore, Store } from 'redux'
 // tslint:disable-next-line:no-import-side-effect
 import '../styles/main.scss'
 import App from './components/App'
-import { handleSongChange } from './interface/handleSongChange'
 import { reducer } from './interface/reducer'
-import { SongName } from './songTypes'
 
 const root: HTMLDivElement = document.createElement('div')
 document.body.appendChild(root)
@@ -15,5 +13,4 @@ document.body.appendChild(root)
 const store: Store = createStore(reducer)
 store.subscribe(() => render(<Provider store={store}><App/></Provider>, root))
 
-// tslint:disable-next-line:no-floating-promises
-handleSongChange({ dispatch: store.dispatch, songName: SongName._EMPTY_SONG, entities: [] })
+render(<Provider store={store}><App/></Provider>, root)
