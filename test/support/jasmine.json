@@ -1,13 +1,13 @@
 {
   "spec_files": [
-    "spec/src/**/*.test.ts",
-    "spec/src/**/*.test.tsx",
+    "test/src/**/*.test.ts",
+    "test/src/**/*.test.tsx",
     "songs/**/*.test.ts",
     "songs/**/*.test.tsx"
   ],
   "helpers": [
-    "spec/support/**/*.ts",
-    "spec/support/**/*.tsx"
+    "test/support/**/*.ts",
+    "test/support/**/*.tsx"
   ],
   "stopSpecOnExpectationFailure": false
 }

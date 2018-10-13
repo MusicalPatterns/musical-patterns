@@ -1,4 +1,5 @@
 .PHONY: lint
+.PHONY: test
 
 setup:
 	./bin/setup.sh

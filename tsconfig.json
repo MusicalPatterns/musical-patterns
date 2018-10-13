@@ -22,7 +22,7 @@
     "jsx": "react"
   },
   "exclude": [
-    "spec",
-    "songs/**/spec"
+    "test",
+    "songs/**/test"
   ]
 }
