@@ -37,7 +37,7 @@ const ConfigOption: (configOptionProps: ConfigOptionProps) => JSX.Element =
             (event: React.SyntheticEvent<HTMLInputElement>): void => {
                 handleConfigBlurEvent({ configKey, event, submittedConfig, unsubmittedConfigInputs })
             }
-            
+
         const className: string = invalid ? 'invalid' : unsubmitted ? 'unsubmitted' : ''
 
         return (
