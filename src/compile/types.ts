@@ -1,7 +1,7 @@
 import { Notes, OscillatorName, Timbre, VoiceType } from '../types'
 import { Index, Scalar, Time } from '../utilities/nominalTypes'
 
-interface VoiceConfig {
+interface VoiceSpec {
     timbre: Timbre | OscillatorName,
     voiceType: VoiceType,
 }
@@ -11,20 +11,20 @@ enum TimeType {
     ATOMIC = 'atomic',
 }
 
-interface EntityConfig {
+interface EntitySpec {
     nextEnd?: Time,
     nextStart?: Time,
     noteIndex?: Index,
     notes?: Notes,
     timeType?: TimeType,
-    voiceConfig?: VoiceConfig,
     voiceGain?: Scalar,
+    voiceSpec?: VoiceSpec,
 }
 
-type EntityConfigs = EntityConfig[]
+type EntitySpecs = EntitySpec[]
 
 export {
-    EntityConfig,
-    EntityConfigs,
+    EntitySpec,
+    EntitySpecs,
     TimeType,
 }

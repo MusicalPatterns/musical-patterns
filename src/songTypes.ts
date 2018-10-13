@@ -1,15 +1,15 @@
-import { EntityConfigs } from './compile/types'
+import { EntitySpecs } from './compile/types'
 import { Entities, Scales } from './types'
 import { Frequency, Scalar } from './utilities/nominalTypes'
 
 enum SongID {
     _EMPTY_SONG = '',
     BEATEN_PATH = 'beaten path',
-    HAFUHAFU = 'hafuhafuSongConfig',
-    HAFUHAFU_WITH_PITCH_CIRCULARITY = 'hafuhafuSongConfig with pitch circularity',
-    STEPWISE = 'stepwiseSongConfig',
+    HAFUHAFU = 'hafuhafu',
+    HAFUHAFU_WITH_PITCH_CIRCULARITY = 'hafuhafu with pitch circularity',
+    STEPWISE = 'stepwiseSongSpec',
     XELT_DLEUDEF_AET_NAELNAEMEUGZ = 'xelt dleudef aet ñaelnaemeugz',
-    ZDAUBYAOS = 'zdaubyaosSongConfig',
+    ZDAUBYAOS = 'zdaubyaosSongSpec',
 }
 
 interface Config {
@@ -19,10 +19,10 @@ interface Config {
     [index: string]: any,
 }
 
-interface SongConfig {
-    compile: (songConfig: SongConfig) => Promise<Song>,
+interface SongSpec {
+    compile: (songSpec: SongSpec) => Promise<Song>,
     config: Config,
-    entityConfigs: EntityConfigs,
+    entitySpecs: EntitySpecs,
     scales: Scales,
     songId: SongID,
 }
@@ -40,7 +40,7 @@ interface SongMetadata {
 
 export {
     Song,
-    SongConfig,
+    SongSpec,
     SongID,
     Config,
     SongMetadata,

@@ -1,4 +1,4 @@
-import { Song, SongConfig } from '../songTypes'
+import { Song } from '../songTypes'
 import { StringifiedConfig, StringifiedConfigStates } from './state'
 
 enum ActionType {

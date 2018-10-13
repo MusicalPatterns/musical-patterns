@@ -7,11 +7,11 @@ const handleConfigBlur: (handleConfigBlurParameters: HandleConfigBlurParameters)
     (handleConfigBlurParameters: HandleConfigBlurParameters): void => {
         const { configKey, configValue, dispatch, ui }: HandleConfigBlurParameters = handleConfigBlurParameters
         const { submittedConfig, unsubmittedConfigInputs }: UI = ui
-        const existingValue: string = submittedConfig[ configKey ]
+        const currentConfigValue: string = submittedConfig[ configKey ]
 
         const updatedUnsubmittedInputs: StringifiedConfigStates = {
             ...unsubmittedConfigInputs,
-            [ configKey ]: existingValue !== configValue,
+            [ configKey ]: currentConfigValue !== configValue,
         }
 
         dispatch({ type: ActionType.SET_UNSUBMITTED_INPUTS, data: updatedUnsubmittedInputs })

@@ -1,7 +1,7 @@
 import context from '../context'
 import sampleData from '../sampleData'
 import samples from '../samples'
-import { SongConfig } from '../songTypes'
+import { SongSpec } from '../songTypes'
 import { NoteToPlay, StartNote, StopNote, Timbre, Voice } from '../types'
 import { centsToShiftFromOneFrequencyToAnother, pitchToCents } from '../utilities/cents'
 import * as from from '../utilities/from'
@@ -15,8 +15,8 @@ const BASE_SAMPLE_GAIN: Scalar = 0.25 as any
 // tslint:disable-next-line:no-any no-magic-numbers
 const AVERAGE_SAMPLE_PITCH_OF_C5: Frequency = 523.25 as any
 
-const buildSampleVoice: (type: Timbre, song: SongConfig) => Voice =
-    (type: Timbre, song: SongConfig): Voice => {
+const compileSampleVoice: (type: Timbre, song: SongSpec) => Voice =
+    (type: Timbre, song: SongSpec): Voice => {
         const basePitchShift: Cents = centsToShiftFromOneFrequencyToAnother(
             AVERAGE_SAMPLE_PITCH_OF_C5,
             song.config.baseFrequency,
@@ -51,4 +51,4 @@ const buildSampleVoice: (type: Timbre, song: SongConfig) => Voice =
         }
     }
 
-export default buildSampleVoice
+export default compileSampleVoice

@@ -1,5 +1,5 @@
-import { songConfigs } from '../songs'
-import { SongConfig } from '../songTypes'
+import { songSpecs } from '../songs'
+import { SongSpec } from '../songTypes'
 import { ActionType } from '../state/actions'
 import { StringifiedConfig, StringifiedConfigStates, UI } from '../state/state'
 import { deepEqual } from '../utilities/deepEqual'
@@ -19,7 +19,7 @@ const handleConfigSubmit: (handleConfigSubmitParameters: HandleConfigSubmitParam
         }
 
         try {
-            const newSongConfig: SongConfig = { ...songConfigs[song.songId], config: destringifyConfig(updatedConfig) }
+            const newSongSpec: SongSpec = { ...songSpecs[song.songId], config: destringifyConfig(updatedConfig) }
             stopPreviousSong(song)
             dispatch({ type: ActionType.SET_SUBMITTED_CONFIG, data: updatedConfig })
 
@@ -29,7 +29,7 @@ const handleConfigSubmit: (handleConfigSubmitParameters: HandleConfigSubmitParam
             }
             dispatch({ type: ActionType.SET_UNSUBMITTED_INPUTS, data: updatedUnsubmittedInputs })
 
-            await recompileAndRestart(newSongConfig, dispatch)
+            await recompileAndRestart(newSongSpec, dispatch)
         }
         catch (e) {
             const updatedInvalidInputs: StringifiedConfigStates = { ...invalidConfigInputs, [ configKey ]: true }

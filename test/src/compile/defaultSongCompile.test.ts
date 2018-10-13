@@ -1,22 +1,22 @@
-import * as buildEntity from '../../../src/compile/buildEntity'
-import { defaultSongCompile } from '../../../src/compile/defaultSongCompile'
-import { EntityConfig } from '../../../src/compile/types'
-import { SongConfig } from '../../../src/songTypes'
-import { emptySongConfig } from '../../../src/ui/emptySongConfig'
+import * as compileEntity from '../../../src/compile/compileEntity'
+import { defaultCompileSong } from '../../../src/compile/defaultCompileSong'
+import { EntitySpec } from '../../../src/compile/types'
+import { SongSpec } from '../../../src/songTypes'
+import { emptySongSpec } from '../../../src/ui/emptySongSpec'
 
 describe('default song compile', () => {
-    let buildEntitySpy: jasmine.Spy
+    let compileEntitySpy: jasmine.Spy
     beforeEach(() => {
-        buildEntitySpy = spyOn(buildEntity, 'buildEntity')
+        compileEntitySpy = spyOn(compileEntity, 'compileEntity')
     })
 
     it('returns built entities', async (done: DoneFn) => {
-        const testEntityConfig: EntityConfig = {}
-        const testSong: SongConfig = { ...emptySongConfig, entityConfigs: [ testEntityConfig ] }
+        const testEntitySpec: EntitySpec = {}
+        const testSong: SongSpec = { ...emptySongSpec, entitySpecs: [ testEntitySpec ] }
 
-        await defaultSongCompile(testSong)
+        await defaultCompileSong(testSong)
 
-        expect(buildEntitySpy).toHaveBeenCalledWith(testEntityConfig, testSong)
+        expect(compileEntitySpy).toHaveBeenCalledWith(testEntitySpec, testSong)
         done()
     })
 })

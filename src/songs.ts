@@ -1,19 +1,19 @@
 import { beatenPathSongMetadata } from '../songs/beaten-path/src/metadata'
-import { beatenPathSongConfig } from '../songs/beaten-path/src/songs'
+import { beatenPathSongSpec } from '../songs/beaten-path/src/songs'
 import { hafuhafuSongMetadata, hafuhafuWithPitchCircularitySongMetadata } from '../songs/hafuhafu/src/metadata'
-import { hafuhafuSongConfig, hafuhafuWithPitchCircularitySongConfig } from '../songs/hafuhafu/src/songs'
+import { hafuhafuSongSpec, hafuhafuWithPitchCircularitySongSpec } from '../songs/hafuhafu/src/songs'
 import { xeltDleudefAetNaelnaemeugzSongMetadata } from '../songs/xelt-dleudef-aet-naelnaemeugz/src/metadata'
-import { xeltDleudefAetNaelnaemeugzSongConfig } from '../songs/xelt-dleudef-aet-naelnaemeugz/src/songs'
+import { xeltDleudefAetNaelnaemeugzSongSpec } from '../songs/xelt-dleudef-aet-naelnaemeugz/src/songs'
 import { zdaubyaosSongMetadata } from '../songs/zdaubyaos/src/metadata'
-import { zdaubyaosSongConfig } from '../songs/zdaubyaos/src/songs'
-import { SongConfig, SongID, SongMetadata } from './songTypes'
+import { zdaubyaosSongSpec } from '../songs/zdaubyaos/src/songs'
+import { SongID, SongMetadata, SongSpec } from './songTypes'
 
-const songConfigs: {[index: string]: SongConfig} = {
-    [SongID.BEATEN_PATH]: beatenPathSongConfig,
-    [SongID.HAFUHAFU]: hafuhafuSongConfig,
-    [SongID.HAFUHAFU_WITH_PITCH_CIRCULARITY]: hafuhafuWithPitchCircularitySongConfig,
-    [SongID.XELT_DLEUDEF_AET_NAELNAEMEUGZ]: xeltDleudefAetNaelnaemeugzSongConfig,
-    [SongID.ZDAUBYAOS]: zdaubyaosSongConfig,
+const songSpecs: {[index: string]: SongSpec} = {
+    [SongID.BEATEN_PATH]: beatenPathSongSpec,
+    [SongID.HAFUHAFU]: hafuhafuSongSpec,
+    [SongID.HAFUHAFU_WITH_PITCH_CIRCULARITY]: hafuhafuWithPitchCircularitySongSpec,
+    [SongID.XELT_DLEUDEF_AET_NAELNAEMEUGZ]: xeltDleudefAetNaelnaemeugzSongSpec,
+    [SongID.ZDAUBYAOS]: zdaubyaosSongSpec,
 }
 
 const songMetadata: {[index: string]: SongMetadata} = {
@@ -25,6 +25,6 @@ const songMetadata: {[index: string]: SongMetadata} = {
 }
 
 export {
-    songConfigs,
+    songSpecs,
     songMetadata,
 }

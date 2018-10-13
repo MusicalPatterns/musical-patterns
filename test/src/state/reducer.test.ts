@@ -1,11 +1,11 @@
+import { Song } from '../../../src/songTypes'
 import { ActionType, SetSong } from '../../../src/state/actions'
 import { reducer } from '../../../src/state/reducer'
 import { immutablizeState, State } from '../../../src/state/state'
-import { Song } from '../../../src/songTypes'
-import { mockSongConfig } from '../../support/mockSongConfig'
+import { mockSongSpec } from '../../support/mockSongConfig'
 
 describe('reducer', () => {
-    it('sets song', async (done) => {
+    it('sets song', async (done: DoneFn) => {
         const state: State = immutablizeState({
             song: undefined,
             ui: {
@@ -16,7 +16,7 @@ describe('reducer', () => {
             },
         })
 
-        const newSong: Song = await mockSongConfig.compile(mockSongConfig)
+        const newSong: Song = await mockSongSpec.compile(mockSongSpec)
         const action: SetSong = {
             data: newSong,
             type: ActionType.SET_SONG,

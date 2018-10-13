@@ -1,4 +1,4 @@
-import { Song, SongConfig } from '../songTypes'
+import { Song } from '../songTypes'
 import { Action, ActionType } from './actions'
 import { initialState, State, StringifiedConfig, StringifiedConfigStates, UI } from './state'
 

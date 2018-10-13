@@ -1,8 +1,8 @@
-import { buildEntity } from '../../src/compile/buildEntity'
+import { compileEntity } from '../../src/compile/compileEntity'
 import { Entity } from '../../src/types'
-import { emptySongConfig } from '../../src/ui/emptySongConfig'
+import { emptySongSpec } from '../../src/ui/emptySongSpec'
 
-const mockEntity: Entity = buildEntity({}, emptySongConfig)
+const mockEntity: Entity = compileEntity({}, emptySongSpec)
 
 export {
     mockEntity,
