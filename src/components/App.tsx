@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
+import { songMetadata } from '../songs'
 import { State } from '../state/state'
 import ConfigSelector from './ConfigSelector'
 import SongSelector from './SongSelector'
@@ -19,9 +20,9 @@ const App: (appProps: AppProps) => JSX.Element =
 
                 {song && <div>
                     <div>
-                        {song.description}
+                        {songMetadata[song.songId].description}
                     </div>
-                    <ConfigSelector/>
+                    <ConfigSelector {...{ song }}/>
                 </div>}
             </div>
         )

@@ -1,8 +1,9 @@
-import { Entities, Entity } from '../types'
+import { Song } from '../songTypes'
+import { Entity } from '../types'
 
-const stopPreviousSong: (entities: Entities) => void =
-    (entities: Entities): void => {
-        entities.forEach((entity: Entity): void => {
+const stopPreviousSong: (song: Song) => void =
+    (song: Song): void => {
+        song.entities.forEach((entity: Entity): void => {
             entity.voice.stopNote()
         })
     }

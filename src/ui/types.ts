@@ -2,7 +2,6 @@ import * as React from 'react'
 import { Dispatch } from 'redux'
 import { Song, SongID } from '../songTypes'
 import { UI } from '../state/state'
-import { Entities } from '../types'
 
 interface HandleConfigChangeParameters {
     configKey: string,
@@ -21,13 +20,11 @@ interface HandleConfigSubmitParameters {
     configKey: string,
     configValue: string,
     dispatch: Dispatch,
-    entities: Entities,
     song: Song,
     ui: UI,
 }
 interface HandleConfigSubmitEventParameters {
     configKey: string,
-    entities: Entities,
     event: React.KeyboardEvent,
     song: Song,
     ui: UI,
@@ -35,13 +32,13 @@ interface HandleConfigSubmitEventParameters {
 type HandleConfigSubmitEvent = (handleConfigSubmitEventParameters: HandleConfigSubmitEventParameters) => void
 
 interface HandleSongChangeParameters {
+    currentSong?: Song,
     dispatch: Dispatch,
-    entities: Entities,
-    songId: SongID,
+    newlySelectedSongId: SongID,
 }
 interface HandleSongChangeEventParameters {
-    entities: Entities
     event: React.SyntheticEvent<HTMLSelectElement>,
+    song?: Song,
 }
 type HandleSongChangeEvent = (handleSongChangeEventParameters: HandleSongChangeEventParameters) => void
 

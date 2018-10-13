@@ -1,14 +1,13 @@
 import { Dispatch } from 'redux'
 import { songLoop } from '../perform/songLoop'
-import { Song } from '../songTypes'
+import { Song, SongConfig } from '../songTypes'
 import { ActionType } from '../state/actions'
-import { Entities } from '../types'
 
-const recompileAndRestart: (song: Song, dispatch: Dispatch) => Promise<void> =
-    async (song: Song, dispatch: Dispatch): Promise<void> => {
-        const entities: Entities = await song.compile(song)
-        dispatch({ type: ActionType.SET_ENTITIES, data: entities })
-        songLoop(entities)
+const recompileAndRestart: (newlySelectedSongConfig: SongConfig, dispatch: Dispatch) => Promise<void> =
+    async (newlySelectedSongConfig: SongConfig, dispatch: Dispatch): Promise<void> => {
+        const song: Song = await newlySelectedSongConfig.compile(newlySelectedSongConfig)
+        dispatch({ type: ActionType.SET_SONG, data: song })
+        songLoop(song)
     }
 
 export {

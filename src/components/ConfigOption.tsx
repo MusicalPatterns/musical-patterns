@@ -5,11 +5,10 @@ const ConfigOption: (configOptionProps: ConfigOptionProps) => JSX.Element =
     (configOptionProps: ConfigOptionProps): JSX.Element => {
         const { configKey, configValue, configSelectorProps, invalid, unsubmitted } = configOptionProps
         const {
-            entities,
+            song,
             handleConfigChangeEvent,
             handleConfigSubmitEvent,
             handleConfigBlurEvent,
-            song,
             ui,
         } = configSelectorProps
 
@@ -19,7 +18,7 @@ const ConfigOption: (configOptionProps: ConfigOptionProps) => JSX.Element =
             }
         const onKeyPress: (event: React.KeyboardEvent) => void =
             (event: React.KeyboardEvent): void => {
-                handleConfigSubmitEvent({ configKey, entities, event, song, ui })
+                handleConfigSubmitEvent({ configKey, event, song, ui })
             }
         const onBlur: (event: React.SyntheticEvent<HTMLInputElement>) => void =
             (event: React.SyntheticEvent<HTMLInputElement>): void => {

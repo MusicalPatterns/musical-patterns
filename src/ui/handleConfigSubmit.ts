@@ -1,4 +1,5 @@
-import { Song } from '../songTypes'
+import { songConfigs } from '../songs'
+import { SongConfig } from '../songTypes'
 import { ActionType } from '../state/actions'
 import { StringifiedConfig, StringifiedConfigStates, UI } from '../state/state'
 import { deepEqual } from '../utilities/deepEqual'
@@ -9,7 +10,7 @@ import { HandleConfigSubmitParameters } from './types'
 
 const handleConfigSubmit: (handleConfigSubmitParameters: HandleConfigSubmitParameters) => Promise<void> =
     async (handleConfigSubmitParameters: HandleConfigSubmitParameters): Promise<void> => {
-        const { configKey, configValue, dispatch, entities, song, ui } = handleConfigSubmitParameters
+        const { configKey, configValue, dispatch, song, ui } = handleConfigSubmitParameters
         const { invalidConfigInputs, submittedConfig, unsubmittedConfigInputs }: UI = ui
 
         const updatedConfig: StringifiedConfig = { ...submittedConfig, [ configKey ]: configValue }
@@ -18,8 +19,8 @@ const handleConfigSubmit: (handleConfigSubmitParameters: HandleConfigSubmitParam
         }
 
         try {
-            const newSong: Song = { ...song, config: destringifyConfig(updatedConfig) }
-            stopPreviousSong(entities)
+            const newSongConfig: SongConfig = { ...songConfigs[song.songId], config: destringifyConfig(updatedConfig) }
+            stopPreviousSong(song)
             dispatch({ type: ActionType.SET_SUBMITTED_CONFIG, data: updatedConfig })
 
             const updatedUnsubmittedInputs: StringifiedConfigStates = {
@@ -28,7 +29,7 @@ const handleConfigSubmit: (handleConfigSubmitParameters: HandleConfigSubmitParam
             }
             dispatch({ type: ActionType.SET_UNSUBMITTED_INPUTS, data: updatedUnsubmittedInputs })
 
-            await recompileAndRestart(newSong, dispatch)
+            await recompileAndRestart(newSongConfig, dispatch)
         }
         catch (e) {
             const updatedInvalidInputs: StringifiedConfigStates = { ...invalidConfigInputs, [ configKey ]: true }

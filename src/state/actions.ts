@@ -1,12 +1,10 @@
-import { Song } from '../songTypes'
-import { Entities } from '../types'
+import { Song, SongConfig } from '../songTypes'
 import { StringifiedConfig, StringifiedConfigStates } from './state'
 
 enum ActionType {
     SET_SUBMITTED_CONFIG = 'set submitted config',
-    SET_SONG_AND_STRINGIFIED_CONFIGS_FROM_SONG = 'set song and stringified config from song',
-    SET_STRINGIFIED_CONFIG = 'set stringified config',
-    SET_ENTITIES = 'set entities',
+    SET_SONG = 'set song',
+    SET_DISPLAYED_CONFIG = 'set displayed config',
     SET_INVALID_INPUTS = 'set invalid inputs',
     SET_UNSUBMITTED_INPUTS = 'set unsubmitted inputs',
 }
@@ -15,24 +13,19 @@ interface ActionObject {
     type: ActionType,
 }
 
+interface SetSong extends ActionObject {
+    data: Song,
+    type: ActionType.SET_SONG,
+}
+
 interface SetSubmittedConfig extends ActionObject {
     data: StringifiedConfig,
     type: ActionType.SET_SUBMITTED_CONFIG,
 }
 
-interface SetSongAndStringifiedConfigFromSong extends ActionObject {
-    data: Song,
-    type: ActionType.SET_SONG_AND_STRINGIFIED_CONFIGS_FROM_SONG,
-}
-
-interface SetStringifiedConfig extends ActionObject {
+interface SetDisplayedConfig extends ActionObject {
     data: StringifiedConfig,
-    type: ActionType.SET_STRINGIFIED_CONFIG,
-}
-
-interface SetEntities extends ActionObject {
-    data: Entities,
-    type: ActionType.SET_ENTITIES,
+    type: ActionType.SET_DISPLAYED_CONFIG,
 }
 
 interface SetInvalidInputs extends ActionObject {
@@ -46,15 +39,14 @@ interface SetUnsubmittedInputs extends ActionObject {
 }
 
 type Action =
+    SetSong |
     SetSubmittedConfig |
-    SetSongAndStringifiedConfigFromSong |
-    SetStringifiedConfig |
-    SetEntities |
+    SetDisplayedConfig |
     SetInvalidInputs |
     SetUnsubmittedInputs
 
 export {
     Action,
     ActionType,
-    SetEntities,
+    SetSong,
 }

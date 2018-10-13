@@ -1,6 +1,5 @@
 import { Map } from 'immutable'
 import { Song } from '../songTypes'
-import { Entities } from '../types'
 
 type StringifiedConfigEntry = [ string, string ]
 
@@ -20,15 +19,14 @@ interface UI {
 }
 
 interface RawState {
-    entities: Entities,
     song?: Song,
     ui: UI,
 }
 
 type AllowedValue =
-    Entities |
     Song |
-    UI
+    UI |
+    undefined
 
 type MapTypeAllowedData<T> = {
     [K in keyof T]: AllowedValue
@@ -49,7 +47,6 @@ const immutablizeState: <T extends MapTypeAllowedData<T>>(data: T) => TypedMap<T
     <T extends MapTypeAllowedData<T>>(data: T): TypedMap<T> => Map(data) as any
 
 const rawState: RawState = {
-    entities: [],
     song: undefined,
     ui: {
         displayedConfig: {},

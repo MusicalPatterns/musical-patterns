@@ -8,7 +8,7 @@ const handleConfigChange: (handleConfigChangeParameters: HandleConfigChangeParam
         const { displayedConfig, invalidConfigInputs }: UI = ui
 
         const updatedStringifiedConfig: StringifiedConfig = { ...displayedConfig, ...{ [ configKey ]: configValue } }
-        dispatch({ type: ActionType.SET_STRINGIFIED_CONFIG, data: updatedStringifiedConfig })
+        dispatch({ type: ActionType.SET_DISPLAYED_CONFIG, data: updatedStringifiedConfig })
 
         const updatedInvalidInputs: StringifiedConfigStates = { ...invalidConfigInputs, [ configKey ]: false }
         dispatch({ type: ActionType.SET_INVALID_INPUTS, data: updatedInvalidInputs })

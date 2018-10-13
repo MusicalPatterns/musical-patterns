@@ -1,19 +1,26 @@
-import { songs } from '../song'
-import { Song } from '../songTypes'
+import { songConfigs } from '../songs'
+import { SongConfig } from '../songTypes'
 import { ActionType } from '../state/actions'
 import { recompileAndRestart } from './recompileAndRestart'
 import { stopPreviousSong } from './stopPreviousSong'
 import { HandleSongChangeParameters } from './types'
+import { stringifyConfig } from './stringifyConfig'
+import { StringifiedConfig } from '../state/state'
 
 const handleSongChange: (handleSongChangeParameters: HandleSongChangeParameters) => Promise<void> =
-    async ({ dispatch, songId, entities }: HandleSongChangeParameters): Promise<void> => {
-        const song: Song = songs[songId]
+    async ({ dispatch, newlySelectedSongId, currentSong }: HandleSongChangeParameters): Promise<void> => {
+        const newlySelectedSongConfig: SongConfig = songConfigs[newlySelectedSongId]
 
-        stopPreviousSong(entities)
+        if (currentSong) {
+            stopPreviousSong(currentSong)
+        }
 
-        dispatch({ type: ActionType.SET_SONG_AND_STRINGIFIED_CONFIGS_FROM_SONG, data: song })
+        const stringifiedConfig: StringifiedConfig = stringifyConfig(newlySelectedSongConfig.config)
 
-        await recompileAndRestart(song, dispatch)
+        dispatch({ type: ActionType.SET_SUBMITTED_CONFIG, data: stringifiedConfig })
+        dispatch({ type: ActionType.SET_DISPLAYED_CONFIG, data: stringifiedConfig })
+
+        await recompileAndRestart(newlySelectedSongConfig, dispatch)
     }
 
 export {

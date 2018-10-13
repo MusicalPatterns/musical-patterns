@@ -1,6 +1,5 @@
 import { Song } from '../songTypes'
 import { UI } from '../state/state'
-import { Entities } from '../types'
 import {
     HandleConfigBlurEvent,
     HandleConfigChangeEvent,
@@ -13,17 +12,17 @@ interface AppProps {
 }
 
 interface SongSelectorPropsFromState {
-    entities: Entities,
+    song?: Song,
 }
+
 interface SongSelectorPropsFromDispatch {
     handleSongChangeEvent: HandleSongChangeEvent,
 }
+
 interface SongSelectorProps extends SongSelectorPropsFromState, SongSelectorPropsFromDispatch {
 }
 
 interface ConfigSelectorPropsFromState {
-    entities: Entities,
-    song: Song,
     ui: UI,
 }
 
@@ -32,7 +31,14 @@ interface ConfigSelectorPropsFromDispatch {
     handleConfigChangeEvent: HandleConfigChangeEvent,
     handleConfigSubmitEvent: HandleConfigSubmitEvent,
 }
-interface ConfigSelectorProps extends ConfigSelectorPropsFromState, ConfigSelectorPropsFromDispatch {
+
+interface ConfigSelectorPropsFromParent {
+    song: Song,
+}
+
+interface ConfigSelectorProps extends ConfigSelectorPropsFromState,
+    ConfigSelectorPropsFromDispatch,
+    ConfigSelectorPropsFromParent {
 }
 
 interface ConfigOptionProps {

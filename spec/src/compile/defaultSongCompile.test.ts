@@ -1,8 +1,8 @@
 import * as buildEntity from '../../../src/compile/buildEntity'
 import { defaultSongCompile } from '../../../src/compile/defaultSongCompile'
 import { EntityConfig } from '../../../src/compile/types'
-import { Song } from '../../../src/songTypes'
-import { emptySong } from '../../../src/ui/emptySong'
+import { SongConfig } from '../../../src/songTypes'
+import { emptySongConfig } from '../../../src/ui/emptySongConfig'
 
 describe('default song compile', () => {
     let buildEntitySpy: jasmine.Spy
@@ -12,7 +12,7 @@ describe('default song compile', () => {
 
     it('returns built entities', async (done: DoneFn) => {
         const testEntityConfig: EntityConfig = {}
-        const testSong: Song = { ...emptySong, entityConfigs: [ testEntityConfig ] }
+        const testSong: SongConfig = { ...emptySongConfig, entityConfigs: [ testEntityConfig ] }
 
         await defaultSongCompile(testSong)
 
