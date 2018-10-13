@@ -5,7 +5,7 @@ import { createStore, Store } from 'redux'
 // tslint:disable-next-line:no-import-side-effect
 import '../styles/main.scss'
 import App from './components/App'
-import { reducer } from './ui/reducer'
+import { reducer } from './state/reducer'
 
 const root: HTMLDivElement = document.createElement('div')
 document.body.appendChild(root)

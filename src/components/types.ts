@@ -1,6 +1,6 @@
 import { Song } from '../songTypes'
+import { UI } from '../state/state'
 import { Entities } from '../types'
-import { UI } from '../ui/state'
 import {
     HandleConfigBlurEvent,
     HandleConfigChangeEvent,

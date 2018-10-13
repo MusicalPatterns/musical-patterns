@@ -1,9 +1,9 @@
 import { Song } from '../songTypes'
+import { ActionType } from '../state/actions'
+import { StringifiedConfig, StringifiedConfigStates, UI } from '../state/state'
 import { deepEqual } from '../utilities/deepEqual'
-import { ActionType } from './actions'
 import { destringifyConfig } from './destringifyConfig'
 import { recompileAndRestart } from './recompileAndRestart'
-import { StringifiedConfig, StringifiedConfigStates, UI } from './state'
 import { stopPreviousSong } from './stopPreviousSong'
 import { HandleConfigSubmitParameters } from './types'
 

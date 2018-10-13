@@ -3,8 +3,8 @@ import { connect } from 'react-redux'
 import { Dispatch } from 'redux'
 import { songs } from '../song'
 import { Song, SongName } from '../songTypes'
+import { State } from '../state/state'
 import { handleSongChange } from '../ui/handleSongChange'
-import { State } from '../ui/state'
 import {
     HandleSongChangeEventParameters,
 } from '../ui/types'

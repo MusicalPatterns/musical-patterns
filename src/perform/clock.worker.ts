@@ -14,4 +14,4 @@ const mainLoop: (timestamp: number) => void =
 
 requestAnimationFrame(mainLoop)
 
-export default undefined as any
+export default ((): void => undefined) as any

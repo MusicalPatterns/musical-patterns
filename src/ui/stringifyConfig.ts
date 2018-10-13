@@ -1,5 +1,5 @@
 import { Config } from '../songTypes'
-import { StringifiedConfig } from './state'
+import { StringifiedConfig } from '../state/state'
 
 const displayedConfigDefaults: StringifiedConfig = {
 }

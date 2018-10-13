@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { Dispatch } from 'redux'
 import { Song, SongName } from '../songTypes'
+import { UI } from '../state/state'
 import { Entities } from '../types'
-import { UI } from './state'
 
 interface HandleConfigChangeParameters {
     configKey: string,

@@ -1,8 +1,8 @@
 import { Dispatch } from 'redux'
 import { songLoop } from '../perform/songLoop'
 import { Song } from '../songTypes'
+import { ActionType } from '../state/actions'
 import { Entities } from '../types'
-import { ActionType } from './actions'
 
 const recompileAndRestart: (song: Song, dispatch: Dispatch) => Promise<void> =
     async (song: Song, dispatch: Dispatch): Promise<void> => {

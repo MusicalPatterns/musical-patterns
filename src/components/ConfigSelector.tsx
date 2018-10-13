@@ -1,11 +1,11 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
 import { Dispatch } from 'redux'
+import { State, UI } from '../state/state'
 import { emptySong } from '../ui/emptySong'
 import { handleConfigBlur } from '../ui/handleConfigBlur'
 import { handleConfigChange } from '../ui/handleConfigChange'
 import { handleConfigSubmit } from '../ui/handleConfigSubmit'
-import { State, UI } from '../ui/state'
 import {
     HandleConfigBlurEventParameters,
     HandleConfigChangeEventParameters,

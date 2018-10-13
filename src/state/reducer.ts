@@ -1,8 +1,8 @@
 import { Song } from '../songTypes'
 import { Entities } from '../types'
+import { stringifyConfig } from '../ui/stringifyConfig'
 import { Action, ActionType } from './actions'
 import { initialState, State, StringifiedConfig, StringifiedConfigStates, UI } from './state'
-import { stringifyConfig } from './stringifyConfig'
 
 const reducer: (state: State | undefined, action: Action) => State =
     (state: State = initialState, action: Action): State => {

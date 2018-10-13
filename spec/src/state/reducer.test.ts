@@ -1,8 +1,8 @@
+import { ActionType, SetEntities } from '../../../src/state/actions'
+import { reducer } from '../../../src/state/reducer'
+import { immutablizeState, State } from '../../../src/state/state'
 import { Entities } from '../../../src/types'
-import { ActionType, SetEntities } from '../../../src/ui/actions'
 import { emptySong } from '../../../src/ui/emptySong'
-import { reducer } from '../../../src/ui/reducer'
-import { immutablizeState, State } from '../../../src/ui/state'
 import { mockEntity } from '../../support/mockEntity'
 
 describe('reducer', () => {

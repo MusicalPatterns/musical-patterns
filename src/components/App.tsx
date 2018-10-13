@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
-import { State } from '../ui/state'
+import { State } from '../state/state'
 import ConfigSelector from './ConfigSelector'
 import SongSelector from './SongSelector'
 import { AppProps } from './types'

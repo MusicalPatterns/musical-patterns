@@ -1,6 +1,6 @@
 import { Config } from '../songTypes'
+import { StringifiedConfig, StringifiedConfigEntry } from '../state/state'
 import * as to from '../utilities/to'
-import { StringifiedConfig, StringifiedConfigEntry } from './state'
 
 const configDefaults: Config = {
     baseFrequency: to.Frequency(0),

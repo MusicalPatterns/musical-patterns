@@ -28,3 +28,9 @@ global.XMLHttpRequest = () => ({
     send: () => {
     },
 })
+
+// tslint:disable-next-line
+// global.self = { postMessage: () => {} }
+
+// tslint:disable-next-line
+// global.requestAnimationFrame = () => {}

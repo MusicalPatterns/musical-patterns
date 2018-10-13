@@ -1,5 +1,5 @@
-import { ActionType } from './actions'
-import { StringifiedConfig, StringifiedConfigStates, UI } from './state'
+import { ActionType } from '../state/actions'
+import { StringifiedConfig, StringifiedConfigStates, UI } from '../state/state'
 import { HandleConfigChangeParameters } from './types'
 
 const handleConfigChange: (handleConfigChangeParameters: HandleConfigChangeParameters) => void =

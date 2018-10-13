@@ -1,5 +1,6 @@
-import { ActionType } from './actions'
-import { StringifiedConfigStates, UI } from './state'
+
+import { ActionType } from '../state/actions'
+import { StringifiedConfigStates, UI } from '../state/state'
 import { HandleConfigBlurParameters } from './types'
 
 const handleConfigBlur: (handleConfigBlurParameters: HandleConfigBlurParameters) => void =

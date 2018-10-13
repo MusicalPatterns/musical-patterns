@@ -1,6 +1,6 @@
 import { songs } from '../song'
 import { Song } from '../songTypes'
-import { ActionType } from './actions'
+import { ActionType } from '../state/actions'
 import { recompileAndRestart } from './recompileAndRestart'
 import { stopPreviousSong } from './stopPreviousSong'
 import { HandleSongChangeParameters } from './types'
