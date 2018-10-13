@@ -1,10 +1,11 @@
 import { ActionType } from './actions'
-import { StringifiedConfig, StringifiedConfigStates } from './state'
+import { StringifiedConfig, StringifiedConfigStates, UI } from './state'
 import { HandleConfigChangeParameters } from './types'
 
 const handleConfigChange: (handleConfigChangeParameters: HandleConfigChangeParameters) => void =
     (handleConfigChangeParameters: HandleConfigChangeParameters): void => {
-        const { dispatch, configKey, configValue, displayedConfig, invalidConfigInputs } = handleConfigChangeParameters
+        const { dispatch, configKey, configValue, ui }: HandleConfigChangeParameters = handleConfigChangeParameters
+        const { displayedConfig, invalidConfigInputs }: UI = ui
 
         const updatedStringifiedConfig: StringifiedConfig = { ...displayedConfig, ...{ [ configKey ]: configValue } }
         dispatch({ type: ActionType.SET_STRINGIFIED_CONFIG, data: updatedStringifiedConfig })

@@ -1,6 +1,6 @@
 import { Song } from '../songTypes'
 import { Entities } from '../types'
-import { StringifiedConfig, StringifiedConfigEntry, StringifiedConfigStates } from '../ui/state'
+import { UI } from '../ui/state'
 import {
     HandleConfigBlurEvent,
     HandleConfigChangeEvent,
@@ -22,13 +22,11 @@ interface SongSelectorProps extends SongSelectorPropsFromState, SongSelectorProp
 }
 
 interface ConfigSelectorPropsFromState {
-    displayedConfig: StringifiedConfig,
     entities: Entities,
-    invalidConfigInputs: StringifiedConfigStates,
     song: Song,
-    submittedConfig: StringifiedConfig,
-    unsubmittedConfigInputs: StringifiedConfigStates,
+    ui: UI,
 }
+
 interface ConfigSelectorPropsFromDispatch {
     handleConfigBlurEvent: HandleConfigBlurEvent,
     handleConfigChangeEvent: HandleConfigChangeEvent,
@@ -38,8 +36,9 @@ interface ConfigSelectorProps extends ConfigSelectorPropsFromState, ConfigSelect
 }
 
 interface ConfigOptionProps {
-    configEntry: StringifiedConfigEntry,
+    configKey: string,
     configSelectorProps: ConfigSelectorProps,
+    configValue: string,
     invalid: boolean,
     unsubmitted: boolean,
 }

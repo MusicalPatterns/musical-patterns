@@ -3,22 +3,14 @@ import { deepEqual } from '../utilities/deepEqual'
 import { ActionType } from './actions'
 import { destringifyConfig } from './destringifyConfig'
 import { recompileAndRestart } from './recompileAndRestart'
-import { StringifiedConfig, StringifiedConfigStates } from './state'
+import { StringifiedConfig, StringifiedConfigStates, UI } from './state'
 import { stopPreviousSong } from './stopPreviousSong'
 import { HandleConfigSubmitParameters } from './types'
 
 const handleConfigSubmit: (handleConfigSubmitParameters: HandleConfigSubmitParameters) => Promise<void> =
     async (handleConfigSubmitParameters: HandleConfigSubmitParameters): Promise<void> => {
-        const {
-            submittedConfig,
-            configKey,
-            configValue,
-            dispatch,
-            entities,
-            invalidConfigInputs,
-            song,
-            unsubmittedConfigInputs,
-        } = handleConfigSubmitParameters
+        const { configKey, configValue, dispatch, entities, song, ui } = handleConfigSubmitParameters
+        const { invalidConfigInputs, submittedConfig, unsubmittedConfigInputs }: UI = ui
 
         const updatedConfig: StringifiedConfig = { ...submittedConfig, [ configKey ]: configValue }
         if (deepEqual(submittedConfig, updatedConfig)) {

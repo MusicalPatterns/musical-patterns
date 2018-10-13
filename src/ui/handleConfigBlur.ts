@@ -1,16 +1,11 @@
 import { ActionType } from './actions'
-import { StringifiedConfigStates } from './state'
+import { StringifiedConfigStates, UI } from './state'
 import { HandleConfigBlurParameters } from './types'
 
 const handleConfigBlur: (handleConfigBlurParameters: HandleConfigBlurParameters) => void =
     (handleConfigBlurParameters: HandleConfigBlurParameters): void => {
-        const {
-            configKey,
-            configValue,
-            dispatch,
-            submittedConfig,
-            unsubmittedConfigInputs,
-        } = handleConfigBlurParameters
+        const { configKey, configValue, dispatch, ui }: HandleConfigBlurParameters = handleConfigBlurParameters
+        const { submittedConfig, unsubmittedConfigInputs }: UI = ui
         const existingValue: string = submittedConfig[ configKey ]
 
         const updatedUnsubmittedInputs: StringifiedConfigStates = {

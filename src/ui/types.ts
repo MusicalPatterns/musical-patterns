@@ -2,20 +2,18 @@ import * as React from 'react'
 import { Dispatch } from 'redux'
 import { Song, SongName } from '../songTypes'
 import { Entities } from '../types'
-import { StringifiedConfig, StringifiedConfigStates } from './state'
+import { UI } from './state'
 
 interface HandleConfigChangeParameters {
     configKey: string,
     configValue: string,
     dispatch: Dispatch,
-    displayedConfig: StringifiedConfig,
-    invalidConfigInputs: StringifiedConfigStates,
+    ui: UI,
 }
 interface HandleConfigChangeEventParameters {
     configKey: string,
-    displayedConfig: StringifiedConfig,
     event: React.SyntheticEvent<HTMLInputElement>,
-    invalidConfigInputs: StringifiedConfigStates,
+    ui: UI,
 }
 type HandleConfigChangeEvent = (handleConfigChangeEventParameters: HandleConfigChangeEventParameters) => void
 
@@ -24,19 +22,15 @@ interface HandleConfigSubmitParameters {
     configValue: string,
     dispatch: Dispatch,
     entities: Entities,
-    invalidConfigInputs: StringifiedConfigStates,
     song: Song,
-    submittedConfig: StringifiedConfig,
-    unsubmittedConfigInputs: StringifiedConfigStates,
+    ui: UI,
 }
 interface HandleConfigSubmitEventParameters {
     configKey: string,
     entities: Entities,
     event: React.KeyboardEvent,
-    invalidConfigInputs: StringifiedConfigStates,
     song: Song,
-    submittedConfig: StringifiedConfig,
-    unsubmittedConfigInputs: StringifiedConfigStates,
+    ui: UI,
 }
 type HandleConfigSubmitEvent = (handleConfigSubmitEventParameters: HandleConfigSubmitEventParameters) => void
 
@@ -55,14 +49,12 @@ interface HandleConfigBlurParameters {
     configKey: string,
     configValue: string,
     dispatch: Dispatch,
-    submittedConfig: StringifiedConfig,
-    unsubmittedConfigInputs: StringifiedConfigStates,
+    ui: UI,
 }
 interface HandleConfigBlurEventParameters {
     configKey: string,
     event: React.SyntheticEvent<HTMLInputElement>,
-    submittedConfig: StringifiedConfig,
-    unsubmittedConfigInputs: StringifiedConfigStates,
+    ui: UI,
 }
 type HandleConfigBlurEvent = (handleConfigBlurEventParameters: HandleConfigBlurEventParameters) => void
 

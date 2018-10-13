@@ -5,7 +5,7 @@ import { emptySong } from '../ui/emptySong'
 import { handleConfigBlur } from '../ui/handleConfigBlur'
 import { handleConfigChange } from '../ui/handleConfigChange'
 import { handleConfigSubmit } from '../ui/handleConfigSubmit'
-import { State, StringifiedConfigEntry, UI } from '../ui/state'
+import { State, UI } from '../ui/state'
 import {
     HandleConfigBlurEventParameters,
     HandleConfigChangeEventParameters,
@@ -17,23 +17,12 @@ import { ConfigSelectorProps, ConfigSelectorPropsFromDispatch, ConfigSelectorPro
 const SUBMIT: string = 'Enter'
 
 const mapStateToProps: (state: State) => ConfigSelectorPropsFromState =
-    (state: State): ConfigSelectorPropsFromState => {
-        const {
-            displayedConfig,
-            invalidConfigInputs,
-            submittedConfig,
-            unsubmittedConfigInputs,
-        }: UI = state.get('ui')
-
-        return {
-            displayedConfig,
+    (state: State): ConfigSelectorPropsFromState =>
+        ({
             entities: state.get('entities'),
-            invalidConfigInputs,
             song: state.get('song') || emptySong,
-            submittedConfig,
-            unsubmittedConfigInputs,
-        }
-    }
+            ui: state.get('ui'),
+        })
 
 const mapDispatchToProps: (dispatch: Dispatch) => ConfigSelectorPropsFromDispatch =
     (dispatch: Dispatch): ConfigSelectorPropsFromDispatch => ({
@@ -66,15 +55,15 @@ const mapDispatchToProps: (dispatch: Dispatch) => ConfigSelectorPropsFromDispatc
 
 const ConfigSelector: (configSelectorProps: ConfigSelectorProps) => JSX.Element =
     (configSelectorProps: ConfigSelectorProps): JSX.Element => {
-        const { displayedConfig, invalidConfigInputs, unsubmittedConfigInputs } = configSelectorProps
+        const { ui }: ConfigSelectorProps = configSelectorProps
+        const { displayedConfig, invalidConfigInputs, unsubmittedConfigInputs }: UI = ui
         const configSelector: JSX.Element[] = Object.keys(displayedConfig).sort().map(
-            (displayedConfigKey: string, key: number): JSX.Element => {
-                const displayedConfigValue: string = displayedConfig[ displayedConfigKey ]
-                const configEntry: StringifiedConfigEntry = [ displayedConfigKey, displayedConfigValue ]
-                const invalid: boolean = invalidConfigInputs[ displayedConfigKey ]
-                const unsubmitted: boolean = unsubmittedConfigInputs[ displayedConfigKey ]
+            (configKey: string, key: number): JSX.Element => {
+                const configValue: string = displayedConfig[ configKey ]
+                const invalid: boolean = invalidConfigInputs[ configKey ]
+                const unsubmitted: boolean = unsubmittedConfigInputs[ configKey ]
 
-                return <ConfigOption {...{ configEntry, key, configSelectorProps, invalid, unsubmitted }} />
+                return <ConfigOption {...{ configKey, configValue, key, configSelectorProps, invalid, unsubmitted }} />
             },
         )
 

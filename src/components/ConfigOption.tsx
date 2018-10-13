@@ -3,39 +3,27 @@ import { ConfigOptionProps } from './types'
 
 const ConfigOption: (configOptionProps: ConfigOptionProps) => JSX.Element =
     (configOptionProps: ConfigOptionProps): JSX.Element => {
-        const { configEntry, configSelectorProps, invalid, unsubmitted } = configOptionProps
-        const [ configKey, configValue ] = configEntry
+        const { configKey, configValue, configSelectorProps, invalid, unsubmitted } = configOptionProps
         const {
-            displayedConfig,
             entities,
             handleConfigChangeEvent,
             handleConfigSubmitEvent,
             handleConfigBlurEvent,
-            invalidConfigInputs,
             song,
-            submittedConfig,
-            unsubmittedConfigInputs,
+            ui,
         } = configSelectorProps
 
         const onChange: (event: React.SyntheticEvent<HTMLInputElement>) => void =
             (event: React.SyntheticEvent<HTMLInputElement>): void => {
-                handleConfigChangeEvent({ configKey, event, displayedConfig, invalidConfigInputs })
+                handleConfigChangeEvent({ configKey, event, ui })
             }
         const onKeyPress: (event: React.KeyboardEvent) => void =
             (event: React.KeyboardEvent): void => {
-                handleConfigSubmitEvent({
-                    configKey,
-                    entities,
-                    event,
-                    invalidConfigInputs,
-                    song,
-                    submittedConfig,
-                    unsubmittedConfigInputs,
-                })
+                handleConfigSubmitEvent({ configKey, entities, event, song, ui })
             }
         const onBlur: (event: React.SyntheticEvent<HTMLInputElement>) => void =
             (event: React.SyntheticEvent<HTMLInputElement>): void => {
-                handleConfigBlurEvent({ configKey, event, submittedConfig, unsubmittedConfigInputs })
+                handleConfigBlurEvent({ configKey, event, ui })
             }
 
         const className: string = invalid ? 'invalid' : unsubmitted ? 'unsubmitted' : ''
