@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Dispatch } from 'redux'
-import { Song, SongName } from '../songTypes'
+import { Song, SongID } from '../songTypes'
 import { UI } from '../state/state'
 import { Entities } from '../types'
 
@@ -37,7 +37,7 @@ type HandleConfigSubmitEvent = (handleConfigSubmitEventParameters: HandleConfigS
 interface HandleSongChangeParameters {
     dispatch: Dispatch,
     entities: Entities,
-    songName: SongName,
+    songId: SongID,
 }
 interface HandleSongChangeEventParameters {
     entities: Entities

@@ -1,5 +1,5 @@
 import { defaultSongCompile } from '../../src/compile/defaultSongCompile'
-import { Song, SongName } from '../../src/songTypes'
+import { Song, SongID } from '../../src/songTypes'
 import * as to from '../../src/utilities/to'
 
 const mockSong: Song = {
@@ -11,7 +11,7 @@ const mockSong: Song = {
     description: '',
     entityConfigs: [],
     formattedName: '',
-    name: SongName._EMPTY_SONG,
+    id: SongID._EMPTY_SONG,
     scales: [],
 }
 

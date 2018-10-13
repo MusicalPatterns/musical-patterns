@@ -2,7 +2,7 @@ import { EntityConfigs } from './compile/types'
 import { Entities, Scales } from './types'
 import { Frequency, Scalar } from './utilities/nominalTypes'
 
-enum SongName {
+enum SongID {
     _EMPTY_SONG = '',
     BEATEN_PATH = 'beaten path',
     HAFUHAFU = 'hafuhafu',
@@ -25,12 +25,12 @@ interface Song {
     description: string,
     entityConfigs: EntityConfigs,
     formattedName: string,
-    name: SongName,
+    id: SongID,
     scales: Scales,
 }
 
 export {
     Song,
-    SongName,
+    SongID,
     Config,
 }

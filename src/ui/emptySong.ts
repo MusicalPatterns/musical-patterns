@@ -1,5 +1,5 @@
 import { defaultSongCompile } from '../compile/defaultSongCompile'
-import { Song, SongName } from '../songTypes'
+import { Song, SongID } from '../songTypes'
 import * as to from '../utilities/to'
 
 const emptySong: Song = {
@@ -11,7 +11,7 @@ const emptySong: Song = {
     description: '',
     entityConfigs: [],
     formattedName: '',
-    name: SongName._EMPTY_SONG,
+    id: SongID._EMPTY_SONG,
     scales: [],
 }
 

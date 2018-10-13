@@ -6,8 +6,8 @@ import { stopPreviousSong } from './stopPreviousSong'
 import { HandleSongChangeParameters } from './types'
 
 const handleSongChange: (handleSongChangeParameters: HandleSongChangeParameters) => Promise<void> =
-    async ({ dispatch, songName, entities }: HandleSongChangeParameters): Promise<void> => {
-        const song: Song = songs[songName]
+    async ({ dispatch, songId, entities }: HandleSongChangeParameters): Promise<void> => {
+        const song: Song = songs[songId]
 
         stopPreviousSong(entities)
 
