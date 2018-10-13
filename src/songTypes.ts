@@ -1,4 +1,4 @@
-import { EntityConfig } from './compile/types'
+import { EntityConfigs } from './compile/types'
 import { Entities, Scales } from './types'
 import { Frequency, Scalar } from './utilities/nominalTypes'
 
@@ -23,7 +23,7 @@ interface Song {
     compile: (song: Song) => Promise<Entities>,
     config: Config,
     description: string,
-    entityConfigs: EntityConfig[],
+    entityConfigs: EntityConfigs,
     formattedName: string,
     name: SongName,
     scales: Scales,

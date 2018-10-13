@@ -21,7 +21,10 @@ interface EntityConfig {
     voiceGain?: Scalar,
 }
 
+type EntityConfigs = EntityConfig[]
+
 export {
     EntityConfig,
+    EntityConfigs,
     TimeType,
 }
