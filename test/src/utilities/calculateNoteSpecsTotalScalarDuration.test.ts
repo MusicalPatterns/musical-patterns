@@ -23,6 +23,6 @@ describe('calculate note specs total scalar duration', () => {
             },
         ]
 
-        expect(from.Scalar(calculateNoteSpecsTotalScalarDuration(noteSpecs))).toBe(10)
+        expect(from.SumOfScalars(calculateNoteSpecsTotalScalarDuration(noteSpecs))).toBe(10)
     })
 })

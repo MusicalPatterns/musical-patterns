@@ -14,6 +14,10 @@ interface Scalar extends Number {
     _ScalarBrand: string,
 }
 
+interface SumOfScalars extends Number {
+    _SumOfScalarsBrand: string,
+}
+
 interface Offset extends Number {
     _OffsetBrand: string,
 }
@@ -24,6 +28,10 @@ interface Time extends Number {
 
 interface Index extends Number {
     _IndexBrand: string,
+}
+
+interface SumOfIndices extends Number {
+    _SumOfIndicesBrand: string,
 }
 
 interface Count extends Number {
@@ -44,4 +52,6 @@ export {
     Time,
     Index,
     Power,
+    SumOfIndices,
+    SumOfScalars,
 }
