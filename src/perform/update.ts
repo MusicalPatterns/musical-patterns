@@ -1,44 +1,42 @@
 import { TimeType } from '../compile/types'
 import { BASE_DURATION } from '../constants'
-import { Entity, Note, Scale } from '../types'
+import { Note, Thread } from '../types'
+import applyOffset from '../utilities/applyOffset'
+import applyScale from '../utilities/applyScale'
 import * as from from '../utilities/from'
-import { Offset, Scalar, Time } from '../utilities/nominalTypes'
-import offset from '../utilities/offset'
-import scale from '../utilities/scale'
+import { Time } from '../utilities/nominalTypes'
 import * as to from '../utilities/to'
 
-// tslint:disable-next-line:no-any no-magic-numbers
-const OFFSET_FOR_ZERO_INDEXING: Offset = -1 as any
-// tslint:disable-next-line:no-any no-magic-numbers
-const FALL_BACK_PITCH: Scalar = 1 as any
+const update: (thread: Thread, rawTime: Time, atomicTime: Time) => void =
+    (thread: Thread, rawTime: Time, atomicTime: Time): void => {
+        const time: Time = thread.timeType === TimeType.RAW ? rawTime : atomicTime
 
-const update: (entity: Entity, rawTime: Time, atomicTime: Time) => void =
-    (entity: Entity, rawTime: Time, atomicTime: Time): void => {
-        const time: Time = entity.timeType === TimeType.RAW ? rawTime : atomicTime
+        const note: Note = thread.notes[ from.Index(thread.noteIndex) ]
 
-        const note: Note = entity.notes[from.Index(entity.noteIndex)]
-
-        if (time > entity.nextEnd) {
-            entity.voice.stopNote()
+        if (time > thread.nextEnd) {
+            thread.voice.stopNote()
         }
 
-        if (from.Index(entity.noteIndex) === entity.notes.length) {
-            entity.noteIndex = to.Index(0)
+        if (from.Index(thread.noteIndex) === thread.notes.length) {
+            thread.noteIndex = to.Index(0)
         }
 
-        if (time > entity.nextStart) {
-            const pitchScale: Scale = entity.scales[from.Index(note.scaleIndex)]
-
-            const basePitch: Scalar = pitchScale[offset(from.Index(note.pitchIndex), OFFSET_FOR_ZERO_INDEXING)]
-            entity.voice.startNote({
-                gain: scale(note.gain, entity.voiceGain),
-                pitch: scale(basePitch || FALL_BACK_PITCH, note.pitchScalar),
+        if (time > thread.nextStart) {
+            thread.voice.startNote({
+                frequency: note.frequency,
+                gain: note.gain,
             })
 
-            entity.nextEnd = offset(entity.nextStart, to.Offset(from.Time(scale(note.sustain, BASE_DURATION))))
-            entity.nextStart = offset(entity.nextStart, to.Offset(from.Time(scale(note.duration, BASE_DURATION))))
+            thread.nextEnd = applyOffset(
+                thread.nextStart,
+                to.Offset(from.Time(applyScale(note.sustain, BASE_DURATION))),
+            )
+            thread.nextStart = applyOffset(
+                thread.nextStart,
+                to.Offset(from.Time(applyScale(note.duration, BASE_DURATION))),
+            )
 
-            entity.noteIndex = to.Index(from.Index(entity.noteIndex) + 1)
+            thread.noteIndex = to.Index(from.Index(thread.noteIndex) + 1)
         }
     }
 

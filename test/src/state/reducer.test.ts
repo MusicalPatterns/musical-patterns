@@ -1,36 +1,36 @@
-import { Song } from '../../../src/songTypes'
-import { ActionType, SetSong } from '../../../src/state/actions'
+import { ActionType, SetThreads } from '../../../src/state/actions'
 import { reducer } from '../../../src/state/reducer'
 import { immutablizeState, State } from '../../../src/state/state'
-import { mockSongSpec } from '../../support/mockSongConfig'
+import { mockThread } from '../../support/mockThread'
 
 describe('reducer', () => {
-    it('sets song', async (done: DoneFn) => {
+    it('sets threads', async (done: DoneFn) => {
         const state: State = immutablizeState({
-            song: undefined,
+            songId: undefined,
+            threads: [],
             ui: {
-                displayedConfig: {},
-                invalidConfigInputs: {},
-                submittedConfig: {},
-                unsubmittedConfigInputs: {},
+                displayedSongSpec: {},
+                invalidSongSpecInputs: {},
+                submittedSongSpec: {},
+                unsubmittedSongSpecInputs: {},
             },
         })
 
-        const newSong: Song = await mockSongSpec.compile(mockSongSpec)
-        const action: SetSong = {
-            data: newSong,
-            type: ActionType.SET_SONG,
+        const action: SetThreads = {
+            data: [ mockThread ],
+            type: ActionType.SET_THREADS,
         }
 
         const newState: State = reducer(state, action)
 
         const expectedState: State = immutablizeState({
-            song: newSong,
+            songId: undefined,
+            threads: [ mockThread ],
             ui: {
-                displayedConfig: {},
-                invalidConfigInputs: {},
-                submittedConfig: {},
-                unsubmittedConfigInputs: {},
+                displayedSongSpec: {},
+                invalidSongSpecInputs: {},
+                submittedSongSpec: {},
+                unsubmittedSongSpecInputs: {},
             },
         })
         expect(newState.toJS()).toEqual(expectedState.toJS())

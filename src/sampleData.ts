@@ -1,7 +1,7 @@
 // tslint:disable:no-magic-numbers
 
 import { CENTS_PER_SEMITONE } from './constants'
-import { Timbre } from './types'
+import { SampleName } from './types'
 import * as from from './utilities/from'
 import { Cents, Semitones } from './utilities/nominalTypes'
 import * as to from './utilities/to'
@@ -13,38 +13,38 @@ interface SampleData {
     centsAdjustment: Cents,
 }
 
-const sampleData: { [x in Timbre]: SampleData } = {
-    [Timbre.CELLO]: {
+const sampleData: { [x in SampleName]: SampleData } = {
+    [SampleName.CELLO]: {
         centsAdjustment: shiftSemitones(to.Semitones(0)),
     },
-    [Timbre.DOUBLEBASS]: {
+    [SampleName.DOUBLEBASS]: {
         centsAdjustment: shiftSemitones(to.Semitones(24)),
     },
-    [Timbre.FLUTE]: {
+    [SampleName.FLUTE]: {
         centsAdjustment: shiftSemitones(to.Semitones(0)),
     },
-    [Timbre.PIANO]: {
+    [SampleName.PIANO]: {
         centsAdjustment: shiftSemitones(to.Semitones(-24)),
     },
-    [Timbre.TROMBONE]: {
+    [SampleName.TROMBONE]: {
         centsAdjustment: shiftSemitones(to.Semitones(2)),
     },
-    [Timbre.TRUMPET]: {
+    [SampleName.TRUMPET]: {
         centsAdjustment: shiftSemitones(to.Semitones(-1)),
     },
-    [Timbre.TUBA]: {
+    [SampleName.TUBA]: {
         centsAdjustment: shiftSemitones(to.Semitones(12)),
     },
-    [Timbre.VIOLIN]: {
+    [SampleName.VIOLIN]: {
         centsAdjustment: shiftSemitones(to.Semitones(0)),
     },
-    [Timbre.SNARE]: {
+    [SampleName.SNARE]: {
         centsAdjustment: shiftSemitones(to.Semitones(0)),
     },
-    [Timbre.KICK]: {
+    [SampleName.KICK]: {
         centsAdjustment: shiftSemitones(to.Semitones(0)),
     },
-    [Timbre.HIHAT]: {
+    [SampleName.HIHAT]: {
         centsAdjustment: shiftSemitones(to.Semitones(0)),
     },
 }

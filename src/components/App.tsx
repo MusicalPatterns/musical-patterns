@@ -1,28 +1,37 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
-import { songMetadata } from '../songs'
+import { SongID } from '../songIds'
+import { songs } from '../songs'
+import { Song, SongMetadata } from '../songTypes'
 import { State } from '../state/state'
-import ConfigSelector from './ConfigSelector'
-import SongSelector from './SongSelector'
+import SongSelector from './SongSelect'
+import SongSpecInputs from './SongSpecInputs'
 import { AppProps } from './types'
 
 const mapStateToProps: (state: State) => AppProps =
     (state: State): AppProps => ({
-        song: state.get('song'),
+        songId: state.get('songId'),
     })
 
+const songDescription: (songId: SongID) => string =
+    (songId: SongID): string => {
+        const song: Song = songs[songId]
+        const songMetadata: SongMetadata = song.metadata
+
+        return songMetadata.description
+    }
+
 const App: (appProps: AppProps) => JSX.Element =
-    ({ song }: AppProps): JSX.Element =>
+    ({ songId }: AppProps): JSX.Element =>
+
         (
             <div>
                 <h1>Fun Musical Ideas</h1>
                 <SongSelector/>
 
-                {song && <div>
-                    <div>
-                        {songMetadata[song.songId].description}
-                    </div>
-                    <ConfigSelector {...{ song }}/>
+                {songId && <div>
+                    <div>{songDescription(songId)}</div>
+                    <SongSpecInputs {...{ songId }}/>
                 </div>}
             </div>
         )

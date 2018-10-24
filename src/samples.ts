@@ -1,15 +1,15 @@
 import context from './context'
-import { Timbre } from './types'
+import { SampleName } from './types'
 
 // @ts-ignore
-const samples: { [x in Timbre]: AudioBuffer } = {}
+const samples: { [x in SampleName]: AudioBuffer } = {}
 
 type ModulePath = string
 
 declare const require: (modulePath: ModulePath) => string
 
-const getTimbreUrl: (timbre: Timbre) => ModulePath =
-    (timbre: Timbre): ModulePath => {
+const getTimbreUrl: (timbre: SampleName) => ModulePath =
+    (timbre: SampleName): ModulePath => {
         let inTest: boolean = false
         Object.keys(require).forEach((key: string): void => {
             if (key === 'extensions') {
@@ -20,8 +20,8 @@ const getTimbreUrl: (timbre: Timbre) => ModulePath =
         return inTest ? '' : require(`../samples/${timbre}.wav`)
     }
 
-const load: (timbre: Timbre) => void =
-    async (timbre: Timbre): Promise<void> => {
+const load: (timbre: SampleName) => void =
+    async (timbre: SampleName): Promise<void> => {
         const request: XMLHttpRequest = new XMLHttpRequest()
         const url: ModulePath = getTimbreUrl(timbre)
         request.open('GET', url, true)
@@ -36,6 +36,6 @@ const load: (timbre: Timbre) => void =
         request.send()
     }
 
-Object.values(Timbre).forEach(load)
+Object.values(SampleName).forEach(load)
 
 export default samples

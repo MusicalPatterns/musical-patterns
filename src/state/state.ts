@@ -1,31 +1,34 @@
 import { Map } from 'immutable'
-import { Song } from '../songTypes'
+import { SongID } from '../songIds'
+import { Threads } from '../types'
 
-type StringifiedConfigEntry = [ string, string ]
+type StringifiedSongSpecEntry = [ string, string ]
 
-interface StringifiedConfig {
+interface StringifiedSongSpec {
     [ index: string ]: string,
 }
 
-interface StringifiedConfigStates {
+interface StringifiedSongSpecInputStates {
     [ index: string ]: boolean,
 }
 
 interface UI {
-    displayedConfig: StringifiedConfig,
-    invalidConfigInputs: StringifiedConfigStates,
-    submittedConfig: StringifiedConfig,
-    unsubmittedConfigInputs: StringifiedConfigStates,
+    displayedSongSpec: StringifiedSongSpec,
+    invalidSongSpecInputs: StringifiedSongSpecInputStates,
+    submittedSongSpec: StringifiedSongSpec,
+    unsubmittedSongSpecInputs: StringifiedSongSpecInputStates,
 }
 
 interface RawState {
-    song?: Song,
+    songId?: SongID,
+    threads: Threads,
     ui: UI,
 }
 
 type AllowedValue =
-    Song |
+    Threads |
     UI |
+    SongID |
     undefined
 
 type MapTypeAllowedData<T> = {
@@ -47,23 +50,24 @@ const immutablizeState: <T extends MapTypeAllowedData<T>>(data: T) => TypedMap<T
     <T extends MapTypeAllowedData<T>>(data: T): TypedMap<T> => Map(data) as any
 
 const rawState: RawState = {
-    song: undefined,
+    songId: undefined,
+    threads: [],
     ui: {
-        displayedConfig: {},
-        invalidConfigInputs: {},
-        submittedConfig: {},
-        unsubmittedConfigInputs: {},
+        displayedSongSpec: {},
+        invalidSongSpecInputs: {},
+        submittedSongSpec: {},
+        unsubmittedSongSpecInputs: {},
     },
 }
 
 const initialState: State = immutablizeState(rawState)
 
 export {
-    StringifiedConfig,
-    StringifiedConfigStates,
+    StringifiedSongSpec,
+    StringifiedSongSpecInputStates,
     State,
     initialState,
     immutablizeState,
     UI,
-    StringifiedConfigEntry,
+    StringifiedSongSpecEntry,
 }

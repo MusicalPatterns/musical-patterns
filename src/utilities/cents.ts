@@ -1,7 +1,7 @@
 import { CENTS_PER_OCTAVE } from '../constants'
+import applyScale from './applyScale'
 import * as from from './from'
 import { Cents, Frequency, Scalar } from './nominalTypes'
-import scale from './scale'
 import * as to from './to'
 
 const centsToShiftFromOneFrequencyToAnother: (frequencyOne: Frequency, frequencyTwo: Frequency) => Cents =
@@ -15,7 +15,7 @@ const pitchToCents: (pitch: Scalar) => Cents =
     (pitch: Scalar): Cents => {
         const octaveRepeatingPitchSpaceLogarithmicScalar: Scalar = to.Scalar(Math.log2(from.Scalar(pitch)))
 
-        return scale(CENTS_PER_OCTAVE, octaveRepeatingPitchSpaceLogarithmicScalar)
+        return applyScale(CENTS_PER_OCTAVE, octaveRepeatingPitchSpaceLogarithmicScalar)
     }
 
 export {

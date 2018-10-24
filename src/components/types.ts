@@ -1,61 +1,63 @@
-import { Song } from '../songTypes'
+import { SongID } from '../songIds'
 import { UI } from '../state/state'
+import { Threads } from '../types'
 import {
-    HandleConfigBlurEvent,
-    HandleConfigChangeEvent,
-    HandleConfigSubmitEvent,
     HandleSongChangeEvent,
+    HandleSongSpecBlurEvent,
+    HandleSongSpecChangeEvent,
+    HandleSongSpecSubmitEvent,
 } from '../ui/types'
 
 interface AppProps {
-    song?: Song,
+    songId?: SongID,
 }
 
-interface SongSelectorPropsFromState {
-    song?: Song,
+interface SongSelectPropsFromState {
+    threads: Threads,
 }
 
-interface SongSelectorPropsFromDispatch {
+interface SongSelectPropsFromDispatch {
     handleSongChangeEvent: HandleSongChangeEvent,
 }
 
-interface SongSelectorProps extends SongSelectorPropsFromState, SongSelectorPropsFromDispatch {
+interface SongSelectProps extends SongSelectPropsFromState, SongSelectPropsFromDispatch {
 }
 
-interface ConfigSelectorPropsFromState {
+interface SongSpecInputsPropsFromState {
+    threads: Threads,
     ui: UI,
 }
 
-interface ConfigSelectorPropsFromDispatch {
-    handleConfigBlurEvent: HandleConfigBlurEvent,
-    handleConfigChangeEvent: HandleConfigChangeEvent,
-    handleConfigSubmitEvent: HandleConfigSubmitEvent,
+interface SongSpecInputsPropsFromDispatch {
+    handleSongSpecBlurEvent: HandleSongSpecBlurEvent,
+    handleSongSpecChangeEvent: HandleSongSpecChangeEvent,
+    handleSongSpecSubmitEvent: HandleSongSpecSubmitEvent,
 }
 
-interface ConfigSelectorPropsFromParent {
-    song: Song,
+interface SongSpecInputsPropsFromParent {
+    songId: SongID,
 }
 
-interface ConfigSelectorProps extends ConfigSelectorPropsFromState,
-    ConfigSelectorPropsFromDispatch,
-    ConfigSelectorPropsFromParent {
+interface SongSpecInputsProps extends SongSpecInputsPropsFromState,
+    SongSpecInputsPropsFromDispatch,
+    SongSpecInputsPropsFromParent {
 }
 
-interface ConfigOptionProps {
-    configKey: string,
-    configSelectorProps: ConfigSelectorProps,
-    configValue: string,
+interface SongSpecInputProps {
     invalid: boolean,
+    songSpecInputsProps: SongSpecInputsProps,
+    songSpecKey: string,
+    songSpecValue: string,
     unsubmitted: boolean,
 }
 
 export {
     AppProps,
-    ConfigSelectorProps,
-    ConfigSelectorPropsFromState,
-    ConfigSelectorPropsFromDispatch,
-    ConfigOptionProps,
-    SongSelectorProps,
-    SongSelectorPropsFromState,
-    SongSelectorPropsFromDispatch,
+    SongSpecInputsProps,
+    SongSpecInputsPropsFromState,
+    SongSpecInputsPropsFromDispatch,
+    SongSpecInputProps,
+    SongSelectProps,
+    SongSelectPropsFromState,
+    SongSelectPropsFromDispatch,
 }

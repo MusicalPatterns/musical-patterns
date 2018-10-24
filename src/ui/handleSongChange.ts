@@ -1,26 +1,23 @@
-import { songSpecs } from '../songs'
-import { SongSpec } from '../songTypes'
+import { songs, SongSpec } from '../songs'
 import { ActionType } from '../state/actions'
-import { StringifiedConfig } from '../state/state'
+import { StringifiedSongSpec } from '../state/state'
 import { recompileAndRestart } from './recompileAndRestart'
-import { stopPreviousSong } from './stopPreviousSong'
-import { stringifyConfig } from './stringifyConfig'
+import { stopThreads } from './stopThreads'
+import { stringifySongSpec } from './stringifySongSpec'
 import { HandleSongChangeParameters } from './types'
 
 const handleSongChange: (handleSongChangeParameters: HandleSongChangeParameters) => Promise<void> =
-    async ({ dispatch, newlySelectedSongId, currentSong }: HandleSongChangeParameters): Promise<void> => {
-        const newlySelectedSongSpec: SongSpec = songSpecs[newlySelectedSongId]
+    async ({ dispatch, songId, threads }: HandleSongChangeParameters): Promise<void> => {
+        const songSpec: SongSpec = songs[ songId ].spec
 
-        if (currentSong) {
-            stopPreviousSong(currentSong)
-        }
+        stopThreads(threads)
 
-        const stringifiedConfig: StringifiedConfig = stringifyConfig(newlySelectedSongSpec.config)
+        const stringifiedSongSpec: StringifiedSongSpec = stringifySongSpec(songSpec)
 
-        dispatch({ type: ActionType.SET_SUBMITTED_CONFIG, data: stringifiedConfig })
-        dispatch({ type: ActionType.SET_DISPLAYED_CONFIG, data: stringifiedConfig })
+        dispatch({ type: ActionType.SET_SUBMITTED_SONG_SPEC, data: stringifiedSongSpec })
+        dispatch({ type: ActionType.SET_DISPLAYED_SONG_SPEC, data: stringifiedSongSpec })
 
-        await recompileAndRestart(newlySelectedSongSpec, dispatch)
+        await recompileAndRestart({ songSpec, dispatch, songId })
     }
 
 export {

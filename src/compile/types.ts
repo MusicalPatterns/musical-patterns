@@ -1,8 +1,11 @@
-import { Notes, OscillatorName, Timbre, VoiceType } from '../types'
-import { Index, Scalar, Time } from '../utilities/nominalTypes'
+import { SongSpec } from '../songs'
+import { SongMaterial } from '../songTypes'
+import { OscillatorName, SampleName, Scales, VoiceType } from '../types'
+import { Frequency, Index, Offset, Scalar, Time } from '../utilities/nominalTypes'
+import { DictionaryOf } from '../utilities/types'
 
 interface VoiceSpec {
-    timbre: Timbre | OscillatorName,
+    timbre: SampleName | OscillatorName,
     voiceType: VoiceType,
 }
 
@@ -11,20 +14,80 @@ enum TimeType {
     ATOMIC = 'atomic',
 }
 
-interface EntitySpec {
-    nextEnd?: Time,
-    nextStart?: Time,
-    noteIndex?: Index,
-    notes?: Notes,
+interface Entity {
+    noteSpecs?: NoteSpecs,
     timeType?: TimeType,
-    voiceGain?: Scalar,
     voiceSpec?: VoiceSpec,
 }
 
-type EntitySpecs = EntitySpec[]
+type Entities = Entity[]
+
+// tslint:disable-next-line:no-any
+type BuildEntitiesFunction = (songSpec?: any) => Entities
+// tslint:disable-next-line:no-any
+type BuildScalesFunction = (songSpec?: any) => Scales
+
+interface CompileSongParameters {
+    songMaterial: SongMaterial,
+    songSpec: SongSpec,
+}
+
+interface CompileThreadParameters {
+    entity: Entity,
+    scales: Scales
+}
+
+interface CompileThreadsParameters {
+    entities: Entities,
+    scales: Scales
+}
+
+interface NoteSpec {
+    durationSpec?: NotePropertySpec,
+    gainSpec?: NotePropertySpec,
+    pitchSpec?: NotePropertySpec,
+    sustainSpec?: NotePropertySpec,
+}
+
+interface NotePropertySpec {
+    index?: Index,
+    offset?: Offset,
+    scalar?: Scalar,
+    scaleIndex?: Index,
+}
+
+type NoteSpecs = NoteSpec[]
+
+type NoteProperty = Time | Scalar | Frequency
+
+interface CompileNotePropertyOptions {
+    scales: Scales
+}
+
+interface CompileNotesOptions {
+    scales: Scales,
+}
+
+type EntityDictionary = DictionaryOf<Entity>
+
+type NoteSpecsDictionary = DictionaryOf<NoteSpecs>
 
 export {
-    EntitySpec,
-    EntitySpecs,
+    Entity,
+    Entities,
     TimeType,
+    CompileSongParameters,
+    CompileThreadParameters,
+    CompileThreadsParameters,
+    BuildEntitiesFunction,
+    BuildScalesFunction,
+    VoiceSpec,
+    NoteSpec,
+    NotePropertySpec,
+    NoteSpecs,
+    NoteProperty,
+    CompileNotePropertyOptions,
+    CompileNotesOptions,
+    EntityDictionary,
+    NoteSpecsDictionary,
 }

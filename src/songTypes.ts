@@ -1,47 +1,31 @@
-import { EntitySpecs } from './compile/types'
-import { Entities, Scales } from './types'
-import { Frequency, Scalar } from './utilities/nominalTypes'
+import { BuildEntitiesFunction, BuildScalesFunction } from './compile/types'
+import { SongSpec } from './songs'
+import { Scalar } from './utilities/nominalTypes'
 
-enum SongID {
-    _EMPTY_SONG = '',
-    BEATEN_PATH = 'beaten path',
-    HAFUHAFU = 'hafuhafu',
-    HAFUHAFU_WITH_PITCH_CIRCULARITY = 'hafuhafu with pitch circularity',
-    STEPWISE = 'stepwiseSongSpec',
-    XELT_DLEUDEF_AET_NAELNAEMEUGZ = 'xelt dleudef aet ñaelnaemeugz',
-    ZDAUBYAOS = 'zdaubyaosSongSpec',
-}
-
-interface Config {
-    baseFrequency: Frequency,
-    durationScalar: Scalar,
-    // tslint:disable-next-line:no-any
-    [index: string]: any,
-}
-
-interface SongSpec {
-    compile: (songSpec: SongSpec) => Promise<Song>,
-    config: Config,
-    entitySpecs: EntitySpecs,
-    scales: Scales,
-    songId: SongID,
+interface BaseSongSpec {
+    songDurationScalar: Scalar,
+    songPitchScalar: Scalar,
 }
 
 interface Song {
-    entities: Entities,
-    songId: SongID,
+    material: SongMaterial,
+    metadata: SongMetadata,
+    spec: SongSpec,
 }
 
 interface SongMetadata {
     description: string,
     formattedName: string,
-    songId: SongID,
+}
+
+interface SongMaterial {
+    buildEntitiesFunction: BuildEntitiesFunction,
+    buildScalesFunction: BuildScalesFunction,
 }
 
 export {
     Song,
-    SongSpec,
-    SongID,
-    Config,
+    BaseSongSpec,
     SongMetadata,
+    SongMaterial,
 }

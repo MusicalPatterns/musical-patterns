@@ -1,43 +1,31 @@
 import { TimeType } from './compile/types'
-import { Index, Scalar, Time } from './utilities/nominalTypes'
+import { StartNote, StopNote } from './perform/types'
+import { Frequency, Index, Offset, Scalar, Time } from './utilities/nominalTypes'
 
 interface Note {
     duration: Time,
+    frequency: Frequency,
     gain: Scalar,
-    pitchIndex: Index,
-    pitchScalar: Scalar,
-    scaleIndex: Index,
     sustain: Time,
 }
 
 type Notes = Note[]
-
-interface NoteToPlay {
-    gain: Scalar,
-    pitch: Scalar,
-}
-
-type StartNote = (note: NoteToPlay) => void
-
-type StopNote = () => void
 
 interface Voice {
     startNote: StartNote,
     stopNote: StopNote,
 }
 
-interface Entity {
+interface Thread {
     nextEnd: Time,
     nextStart: Time,
     noteIndex: Index,
     notes: Notes,
-    scales: Scales,
     timeType: TimeType,
     voice: Voice,
-    voiceGain: Scalar,
 }
 
-type Entities = Entity[]
+type Threads = Thread[]
 
 enum VoiceType {
     OSCILLATOR = 'oscillator',
@@ -52,10 +40,17 @@ enum OscillatorName {
     CUSTOM = 'custom',
 }
 
-type Scale = Scalar[]
+type Scalars = Scalar[]
+
+interface Scale {
+    offset?: Offset,
+    scalar?: Scalar,
+    scalars: Scalars,
+}
+
 type Scales = Scale[]
 
-enum Timbre {
+enum SampleName {
     CELLO = 'cello',
     DOUBLEBASS = 'doublebass',
     FLUTE = 'flute',
@@ -69,24 +64,16 @@ enum Timbre {
     HIHAT = 'hihat',
 }
 
-interface Times {
-    atomicTime: Time,
-    rawTime: Time,
-}
-
 export {
     Voice,
     Note,
-    NoteToPlay,
-    StartNote,
-    StopNote,
-    Entity,
-    Timbre,
+    Notes,
+    Thread,
+    SampleName,
     VoiceType,
     OscillatorName,
     Scale,
     Scales,
-    Notes,
-    Times,
-    Entities,
+    Threads,
+    Scalars,
 }

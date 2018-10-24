@@ -6,7 +6,7 @@ import App from '../../../src/components/App'
 import * as React from 'react'
 
 describe('user interface', () => {
-    describe('submitting config', () => {
+    describe('submitting song spec', () => {
         xit('won\'t work until i can connect to wifi and install jsdom again', () => {
             const root: HTMLDivElement = document.createElement('div')
             document.body.appendChild(root)

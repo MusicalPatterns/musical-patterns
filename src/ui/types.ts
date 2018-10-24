@@ -1,71 +1,74 @@
 import * as React from 'react'
 import { Dispatch } from 'redux'
-import { Song, SongID } from '../songTypes'
+import { SongID } from '../songIds'
 import { UI } from '../state/state'
+import { Threads } from '../types'
 
-interface HandleConfigChangeParameters {
-    configKey: string,
-    configValue: string,
+interface HandleSongSpecChangeParameters {
     dispatch: Dispatch,
+    songSpecKey: string,
+    songSpecValue: string,
     ui: UI,
 }
-interface HandleConfigChangeEventParameters {
-    configKey: string,
+interface HandleSongSpecChangeEventParameters {
     event: React.SyntheticEvent<HTMLInputElement>,
+    songSpecKey: string,
     ui: UI,
 }
-type HandleConfigChangeEvent = (handleConfigChangeEventParameters: HandleConfigChangeEventParameters) => void
+type HandleSongSpecChangeEvent = (handleSongSpecChangeEventParameters: HandleSongSpecChangeEventParameters) => void
 
-interface HandleConfigSubmitParameters {
-    configKey: string,
-    configValue: string,
+interface HandleSongSpecSubmitParameters {
     dispatch: Dispatch,
-    song: Song,
+    songId: SongID,
+    songSpecKey: string,
+    songSpecValue: string,
+    threads: Threads,
     ui: UI,
 }
-interface HandleConfigSubmitEventParameters {
-    configKey: string,
+interface HandleSongSpecSubmitEventParameters {
     event: React.KeyboardEvent,
-    song: Song,
+    songId: SongID,
+    songSpecKey: string,
+    threads: Threads,
     ui: UI,
 }
-type HandleConfigSubmitEvent = (handleConfigSubmitEventParameters: HandleConfigSubmitEventParameters) => void
+type HandleSongSpecSubmitEvent = (handleSongSpecSubmitEventParameters: HandleSongSpecSubmitEventParameters) => void
 
 interface HandleSongChangeParameters {
-    currentSong?: Song,
     dispatch: Dispatch,
-    newlySelectedSongId: SongID,
+    songId: SongID,
+    threads: Threads,
 }
 interface HandleSongChangeEventParameters {
     event: React.SyntheticEvent<HTMLSelectElement>,
-    song?: Song,
+    threads: Threads,
 }
 type HandleSongChangeEvent = (handleSongChangeEventParameters: HandleSongChangeEventParameters) => void
 
-interface HandleConfigBlurParameters {
-    configKey: string,
-    configValue: string,
+interface HandleSongSpecBlurParameters {
     dispatch: Dispatch,
+    songSpecKey: string,
+    songSpecValue: string,
     ui: UI,
 }
-interface HandleConfigBlurEventParameters {
-    configKey: string,
+interface HandleSongSpecBlurEventParameters {
     event: React.SyntheticEvent<HTMLInputElement>,
+    songSpecKey: string,
     ui: UI,
 }
-type HandleConfigBlurEvent = (handleConfigBlurEventParameters: HandleConfigBlurEventParameters) => void
+type HandleSongSpecBlurEvent = (handleSongSpecBlurEventParameters: HandleSongSpecBlurEventParameters) => void
 
 export {
-    HandleConfigChangeEvent,
-    HandleConfigChangeEventParameters,
-    HandleConfigChangeParameters,
-    HandleConfigSubmitEvent,
-    HandleConfigSubmitEventParameters,
-    HandleConfigSubmitParameters,
+    HandleSongSpecChangeEvent,
+    HandleSongSpecChangeEventParameters,
+    HandleSongSpecChangeParameters,
+    HandleSongSpecSubmitEvent,
+    HandleSongSpecSubmitEventParameters,
+    HandleSongSpecSubmitParameters,
     HandleSongChangeEvent,
     HandleSongChangeEventParameters,
     HandleSongChangeParameters,
-    HandleConfigBlurEvent,
-    HandleConfigBlurEventParameters,
-    HandleConfigBlurParameters,
+    HandleSongSpecBlurEvent,
+    HandleSongSpecBlurEventParameters,
+    HandleSongSpecBlurParameters,
 }
