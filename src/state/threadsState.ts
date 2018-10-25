@@ -1,9 +1,10 @@
-import { List } from 'immutable'
+import { fromJS, List } from 'immutable'
 import { Thread } from '../types'
 
-const initialThreads: ImmutableThreads = List([])
+interface ImmutableThreads extends List<Thread> {}
 
-type ImmutableThreads = List<Thread>
+// tslint:disable-next-line:no-unsafe-any
+const initialThreads: ImmutableThreads = fromJS([])
 
 export {
     initialThreads,

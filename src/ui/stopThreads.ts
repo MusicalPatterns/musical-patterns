@@ -4,6 +4,7 @@ import { Maybe } from '../utilities/types'
 
 const stopThreads: (threads: ImmutableThreads) => void =
     (threads: ImmutableThreads): void => {
+        // tslint:disable-next-line:no-unsafe-any
         threads.forEach((thread: Maybe<Thread>): void => {
             if (thread) {
                 thread.voice.stopNote()

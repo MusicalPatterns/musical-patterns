@@ -1,6 +1,6 @@
-// tslint:disable:no-null-keyword
+// tslint:disable:no-null-keyword no-unsafe-any
 
-import { List } from 'immutable'
+import { fromJS } from 'immutable'
 import { ActionType, SetThreads } from '../../../src/state/actions'
 import { immutablize } from '../../../src/state/immutablize'
 import { rootReducer } from '../../../src/state/rootReducer'
@@ -11,7 +11,7 @@ describe('reducer', () => {
     it('sets threads', async (done: DoneFn) => {
         const state: ImmutableRootState = immutablize({
             songId: null,
-            threads: List([]),
+            threads: fromJS([]),
             ui: immutablize({
                 displayedSongSpec: {},
                 invalidSongSpecInputs: {},
@@ -21,7 +21,7 @@ describe('reducer', () => {
         })
 
         const action: SetThreads = {
-            data: List([ mockThread ]),
+            data: fromJS([ mockThread ]),
             type: ActionType.SET_THREADS,
         }
 
@@ -30,7 +30,7 @@ describe('reducer', () => {
 
         const expectedState: ImmutableRootState = immutablize({
             songId: null,
-            threads: List([ mockThread ]),
+            threads: fromJS([ mockThread ]),
             ui: immutablize({
                 displayedSongSpec: {},
                 invalidSongSpecInputs: {},
