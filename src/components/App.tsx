@@ -3,13 +3,13 @@ import { connect } from 'react-redux'
 import { SongID } from '../songIds'
 import { songs } from '../songs'
 import { Song, SongMetadata } from '../songTypes'
-import { State } from '../state/state'
+import { ImmutableRootState } from '../state/rootState'
 import SongSelector from './SongSelect'
 import SongSpecInputs from './SongSpecInputs'
 import { AppProps } from './types'
 
-const mapStateToProps: (state: State) => AppProps =
-    (state: State): AppProps => ({
+const mapStateToProps: (state: ImmutableRootState) => AppProps =
+    (state: ImmutableRootState): AppProps => ({
         songId: state.get('songId'),
     })
 

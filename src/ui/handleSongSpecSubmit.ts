@@ -1,6 +1,6 @@
 import { songs, SongSpec } from '../songs'
 import { ActionType } from '../state/actions'
-import { StringifiedSongSpec, StringifiedSongSpecInputStates, UI } from '../state/state'
+import { StringifiedSongSpec, StringifiedSongSpecInputStates, UI } from '../state/uiState'
 import { deepEqual } from '../utilities/deepEqual'
 import { destringifySongSpec } from './destringifySongSpec'
 import { recompileAndRestart } from './recompileAndRestart'
@@ -10,7 +10,7 @@ import { HandleSongSpecSubmitParameters } from './types'
 const handleSongSpecSubmit: (handleSongSpecSubmitParameters: HandleSongSpecSubmitParameters) => Promise<void> =
     async (handleSongSpecSubmitParameters: HandleSongSpecSubmitParameters): Promise<void> => {
         const { songSpecKey, songSpecValue, dispatch, songId, threads, ui } = handleSongSpecSubmitParameters
-        const { invalidSongSpecInputs, submittedSongSpec, unsubmittedSongSpecInputs }: UI = ui
+        const { invalidSongSpecInputs, submittedSongSpec, unsubmittedSongSpecInputs }: UI = ui.toJS()
 
         const updatedSongSpec: StringifiedSongSpec = { ...submittedSongSpec, [ songSpecKey ]: songSpecValue }
         if (deepEqual(submittedSongSpec, updatedSongSpec)) {

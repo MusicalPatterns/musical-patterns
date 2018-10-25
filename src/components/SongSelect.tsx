@@ -4,14 +4,14 @@ import { Dispatch } from 'redux'
 import { SongID } from '../songIds'
 import { songs } from '../songs'
 import { Song } from '../songTypes'
-import { State } from '../state/state'
+import { ImmutableRootState } from '../state/rootState'
 import { handleSongChange } from '../ui/handleSongChange'
 import { songsFilter } from '../ui/songsFilter'
 import { HandleSongChangeEventParameters } from '../ui/types'
 import { SongSelectProps, SongSelectPropsFromDispatch, SongSelectPropsFromState } from './types'
 
-const mapStateToProps: (state: State) => SongSelectPropsFromState =
-    (state: State): SongSelectPropsFromState => ({
+const mapStateToProps: (state: ImmutableRootState) => SongSelectPropsFromState =
+    (state: ImmutableRootState): SongSelectPropsFromState => ({
         threads: state.get('threads'),
     })
 

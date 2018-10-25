@@ -1,6 +1,6 @@
 import { SongID } from '../songIds'
-import { Threads } from '../types'
-import { StringifiedSongSpec, StringifiedSongSpecInputStates } from './state'
+import { ImmutableThreads } from './threadsState'
+import { StringifiedSongSpec, StringifiedSongSpecInputStates } from './uiState'
 
 enum ActionType {
     SET_SUBMITTED_SONG_SPEC = 'set submitted song spec',
@@ -16,7 +16,7 @@ interface ActionObject {
 }
 
 interface SetThreads extends ActionObject {
-    data: Threads,
+    data: ImmutableThreads,
     type: ActionType.SET_THREADS,
 }
 

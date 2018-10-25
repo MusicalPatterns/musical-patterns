@@ -1,19 +1,19 @@
 import * as React from 'react'
 import { Dispatch } from 'redux'
 import { SongID } from '../songIds'
-import { UI } from '../state/state'
-import { Threads } from '../types'
+import { ImmutableThreads } from '../state/threadsState'
+import { ImmutableUI } from '../state/uiState'
 
 interface HandleSongSpecChangeParameters {
     dispatch: Dispatch,
     songSpecKey: string,
     songSpecValue: string,
-    ui: UI,
+    ui: ImmutableUI,
 }
 interface HandleSongSpecChangeEventParameters {
     event: React.SyntheticEvent<HTMLInputElement>,
     songSpecKey: string,
-    ui: UI,
+    ui: ImmutableUI,
 }
 type HandleSongSpecChangeEvent = (handleSongSpecChangeEventParameters: HandleSongSpecChangeEventParameters) => void
 
@@ -22,26 +22,26 @@ interface HandleSongSpecSubmitParameters {
     songId: SongID,
     songSpecKey: string,
     songSpecValue: string,
-    threads: Threads,
-    ui: UI,
+    threads: ImmutableThreads,
+    ui: ImmutableUI,
 }
 interface HandleSongSpecSubmitEventParameters {
     event: React.KeyboardEvent,
     songId: SongID,
     songSpecKey: string,
-    threads: Threads,
-    ui: UI,
+    threads: ImmutableThreads,
+    ui: ImmutableUI,
 }
 type HandleSongSpecSubmitEvent = (handleSongSpecSubmitEventParameters: HandleSongSpecSubmitEventParameters) => void
 
 interface HandleSongChangeParameters {
     dispatch: Dispatch,
     songId: SongID,
-    threads: Threads,
+    threads: ImmutableThreads,
 }
 interface HandleSongChangeEventParameters {
     event: React.SyntheticEvent<HTMLSelectElement>,
-    threads: Threads,
+    threads: ImmutableThreads,
 }
 type HandleSongChangeEvent = (handleSongChangeEventParameters: HandleSongChangeEventParameters) => void
 
@@ -49,12 +49,12 @@ interface HandleSongSpecBlurParameters {
     dispatch: Dispatch,
     songSpecKey: string,
     songSpecValue: string,
-    ui: UI,
+    ui: ImmutableUI,
 }
 interface HandleSongSpecBlurEventParameters {
     event: React.SyntheticEvent<HTMLInputElement>,
     songSpecKey: string,
-    ui: UI,
+    ui: ImmutableUI,
 }
 type HandleSongSpecBlurEvent = (handleSongSpecBlurEventParameters: HandleSongSpecBlurEventParameters) => void
 

@@ -1,19 +1,20 @@
 import { SongID } from '../songIds'
-import { UI } from '../state/state'
-import { Threads } from '../types'
+import { ImmutableThreads } from '../state/threadsState'
+import { ImmutableUI } from '../state/uiState'
 import {
     HandleSongChangeEvent,
     HandleSongSpecBlurEvent,
     HandleSongSpecChangeEvent,
     HandleSongSpecSubmitEvent,
 } from '../ui/types'
+import { Maybe } from '../utilities/types'
 
 interface AppProps {
-    songId?: SongID,
+    songId: Maybe<SongID>,
 }
 
 interface SongSelectPropsFromState {
-    threads: Threads,
+    threads: ImmutableThreads,
 }
 
 interface SongSelectPropsFromDispatch {
@@ -24,8 +25,8 @@ interface SongSelectProps extends SongSelectPropsFromState, SongSelectPropsFromD
 }
 
 interface SongSpecInputsPropsFromState {
-    threads: Threads,
-    ui: UI,
+    threads: ImmutableThreads,
+    ui: ImmutableUI,
 }
 
 interface SongSpecInputsPropsFromDispatch {
@@ -44,11 +45,8 @@ interface SongSpecInputsProps extends SongSpecInputsPropsFromState,
 }
 
 interface SongSpecInputProps {
-    invalid: boolean,
     songSpecInputsProps: SongSpecInputsProps,
     songSpecKey: string,
-    songSpecValue: string,
-    unsubmitted: boolean,
 }
 
 export {

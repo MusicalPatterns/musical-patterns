@@ -1,7 +1,8 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
 import { Dispatch } from 'redux'
-import { State, UI } from '../state/state'
+import { ImmutableRootState } from '../state/rootState'
+import { StringifiedSongSpec } from '../state/uiState'
 import { handleSongSpecBlur } from '../ui/handleSongSpecBlur'
 import { handleSongSpecChange } from '../ui/handleSongSpecChange'
 import { handleSongSpecSubmit } from '../ui/handleSongSpecSubmit'
@@ -20,8 +21,8 @@ import {
 
 const SUBMIT: string = 'Enter'
 
-const mapStateToProps: (state: State) => SongSpecInputsPropsFromState =
-    (state: State): SongSpecInputsPropsFromState =>
+const mapStateToProps: (state: ImmutableRootState) => SongSpecInputsPropsFromState =
+    (state: ImmutableRootState): SongSpecInputsPropsFromState =>
         ({
             threads: state.get('threads'),
             ui: state.get('ui'),
@@ -59,19 +60,10 @@ const mapDispatchToProps: (dispatch: Dispatch) => SongSpecInputsPropsFromDispatc
 const SongSpecInputs: (songSpecInputsProps: SongSpecInputsProps) => JSX.Element =
     (songSpecInputsProps: SongSpecInputsProps): JSX.Element => {
         const { ui }: SongSpecInputsProps = songSpecInputsProps
-        const { displayedSongSpec, invalidSongSpecInputs, unsubmittedSongSpecInputs }: UI = ui
+        const displayedSongSpec: StringifiedSongSpec = ui.get('displayedSongSpec')
         const songSpecInputs: JSX.Element[] = Object.keys(displayedSongSpec).sort().map(
             (songSpecKey: string, key: number): JSX.Element => {
-                const songSpecValue: string = displayedSongSpec[ songSpecKey ]
-                const invalid: boolean = invalidSongSpecInputs[ songSpecKey ]
-                const unsubmitted: boolean = unsubmittedSongSpecInputs[ songSpecKey ]
-                const songSpecInputProps: SongSpecInputProps = {
-                    invalid,
-                    songSpecInputsProps,
-                    songSpecKey,
-                    songSpecValue,
-                    unsubmitted,
-                }
+                const songSpecInputProps: SongSpecInputProps = { songSpecInputsProps, songSpecKey }
 
                 return <SongSpecInput {...{ ...songSpecInputProps, key }} />
             },

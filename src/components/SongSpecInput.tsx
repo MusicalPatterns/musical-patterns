@@ -1,9 +1,10 @@
 import * as React from 'react'
+import { UI } from '../state/uiState'
 import { SongSpecInputProps } from './types'
 
 const SongSpecInput: (songSpecInputProps: SongSpecInputProps) => JSX.Element =
     (songSpecInputProps: SongSpecInputProps): JSX.Element => {
-        const { songSpecKey, songSpecValue, songSpecInputsProps, invalid, unsubmitted } = songSpecInputProps
+        const { songSpecKey, songSpecInputsProps } = songSpecInputProps
         const {
             songId,
             handleSongSpecChangeEvent,
@@ -12,6 +13,12 @@ const SongSpecInput: (songSpecInputProps: SongSpecInputProps) => JSX.Element =
             threads,
             ui,
         } = songSpecInputsProps
+
+        const { displayedSongSpec, invalidSongSpecInputs, unsubmittedSongSpecInputs }: UI = ui.toJS()
+
+        const songSpecValue: string = displayedSongSpec[ songSpecKey ]
+        const invalid: boolean = invalidSongSpecInputs[ songSpecKey ]
+        const unsubmitted: boolean = unsubmittedSongSpecInputs[ songSpecKey ]
 
         const onChange: (event: React.SyntheticEvent<HTMLInputElement>) => void =
             (event: React.SyntheticEvent<HTMLInputElement>): void => {

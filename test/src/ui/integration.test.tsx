@@ -1,5 +1,5 @@
 import { createStore, Store } from 'redux'
-import { reducer } from '../../../src/state/reducer'
+import { rootReducer } from '../../../src/state/rootReducer'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import App from '../../../src/components/App'
@@ -11,7 +11,7 @@ describe('user interface', () => {
             const root: HTMLDivElement = document.createElement('div')
             document.body.appendChild(root)
 
-            const store: Store = createStore(reducer)
+            const store: Store = createStore(rootReducer)
             store.subscribe(() => render(<Provider store={store}><App/></Provider>, root))
 
             render(<Provider store={store}><App/></Provider>, root)

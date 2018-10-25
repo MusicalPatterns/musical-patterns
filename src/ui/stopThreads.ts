@@ -1,9 +1,13 @@
-import { Thread, Threads } from '../types'
+import { ImmutableThreads } from '../state/threadsState'
+import { Thread } from '../types'
+import { Maybe } from '../utilities/types'
 
-const stopThreads: (threads: Threads) => void =
-    (threads: Threads): void => {
-        threads.forEach((thread: Thread): void => {
-            thread.voice.stopNote()
+const stopThreads: (threads: ImmutableThreads) => void =
+    (threads: ImmutableThreads): void => {
+        threads.forEach((thread: Maybe<Thread>): void => {
+            if (thread) {
+                thread.voice.stopNote()
+            }
         })
     }
 
