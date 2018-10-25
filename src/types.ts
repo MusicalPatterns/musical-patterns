@@ -1,6 +1,6 @@
-import { TimeType } from './compile/types'
+import { Adjustable, TimeType } from './compile/types'
 import { StartNote, StopNote } from './perform/types'
-import { Frequency, Index, Offset, Scalar, Time } from './utilities/nominalTypes'
+import { Frequency, Index, Scalar, Time } from './utilities/nominalTypes'
 
 interface Note {
     duration: Time,
@@ -42,9 +42,7 @@ enum OscillatorName {
 
 type Scalars = Scalar[]
 
-interface Scale {
-    offset?: Offset,
-    scalar?: Scalar,
+interface Scale extends Adjustable {
     scalars: Scalars,
 }
 

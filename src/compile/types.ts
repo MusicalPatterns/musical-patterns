@@ -49,10 +49,13 @@ interface NoteSpec {
     sustainSpec?: NotePropertySpec,
 }
 
-interface NotePropertySpec {
-    index?: Index,
+interface Adjustable {
     offset?: Offset,
     scalar?: Scalar,
+}
+
+interface NotePropertySpec extends Adjustable {
+    index?: Index,
     scaleIndex?: Index,
 }
 
@@ -90,4 +93,5 @@ export {
     CompileNotesOptions,
     EntityDictionary,
     NoteSpecsDictionary,
+    Adjustable,
 }
