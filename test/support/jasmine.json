@@ -6,8 +6,7 @@
     "songs/**/*.test.tsx"
   ],
   "helpers": [
-    "test/support/**/*.ts",
-    "test/support/**/*.tsx"
+    "test/support/mockDom.ts"
   ],
   "stopSpecOnExpectationFailure": false
 }
