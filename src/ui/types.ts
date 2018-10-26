@@ -2,6 +2,7 @@ import * as React from 'react'
 import { Dispatch } from 'redux'
 import { SongID, SongSpec } from '../song'
 import { ImmutableThreads, ImmutableUI } from '../state'
+import { DictionaryOf } from '../utilities'
 
 interface HandleSongSpecChangeParameters {
     dispatch: Dispatch,
@@ -57,9 +58,7 @@ interface HandleSongSpecBlurEventParameters {
 }
 type HandleSongSpecBlurEvent = (handleSongSpecBlurEventParameters: HandleSongSpecBlurEventParameters) => void
 
-interface PartialSongIdObject<T> {
-    [ index: string ]: T
-}
+type PartialSongIdObject<T> = DictionaryOf<T>
 
 type FullSongIdObject<T> = { [P in SongID]: T }
 

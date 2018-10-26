@@ -1,11 +1,9 @@
+import { DictionaryOf } from '../../utilities'
 import { TypedMap } from '../types'
 
-interface StringifiedSongSpec {
-    [ index: string ]: string,
-}
-interface StringifiedSongSpecInputStates {
-    [ index: string ]: boolean,
-}
+type StringifiedSongSpec = DictionaryOf<string>
+
+type StringifiedSongSpecInputStates = DictionaryOf<boolean>
 
 type StringifiedSongSpecEntry = [ string, string ]
 
