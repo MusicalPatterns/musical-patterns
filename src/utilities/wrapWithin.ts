@@ -12,4 +12,6 @@ const wrapWithin: (n: number, within: number) => number =
         return newN
     }
 
-export default wrapWithin
+export {
+    wrapWithin,
+}

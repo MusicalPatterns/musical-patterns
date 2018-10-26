@@ -1,13 +1,10 @@
+import { from, to } from '../nominal'
 import { Scale } from '../types'
-import applyOffset from '../utilities/applyOffset'
-import applyScale from '../utilities/applyScale'
-import * as from from '../utilities/from'
-import * as to from '../utilities/to'
-import { Maybe } from '../utilities/types'
-import { CompileNotePropertyOptions, NoteProperty, NotePropertySpec } from './types'
+import { applyOffset, applyScale, Maybe } from '../utilities'
+import { CompileNotesOptions, NoteProperty, NotePropertySpec } from './types'
 
-const compileNoteProperty: (notePropertySpec: NotePropertySpec, options: CompileNotePropertyOptions) => NoteProperty =
-    (notePropertySpec: NotePropertySpec, { scales }: CompileNotePropertyOptions): NoteProperty => {
+const compileNoteProperty: (notePropertySpec: NotePropertySpec, options: CompileNotesOptions) => NoteProperty =
+    (notePropertySpec: NotePropertySpec, { scales }: CompileNotesOptions): NoteProperty => {
         const {
             index = to.Index(0),
             offset: noteOffset = to.Offset(0),

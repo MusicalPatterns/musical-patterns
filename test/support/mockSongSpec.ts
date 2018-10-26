@@ -1,5 +1,4 @@
-import { BaseSongSpec } from '../../src/songTypes'
-import * as to from '../../src/utilities/to'
+import { BaseSongSpec, to } from '../../src/indexForTest'
 
 const mockSongSpec: BaseSongSpec = {
     songDurationScalar: to.Scalar(1),

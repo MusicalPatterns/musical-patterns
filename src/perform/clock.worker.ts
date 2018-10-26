@@ -14,4 +14,5 @@ const mainLoop: (timestamp: number) => void =
 
 requestAnimationFrame(mainLoop)
 
+// tslint:disable-next-line:no-default-export
 export default ((): void => undefined) as any

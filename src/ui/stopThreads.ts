@@ -1,6 +1,6 @@
-import { ImmutableThreads } from '../state/threadsState'
+import { ImmutableThreads } from '../state'
 import { Thread } from '../types'
-import { Maybe } from '../utilities/types'
+import { Maybe } from '../utilities'
 
 const stopThreads: (threads: ImmutableThreads) => void =
     (threads: ImmutableThreads): void => {

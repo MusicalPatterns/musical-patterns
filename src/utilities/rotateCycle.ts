@@ -1,8 +1,6 @@
-import applyOffset from './applyOffset'
-import * as from from './from'
-import { Count, Index, Offset } from './nominalTypes'
-import * as to from './to'
-import wrapWithin from './wrapWithin'
+import { Count, from, Index, Offset, to } from '../nominal'
+import { applyOffset } from './applyOffset'
+import { wrapWithin } from './wrapWithin'
 
 const rotateCycle: <T>(array: T[], rotationOffset: Offset) => T[] =
     <T>(array: T[], rotationOffset: Offset): T[] => {
@@ -18,4 +16,6 @@ const rotateCycle: <T>(array: T[], rotationOffset: Offset) => T[] =
         return output
     }
 
-export default rotateCycle
+export {
+    rotateCycle,
+}

@@ -1,17 +1,9 @@
-import { Dispatch } from 'redux'
-import { compileSong } from '../compile/compileSong'
-import { songLoop } from '../perform/songLoop'
-import { SongID } from '../songIds'
-import { songs, SongSpec } from '../songs'
-import { SongMaterial } from '../songTypes'
-import { ActionType } from '../state/actions'
+import { compileSong } from '../compile'
+import { songLoop } from '../perform'
+import { SongMaterial, songs } from '../song'
+import { ActionType } from '../state'
 import { Threads } from '../types'
-
-interface RecompileAndRestartParameters {
-    dispatch: Dispatch,
-    songId: SongID,
-    songSpec: SongSpec,
-}
+import { RecompileAndRestartParameters } from './types'
 
 const recompileAndRestart: (recompileAndRestartParameters: RecompileAndRestartParameters) => Promise<void> =
     async ({ dispatch, songId, songSpec }: RecompileAndRestartParameters): Promise<void> => {

@@ -1,8 +1,7 @@
 import * as React from 'react'
 import { Dispatch } from 'redux'
-import { SongID } from '../songIds'
-import { ImmutableThreads } from '../state/threadsState'
-import { ImmutableUI } from '../state/uiState'
+import { SongID, SongSpec } from '../song'
+import { ImmutableThreads, ImmutableUI } from '../state'
 
 interface HandleSongSpecChangeParameters {
     dispatch: Dispatch,
@@ -58,6 +57,20 @@ interface HandleSongSpecBlurEventParameters {
 }
 type HandleSongSpecBlurEvent = (handleSongSpecBlurEventParameters: HandleSongSpecBlurEventParameters) => void
 
+interface PartialSongIdObject<T> {
+    [ index: string ]: T
+}
+
+type FullSongIdObject<T> = { [P in SongID]: T }
+
+type SongIdObjectFilter = <T>(fullSongIdObject: FullSongIdObject<T>) => PartialSongIdObject<T>
+
+interface RecompileAndRestartParameters {
+    dispatch: Dispatch,
+    songId: SongID,
+    songSpec: SongSpec,
+}
+
 export {
     HandleSongSpecChangeEvent,
     HandleSongSpecChangeEventParameters,
@@ -71,4 +84,8 @@ export {
     HandleSongSpecBlurEvent,
     HandleSongSpecBlurEventParameters,
     HandleSongSpecBlurParameters,
+    SongIdObjectFilter,
+    FullSongIdObject,
+    PartialSongIdObject,
+    RecompileAndRestartParameters,
 }

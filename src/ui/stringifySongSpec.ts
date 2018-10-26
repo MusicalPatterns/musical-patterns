@@ -1,5 +1,5 @@
-import { SongSpec } from '../songs'
-import { StringifiedSongSpec } from '../state/uiState'
+import { SongSpec } from '../song'
+import { StringifiedSongSpec } from '../state'
 
 const displayedSongSpecDefaults: StringifiedSongSpec = {
 }

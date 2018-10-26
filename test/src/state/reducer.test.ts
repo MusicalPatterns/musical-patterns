@@ -1,11 +1,8 @@
 // tslint:disable:no-null-keyword no-unsafe-any
 
 import { fromJS } from 'immutable'
-import { ActionType, SetThreads } from '../../../src/state/actions'
-import { immutablize } from '../../../src/state/immutablize'
-import { rootReducer } from '../../../src/state/rootReducer'
-import { ImmutableRootState } from '../../../src/state/rootState'
-import { mockThread } from '../../support/mockThread'
+import { ActionType, ImmutableRootState, immutablize, rootReducer, SetThreads } from '../../../src/indexForTest'
+import { mockThread } from '../../support'
 
 describe('reducer', () => {
     it('sets threads', async (done: DoneFn) => {

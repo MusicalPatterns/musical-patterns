@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { UI } from '../state/uiState'
+import { UI } from '../state'
 import { SongSpecInputProps } from './types'
 
 const SongSpecInput: (songSpecInputProps: SongSpecInputProps) => JSX.Element =

@@ -1,5 +1,4 @@
-import { compileThread } from '../../src/compile/compileThread'
-import { Thread } from '../../src/types'
+import { compileThread, Thread } from '../../src/indexForTest'
 
 const mockThread: Thread = compileThread({
     entity: {},

@@ -4,7 +4,8 @@
     "tslint-eslint-rules"
   ],
   "rulesDirectory": [
-    "node_modules/tslint-defocus/dist"
+    "node_modules/tslint-defocus/dist",
+    "lint"
   ],
   "rules": {
     "no-constant-condition": true,
@@ -12,7 +13,6 @@
     "type-literal-delimiter": false,
     "prefer-method-signature": false,
     "no-inferrable-types": false,
-    "no-default-export": false,
     "quotemark": [
       true,
       "single"
@@ -52,6 +52,9 @@
     "no-namespace": false,
     "newline-per-chained-call": false,
     "no-dynamic-delete": false,
-    "no-implicit-dependencies": [true, "dev"]
+    "no-implicit-dependencies": [true, "dev"],
+    "no-reaching-imports": true,
+    "no-import-paths-without-names": true,
+    "no-type-definitions-outside-types-modules": true
   }
 }

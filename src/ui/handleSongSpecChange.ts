@@ -1,5 +1,4 @@
-import { ActionType } from '../state/actions'
-import { StringifiedSongSpec, StringifiedSongSpecInputStates, UI } from '../state/uiState'
+import { ActionType, StringifiedSongSpec, StringifiedSongSpecInputStates, UI } from '../state'
 import { HandleSongSpecChangeParameters } from './types'
 
 const handleSongSpecChange: (handleSongSpecChangeParameters: HandleSongSpecChangeParameters) => void =

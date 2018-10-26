@@ -1,10 +1,7 @@
 import { OCTAVE } from './constants'
+import { Offset, Power, Scalar, to } from './nominal'
 import { Scale } from './types'
-import applyOffset from './utilities/applyOffset'
-import { Offset, Power, Scalar } from './utilities/nominalTypes'
-import numbers from './utilities/numbers'
-import raise from './utilities/raise'
-import * as to from './utilities/to'
+import { applyOffset, numbers, raise } from './utilities'
 
 // tslint:disable-next-line:no-any no-magic-numbers
 const POWER_OFFSET: Offset = -1 as any

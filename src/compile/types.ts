@@ -1,8 +1,7 @@
-import { SongSpec } from '../songs'
-import { SongMaterial } from '../songTypes'
+import { Frequency, Index, Offset, Scalar, Time } from '../nominal'
+import { SongMaterial, SongSpec } from '../song'
 import { OscillatorName, SampleName, Scales, VoiceType } from '../types'
-import { Frequency, Index, Offset, Scalar, Time } from '../utilities/nominalTypes'
-import { DictionaryOf } from '../utilities/types'
+import { DictionaryOf } from '../utilities'
 
 interface VoiceSpec {
     timbre: SampleName | OscillatorName,
@@ -15,15 +14,13 @@ enum TimeType {
 }
 
 interface Entity {
-    noteSpecs?: NoteSpecs,
+    noteSpecs?: NoteSpec[],
     timeType?: TimeType,
     voiceSpec?: VoiceSpec,
 }
 
-type Entities = Entity[]
-
 // tslint:disable-next-line:no-any
-type BuildEntitiesFunction = (songSpec?: any) => Entities
+type BuildEntitiesFunction = (songSpec?: any) => Entity[]
 // tslint:disable-next-line:no-any
 type BuildScalesFunction = (songSpec?: any) => Scales
 
@@ -38,7 +35,7 @@ interface CompileThreadParameters {
 }
 
 interface CompileThreadsParameters {
-    entities: Entities,
+    entities: Entity[],
     scales: Scales
 }
 
@@ -59,13 +56,7 @@ interface NotePropertySpec extends Adjustable {
     scaleIndex?: Index,
 }
 
-type NoteSpecs = NoteSpec[]
-
 type NoteProperty = Time | Scalar | Frequency
-
-interface CompileNotePropertyOptions {
-    scales: Scales
-}
 
 interface CompileNotesOptions {
     scales: Scales,
@@ -73,11 +64,18 @@ interface CompileNotesOptions {
 
 type EntityDictionary = DictionaryOf<Entity>
 
-type NoteSpecsDictionary = DictionaryOf<NoteSpecs>
+type NoteSpecsDictionary = DictionaryOf<NoteSpec[]>
+
+interface CompileOscillatorVoiceParameters {
+    timbre: OscillatorType,
+}
+
+interface CompileSampleVoiceParameters {
+    timbre: SampleName,
+}
 
 export {
     Entity,
-    Entities,
     TimeType,
     CompileSongParameters,
     CompileThreadParameters,
@@ -87,11 +85,11 @@ export {
     VoiceSpec,
     NoteSpec,
     NotePropertySpec,
-    NoteSpecs,
     NoteProperty,
-    CompileNotePropertyOptions,
     CompileNotesOptions,
     EntityDictionary,
     NoteSpecsDictionary,
     Adjustable,
+    CompileOscillatorVoiceParameters,
+    CompileSampleVoiceParameters,
 }

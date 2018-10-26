@@ -1,6 +1,6 @@
 // tslint:disable no-any no-magic-numbers
 
-import { Cents, Offset, Scalar } from './utilities/nominalTypes'
+import { Cents, Offset, Scalar } from './nominal'
 
 const BASE_DURATION: Scalar = 7 as any
 const BASE_GAIN: Scalar = 0.1 as any

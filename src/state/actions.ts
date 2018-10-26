@@ -1,6 +1,8 @@
-import { SongID } from '../songIds'
-import { ImmutableThreads } from './threadsState'
-import { StringifiedSongSpec, StringifiedSongSpecInputStates } from './uiState'
+// tslint:disable:no-type-definitions-outside-types-modules
+
+import { SongID } from '../song'
+import { ImmutableThreads } from './threads'
+import { StringifiedSongSpec, StringifiedSongSpecInputStates } from './ui'
 
 enum ActionType {
     SET_SUBMITTED_SONG_SPEC = 'set submitted song spec',

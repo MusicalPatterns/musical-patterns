@@ -5,6 +5,7 @@
   "rules": {
     "variable-name": false,
     "no-unsafe-any": false,
-    "file-name-casing": false
+    "file-name-casing": false,
+    "no-default-export": false
   }
 }

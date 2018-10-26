@@ -1,9 +1,7 @@
+import { from, Time, to } from '../nominal'
 import { Thread, Threads } from '../types'
-import * as from from '../utilities/from'
-import { Time } from '../utilities/nominalTypes'
-import * as to from '../utilities/to'
 import Clock from './clock.worker'
-import update from './update'
+import { update } from './update'
 
 // tslint:disable-next-line:no-unsafe-any
 let clock: Worker = new Clock()

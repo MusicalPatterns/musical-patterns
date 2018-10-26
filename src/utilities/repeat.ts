@@ -1,5 +1,4 @@
-import * as from from './from'
-import { Count } from './nominalTypes'
+import { Count, from } from '../nominal'
 
 const repeat: <T>(array: T[], count: Count) => T[] =
     <T>(array: T[], count: Count): T[] => {
@@ -11,4 +10,6 @@ const repeat: <T>(array: T[], count: Count) => T[] =
         return output
     }
 
-export default repeat
+export {
+    repeat,
+}

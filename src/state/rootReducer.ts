@@ -1,8 +1,8 @@
 import { Reducer } from 'redux'
 import { combineReducers } from 'redux-immutable'
-import { songIdReducer } from './songIdReducer'
-import { threadsReducer } from './threadsReducer'
-import { uiReducer } from './uiReducer'
+import { songIdReducer } from './songId'
+import { threadsReducer } from './threads'
+import { uiReducer } from './ui'
 
 const rootReducer: Reducer = combineReducers({
     songId: songIdReducer,

@@ -1,6 +1,4 @@
-
-import { ActionType } from '../state/actions'
-import { StringifiedSongSpecInputStates, UI } from '../state/uiState'
+import { ActionType, StringifiedSongSpecInputStates, UI } from '../state'
 import { HandleSongSpecBlurParameters } from './types'
 
 const handleSongSpecBlur: (handleSongSpecBlurParameters: HandleSongSpecBlurParameters) => void =

@@ -1,6 +1,6 @@
+import { Scalar } from '../nominal'
 import { Note } from '../types'
-import applyScale from '../utilities/applyScale'
-import { Scalar } from '../utilities/nominalTypes'
+import { applyScale } from '../utilities'
 
 const scaleDuration: (note: Note, durationScalar: Scalar) => Note =
     (note: Note, durationScalar: Scalar): Note => ({
@@ -9,4 +9,6 @@ const scaleDuration: (note: Note, durationScalar: Scalar) => Note =
         sustain: applyScale(note.sustain, durationScalar),
     })
 
-export default scaleDuration
+export {
+    scaleDuration,
+}

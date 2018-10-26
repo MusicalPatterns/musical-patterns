@@ -1,6 +1,6 @@
-import { Adjustable, TimeType } from './compile/types'
-import { StartNote, StopNote } from './perform/types'
-import { Frequency, Index, Scalar, Time } from './utilities/nominalTypes'
+import { Adjustable, TimeType } from './compile'
+import { Frequency, Index, Scalar, Time } from './nominal'
+import { StartNote, StopNote } from './perform'
 
 interface Note {
     duration: Time,

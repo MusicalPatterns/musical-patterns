@@ -6,4 +6,6 @@ const sequence: <T>(arrayOfArrays: T[][]) => T[] =
             [],
         )
 
-export default sequence
+export {
+    sequence,
+}

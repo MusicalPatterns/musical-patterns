@@ -1,6 +1,5 @@
-import { songs, SongSpec } from '../songs'
-import { ActionType } from '../state/actions'
-import { StringifiedSongSpec } from '../state/uiState'
+import { songs, SongSpec } from '../song'
+import { ActionType, StringifiedSongSpec } from '../state'
 import { recompileAndRestart } from './recompileAndRestart'
 import { stopThreads } from './stopThreads'
 import { stringifySongSpec } from './stringifySongSpec'

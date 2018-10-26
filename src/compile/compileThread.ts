@@ -1,5 +1,5 @@
+import { to } from '../nominal'
 import { Notes, OscillatorName, Thread, Voice, VoiceType } from '../types'
-import * as to from '../utilities/to'
 import { compileNotes } from './compileNotes'
 import { compileVoice } from './compileVoice'
 import { CompileThreadParameters, TimeType } from './types'

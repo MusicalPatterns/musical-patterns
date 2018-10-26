@@ -1,12 +1,5 @@
-import { SongID } from '../songIds'
-
-interface PartialSongIdObject<T> {
-    [ index: string ]: T
-}
-
-type FullSongIdObject<T> = { [P in SongID]: T }
-
-type SongIdObjectFilter = <T>(fullSongIdObject: FullSongIdObject<T>) => PartialSongIdObject<T>
+import { SongID } from '../song'
+import { FullSongIdObject, PartialSongIdObject, SongIdObjectFilter } from './types'
 
 const songsFilter: SongIdObjectFilter =
     <T>(fullSongIdObject: FullSongIdObject<T>): PartialSongIdObject<T> => {

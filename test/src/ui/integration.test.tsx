@@ -1,8 +1,7 @@
 import { createStore, Store } from 'redux'
-import { rootReducer } from '../../../src/state/rootReducer'
+import { rootReducer, App } from '../../../src/indexForTest'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import App from '../../../src/components/App'
 import * as React from 'react'
 
 describe('user interface', () => {

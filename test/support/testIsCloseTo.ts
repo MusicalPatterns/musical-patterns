@@ -23,4 +23,6 @@ const testIsCloseTo: <T>(numberOne: T, numberTwo: T, negative?: boolean) => bool
         return negative ? !isClose : isClose
     }
 
-export default testIsCloseTo
+export {
+    testIsCloseTo,
+}

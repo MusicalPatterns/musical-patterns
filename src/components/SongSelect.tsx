@@ -1,13 +1,9 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
 import { Dispatch } from 'redux'
-import { SongID } from '../songIds'
-import { songs } from '../songs'
-import { Song } from '../songTypes'
-import { ImmutableRootState } from '../state/rootState'
-import { handleSongChange } from '../ui/handleSongChange'
-import { songsFilter } from '../ui/songsFilter'
-import { HandleSongChangeEventParameters } from '../ui/types'
+import { Song, SongID, songs } from '../song'
+import { ImmutableRootState } from '../state'
+import { handleSongChange, HandleSongChangeEventParameters, songsFilter } from '../ui'
 import { SongSelectProps, SongSelectPropsFromDispatch, SongSelectPropsFromState } from './types'
 
 const mapStateToProps: (state: ImmutableRootState) => SongSelectPropsFromState =

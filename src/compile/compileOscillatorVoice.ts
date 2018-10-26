@@ -1,14 +1,11 @@
 import { BASE_GAIN, SILENT } from '../constants'
-import context from '../context'
-import { NoteToPlay, StartNote, StopNote } from '../perform/types'
+import { from } from '../nominal'
+import { context, NoteToPlay, StartNote, StopNote } from '../perform'
 import { Voice } from '../types'
-import applyScale from '../utilities/applyScale'
-import * as from from '../utilities/from'
+import { applyScale } from '../utilities'
+import { CompileOscillatorVoiceParameters } from './types'
 
-interface CompileOscillatorVoiceParameters {
-    timbre: OscillatorType,
-}
-
+// tslint:disable-next-line:no-type-definitions-outside-types-modules
 const compileOscillatorVoice: (compileOscillatorVoiceParameters: CompileOscillatorVoiceParameters) => Voice =
     ({ timbre }: CompileOscillatorVoiceParameters): Voice => {
         const oscillatorNode: OscillatorNode = context.createOscillator()
@@ -36,4 +33,6 @@ const compileOscillatorVoice: (compileOscillatorVoiceParameters: CompileOscillat
         }
     }
 
-export default compileOscillatorVoice
+export {
+    compileOscillatorVoice,
+}

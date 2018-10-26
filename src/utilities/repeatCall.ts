@@ -1,5 +1,4 @@
-import * as from from './from'
-import { Count } from './nominalTypes'
+import { Count, from } from '../nominal'
 
 const repeatCall: <T>(arrayFunction: () => T[], count: Count) => T[] =
     <T>(arrayFunction: () => T[], count: Count): T[] => {
@@ -11,4 +10,6 @@ const repeatCall: <T>(arrayFunction: () => T[], count: Count) => T[] =
         return output
     }
 
-export default repeatCall
+export {
+    repeatCall,
+}

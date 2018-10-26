@@ -1,5 +1,4 @@
-import rotateCycle from '../../../src/utilities/rotateCycle'
-import * as to from '../../../src/utilities/to'
+import { rotateCycle, to } from '../../../src/indexForTest'
 
 describe('rotate cycle', () => {
     it('rotates a cycle', () => {

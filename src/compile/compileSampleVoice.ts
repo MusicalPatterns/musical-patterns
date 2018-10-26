@@ -1,13 +1,8 @@
-import context from '../context'
-import { NoteToPlay, StartNote, StopNote } from '../perform/types'
-import sampleData from '../sampleData'
-import samples from '../samples'
-import { SampleName, Voice } from '../types'
-import applyScale from '../utilities/applyScale'
-import { pitchToCents } from '../utilities/cents'
-import * as from from '../utilities/from'
-import { Cents, Frequency, Scalar } from '../utilities/nominalTypes'
-import * as to from '../utilities/to'
+import { Cents, Frequency, from, Scalar, to } from '../nominal'
+import { context, NoteToPlay, sampleData, samples, StartNote, StopNote } from '../perform'
+import { Voice } from '../types'
+import { applyScale, pitchToCents } from '../utilities'
+import { CompileSampleVoiceParameters } from './types'
 
 const START_SOURCE_AT_BEGINNING: number = 0
 // tslint:disable-next-line:no-any no-magic-numbers
@@ -15,10 +10,6 @@ const BASE_SAMPLE_GAIN: Scalar = 0.25 as any
 
 // tslint:disable-next-line:no-any no-magic-numbers
 const AVERAGE_SAMPLE_PITCH_OF_C5: Frequency = 523.25 as any
-
-interface CompileSampleVoiceParameters {
-    timbre: SampleName,
-}
 
 const compileSampleVoice: (compileSampleVoiceParameters: CompileSampleVoiceParameters) => Voice =
     ({ timbre }: CompileSampleVoiceParameters): Voice => {
@@ -54,4 +45,6 @@ const compileSampleVoice: (compileSampleVoiceParameters: CompileSampleVoiceParam
         }
     }
 
-export default compileSampleVoice
+export {
+    compileSampleVoice,
+}

@@ -1,13 +1,12 @@
-import { SongID } from '../songIds'
-import { ImmutableThreads } from '../state/threadsState'
-import { ImmutableUI } from '../state/uiState'
+import { SongID } from '../song'
+import { ImmutableThreads, ImmutableUI } from '../state'
 import {
     HandleSongChangeEvent,
     HandleSongSpecBlurEvent,
     HandleSongSpecChangeEvent,
     HandleSongSpecSubmitEvent,
-} from '../ui/types'
-import { Maybe } from '../utilities/types'
+} from '../ui'
+import { Maybe } from '../utilities'
 
 interface AppProps {
     songId: Maybe<SongID>,

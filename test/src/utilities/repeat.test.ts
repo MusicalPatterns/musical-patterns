@@ -1,5 +1,4 @@
-import repeat from '../../../src/utilities/repeat'
-import * as to from '../../../src/utilities/to'
+import { repeat, to } from '../../../src/indexForTest'
 
 describe('repeat', () => {
     it('concats x copies of an array together', () => {

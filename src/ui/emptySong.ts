@@ -1,7 +1,7 @@
-import { Entities } from '../compile/types'
-import { BaseSongSpec, Song, SongMaterial, SongMetadata } from '../songTypes'
+import { Entity } from '../compile'
+import { to } from '../nominal'
+import { BaseSongSpec, Song, SongMaterial, SongMetadata } from '../song'
 import { Scales } from '../types'
-import * as to from '../utilities/to'
 
 const emptySongSpec: BaseSongSpec = {
     songDurationScalar: to.Scalar(1),
@@ -14,7 +14,7 @@ const emptySongMetadata: SongMetadata = {
 }
 
 const emptySongMaterial: SongMaterial = {
-    buildEntitiesFunction: (): Entities => [],
+    buildEntitiesFunction: (): Entity[] => [],
     buildScalesFunction: (): Scales => [],
 }
 

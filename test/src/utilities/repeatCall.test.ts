@@ -1,5 +1,4 @@
-import repeatCall from '../../../src/utilities/repeatCall'
-import * as to from '../../../src/utilities/to'
+import { repeatCall, to } from '../../../src/indexForTest'
 
 describe('repeat call', () => {
     it('concats x copies of the array a function returns together', () => {

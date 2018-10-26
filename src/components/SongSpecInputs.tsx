@@ -1,16 +1,13 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
 import { Dispatch } from 'redux'
-import { ImmutableRootState } from '../state/rootState'
-import { StringifiedSongSpec } from '../state/uiState'
-import { handleSongSpecBlur } from '../ui/handleSongSpecBlur'
-import { handleSongSpecChange } from '../ui/handleSongSpecChange'
-import { handleSongSpecSubmit } from '../ui/handleSongSpecSubmit'
+import { ImmutableRootState, StringifiedSongSpec } from '../state'
 import {
+    handleSongSpecBlur,
     HandleSongSpecBlurEventParameters,
-    HandleSongSpecChangeEventParameters,
-    HandleSongSpecSubmitEventParameters,
-} from '../ui/types'
+    handleSongSpecChange, HandleSongSpecChangeEventParameters,
+    handleSongSpecSubmit, HandleSongSpecSubmitEventParameters,
+} from '../ui'
 import SongSpecInput from './SongSpecInput'
 import {
     SongSpecInputProps,

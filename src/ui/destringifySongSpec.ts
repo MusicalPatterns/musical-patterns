@@ -1,6 +1,6 @@
-import { SongSpec } from '../songs'
-import { StringifiedSongSpec, StringifiedSongSpecEntry } from '../state/uiState'
-import * as to from '../utilities/to'
+import { to } from '../nominal'
+import { SongSpec } from '../song'
+import { StringifiedSongSpec, StringifiedSongSpecEntry } from '../state'
 
 const songSpecDefaults: SongSpec = {
     songDurationScalar: to.Scalar(1),
