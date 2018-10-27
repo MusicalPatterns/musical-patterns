@@ -19,8 +19,10 @@ const buildStandardScales: () => DictionaryOf<Scale> =
         const flatDurationsScale: Scale = harmonicSeriesScale
 
         const octaveSeriesScale: Scale = {
-            scalars: numbers.map(to.Power).map((power: Power): Scalar =>
-                raise(OCTAVE, applyOffset(power, POWER_OFFSET))),
+            scalars: numbers
+                .map(to.Power)
+                .map((power: Power): Scalar =>
+                    raise(OCTAVE, applyOffset(power, POWER_OFFSET))),
         }
 
         return {

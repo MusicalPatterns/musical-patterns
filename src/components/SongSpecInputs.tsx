@@ -59,14 +59,17 @@ const mapDispatchToProps: (dispatch: Dispatch) => SongSpecInputsPropsFromDispatc
 const SongSpecInputs: (songSpecInputsProps: SongSpecInputsProps) => JSX.Element =
     (songSpecInputsProps: SongSpecInputsProps): JSX.Element => {
         const { ui }: SongSpecInputsProps = songSpecInputsProps
-        const displayedSongSpec: StringifiedSongSpec = ui.get(UIStateKeys.DISPLAYED_SONG_SPEC)
-        const songSpecInputs: JSX.Element[] = Object.keys(displayedSongSpec).sort().map(
-            (songSpecKey: string, key: number): JSX.Element => {
-                const songSpecInputProps: SongSpecInputProps = { songSpecInputsProps, songSpecKey }
+        const displayedSongSpec: StringifiedSongSpec = ui
+            .get(UIStateKeys.DISPLAYED_SONG_SPEC)
+        const songSpecInputs: JSX.Element[] = Object.keys(displayedSongSpec)
+            .sort()
+            .map(
+                (songSpecKey: string, key: number): JSX.Element => {
+                    const songSpecInputProps: SongSpecInputProps = { songSpecInputsProps, songSpecKey }
 
-                return <SongSpecInput {...{ ...songSpecInputProps, key }} />
-            },
-        )
+                    return <SongSpecInput {...{ ...songSpecInputProps, key }} />
+                },
+            )
 
         return (
             <div>

@@ -46,4 +46,5 @@ export {
 } from './components/indexForTest'
 export {
     Thread,
+    Scale,
 } from './types'

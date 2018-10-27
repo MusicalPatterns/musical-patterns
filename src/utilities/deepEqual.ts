@@ -7,7 +7,7 @@ const deepEqual: (_: any, __: any) => boolean =
         }
         else if (a instanceof Array) {
             if (b instanceof Array) {
-                return a.every((el: any, index: number): boolean => deepEqual(el, b[index]))
+                return a.every((el: any, index: number): boolean => deepEqual(el, b[ index ]))
             }
             else {
                 return false
@@ -18,8 +18,9 @@ const deepEqual: (_: any, __: any) => boolean =
                 return false
             }
             else if (typeof b === 'object') {
-                return Object.entries(a).every(([ key, value ]: [string, any]): boolean =>
-                    deepEqual(value, b[key]))
+                return Object.entries(a)
+                    .every(([ key, value ]: [ string, any ]): boolean =>
+                        deepEqual(value, b[ key ]))
             }
             else {
                 return false

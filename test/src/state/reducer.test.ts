@@ -35,7 +35,8 @@ describe('reducer', () => {
                 unsubmittedSongSpecInputs: {},
             }),
         })
-        expect(newState.toJS()).toEqual(expectedState.toJS())
+        expect(newState.toJS())
+            .toEqual(expectedState.toJS())
 
         done()
     })
