@@ -29,14 +29,18 @@ const load: (timbre: SampleName) => void =
         request.onload = (): void => {
             const audioData: ArrayBuffer = request.response as ArrayBuffer
             context.decodeAudioData(audioData, (buffer: AudioBuffer): void => {
-                samples[timbre] = buffer
+                samples[ timbre ] = buffer
             }).then().catch()
         }
         request.send()
     }
 
-Object.values(SampleName).forEach(load)
+const loadAllSamples: () => void =
+    (): void => {
+        Object.values(SampleName).forEach(load)
+    }
 
 export {
     samples,
+    loadAllSamples,
 }

@@ -1,5 +1,5 @@
 import { Cents, Frequency, from, Scalar, to } from '../nominal'
-import { context, NoteToPlay, sampleData, samples, StartNote, StopNote } from '../perform'
+import { buildSampleData, context, NoteToPlay, SampleDatas, samples, StartNote, StopNote } from '../perform'
 import { Voice } from '../types'
 import { applyScale, pitchToCents } from '../utilities'
 import { CompileSampleVoiceParameters } from './types'
@@ -11,9 +11,13 @@ const BASE_SAMPLE_GAIN: Scalar = 0.25 as any
 // tslint:disable-next-line:no-any no-magic-numbers
 const AVERAGE_SAMPLE_PITCH_OF_C5: Frequency = 523.25 as any
 
+let sampleData: SampleDatas
+
 const compileSampleVoice: (compileSampleVoiceParameters: CompileSampleVoiceParameters) => Voice =
     ({ timbre }: CompileSampleVoiceParameters): Voice => {
         let source: AudioBufferSourceNode
+
+        sampleData = sampleData || buildSampleData()
 
         const startNote: StartNote = ({ frequency, gain }: NoteToPlay): void => {
             source = context.createBufferSource()

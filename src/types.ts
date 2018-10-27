@@ -9,8 +9,6 @@ interface Note {
     sustain: Time,
 }
 
-type Notes = Note[]
-
 interface Voice {
     startNote: StartNote,
     stopNote: StopNote,
@@ -20,12 +18,10 @@ interface Thread {
     nextEnd: Time,
     nextStart: Time,
     noteIndex: Index,
-    notes: Notes,
+    notes: Note[],
     timeType: TimeType,
     voice: Voice,
 }
-
-type Threads = Thread[]
 
 enum VoiceType {
     OSCILLATOR = 'oscillator',
@@ -40,13 +36,9 @@ enum OscillatorName {
     CUSTOM = 'custom',
 }
 
-type Scalars = Scalar[]
-
 interface Scale extends Adjustable {
-    scalars: Scalars,
+    scalars: Scalar[],
 }
-
-type Scales = Scale[]
 
 enum SampleName {
     CELLO = 'cello',
@@ -65,13 +57,9 @@ enum SampleName {
 export {
     Voice,
     Note,
-    Notes,
     Thread,
     SampleName,
     VoiceType,
     OscillatorName,
     Scale,
-    Scales,
-    Threads,
-    Scalars,
 }

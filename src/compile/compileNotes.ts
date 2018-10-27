@@ -1,5 +1,5 @@
 import { Frequency, Scalar, Time, to } from '../nominal'
-import { Note, Notes } from '../types'
+import { Note } from '../types'
 import { compileNoteProperty } from './compileNoteProperty'
 import { CompileNotesOptions, NotePropertySpec, NoteSpec } from './types'
 
@@ -9,8 +9,8 @@ const defaultNotePropertySpec: NotePropertySpec = {
     scaleIndex: to.Index(0),
 }
 
-const compileNotes: (noteSpecs: NoteSpec[], compileNotesOptions: CompileNotesOptions) => Notes =
-    (noteSpecs: NoteSpec[], { scales }: CompileNotesOptions): Notes =>
+const compileNotes: (noteSpecs: NoteSpec[], compileNotesOptions: CompileNotesOptions) => Note[] =
+    (noteSpecs: NoteSpec[], { scales }: CompileNotesOptions): Note[] =>
         noteSpecs.map((noteSpec: NoteSpec): Note => {
             const {
                 durationSpec = defaultNotePropertySpec,

@@ -1,9 +1,11 @@
+export { songLoop } from './songLoop'
+export { loadAllSamples, samples } from './samples'
+export { buildSampleData } from './sampleData'
+export { context } from './context'
+
 export {
     NoteToPlay,
     StartNote,
     StopNote,
+    SampleDatas,
 } from './types'
-export { songLoop } from './songLoop'
-export { samples } from './samples'
-export { sampleData } from './sampleData'
-export { context } from './context'

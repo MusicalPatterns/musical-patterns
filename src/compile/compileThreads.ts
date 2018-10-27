@@ -1,9 +1,9 @@
-import { Thread, Threads } from '../types'
+import { Thread } from '../types'
 import { compileThread } from './compileThread'
 import { CompileThreadsParameters, Entity } from './types'
 
-const compileThreads: (compileThreadsParameters: CompileThreadsParameters) => Threads =
-    ({ entities, scales }: CompileThreadsParameters): Threads =>
+const compileThreads: (compileThreadsParameters: CompileThreadsParameters) => Thread[] =
+    ({ entities, scales }: CompileThreadsParameters): Thread[] =>
         entities.map((entity: Entity): Thread =>
             compileThread({ entity, scales }))
 

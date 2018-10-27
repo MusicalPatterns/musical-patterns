@@ -1,12 +1,12 @@
 import { from, Time, to } from '../nominal'
-import { Thread, Threads } from '../types'
+import { Thread } from '../types'
 import Clock from './clock.worker'
 import { update } from './update'
 
 let clock: Worker
 
-const songLoop: (threads: Threads) => void =
-    (threads: Threads): void => {
+const songLoop: (threads: Thread[]) => void =
+    (threads: Thread[]): void => {
         let atomicTime: Time = to.Time(0)
 
         if (clock) {

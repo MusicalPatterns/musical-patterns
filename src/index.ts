@@ -6,12 +6,7 @@ export {
     EntityDictionary,
     NoteSpecsDictionary,
 } from './compile'
-export {
-    flatDurationsScale,
-    octaveSeriesScale,
-    subharmonicSeriesScale,
-    harmonicSeriesScale,
-} from './scales'
+export { buildStandardScales } from './scales'
 export {
     SongSpec,
     SongMaterial,
@@ -55,8 +50,6 @@ export {
 export {
     OscillatorName,
     SampleName,
-    Scales,
     VoiceType,
-    Scalars,
     Scale,
 } from './types'

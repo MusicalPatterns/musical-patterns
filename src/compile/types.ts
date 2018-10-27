@@ -1,6 +1,6 @@
 import { Frequency, Index, Offset, Scalar, Time } from '../nominal'
 import { SongMaterial, SongSpec } from '../song'
-import { OscillatorName, SampleName, Scales, VoiceType } from '../types'
+import { OscillatorName, SampleName, Scale, VoiceType } from '../types'
 import { DictionaryOf } from '../utilities'
 
 interface VoiceSpec {
@@ -22,7 +22,7 @@ interface Entity {
 // tslint:disable-next-line:no-any
 type BuildEntitiesFunction = (songSpec?: any) => Entity[]
 // tslint:disable-next-line:no-any
-type BuildScalesFunction = (songSpec?: any) => Scales
+type BuildScalesFunction = (songSpec?: any) => Scale[]
 
 interface CompileSongParameters {
     songMaterial: SongMaterial,
@@ -31,12 +31,12 @@ interface CompileSongParameters {
 
 interface CompileThreadParameters {
     entity: Entity,
-    scales: Scales
+    scales: Scale[]
 }
 
 interface CompileThreadsParameters {
     entities: Entity[],
-    scales: Scales
+    scales: Scale[]
 }
 
 interface NoteSpec {
@@ -59,7 +59,7 @@ interface NotePropertySpec extends Adjustable {
 type NoteProperty = Time | Scalar | Frequency
 
 interface CompileNotesOptions {
-    scales: Scales,
+    scales: Scale[],
 }
 
 type EntityDictionary = DictionaryOf<Entity>

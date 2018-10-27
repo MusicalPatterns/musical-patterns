@@ -8,4 +8,5 @@ export { centsToShiftFromOneFrequencyToAnother, pitchToCents } from './cents'
 
 export {
     Maybe,
+    DictionaryOf,
 } from './types'

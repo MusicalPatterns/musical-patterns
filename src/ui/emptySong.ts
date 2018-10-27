@@ -1,7 +1,7 @@
 import { Entity } from '../compile'
 import { to } from '../nominal'
 import { BaseSongSpec, Song, SongMaterial, SongMetadata } from '../song'
-import { Scales } from '../types'
+import { Scale } from '../types'
 
 const emptySongSpec: BaseSongSpec = {
     songDurationScalar: to.Scalar(1),
@@ -15,7 +15,7 @@ const emptySongMetadata: SongMetadata = {
 
 const emptySongMaterial: SongMaterial = {
     buildEntitiesFunction: (): Entity[] => [],
-    buildScalesFunction: (): Scales => [],
+    buildScalesFunction: (): Scale[] => [],
 }
 
 const emptySong: Song = {

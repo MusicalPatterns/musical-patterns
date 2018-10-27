@@ -1,5 +1,5 @@
 import { to } from '../nominal'
-import { Notes, OscillatorName, Thread, Voice, VoiceType } from '../types'
+import { Note, OscillatorName, Thread, Voice, VoiceType } from '../types'
 import { compileNotes } from './compileNotes'
 import { compileVoice } from './compileVoice'
 import { CompileThreadParameters, TimeType } from './types'
@@ -13,7 +13,7 @@ const compileThread: (compileEntityParameters: CompileThreadParameters) => Threa
         } = entity
 
         const voice: Voice = compileVoice(voiceSpec)
-        const notes: Notes = compileNotes(noteSpecs, { scales })
+        const notes: Note[] = compileNotes(noteSpecs, { scales })
 
         return {
             nextEnd: to.Time(0),

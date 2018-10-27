@@ -7,7 +7,7 @@ export {
     compileThread,
 } from './compile/indexForTest'
 export {
-    octaveSeriesScale,
+    buildStandardScales,
 } from './scales'
 export {
     applyOffset,
@@ -19,6 +19,7 @@ export {
     repeat,
     repeatCall,
     rotateCycle,
+    DictionaryOf,
 } from './utilities/indexForTest'
 export {
     SumOfScalars,
