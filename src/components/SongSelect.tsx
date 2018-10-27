@@ -2,13 +2,13 @@ import * as React from 'react'
 import { connect } from 'react-redux'
 import { Dispatch } from 'redux'
 import { Song, SongID, songs } from '../song'
-import { ImmutableRootState } from '../state'
+import { ImmutableRootState, RootStateKeys } from '../state'
 import { handleSongChange, HandleSongChangeEventParameters, songsFilter } from '../ui'
 import { SongSelectProps, SongSelectPropsFromDispatch, SongSelectPropsFromState } from './types'
 
 const mapStateToProps: (state: ImmutableRootState) => SongSelectPropsFromState =
     (state: ImmutableRootState): SongSelectPropsFromState => ({
-        threads: state.get('threads'),
+        threads: state.get(RootStateKeys.THREADS),
     })
 
 const mapDispatchToProps: (dispatch: Dispatch) => SongSelectPropsFromDispatch =

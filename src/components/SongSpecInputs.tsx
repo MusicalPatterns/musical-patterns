@@ -1,12 +1,14 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
 import { Dispatch } from 'redux'
-import { ImmutableRootState, StringifiedSongSpec } from '../state'
+import { ImmutableRootState, RootStateKeys, StringifiedSongSpec, UIStateKeys } from '../state'
 import {
     handleSongSpecBlur,
     HandleSongSpecBlurEventParameters,
-    handleSongSpecChange, HandleSongSpecChangeEventParameters,
-    handleSongSpecSubmit, HandleSongSpecSubmitEventParameters,
+    handleSongSpecChange,
+    HandleSongSpecChangeEventParameters,
+    handleSongSpecSubmit,
+    HandleSongSpecSubmitEventParameters,
 } from '../ui'
 import SongSpecInput from './SongSpecInput'
 import {
@@ -21,8 +23,8 @@ const SUBMIT: string = 'Enter'
 const mapStateToProps: (state: ImmutableRootState) => SongSpecInputsPropsFromState =
     (state: ImmutableRootState): SongSpecInputsPropsFromState =>
         ({
-            threads: state.get('threads'),
-            ui: state.get('ui'),
+            threads: state.get(RootStateKeys.THREADS),
+            ui: state.get(RootStateKeys.UI),
         })
 
 const mapDispatchToProps: (dispatch: Dispatch) => SongSpecInputsPropsFromDispatch =
@@ -57,7 +59,7 @@ const mapDispatchToProps: (dispatch: Dispatch) => SongSpecInputsPropsFromDispatc
 const SongSpecInputs: (songSpecInputsProps: SongSpecInputsProps) => JSX.Element =
     (songSpecInputsProps: SongSpecInputsProps): JSX.Element => {
         const { ui }: SongSpecInputsProps = songSpecInputsProps
-        const displayedSongSpec: StringifiedSongSpec = ui.get('displayedSongSpec')
+        const displayedSongSpec: StringifiedSongSpec = ui.get(UIStateKeys.DISPLAYED_SONG_SPEC)
         const songSpecInputs: JSX.Element[] = Object.keys(displayedSongSpec).sort().map(
             (songSpecKey: string, key: number): JSX.Element => {
                 const songSpecInputProps: SongSpecInputProps = { songSpecInputsProps, songSpecKey }

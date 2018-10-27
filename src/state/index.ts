@@ -1,5 +1,6 @@
 export {
     ImmutableRootState,
+    RootStateKeys,
 } from './types'
 export {
     UI,
@@ -7,6 +8,7 @@ export {
     ImmutableUI,
     StringifiedSongSpecEntry,
     StringifiedSongSpecInputStates,
+    UIStateKeys,
 } from './ui'
 export {
     ImmutableThreads,

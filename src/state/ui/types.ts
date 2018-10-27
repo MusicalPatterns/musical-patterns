@@ -7,11 +7,18 @@ type StringifiedSongSpecInputStates = DictionaryOf<boolean>
 
 type StringifiedSongSpecEntry = [ string, string ]
 
+enum UIStateKeys {
+    DISPLAYED_SONG_SPEC = 'displayedSongSpec',
+    INVALID_SONG_SPEC_INPUTS = 'invalidSongSpecInputs',
+    SUBMITTED_SONG_SPEC = 'submittedSongSpec',
+    UNSUBMITTED_SONG_SPEC_INPUTS = 'unsubmittedSongSpecInputs',
+}
+
 interface UI {
-    displayedSongSpec: StringifiedSongSpec,
-    invalidSongSpecInputs: StringifiedSongSpecInputStates,
-    submittedSongSpec: StringifiedSongSpec,
-    unsubmittedSongSpecInputs: StringifiedSongSpecInputStates,
+    [ UIStateKeys.DISPLAYED_SONG_SPEC ]: StringifiedSongSpec,
+    [ UIStateKeys.INVALID_SONG_SPEC_INPUTS ]: StringifiedSongSpecInputStates,
+    [ UIStateKeys.SUBMITTED_SONG_SPEC ]: StringifiedSongSpec,
+    [ UIStateKeys.UNSUBMITTED_SONG_SPEC_INPUTS ]: StringifiedSongSpecInputStates,
 }
 
 type ImmutableUI = TypedMap<UI>
@@ -22,4 +29,5 @@ export {
     StringifiedSongSpecEntry,
     UI,
     ImmutableUI,
+    UIStateKeys,
 }

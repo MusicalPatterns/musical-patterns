@@ -4,11 +4,18 @@ import { Maybe } from '../utilities'
 import { ImmutableThreads } from './threads'
 import { ImmutableUI, StringifiedSongSpec, StringifiedSongSpecInputStates } from './ui'
 
-interface RootState {
-    songId: Maybe<SongID>,
-    threads: ImmutableThreads,
-    ui: ImmutableUI,
+enum RootStateKeys {
+    SONG_ID = 'songId',
+    THREADS = 'threads',
+    UI = 'ui',
 }
+
+interface RootState {
+    [ RootStateKeys.SONG_ID ]: Maybe<SongID>,
+    [ RootStateKeys.THREADS ]: ImmutableThreads,
+    [ RootStateKeys.UI ]: ImmutableUI,
+}
+
 type ImmutableRootState = TypedMap<RootState>
 
 type AllowedValue =
@@ -35,4 +42,5 @@ export {
     ImmutableRootState,
     TypedMap,
     MapTypeAllowedData,
+    RootStateKeys,
 }
