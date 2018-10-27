@@ -5,6 +5,7 @@ export {
     StringifiedSongSpecEntry,
     StringifiedSongSpecInputStates,
     UIStateKeys,
+    UiActionType,
 } from './types'
 export {
     uiReducer,

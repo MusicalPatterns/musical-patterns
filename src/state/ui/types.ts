@@ -23,6 +23,39 @@ interface UI {
 
 type ImmutableUI = TypedMap<UI>
 
+enum UiActionType {
+    SET_SUBMITTED_SONG_SPEC = 'set submitted song spec',
+    SET_DISPLAYED_SONG_SPEC = 'set displayed song spec',
+    SET_INVALID_SONG_SPEC_INPUTS = 'set invalid song spec inputs',
+    SET_UNSUBMITTED_SONG_SPEC_INPUTS = 'set unsubmitted song spec inputs',
+}
+
+interface SetSubmittedSongSpec {
+    data: StringifiedSongSpec,
+    type: UiActionType.SET_SUBMITTED_SONG_SPEC,
+}
+
+interface SetDisplayedSongSpec {
+    data: StringifiedSongSpec,
+    type: UiActionType.SET_DISPLAYED_SONG_SPEC,
+}
+
+interface SetInvalidSongSpecInputs {
+    data: StringifiedSongSpecInputStates,
+    type: UiActionType.SET_INVALID_SONG_SPEC_INPUTS,
+}
+
+interface SetUnsubmittedSongSpecInputs {
+    data: StringifiedSongSpecInputStates,
+    type: UiActionType.SET_UNSUBMITTED_SONG_SPEC_INPUTS,
+}
+
+type UiAction =
+    SetSubmittedSongSpec |
+    SetDisplayedSongSpec |
+    SetInvalidSongSpecInputs |
+    SetUnsubmittedSongSpecInputs
+
 export {
     StringifiedSongSpecInputStates,
     StringifiedSongSpec,
@@ -30,4 +63,6 @@ export {
     UI,
     ImmutableUI,
     UIStateKeys,
+    UiAction,
+    UiActionType,
 }

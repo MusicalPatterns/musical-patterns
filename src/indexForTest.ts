@@ -36,7 +36,7 @@ export {
 } from './song/indexForTest'
 export {
     ActionType,
-    SetThreads,
+    ThreadsAction,
     immutablize,
     rootReducer,
     ImmutableRootState,

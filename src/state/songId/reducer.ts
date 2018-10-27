@@ -1,12 +1,12 @@
 import { SongID } from '../../song'
 import { Maybe } from '../../utilities'
-import { Action, ActionType } from '../actions'
 import { initialSongId } from './state'
+import { SongIdAction, SongIdActionType } from './types'
 
-const songIdReducer: (songId: Maybe<SongID>, action: Action) => Maybe<SongID> =
-    (songId: Maybe<SongID> = initialSongId, action: Action): Maybe<SongID> => {
+const songIdReducer: (songId: Maybe<SongID>, action: SongIdAction) => Maybe<SongID> =
+    (songId: Maybe<SongID> = initialSongId, action: SongIdAction): Maybe<SongID> => {
         switch (action.type) {
-            case ActionType.SET_SONG_ID: {
+            case SongIdActionType.SET_SONG_ID: {
                 return action.data
             }
 

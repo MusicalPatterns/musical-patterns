@@ -1,3 +1,2 @@
-export {
-    songIdReducer,
-} from './reducer'
+export { songIdReducer } from './reducer'
+export { SongIdActionType } from './types'

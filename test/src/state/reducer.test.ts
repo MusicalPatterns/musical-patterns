@@ -1,7 +1,7 @@
 // tslint:disable:no-null-keyword no-unsafe-any
 
 import { fromJS } from 'immutable'
-import { ActionType, ImmutableRootState, immutablize, rootReducer, SetThreads } from '../../../src/indexForTest'
+import { ActionType, ImmutableRootState, immutablize, rootReducer, ThreadsAction } from '../../../src/indexForTest'
 import { mockThread } from '../../support'
 
 describe('reducer', () => {
@@ -17,7 +17,7 @@ describe('reducer', () => {
             }),
         })
 
-        const action: SetThreads = {
+        const action: ThreadsAction = {
             data: fromJS([ mockThread ]),
             type: ActionType.SET_THREADS,
         }
