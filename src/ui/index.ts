@@ -3,7 +3,6 @@ export { handleSongSpecBlur } from './handleSongSpecBlur'
 export { handleSongSpecChange } from './handleSongSpecChange'
 export { handleSongSpecSubmit } from './handleSongSpecSubmit'
 export { songsFilter } from './songsFilter'
-export { emptySong } from './emptySong'
 
 export {
     HandleSongChangeEventParameters,
@@ -14,4 +13,5 @@ export {
     HandleSongSpecBlurEvent,
     HandleSongSpecChangeEvent,
     HandleSongSpecSubmitEvent,
+    PartialSongs,
 } from './types'

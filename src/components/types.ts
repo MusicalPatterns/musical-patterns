@@ -1,4 +1,4 @@
-import { SongID } from '../song'
+import { SongId } from '../../songs'
 import { ImmutableThreads, ImmutableUI } from '../state'
 import {
     HandleSongChangeEvent,
@@ -9,7 +9,7 @@ import {
 import { Maybe } from '../utilities'
 
 interface AppProps {
-    songId: Maybe<SongID>,
+    songId: Maybe<SongId>,
 }
 
 interface SongSelectPropsFromState {
@@ -35,7 +35,7 @@ interface SongSpecInputsPropsFromDispatch {
 }
 
 interface SongSpecInputsPropsFromParent {
-    songId: SongID,
+    songId: SongId,
 }
 
 interface SongSpecInputsProps extends SongSpecInputsPropsFromState,

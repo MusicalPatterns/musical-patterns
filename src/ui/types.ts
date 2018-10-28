@@ -1,8 +1,7 @@
 import * as React from 'react'
 import { Dispatch } from 'redux'
-import { SongID, SongSpec } from '../song'
+import { Song, SongId, Songs, SongSpec } from '../../songs'
 import { ImmutableThreads, ImmutableUI } from '../state'
-import { DictionaryOf } from '../utilities'
 
 interface HandleSongSpecChangeParameters {
     dispatch: Dispatch,
@@ -19,7 +18,7 @@ type HandleSongSpecChangeEvent = (handleSongSpecChangeEventParameters: HandleSon
 
 interface HandleSongSpecSubmitParameters {
     dispatch: Dispatch,
-    songId: SongID,
+    songId: SongId,
     songSpecKey: string,
     songSpecValue: string,
     threads: ImmutableThreads,
@@ -27,7 +26,7 @@ interface HandleSongSpecSubmitParameters {
 }
 interface HandleSongSpecSubmitEventParameters {
     event: React.KeyboardEvent,
-    songId: SongID,
+    songId: SongId,
     songSpecKey: string,
     threads: ImmutableThreads,
     ui: ImmutableUI,
@@ -36,7 +35,7 @@ type HandleSongSpecSubmitEvent = (handleSongSpecSubmitEventParameters: HandleSon
 
 interface HandleSongChangeParameters {
     dispatch: Dispatch,
-    songId: SongID,
+    songId: SongId,
     threads: ImmutableThreads,
 }
 interface HandleSongChangeEventParameters {
@@ -58,15 +57,13 @@ interface HandleSongSpecBlurEventParameters {
 }
 type HandleSongSpecBlurEvent = (handleSongSpecBlurEventParameters: HandleSongSpecBlurEventParameters) => void
 
-type PartialSongIdObject<T> = DictionaryOf<T>
+type PartialSongs = {[key in Partial<SongId>]: Song}
 
-type FullSongIdObject<T> = { [P in SongID]: T }
-
-type SongIdObjectFilter = <T>(fullSongIdObject: FullSongIdObject<T>) => PartialSongIdObject<T>
+type SongsFilter = (songs: Songs) => PartialSongs
 
 interface RecompileAndRestartParameters {
     dispatch: Dispatch,
-    songId: SongID,
+    songId: SongId,
     songSpec: SongSpec,
 }
 
@@ -83,8 +80,7 @@ export {
     HandleSongSpecBlurEvent,
     HandleSongSpecBlurEventParameters,
     HandleSongSpecBlurParameters,
-    SongIdObjectFilter,
-    FullSongIdObject,
-    PartialSongIdObject,
+    PartialSongs,
+    SongsFilter,
     RecompileAndRestartParameters,
 }

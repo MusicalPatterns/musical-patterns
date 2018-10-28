@@ -1,4 +1,4 @@
-import { SongMaterial } from '../song'
+import { SongMaterial } from '../../songs'
 import { Scale, Thread } from '../types'
 import { compileThreads } from './compileThreads'
 import { CompileSongParameters, Entity } from './types'

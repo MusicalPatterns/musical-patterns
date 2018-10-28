@@ -1,9 +1,8 @@
-import { Entity } from '../compile'
-import { to } from '../nominal'
-import { BaseSongSpec, Song, SongMaterial, SongMetadata } from '../song'
-import { Scale } from '../types'
+import { Entity, Scale, to } from '../../src'
+import { SongId } from '../songId'
+import { Song, SongMaterial, SongMetadata, SongSpec } from '../types'
 
-const emptySongSpec: BaseSongSpec = {
+const emptySongSpec: SongSpec = {
     songDurationScalar: to.Scalar(1),
     songPitchScalar: to.Scalar(1),
 }
@@ -21,6 +20,7 @@ const emptySongMaterial: SongMaterial = {
 const emptySong: Song = {
     material: emptySongMaterial,
     metadata: emptySongMetadata,
+    songId: SongId._EMPTY_SONG,
     spec: emptySongSpec,
 }
 

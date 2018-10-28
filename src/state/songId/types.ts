@@ -1,11 +1,11 @@
-import { SongID } from '../../song'
+import { SongId } from '../../../songs'
 
 enum SongIdActionType {
-    SET_SONG_ID = 'SET_SONhG_ID',
+    SET_SONG_ID = 'SET_SONG_ID',
 }
 
 interface SetSongId {
-    data: SongID,
+    data: SongId,
     type: SongIdActionType.SET_SONG_ID,
 }
 

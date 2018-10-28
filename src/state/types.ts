@@ -1,5 +1,5 @@
 import { Map } from 'immutable'
-import { SongID } from '../song'
+import { SongId } from '../../songs'
 import { Maybe } from '../utilities'
 import { ImmutableThreads } from './threads'
 import { ImmutableUI, StringifiedSongSpec, StringifiedSongSpecInputStates } from './ui'
@@ -11,7 +11,7 @@ enum RootStateKeys {
 }
 
 interface RootState {
-    [ RootStateKeys.SONG_ID ]: Maybe<SongID>,
+    [ RootStateKeys.SONG_ID ]: Maybe<SongId>,
     [ RootStateKeys.THREADS ]: ImmutableThreads,
     [ RootStateKeys.UI ]: ImmutableUI,
 }
@@ -22,7 +22,7 @@ type AllowedValue =
     undefined |
     ImmutableThreads |
     ImmutableUI |
-    Maybe<SongID> |
+    Maybe<SongId> |
     StringifiedSongSpecInputStates |
     StringifiedSongSpec
 

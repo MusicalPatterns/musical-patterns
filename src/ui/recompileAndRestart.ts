@@ -1,6 +1,6 @@
+import { SongMaterial, songs } from '../../songs'
 import { compileSong } from '../compile'
 import { songLoop } from '../perform'
-import { SongMaterial, songs } from '../song'
 import { ActionType } from '../state'
 import { Thread } from '../types'
 import { RecompileAndRestartParameters } from './types'

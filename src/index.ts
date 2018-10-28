@@ -2,18 +2,12 @@ export {
     Entity,
     TimeType,
     NoteSpec,
+    BuildEntitiesFunction,
     BuildScalesFunction,
     EntityDictionary,
     NoteSpecsDictionary,
 } from './compile'
 export { buildStandardScales } from './scales'
-export {
-    SongSpec,
-    SongMaterial,
-    SongMetadata,
-    Song,
-    BaseSongSpec,
-} from './song'
 export {
     DictionaryOf,
     numbers,

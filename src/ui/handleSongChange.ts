@@ -1,4 +1,4 @@
-import { songs, SongSpec } from '../song'
+import { songs, SongSpec } from '../../songs'
 import { ActionType, StringifiedSongSpec } from '../state'
 import { recompileAndRestart } from './recompileAndRestart'
 import { stopThreads } from './stopThreads'

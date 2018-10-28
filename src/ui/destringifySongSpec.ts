@@ -1,5 +1,5 @@
+import { SongSpec } from '../../songs'
 import { to } from '../nominal'
-import { SongSpec } from '../song'
 import { StringifiedSongSpec, StringifiedSongSpecEntry } from '../state'
 
 const songSpecDefaults: SongSpec = {

@@ -32,9 +32,6 @@ export {
     from,
 } from './nominal/indexForTest'
 export {
-    BaseSongSpec,
-} from './song/indexForTest'
-export {
     ActionType,
     ThreadsAction,
     immutablize,

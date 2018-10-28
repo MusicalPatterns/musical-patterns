@@ -1,4 +1,4 @@
-import { songs, SongSpec } from '../song'
+import { songs, SongSpec } from '../../songs'
 import { ActionType, StringifiedSongSpec, StringifiedSongSpecInputStates, UI } from '../state'
 import { deepEqual } from '../utilities'
 import { destringifySongSpec } from './destringifySongSpec'

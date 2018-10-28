@@ -1,3 +1,0 @@
-export {
-    BaseSongSpec,
-} from './types'

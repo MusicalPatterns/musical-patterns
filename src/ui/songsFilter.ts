@@ -1,20 +1,21 @@
-import { SongID } from '../song'
-import { FullSongIdObject, PartialSongIdObject, SongIdObjectFilter } from './types'
+import { filteredSongsRegistry, SongId, Songs } from '../../songs'
+import { PartialSongs, SongsFilter } from './types'
 
-const songsFilter: SongIdObjectFilter =
-    <T>(fullSongIdObject: FullSongIdObject<T>): PartialSongIdObject<T> => {
-        const fullSongIdObjectKeys: SongID[] = Object.keys(fullSongIdObject) as SongID[]
-        const partialSongIdObjectKeys: SongID[] = fullSongIdObjectKeys
-            .filter((songIdKey: SongID): boolean =>
-                songIdKey !== SongID.HAFUHAFU_WITH_PITCH_CIRCULARITY && songIdKey !== SongID._EMPTY_SONG)
+const songsFilter: SongsFilter =
+    (songs: Songs): PartialSongs => {
+        const songIds: SongId[] = Object.keys(songs) as SongId[]
+        const filteredSongIds: SongId[] = songIds
+            .sort()
+            .filter((songId: SongId): boolean =>
+                filteredSongsRegistry.every((filteredSongId: SongId): boolean => songId !== filteredSongId),
+            )
 
-        const partialSongIdObjectBase: PartialSongIdObject<T> = {}
-
-        return partialSongIdObjectKeys
+        return filteredSongIds
             .reduce(
-                (partialSongIdObject: PartialSongIdObject<T>, songIdKey: SongID): PartialSongIdObject<T> =>
-                    ({ ...partialSongIdObject, [ songIdKey ]: fullSongIdObject[ songIdKey ] }),
-                partialSongIdObjectBase,
+                (filteredSongs: PartialSongs, songId: SongId): PartialSongs =>
+                    ({ ...filteredSongs, [ songId ]: songs[ songId ] }),
+                // tslint:disable-next-line:no-object-literal-type-assertion
+                {} as PartialSongs,
             )
     }
 

@@ -1,5 +1,5 @@
+import { SongMaterial, SongSpec } from '../../songs'
 import { Frequency, Index, Offset, Scalar, Time } from '../nominal'
-import { SongMaterial, SongSpec } from '../song'
 import { OscillatorName, SampleName, Scale, VoiceType } from '../types'
 import { DictionaryOf } from '../utilities'
 

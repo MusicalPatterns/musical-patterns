@@ -1,7 +1,6 @@
 // tslint:disable no-magic-numbers
 
-import { Index } from './index'
-import { Cents, Count, Offset, Scalar, to } from './nominal'
+import { Cents, Count, Index, Offset, Scalar, to } from './nominal'
 
 const BASE_DURATION: Scalar = to.Scalar(7)
 
