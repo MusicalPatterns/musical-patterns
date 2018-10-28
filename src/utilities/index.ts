@@ -9,7 +9,7 @@ export { absoluteRatio } from './absoluteRatio'
 export { isCloseTo } from './isCloseTo'
 export { sequence } from './sequence'
 export { rotateCycle } from './rotateCycle'
-export { shiftFromOneIndexedToZeroIndexed } from './shiftFromOneIndexedToZeroIndexed'
+export { offsetFromOneIndexedToZeroIndexed } from './offsetFromOneIndexedToZeroIndexed'
 export { repeatCall } from './repeatCall'
 
 export {

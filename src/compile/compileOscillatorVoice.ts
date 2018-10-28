@@ -1,4 +1,4 @@
-import { BASE_GAIN, SILENT } from '../constants'
+import { BASE_GAIN, SILENT_GAIN } from '../constants'
 import { from } from '../nominal'
 import { context, NoteToPlay, StartNote, StopNote } from '../perform'
 import { Voice } from '../types'
@@ -12,7 +12,7 @@ const compileOscillatorVoice: (compileOscillatorVoiceParameters: CompileOscillat
 
         const gainNode: GainNode = context.createGain()
         gainNode.connect(context.destination)
-        gainNode.gain.value = from.Scalar(SILENT)
+        gainNode.gain.value = from.Scalar(SILENT_GAIN)
 
         oscillatorNode.connect(gainNode)
         oscillatorNode.type = timbre
@@ -24,7 +24,7 @@ const compileOscillatorVoice: (compileOscillatorVoiceParameters: CompileOscillat
         }
 
         const stopNote: StopNote = (): void => {
-            gainNode.gain.value = from.Scalar(SILENT)
+            gainNode.gain.value = from.Scalar(SILENT_GAIN)
         }
 
         return {

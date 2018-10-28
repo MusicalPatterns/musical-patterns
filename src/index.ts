@@ -27,10 +27,11 @@ export {
     deepEqual,
     applyOffset,
     raise,
-    shiftFromOneIndexedToZeroIndexed,
+    offsetFromOneIndexedToZeroIndexed,
     repeatCall,
 } from './utilities'
 export {
+    Base,
     Scalar,
     Offset,
     to,
@@ -40,11 +41,20 @@ export {
     Index,
 } from './nominal'
 export {
-    ONE,
-    TWO,
+    EVEN,
+    HALF,
     FULL_GAIN,
-    SEPARATION_FOR_NEIGHBORING_NOTES,
-    DEFAULT_DURATION_SCALAR,
+    DEFAULT_OFFSET_FOR_ALMOST_FULL_SUSTAIN,
+    DEFAULT_ATOMIC_TIME_TYPE_DURATION_SCALAR,
+    DEFAULT_RAW_TIME_TYPE_DURATION_SCALAR,
+    EVERY_OTHER,
+    DEFAULT_DURATIONS_SCALE_INDEX,
+    DEFAULT_PITCH_SCALE_INDEX,
+    DEFAULT_SCALAR_FOR_ALMOST_FULL_SUSTAIN,
+    OCTAVE,
+    TRITAVE,
+    INITIAL,
+    INCLUSIVE,
 } from './constants'
 
 export {

@@ -1,37 +1,63 @@
-// tslint:disable no-any no-magic-numbers
+// tslint:disable no-magic-numbers
 
-import { Cents, Offset, Scalar } from './nominal'
+import { Index } from './index'
+import { Cents, Count, Offset, Scalar, to } from './nominal'
 
-const BASE_DURATION: Scalar = 7 as any
-const BASE_GAIN: Scalar = 0.1 as any
+const BASE_DURATION: Scalar = to.Scalar(7)
 
-const SILENT: Scalar = 0 as any
-const SEPARATION_FOR_NEIGHBORING_NOTES: Offset = -0.1 as any
+const BASE_GAIN: Scalar = to.Scalar(0.1)
+const SILENT_GAIN: Scalar = to.Scalar(0)
+const FULL_GAIN: Scalar = to.Scalar(1)
 
-const CENTS_PER_OCTAVE: Cents = 1200 as any
-const CENTS_PER_SEMITONE: Cents = 100 as any
+const DEFAULT_SCALAR_FOR_ALMOST_FULL_SUSTAIN: Scalar = to.Scalar(0.9)
+const DEFAULT_OFFSET_FOR_ALMOST_FULL_SUSTAIN: Offset = to.Offset(-0.1)
 
-const FULL_GAIN: Scalar = 1 as any
+const CENTS_PER_OCTAVE: Cents = to.Cents(1200)
+const CENTS_PER_SEMITONE: Cents = to.Cents(100)
 
-const ONE: number = 1
-const TWO: number = 2
+const EVEN: number = 2
 const DECIMAL: number = 10
 
-const OCTAVE: Scalar = 2 as any
+const INITIAL: Index = to.Index(0)
 
-const DEFAULT_DURATION_SCALAR: Scalar = 1 as any
+const HALF: Scalar = to.Scalar(1 / 2)
+const EVERY_OTHER: Scalar = to.Scalar(2)
+
+const OCTAVE: Scalar = to.Scalar(2)
+const TRITAVE: Scalar = to.Scalar(3)
+
+const DEFAULT_ATOMIC_TIME_TYPE_DURATION_SCALAR: Scalar = to.Scalar(1)
+const DEFAULT_RAW_TIME_TYPE_DURATION_SCALAR: Scalar = to.Scalar(100)
+const DEFAULT_DURATIONS_SCALE_INDEX: Index = to.Index(1)
+const DEFAULT_PITCH_SCALE_INDEX: Index = to.Index(2)
+
+const DEFAULT_PRECISION: number = 2
+
+const INCLUSIVE: Offset = to.Offset(1)
+
+const A_SUFFICIENT_COUNT_OF_NUMBERS: Count = to.Count(Math.pow(2, 16))
 
 export {
     BASE_DURATION,
     BASE_GAIN,
-    SILENT,
-    SEPARATION_FOR_NEIGHBORING_NOTES,
+    SILENT_GAIN,
+    DEFAULT_SCALAR_FOR_ALMOST_FULL_SUSTAIN,
+    DEFAULT_OFFSET_FOR_ALMOST_FULL_SUSTAIN,
     CENTS_PER_OCTAVE,
     CENTS_PER_SEMITONE,
     FULL_GAIN,
-    ONE,
-    TWO,
+    EVEN,
     DECIMAL,
     OCTAVE,
-    DEFAULT_DURATION_SCALAR,
+    TRITAVE,
+    DEFAULT_ATOMIC_TIME_TYPE_DURATION_SCALAR,
+    DEFAULT_RAW_TIME_TYPE_DURATION_SCALAR,
+    DEFAULT_DURATIONS_SCALE_INDEX,
+    DEFAULT_PITCH_SCALE_INDEX,
+    HALF,
+    EVERY_OTHER,
+    DEFAULT_PRECISION,
+    INCLUSIVE,
+    A_SUFFICIENT_COUNT_OF_NUMBERS,
+    INITIAL,
 }

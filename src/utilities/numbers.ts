@@ -1,10 +1,7 @@
-import { Count } from '../nominal'
-
-// tslint:disable-next-line:no-magic-numbers no-any
-const A_SUFFICIENT_COUNT_OF_PITCHES: Count = Math.pow(2, 16) as any
+import { A_SUFFICIENT_COUNT_OF_NUMBERS } from '../constants'
 
 const numbers: number[] = [
-    ...Array(A_SUFFICIENT_COUNT_OF_PITCHES)
+    ...Array(A_SUFFICIENT_COUNT_OF_NUMBERS)
         .keys(),
 ]
     .map((n: number): number => n + 1)

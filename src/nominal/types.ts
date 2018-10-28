@@ -38,11 +38,16 @@ interface Count extends Number {
     _CountBrand: string,
 }
 
+interface Base extends Number {
+    _BaseBrand: string,
+}
+
 interface Power extends Number {
     _PowerBrand: string,
 }
 
 export {
+    Base,
     Cents,
     Count,
     Frequency,

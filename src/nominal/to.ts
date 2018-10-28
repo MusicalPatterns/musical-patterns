@@ -1,6 +1,7 @@
 // tslint:disable:variable-name no-any
 
 import {
+    Base,
     Cents,
     Count,
     Frequency,
@@ -35,6 +36,9 @@ const SumOfScalars: (sumOfScalars: number) => SumOfScalars =
 const Offset: (offset: number) => Offset =
     (offset: number): Offset => offset as any
 
+const Base: (offset: number) => Base =
+    (base: number): Base => base as any
+
 const Power: (power: number) => Power =
     (power: number): Power => power as any
 
@@ -48,6 +52,7 @@ const SumOfIndices: (sumOfIndices: number) => SumOfIndices =
     (sumOfIndices: number): SumOfIndices => sumOfIndices as any
 
 export {
+    Base,
     Cents,
     Count,
     Frequency,

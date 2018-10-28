@@ -6,6 +6,7 @@ export {
 }
 
 export {
+    Base,
     Frequency,
     Offset,
     Index,
