@@ -1,10 +1,10 @@
-import { ActionType, StringifiedSongSpecInputStates, UI } from '../state'
+import { ActionType, StringifiedSongSpecInputStates, Ui } from '../state'
 import { HandleSongSpecBlurParameters } from './types'
 
 const handleSongSpecBlur: (handleSongSpecBlurParameters: HandleSongSpecBlurParameters) => void =
     (handleSongSpecBlurParameters: HandleSongSpecBlurParameters): void => {
         const { songSpecKey, songSpecValue, dispatch, ui }: HandleSongSpecBlurParameters = handleSongSpecBlurParameters
-        const { submittedSongSpec, unsubmittedSongSpecInputs }: UI = ui.toJS()
+        const { submittedSongSpec, unsubmittedSongSpecInputs }: Ui = ui.toJS()
         const currentSongSpecValue: string = submittedSongSpec[ songSpecKey ]
 
         const updatedUnsubmittedInputs: StringifiedSongSpecInputStates = {

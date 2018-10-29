@@ -1,10 +1,10 @@
-import { ActionType, StringifiedSongSpec, StringifiedSongSpecInputStates, UI } from '../state'
+import { ActionType, StringifiedSongSpec, StringifiedSongSpecInputStates, Ui } from '../state'
 import { HandleSongSpecChangeParameters } from './types'
 
 const handleSongSpecChange: (handleSongSpecChangeParameters: HandleSongSpecChangeParameters) => void =
     (parameters: HandleSongSpecChangeParameters): void => {
         const { dispatch, songSpecKey, songSpecValue, ui }: HandleSongSpecChangeParameters = parameters
-        const { displayedSongSpec, invalidSongSpecInputs }: UI = ui.toJS()
+        const { displayedSongSpec, invalidSongSpecInputs }: Ui = ui.toJS()
 
         const updatedStringifiedSongSpec: StringifiedSongSpec = {
             ...displayedSongSpec,

@@ -3,12 +3,12 @@ export {
     RootStateKeys,
 } from './types'
 export {
-    UI,
+    Ui,
     StringifiedSongSpec,
-    ImmutableUI,
+    ImmutableUi,
     StringifiedSongSpecEntry,
     StringifiedSongSpecInputStates,
-    UIStateKeys,
+    UiStateKeys,
 } from './ui'
 export {
     ImmutableThreads,

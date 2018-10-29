@@ -1,10 +1,10 @@
 export {
-    UI,
+    Ui,
     StringifiedSongSpec,
-    ImmutableUI,
+    ImmutableUi,
     StringifiedSongSpecEntry,
     StringifiedSongSpecInputStates,
-    UIStateKeys,
+    UiStateKeys,
     UiActionType,
 } from './types'
 export {

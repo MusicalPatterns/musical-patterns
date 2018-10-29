@@ -1,5 +1,5 @@
 import { SongId } from '../../songs'
-import { ImmutableThreads, ImmutableUI } from '../state'
+import { ImmutableThreads, ImmutableUi } from '../state'
 import {
     HandleSongChangeEvent,
     HandleSongSpecBlurEvent,
@@ -25,7 +25,7 @@ interface SongSelectProps extends SongSelectPropsFromState, SongSelectPropsFromD
 
 interface SongSpecInputsPropsFromState {
     threads: ImmutableThreads,
-    ui: ImmutableUI,
+    ui: ImmutableUi,
 }
 
 interface SongSpecInputsPropsFromDispatch {

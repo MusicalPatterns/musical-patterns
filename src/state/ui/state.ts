@@ -1,7 +1,7 @@
 import { immutablize } from '../immutablize'
-import { ImmutableUI } from './types'
+import { ImmutableUi } from './types'
 
-const initialUi: ImmutableUI = immutablize({
+const initialUi: ImmutableUi = immutablize({
     displayedSongSpec: {},
     invalidSongSpecInputs: {},
     submittedSongSpec: {},

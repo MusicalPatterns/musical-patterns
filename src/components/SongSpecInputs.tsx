@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
 import { Dispatch } from 'redux'
-import { ImmutableRootState, RootStateKeys, StringifiedSongSpec, UIStateKeys } from '../state'
+import { ImmutableRootState, RootStateKeys, StringifiedSongSpec, UiStateKeys } from '../state'
 import {
     handleSongSpecBlur,
     HandleSongSpecBlurEventParameters,
@@ -60,7 +60,7 @@ const SongSpecInputs: (songSpecInputsProps: SongSpecInputsProps) => JSX.Element 
     (songSpecInputsProps: SongSpecInputsProps): JSX.Element => {
         const { ui }: SongSpecInputsProps = songSpecInputsProps
         const displayedSongSpec: StringifiedSongSpec = ui
-            .get(UIStateKeys.DISPLAYED_SONG_SPEC)
+            .get(UiStateKeys.DISPLAYED_SONG_SPEC)
         const songSpecInputs: JSX.Element[] = Object.keys(displayedSongSpec)
             .sort()
             .map(

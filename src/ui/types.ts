@@ -1,18 +1,18 @@
 import * as React from 'react'
 import { Dispatch } from 'redux'
 import { Song, SongId, Songs, SongSpec } from '../../songs'
-import { ImmutableThreads, ImmutableUI } from '../state'
+import { ImmutableThreads, ImmutableUi } from '../state'
 
 interface HandleSongSpecChangeParameters {
     dispatch: Dispatch,
     songSpecKey: string,
     songSpecValue: string,
-    ui: ImmutableUI,
+    ui: ImmutableUi,
 }
 interface HandleSongSpecChangeEventParameters {
     event: React.SyntheticEvent<HTMLInputElement>,
     songSpecKey: string,
-    ui: ImmutableUI,
+    ui: ImmutableUi,
 }
 type HandleSongSpecChangeEvent = (handleSongSpecChangeEventParameters: HandleSongSpecChangeEventParameters) => void
 
@@ -22,14 +22,14 @@ interface HandleSongSpecSubmitParameters {
     songSpecKey: string,
     songSpecValue: string,
     threads: ImmutableThreads,
-    ui: ImmutableUI,
+    ui: ImmutableUi,
 }
 interface HandleSongSpecSubmitEventParameters {
     event: React.KeyboardEvent,
     songId: SongId,
     songSpecKey: string,
     threads: ImmutableThreads,
-    ui: ImmutableUI,
+    ui: ImmutableUi,
 }
 type HandleSongSpecSubmitEvent = (handleSongSpecSubmitEventParameters: HandleSongSpecSubmitEventParameters) => void
 
@@ -48,12 +48,12 @@ interface HandleSongSpecBlurParameters {
     dispatch: Dispatch,
     songSpecKey: string,
     songSpecValue: string,
-    ui: ImmutableUI,
+    ui: ImmutableUi,
 }
 interface HandleSongSpecBlurEventParameters {
     event: React.SyntheticEvent<HTMLInputElement>,
     songSpecKey: string,
-    ui: ImmutableUI,
+    ui: ImmutableUi,
 }
 type HandleSongSpecBlurEvent = (handleSongSpecBlurEventParameters: HandleSongSpecBlurEventParameters) => void
 

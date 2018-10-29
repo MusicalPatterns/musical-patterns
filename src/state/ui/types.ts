@@ -7,21 +7,21 @@ type StringifiedSongSpecInputStates = DictionaryOf<boolean>
 
 type StringifiedSongSpecEntry = [ string, string ]
 
-enum UIStateKeys {
+enum UiStateKeys {
     DISPLAYED_SONG_SPEC = 'displayedSongSpec',
     INVALID_SONG_SPEC_INPUTS = 'invalidSongSpecInputs',
     SUBMITTED_SONG_SPEC = 'submittedSongSpec',
     UNSUBMITTED_SONG_SPEC_INPUTS = 'unsubmittedSongSpecInputs',
 }
 
-interface UI {
-    [ UIStateKeys.DISPLAYED_SONG_SPEC ]: StringifiedSongSpec,
-    [ UIStateKeys.INVALID_SONG_SPEC_INPUTS ]: StringifiedSongSpecInputStates,
-    [ UIStateKeys.SUBMITTED_SONG_SPEC ]: StringifiedSongSpec,
-    [ UIStateKeys.UNSUBMITTED_SONG_SPEC_INPUTS ]: StringifiedSongSpecInputStates,
+interface Ui {
+    [ UiStateKeys.DISPLAYED_SONG_SPEC ]: StringifiedSongSpec,
+    [ UiStateKeys.INVALID_SONG_SPEC_INPUTS ]: StringifiedSongSpecInputStates,
+    [ UiStateKeys.SUBMITTED_SONG_SPEC ]: StringifiedSongSpec,
+    [ UiStateKeys.UNSUBMITTED_SONG_SPEC_INPUTS ]: StringifiedSongSpecInputStates,
 }
 
-type ImmutableUI = TypedMap<UI>
+type ImmutableUi = TypedMap<Ui>
 
 enum UiActionType {
     SET_SUBMITTED_SONG_SPEC = 'set submitted song spec',
@@ -60,9 +60,9 @@ export {
     StringifiedSongSpecInputStates,
     StringifiedSongSpec,
     StringifiedSongSpecEntry,
-    UI,
-    ImmutableUI,
-    UIStateKeys,
+    Ui,
+    ImmutableUi,
+    UiStateKeys,
     UiAction,
     UiActionType,
 }

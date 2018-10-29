@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { UI } from '../state'
+import { Ui } from '../state'
 import { SongSpecInputProps } from './types'
 
 const SongSpecInput: (songSpecInputProps: SongSpecInputProps) => JSX.Element =
@@ -14,7 +14,7 @@ const SongSpecInput: (songSpecInputProps: SongSpecInputProps) => JSX.Element =
             ui,
         } = songSpecInputsProps
 
-        const { displayedSongSpec, invalidSongSpecInputs, unsubmittedSongSpecInputs }: UI = ui.toJS()
+        const { displayedSongSpec, invalidSongSpecInputs, unsubmittedSongSpecInputs }: Ui = ui.toJS()
 
         const songSpecValue: string = displayedSongSpec[ songSpecKey ]
         const invalid: boolean = invalidSongSpecInputs[ songSpecKey ]
