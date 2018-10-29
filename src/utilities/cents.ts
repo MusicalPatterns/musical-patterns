@@ -1,6 +1,6 @@
-import { CENTS_PER_OCTAVE } from '../constants'
 import { Cents, Frequency, from, Scalar, to } from '../nominal'
 import { applyScale } from './applyScale'
+import { CENTS_PER_OCTAVE } from './constants'
 
 const centsToShiftFromOneFrequencyToAnother: (frequencyOne: Frequency, frequencyTwo: Frequency) => Cents =
     (frequencyOne: Frequency, frequencyTwo: Frequency): Cents => {

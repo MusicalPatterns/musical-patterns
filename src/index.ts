@@ -36,7 +36,6 @@ export {
 } from './nominal'
 export {
     EVEN,
-    HALF,
     FULL_GAIN,
     DEFAULT_OFFSET_FOR_ALMOST_FULL_SUSTAIN,
     DEFAULT_ATOMIC_TIME_TYPE_DURATION_SCALAR,

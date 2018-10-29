@@ -1,8 +1,8 @@
-import { BASE_GAIN, SILENT_GAIN } from '../constants'
 import { from } from '../nominal'
 import { context, NoteToPlay, StartNote, StopNote } from '../perform'
 import { Voice } from '../types'
 import { applyScale } from '../utilities'
+import { BASE_GAIN, SILENT_GAIN } from './constants'
 import { CompileOscillatorVoiceParameters } from './types'
 
 // tslint:disable-next-line:no-type-definitions-outside-types-modules

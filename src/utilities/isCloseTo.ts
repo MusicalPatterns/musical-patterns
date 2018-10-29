@@ -1,7 +1,7 @@
 // tslint:disable:no-any
 
-import { DECIMAL, DEFAULT_PRECISION, HALF } from '../constants'
 import { applyScale } from './applyScale'
+import { DECIMAL, DEFAULT_PRECISION, HALF } from './constants'
 
 const isCloseTo: <T>(numberOne: T, numberTwo: T) => boolean =
     <T>(numberOne: T, numberTwo: T): boolean => {

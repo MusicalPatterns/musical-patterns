@@ -1,8 +1,8 @@
 // tslint:disable:no-magic-numbers
 
-import { CENTS_PER_SEMITONE } from '../constants'
 import { Cents, from, Semitones, to } from '../nominal'
 import { SampleName } from '../types'
+import { CENTS_PER_SEMITONE } from './constants'
 import { SampleDatas } from './types'
 
 const shiftSemitones: (semitones: Semitones) => Cents = (semitones: Semitones): Cents =>

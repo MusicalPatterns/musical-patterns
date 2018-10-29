@@ -1,8 +1,8 @@
 import { TimeType } from '../compile'
-import { BASE_DURATION } from '../constants'
 import { from, Time, to } from '../nominal'
 import { Note, Thread } from '../types'
 import { applyOffset, applyScale } from '../utilities'
+import { BASE_DURATION } from './constants'
 
 const update: (thread: Thread, rawTime: Time, atomicTime: Time) => void =
     (thread: Thread, rawTime: Time, atomicTime: Time): void => {
