@@ -1,4 +1,4 @@
-import { Adjustable, TimeType } from './compile'
+import { Adjustable, Part, TimeType } from './compile'
 import { Frequency, Index, Scalar, Time } from './nominal'
 import { StartNote, StopNote } from './perform'
 
@@ -28,38 +28,17 @@ enum VoiceType {
     SAMPLE = 'sample',
 }
 
-enum OscillatorName {
-    SQUARE = 'square',
-    SINE = 'sine',
-    SAWTOOTH = 'sawtooth',
-    TRIANGLE = 'triangle',
-    CUSTOM = 'custom',
-}
-
 interface Scale extends Adjustable {
     scalars: Scalar[],
 }
 
-enum SampleName {
-    CELLO = 'cello',
-    DOUBLEBASS = 'doublebass',
-    FLUTE = 'flute',
-    PIANO = 'piano',
-    TROMBONE = 'trombone',
-    TRUMPET = 'trumpet',
-    TUBA = 'tuba',
-    VIOLIN = 'violin',
-    SNARE = 'snare',
-    KICK = 'kick',
-    HIHAT = 'hihat',
-}
+type Segment = Part[]
 
 export {
     Voice,
     Note,
     Thread,
-    SampleName,
     VoiceType,
-    OscillatorName,
     Scale,
+    Segment,
 }

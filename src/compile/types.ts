@@ -1,6 +1,7 @@
 import { SongMaterial, SongSpec } from '../../songs'
 import { Frequency, Index, Offset, Scalar, Time } from '../nominal'
-import { OscillatorName, SampleName, Scale, VoiceType } from '../types'
+import { OscillatorName, SampleName } from '../perform'
+import { Scale, VoiceType } from '../types'
 import { DictionaryOf } from '../utilities'
 
 interface VoiceSpec {
@@ -14,7 +15,7 @@ enum TimeType {
 }
 
 interface Entity {
-    noteSpecs?: NoteSpec[],
+    part?: Part,
     timeType?: TimeType,
     voiceSpec?: VoiceSpec,
 }
@@ -46,6 +47,8 @@ interface NoteSpec {
     sustainSpec?: NotePropertySpec,
 }
 
+type Part = NoteSpec[]
+
 interface Adjustable {
     offset?: Offset,
     scalar?: Scalar,
@@ -64,7 +67,7 @@ interface CompileNotesOptions {
 
 type EntityDictionary = DictionaryOf<Entity>
 
-type NoteSpecsDictionary = DictionaryOf<NoteSpec[]>
+type PartDictionary = DictionaryOf<Part>
 
 interface CompileOscillatorVoiceParameters {
     timbre: OscillatorType,
@@ -88,8 +91,9 @@ export {
     NoteProperty,
     CompileNotesOptions,
     EntityDictionary,
-    NoteSpecsDictionary,
+    PartDictionary,
     Adjustable,
     CompileOscillatorVoiceParameters,
     CompileSampleVoiceParameters,
+    Part,
 }

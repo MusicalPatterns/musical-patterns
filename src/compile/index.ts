@@ -6,7 +6,8 @@ export {
     Adjustable,
     Entity,
     EntityDictionary,
-    NoteSpecsDictionary,
+    PartDictionary,
+    Part,
 } from './types'
 export {
     compileSong,

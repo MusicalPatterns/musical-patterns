@@ -1,3 +1,0 @@
-export {
-    emptySong,
-} from './emptySong'

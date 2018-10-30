@@ -1,48 +1,38 @@
-// tslint:disable:no-magic-numbers
-
 import { Cents, from, Semitones, to } from '../nominal'
-import { SampleName } from '../types'
-import { CENTS_PER_SEMITONE } from './constants'
-import { SampleDatas } from './types'
+import {
+    CENTS_PER_SEMITONE, DOWN_ONE_SEMITONE,
+    DOWN_TWO_OCTAVES_IN_SEMITONES,
+    UP_ONE_OCTAVE_IN_SEMITONES,
+    UP_TWO_OCTAVES_IN_SEMITONES, UP_TWO_SEMITONES,
+} from './constants'
+import { SampleDatas, SampleName } from './types'
 
 const shiftSemitones: (semitones: Semitones) => Cents = (semitones: Semitones): Cents =>
     to.Cents(from.Semitones(semitones) * from.Cents(CENTS_PER_SEMITONE))
 
 const buildSampleData: () => SampleDatas =
     (): SampleDatas => ({
-        [ SampleName.CELLO ]: {
-            centsAdjustment: shiftSemitones(to.Semitones(0)),
-        },
+        [ SampleName.CELLO ]: {},
         [ SampleName.DOUBLEBASS ]: {
-            centsAdjustment: shiftSemitones(to.Semitones(24)),
+            centsAdjustment: shiftSemitones(UP_TWO_OCTAVES_IN_SEMITONES),
         },
-        [ SampleName.FLUTE ]: {
-            centsAdjustment: shiftSemitones(to.Semitones(0)),
-        },
+        [ SampleName.FLUTE ]: {},
         [ SampleName.PIANO ]: {
-            centsAdjustment: shiftSemitones(to.Semitones(-24)),
+            centsAdjustment: shiftSemitones(DOWN_TWO_OCTAVES_IN_SEMITONES),
         },
         [ SampleName.TROMBONE ]: {
-            centsAdjustment: shiftSemitones(to.Semitones(2)),
+            centsAdjustment: shiftSemitones(UP_TWO_SEMITONES),
         },
         [ SampleName.TRUMPET ]: {
-            centsAdjustment: shiftSemitones(to.Semitones(-1)),
+            centsAdjustment: shiftSemitones(DOWN_ONE_SEMITONE),
         },
         [ SampleName.TUBA ]: {
-            centsAdjustment: shiftSemitones(to.Semitones(12)),
+            centsAdjustment: shiftSemitones(UP_ONE_OCTAVE_IN_SEMITONES),
         },
-        [ SampleName.VIOLIN ]: {
-            centsAdjustment: shiftSemitones(to.Semitones(0)),
-        },
-        [ SampleName.SNARE ]: {
-            centsAdjustment: shiftSemitones(to.Semitones(0)),
-        },
-        [ SampleName.KICK ]: {
-            centsAdjustment: shiftSemitones(to.Semitones(0)),
-        },
-        [ SampleName.HIHAT ]: {
-            centsAdjustment: shiftSemitones(to.Semitones(0)),
-        },
+        [ SampleName.VIOLIN ]: {},
+        [ SampleName.SNARE ]: {},
+        [ SampleName.KICK ]: {},
+        [ SampleName.HIHAT ]: {},
     })
 
 export {

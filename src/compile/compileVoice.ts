@@ -1,4 +1,5 @@
-import { OscillatorName, SampleName, Voice, VoiceType } from '../types'
+import { OscillatorName, SampleName } from '../perform'
+import { Voice, VoiceType } from '../types'
 import { compileOscillatorVoice } from './compileOscillatorVoice'
 import { compileSampleVoice } from './compileSampleVoice'
 import { VoiceSpec } from './types'

@@ -7,6 +7,7 @@ export {
 
 export {
     Base,
+    Block,
     Frequency,
     Offset,
     Index,

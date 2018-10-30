@@ -6,7 +6,6 @@ enum SongId {
     XELT = 'XELT',
     ZDAUBYAOS = 'ZDAUBYAOS',
     STEPWISE = 'STEPWISE',
-    _EMPTY_SONG = '_EMPTY_SONG',
 }
 
 export {

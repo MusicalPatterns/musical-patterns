@@ -3,4 +3,5 @@ export {
     NotePropertySpec,
     NoteSpec,
     Entity,
+    Part,
 } from './types'

@@ -6,6 +6,7 @@ export {
 }
 
 export {
+    Block,
     SumOfScalars,
     Scalar,
     Cents,

@@ -5,10 +5,12 @@ export {
     BuildEntitiesFunction,
     BuildScalesFunction,
     EntityDictionary,
-    NoteSpecsDictionary,
+    PartDictionary,
+    Part,
 } from './compile'
 export { buildStandardScales } from './scales'
 export {
+    scaleFromScalarsAndScalar,
     DictionaryOf,
     numbers,
     repeat,
@@ -26,6 +28,7 @@ export {
 } from './utilities'
 export {
     Base,
+    Block,
     Scalar,
     Offset,
     to,
@@ -34,6 +37,10 @@ export {
     Time,
     Index,
 } from './nominal'
+export {
+    OscillatorName,
+    SampleName,
+} from './perform'
 export {
     EVEN,
     FULL_GAIN,
@@ -51,8 +58,7 @@ export {
 } from './constants'
 
 export {
-    OscillatorName,
-    SampleName,
     VoiceType,
     Scale,
+    Segment,
 } from './types'

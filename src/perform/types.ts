@@ -1,5 +1,4 @@
 import { Cents, Frequency, Scalar } from '../nominal'
-import { SampleName } from '../types'
 
 interface NoteToPlay {
     frequency: Frequency,
@@ -13,10 +12,32 @@ type StopNote = () => void
 type ModulePath = string
 
 interface SampleData {
-    centsAdjustment: Cents,
+    centsAdjustment?: Cents,
 }
 
 type SampleDatas = { [x in SampleName]: SampleData }
+
+enum SampleName {
+    CELLO = 'cello',
+    DOUBLEBASS = 'doublebass',
+    FLUTE = 'flute',
+    PIANO = 'piano',
+    TROMBONE = 'trombone',
+    TRUMPET = 'trumpet',
+    TUBA = 'tuba',
+    VIOLIN = 'violin',
+    SNARE = 'snare',
+    KICK = 'kick',
+    HIHAT = 'hihat',
+}
+
+enum OscillatorName {
+    SQUARE = 'square',
+    SINE = 'sine',
+    SAWTOOTH = 'sawtooth',
+    TRIANGLE = 'triangle',
+    CUSTOM = 'custom',
+}
 
 export {
     ModulePath,
@@ -25,4 +46,6 @@ export {
     StopNote,
     SampleData,
     SampleDatas,
+    SampleName,
+    OscillatorName,
 }

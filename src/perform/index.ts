@@ -8,4 +8,6 @@ export {
     StartNote,
     StopNote,
     SampleDatas,
+    SampleName,
+    OscillatorName,
 } from './types'

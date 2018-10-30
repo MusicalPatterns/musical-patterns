@@ -1,4 +1,4 @@
 export {
     testIsCloseTo,
-    calculateNoteSpecsTotalScalarDuration,
+    calculatePartTotalScalarDuration,
 } from './support'

@@ -11,6 +11,7 @@ export { sequence } from './sequence'
 export { rotateCycle } from './rotateCycle'
 export { offsetFromOneIndexedToZeroIndexed } from './offsetFromOneIndexedToZeroIndexed'
 export { repeatCall } from './repeatCall'
+export { scaleFromScalarsAndScalar } from './scaleFromScalarsAndScalar'
 
 export {
     Maybe,

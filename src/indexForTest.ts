@@ -5,6 +5,7 @@ export {
     NoteSpec,
     Entity,
     compileThread,
+    Part,
 } from './compile/indexForTest'
 export {
     buildStandardScales,
@@ -25,6 +26,7 @@ export {
     SumOfScalars,
     SumOfIndices,
     Scalar,
+    Block,
     Count,
     Index,
     to,
@@ -44,4 +46,5 @@ export {
 export {
     Thread,
     Scale,
+    Segment,
 } from './types'

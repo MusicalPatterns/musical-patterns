@@ -24,7 +24,7 @@ const compileSampleVoice: (compileSampleVoiceParameters: CompileSampleVoiceParam
 
             const pitch: Scalar = to.Scalar(from.Frequency(frequency) / from.Frequency(AVERAGE_SAMPLE_PITCH_OF_C5))
             const pitchShift: Cents = pitchToCents(pitch)
-            const sampleShift: Cents = sampleData[ timbre ].centsAdjustment
+            const sampleShift: Cents = sampleData[ timbre ].centsAdjustment || to.Cents(0)
 
             source.detune.value = from.Cents(sampleShift) + from.Cents(pitchShift)
 

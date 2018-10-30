@@ -1,6 +1,5 @@
-import { SampleName } from '../types'
 import { context } from './context'
-import { ModulePath } from './types'
+import { ModulePath, SampleName } from './types'
 
 // @ts-ignore
 const samples: { [x in SampleName]: AudioBuffer } = {}

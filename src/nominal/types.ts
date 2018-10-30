@@ -46,6 +46,9 @@ interface Power extends Number {
     _PowerBrand: string,
 }
 
+enum _BlockBrand {}
+type Block = _BlockBrand & Index[]
+
 export {
     Base,
     Cents,
@@ -59,4 +62,5 @@ export {
     Power,
     SumOfIndices,
     SumOfScalars,
+    Block,
 }

@@ -2,6 +2,7 @@
 
 import {
     Base,
+    Block,
     Cents,
     Count,
     Frequency,
@@ -14,6 +15,9 @@ import {
     SumOfScalars,
     Time,
 } from './types'
+
+const Block: (block: Array<Index | number> | Index[]) => number[] =
+    (block: Array<Index | number> | Index[]): number[] => block as any
 
 const Cents: (cents: Cents) => number =
     (cents: Cents): number => cents as any
@@ -53,6 +57,7 @@ const SumOfIndices: (sumOfIndices: SumOfIndices) => number =
 
 export {
     Base,
+    Block,
     Cents,
     Count,
     Frequency,
