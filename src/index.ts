@@ -19,7 +19,7 @@ export {
     applyScale,
     absoluteRatio,
     sequence,
-    rotateCycle,
+    applyCycle,
     deepEqual,
     applyOffset,
     raise,

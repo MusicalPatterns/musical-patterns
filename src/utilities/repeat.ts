@@ -2,12 +2,12 @@ import { Count, from } from '../nominal'
 
 const repeat: <T>(array: T[], count: Count) => T[] =
     <T>(array: T[], count: Count): T[] => {
-        let output: T[] = []
+        let repeatedArray: T[] = []
         for (let i: number = 0; i < from.Count(count); i++) {
-            output = output.concat(array)
+            repeatedArray = repeatedArray.concat(array)
         }
 
-        return output
+        return repeatedArray
     }
 
 export {

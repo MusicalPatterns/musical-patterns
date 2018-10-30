@@ -1,6 +1,6 @@
 // tslint:disable:no-any no-unsafe-any
 
-const deepEqual: (_: any, __: any) => boolean =
+const deepEqual: (a: any, b: any) => boolean =
     (a: any, b: any): boolean => {
         if (a === b) {
             return true

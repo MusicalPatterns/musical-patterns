@@ -19,7 +19,7 @@ export {
     deepEqual,
     repeat,
     repeatCall,
-    rotateCycle,
+    applyCycle,
     DictionaryOf,
 } from './utilities/indexForTest'
 export {

@@ -20,15 +20,15 @@ const compileNoteProperty: (notePropertySpec: NotePropertySpec, options: Compile
         }: Scale = scale
 
         const scaleElement: Maybe<NoteProperty> = scalars[ from.Index(index) ]
-        let result: NoteProperty = scaleElement || to.Scalar(1)
+        let noteProperty: NoteProperty = scaleElement || to.Scalar(1)
 
-        result = applyScale(result, noteScalar)
-        result = applyScale(result, scaleScalar)
+        noteProperty = applyScale(noteProperty, noteScalar)
+        noteProperty = applyScale(noteProperty, scaleScalar)
 
-        result = applyOffset(result, noteOffset)
-        result = applyOffset(result, scaleOffset)
+        noteProperty = applyOffset(noteProperty, noteOffset)
+        noteProperty = applyOffset(noteProperty, scaleOffset)
 
-        return result as NoteProperty
+        return noteProperty as NoteProperty
     }
 
 export {
