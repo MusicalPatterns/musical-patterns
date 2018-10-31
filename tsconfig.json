@@ -23,6 +23,6 @@
   },
   "exclude": [
     "test",
-    "songs/**/test"
+    "patterns/**/test"
   ]
 }

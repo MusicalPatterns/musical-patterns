@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
-import { Pattern, PatternId, PatternMetadata, patterns } from '../../songs'
+import { Pattern, PatternId, PatternMetadata, patterns } from '../../patterns'
 import { ImmutableRootState, RootStateKeys } from '../state'
 import PatternSelector from './PatternSelect'
 import PatternSpecInputs from './PatternSpecInputs'

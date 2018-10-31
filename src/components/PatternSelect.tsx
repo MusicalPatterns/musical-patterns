@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
 import { Dispatch } from 'redux'
-import { Pattern, PatternId, patterns } from '../../songs'
+import { Pattern, PatternId, patterns } from '../../patterns'
 import { ImmutableRootState, RootStateKeys } from '../state'
 import { handlePatternChange, HandlePatternChangeEventParameters, PartialPatterns, patternsFilter } from '../ui'
 import { PatternSelectProps, PatternSelectPropsFromDispatch, PatternSelectPropsFromState } from './types'

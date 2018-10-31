@@ -1,4 +1,4 @@
-import { patterns, PatternSpec } from '../../songs'
+import { patterns, PatternSpec } from '../../patterns'
 import { ActionType, StringifiedPatternSpec } from '../state'
 import { recompileAndRestart } from './recompileAndRestart'
 import { stopThreads } from './stopThreads'

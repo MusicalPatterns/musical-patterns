@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Dispatch } from 'redux'
-import { Pattern, PatternId, Patterns, PatternSpec } from '../../songs'
+import { Pattern, PatternId, Patterns, PatternSpec } from '../../patterns'
 import { ImmutableThreads, ImmutableUi } from '../state'
 
 interface HandlePatternSpecChangeParameters {

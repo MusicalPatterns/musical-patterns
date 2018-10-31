@@ -1,5 +1,5 @@
 import { Map } from 'immutable'
-import { PatternId } from '../../songs'
+import { PatternId } from '../../patterns'
 import { Maybe } from '../utilities'
 import { ImmutableThreads } from './threads'
 import { ImmutableUi, StringifiedPatternSpec, StringifiedPatternSpecInputStates } from './ui'

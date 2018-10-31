@@ -1,4 +1,4 @@
-import { PatternId } from '../../../songs'
+import { PatternId } from '../../../patterns'
 
 enum PatternIdActionType {
     SET_SONG_ID = 'SET_SONG_ID',

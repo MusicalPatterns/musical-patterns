@@ -1,4 +1,4 @@
-import { PatternMaterial } from '../../songs'
+import { PatternMaterial } from '../../patterns'
 import { Scale, Thread } from '../types'
 import { compileThreads } from './compileThreads'
 import { CompilePatternParameters, Entity } from './types'

@@ -1,4 +1,4 @@
-import { patterns, PatternSpec } from '../../songs'
+import { patterns, PatternSpec } from '../../patterns'
 import { ActionType, StringifiedPatternSpec, StringifiedPatternSpecInputStates, Ui } from '../state'
 import { deepEqual } from '../utilities'
 import { destringifyPatternSpec } from './destringifyPatternSpec'

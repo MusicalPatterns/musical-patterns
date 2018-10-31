@@ -6,4 +6,4 @@ set -e
 
 ./node_modules/.bin/tslint 'test/**/*.ts' --fix --project test/tsconfig.json
 
-./node_modules/.bin/tslint 'songs/**/*.ts' --fix --project songs/tsconfig.json
+./node_modules/.bin/tslint 'patterns/**/*.ts' --fix --project patterns/tsconfig.json

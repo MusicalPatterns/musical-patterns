@@ -1,4 +1,4 @@
-import { PatternMaterial, PatternSpec } from '../../songs'
+import { PatternMaterial, PatternSpec } from '../../patterns'
 import { Frequency, Index, Offset, Scalar, Time } from '../nominal'
 import { OscillatorName, SampleName } from '../perform'
 import { Scale, VoiceType } from '../types'

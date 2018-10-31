@@ -1,4 +1,4 @@
-import { PatternId } from '../../../songs'
+import { PatternId } from '../../../patterns'
 import { Maybe } from '../../utilities'
 import { initialPatternId } from './state'
 import { PatternIdAction, PatternIdActionType } from './types'

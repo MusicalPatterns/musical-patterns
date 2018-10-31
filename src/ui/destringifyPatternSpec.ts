@@ -1,4 +1,4 @@
-import { PatternSpec } from '../../songs'
+import { PatternSpec } from '../../patterns'
 import { to } from '../nominal'
 import { StringifiedPatternSpec, StringifiedPatternSpecEntry } from '../state'
 

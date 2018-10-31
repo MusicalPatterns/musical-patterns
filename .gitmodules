@@ -1,15 +1,15 @@
-[submodule "songs/zdaubyaos"]
-	path = songs/zdaubyaos
-	url = git@github.com:MusicalPatterns/zdaubyaos.git
-[submodule "songs/stepwise"]
-	path = songs/stepwise
-	url = git@github.com:MusicalPatterns/stepwise.git
-[submodule "songs/hafuhafu"]
-	path = songs/hafuhafu
-	url = git@github.com:MusicalPatterns/hafuhafu.git
-[submodule "songs/xelt-dleudef-aet-naelnaemeugz"]
-	path = songs/xelt-dleudef-aet-naelnaemeugz
-	url = git@github.com:MusicalPatterns/xelt-dleudef-aet-naelnaemeugz.git
-[submodule "songs/beaten-path"]
-	path = songs/beaten-path
+[submodule "patterns/beaten-path"]
+	path = patterns/beaten-path
 	url = git@github.com:MusicalPatterns/beaten-path.git
+[submodule "patterns/hafuhafu"]
+	path = patterns/hafuhafu
+	url = git@github.com:MusicalPatterns/hafuhafu.git
+[submodule "patterns/stepwise"]
+	path = patterns/stepwise
+	url = git@github.com:MusicalPatterns/stepwise.git
+[submodule "patterns/xelt-dleudef-aet-naelnaemeugz"]
+	path = patterns/xelt-dleudef-aet-naelnaemeugz
+	url = git@github.com:MusicalPatterns/xelt-dleudef-aet-naelnaemeugz.git
+[submodule "patterns/zdaubyaos"]
+	path = patterns/zdaubyaos
+	url = git@github.com:MusicalPatterns/zdaubyaos.git

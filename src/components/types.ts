@@ -1,4 +1,4 @@
-import { PatternId } from '../../songs'
+import { PatternId } from '../../patterns'
 import { ImmutableThreads, ImmutableUi } from '../state'
 import {
     HandlePatternChangeEvent,

@@ -1,4 +1,4 @@
-import { PatternMaterial, patterns } from '../../songs'
+import { PatternMaterial, patterns } from '../../patterns'
 import { compilePattern } from '../compile'
 import { patternLoop } from '../perform'
 import { ActionType } from '../state'
