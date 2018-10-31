@@ -1,5 +1,0 @@
-export { zdaubyaosSong } from './zdaubyaos'
-export { xeltSong } from './xelt-dleudef-aet-naelnaemeugz'
-export { stepwiseSong } from './stepwise'
-export { beatenPathSong } from './beaten-path'
-export { hafuhafuSong, hafuhafuWithPitchCircularitySong } from './hafuhafu'

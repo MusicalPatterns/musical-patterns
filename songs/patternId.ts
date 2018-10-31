@@ -1,5 +1,5 @@
 // tslint:disable-next-line:no-type-definitions-outside-types-modules
-enum SongId {
+enum PatternId {
     BEATEN_PATH = 'BEATEN_PATH',
     HAFUHAFU = 'HAFUHAFU',
     HAFUHAFU_WITH_PITCH_CIRCULARITY = 'HAFUHAFU_WITH_PITCH_CIRCULARITY',
@@ -9,5 +9,5 @@ enum SongId {
 }
 
 export {
-    SongId,
+    PatternId,
 }

@@ -1,11 +1,11 @@
 import { Reducer } from 'redux'
 import { combineReducers } from 'redux-immutable'
-import { songIdReducer } from './songId'
+import { patternIdReducer } from './patternId'
 import { threadsReducer } from './threads'
 import { uiReducer } from './ui'
 
 const rootReducer: Reducer = combineReducers({
-    songId: songIdReducer,
+    patternId: patternIdReducer,
     threads: threadsReducer,
     ui: uiReducer,
     // tslint:disable-next-line:no-any

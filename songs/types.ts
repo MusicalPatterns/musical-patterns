@@ -1,37 +1,37 @@
 import { BuildEntitiesFunction, BuildScalesFunction, Scalar } from '../src'
-import { SongId } from './songId'
+import { PatternId } from './patternId'
 
-interface SongMaterial {
+interface PatternMaterial {
     buildEntitiesFunction: BuildEntitiesFunction,
     buildScalesFunction: BuildScalesFunction,
 }
 
-interface SongMetadata {
+interface PatternMetadata {
     description: string,
     formattedName: string,
 }
 
-interface SongSpec {
-    songDurationScalar: Scalar,
-    songPitchScalar: Scalar,
+interface PatternSpec {
+    patternDurationScalar: Scalar,
+    patternPitchScalar: Scalar,
 
     // tslint:disable-next-line:no-any
     [index: string]: any,
 }
 
-interface Song {
-    material: SongMaterial,
-    metadata: SongMetadata,
-    songId: SongId,
-    spec: SongSpec,
+interface Pattern {
+    material: PatternMaterial,
+    metadata: PatternMetadata,
+    patternId: PatternId,
+    spec: PatternSpec,
 }
 
-type Songs = {[index in SongId]: Song}
+type Patterns = {[index in PatternId]: Pattern}
 
 export {
-    Song,
-    Songs,
-    SongMetadata,
-    SongMaterial,
-    SongSpec,
+    Pattern,
+    Patterns,
+    PatternMetadata,
+    PatternMaterial,
+    PatternSpec,
 }

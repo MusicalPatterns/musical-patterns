@@ -1,4 +1,4 @@
-import { SongMaterial, SongSpec } from '../../songs'
+import { PatternMaterial, PatternSpec } from '../../songs'
 import { Frequency, Index, Offset, Scalar, Time } from '../nominal'
 import { OscillatorName, SampleName } from '../perform'
 import { Scale, VoiceType } from '../types'
@@ -21,13 +21,13 @@ interface Entity {
 }
 
 // tslint:disable-next-line:no-any
-type BuildEntitiesFunction = (songSpec?: any) => Entity[]
+type BuildEntitiesFunction = (patternSpec?: any) => Entity[]
 // tslint:disable-next-line:no-any
-type BuildScalesFunction = (songSpec?: any) => Scale[]
+type BuildScalesFunction = (patternSpec?: any) => Scale[]
 
-interface CompileSongParameters {
-    songMaterial: SongMaterial,
-    songSpec: SongSpec,
+interface CompilePatternParameters {
+    patternMaterial: PatternMaterial,
+    patternSpec: PatternSpec,
 }
 
 interface CompileThreadParameters {
@@ -80,7 +80,7 @@ interface CompileSampleVoiceParameters {
 export {
     Entity,
     TimeType,
-    CompileSongParameters,
+    CompilePatternParameters,
     CompileThreadParameters,
     CompileThreadsParameters,
     BuildEntitiesFunction,

@@ -1,3 +1,3 @@
-# Fun Musical Tool
+# Musical Patterns
 
-beginnings of a tool implementing my [Fun Musical Ideas](https://cmloegcmluin.wordpress.com/2014/08/01/fun-musical-ideas/)
+a project implementing some of my ideas for musical patterns

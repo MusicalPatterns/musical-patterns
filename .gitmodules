@@ -1,15 +1,15 @@
 [submodule "songs/zdaubyaos"]
 	path = songs/zdaubyaos
-	url = git@github.com:FunMusicalIdeas/zdaubyaos.git
+	url = git@github.com:MusicalPatterns/zdaubyaos.git
 [submodule "songs/stepwise"]
 	path = songs/stepwise
-	url = git@github.com:FunMusicalIdeas/stepwise.git
+	url = git@github.com:MusicalPatterns/stepwise.git
 [submodule "songs/hafuhafu"]
 	path = songs/hafuhafu
-	url = git@github.com:FunMusicalIdeas/hafuhafu.git
+	url = git@github.com:MusicalPatterns/hafuhafu.git
 [submodule "songs/xelt-dleudef-aet-naelnaemeugz"]
 	path = songs/xelt-dleudef-aet-naelnaemeugz
-	url = git@github.com:FunMusicalIdeas/xelt-dleudef-aet-naelnaemeugz.git
+	url = git@github.com:MusicalPatterns/xelt-dleudef-aet-naelnaemeugz.git
 [submodule "songs/beaten-path"]
 	path = songs/beaten-path
-	url = git@github.com:FunMusicalIdeas/beaten-path.git
+	url = git@github.com:MusicalPatterns/beaten-path.git

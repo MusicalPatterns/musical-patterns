@@ -1,60 +1,60 @@
-import { SongId } from '../../songs'
+import { PatternId } from '../../songs'
 import { ImmutableThreads, ImmutableUi } from '../state'
 import {
-    HandleSongChangeEvent,
-    HandleSongSpecBlurEvent,
-    HandleSongSpecChangeEvent,
-    HandleSongSpecSubmitEvent,
+    HandlePatternChangeEvent,
+    HandlePatternSpecBlurEvent,
+    HandlePatternSpecChangeEvent,
+    HandlePatternSpecSubmitEvent,
 } from '../ui'
 import { Maybe } from '../utilities'
 
 interface AppProps {
-    songId: Maybe<SongId>,
+    patternId: Maybe<PatternId>,
 }
 
-interface SongSelectPropsFromState {
+interface PatternSelectPropsFromState {
     threads: ImmutableThreads,
 }
 
-interface SongSelectPropsFromDispatch {
-    handleSongChangeEvent: HandleSongChangeEvent,
+interface PatternSelectPropsFromDispatch {
+    handlePatternChangeEvent: HandlePatternChangeEvent,
 }
 
-interface SongSelectProps extends SongSelectPropsFromState, SongSelectPropsFromDispatch {
+interface PatternSelectProps extends PatternSelectPropsFromState, PatternSelectPropsFromDispatch {
 }
 
-interface SongSpecInputsPropsFromState {
+interface PatternSpecInputsPropsFromState {
     threads: ImmutableThreads,
     ui: ImmutableUi,
 }
 
-interface SongSpecInputsPropsFromDispatch {
-    handleSongSpecBlurEvent: HandleSongSpecBlurEvent,
-    handleSongSpecChangeEvent: HandleSongSpecChangeEvent,
-    handleSongSpecSubmitEvent: HandleSongSpecSubmitEvent,
+interface PatternSpecInputsPropsFromDispatch {
+    handlePatternSpecBlurEvent: HandlePatternSpecBlurEvent,
+    handlePatternSpecChangeEvent: HandlePatternSpecChangeEvent,
+    handlePatternSpecSubmitEvent: HandlePatternSpecSubmitEvent,
 }
 
-interface SongSpecInputsPropsFromParent {
-    songId: SongId,
+interface PatternSpecInputsPropsFromParent {
+    patternId: PatternId,
 }
 
-interface SongSpecInputsProps extends SongSpecInputsPropsFromState,
-    SongSpecInputsPropsFromDispatch,
-    SongSpecInputsPropsFromParent {
+interface PatternSpecInputsProps extends PatternSpecInputsPropsFromState,
+    PatternSpecInputsPropsFromDispatch,
+    PatternSpecInputsPropsFromParent {
 }
 
-interface SongSpecInputProps {
-    songSpecInputsProps: SongSpecInputsProps,
-    songSpecKey: string,
+interface PatternSpecInputProps {
+    patternSpecInputsProps: PatternSpecInputsProps,
+    patternSpecKey: string,
 }
 
 export {
     AppProps,
-    SongSpecInputsProps,
-    SongSpecInputsPropsFromState,
-    SongSpecInputsPropsFromDispatch,
-    SongSpecInputProps,
-    SongSelectProps,
-    SongSelectPropsFromState,
-    SongSelectPropsFromDispatch,
+    PatternSpecInputsProps,
+    PatternSpecInputsPropsFromState,
+    PatternSpecInputsPropsFromDispatch,
+    PatternSpecInputProps,
+    PatternSelectProps,
+    PatternSelectPropsFromState,
+    PatternSelectPropsFromDispatch,
 }

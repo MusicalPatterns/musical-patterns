@@ -1,17 +1,17 @@
 import { Map } from 'immutable'
-import { SongId } from '../../songs'
+import { PatternId } from '../../songs'
 import { Maybe } from '../utilities'
 import { ImmutableThreads } from './threads'
-import { ImmutableUi, StringifiedSongSpec, StringifiedSongSpecInputStates } from './ui'
+import { ImmutableUi, StringifiedPatternSpec, StringifiedPatternSpecInputStates } from './ui'
 
 enum RootStateKeys {
-    SONG_ID = 'songId',
+    SONG_ID = 'patternId',
     THREADS = 'threads',
     UI = 'ui',
 }
 
 interface RootState {
-    [ RootStateKeys.SONG_ID ]: Maybe<SongId>,
+    [ RootStateKeys.SONG_ID ]: Maybe<PatternId>,
     [ RootStateKeys.THREADS ]: ImmutableThreads,
     [ RootStateKeys.UI ]: ImmutableUi,
 }
@@ -22,9 +22,9 @@ type AllowedValue =
     undefined |
     ImmutableThreads |
     ImmutableUi |
-    Maybe<SongId> |
-    StringifiedSongSpecInputStates |
-    StringifiedSongSpec
+    Maybe<PatternId> |
+    StringifiedPatternSpecInputStates |
+    StringifiedPatternSpec
 
 type MapTypeAllowedData<T> = {
     [K in keyof T]: AllowedValue

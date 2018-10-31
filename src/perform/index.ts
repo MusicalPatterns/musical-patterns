@@ -1,4 +1,4 @@
-export { songLoop } from './songLoop'
+export { patternLoop } from './patternLoop'
 export { loadAllSamples, samples } from './samples'
 export { buildSampleData } from './sampleData'
 export { context } from './context'

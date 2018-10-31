@@ -36,6 +36,6 @@ module.exports = {
         contentBase: path.join(__dirname, './dist')
     },
     plugins: [new HtmlWebpackPlugin({
-        title: 'Fun Musical Tool',
+        title: 'Musical Patterns',
     })],
 }

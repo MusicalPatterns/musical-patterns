@@ -5,7 +5,7 @@ import { update } from './update'
 
 let clock: Worker
 
-const songLoop: (threads: Thread[]) => void =
+const patternLoop: (threads: Thread[]) => void =
     (threads: Thread[]): void => {
         let atomicTime: Time = to.Time(0)
 
@@ -26,5 +26,5 @@ const songLoop: (threads: Thread[]) => void =
     }
 
 export {
-    songLoop,
+    patternLoop,
 }

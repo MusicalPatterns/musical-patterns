@@ -1,86 +1,90 @@
 import * as React from 'react'
 import { Dispatch } from 'redux'
-import { Song, SongId, Songs, SongSpec } from '../../songs'
+import { Pattern, PatternId, Patterns, PatternSpec } from '../../songs'
 import { ImmutableThreads, ImmutableUi } from '../state'
 
-interface HandleSongSpecChangeParameters {
+interface HandlePatternSpecChangeParameters {
     dispatch: Dispatch,
-    songSpecKey: string,
-    songSpecValue: string,
+    patternSpecKey: string,
+    patternSpecValue: string,
     ui: ImmutableUi,
 }
-interface HandleSongSpecChangeEventParameters {
+interface HandlePatternSpecChangeEventParameters {
     event: React.SyntheticEvent<HTMLInputElement>,
-    songSpecKey: string,
+    patternSpecKey: string,
     ui: ImmutableUi,
 }
-type HandleSongSpecChangeEvent = (handleSongSpecChangeEventParameters: HandleSongSpecChangeEventParameters) => void
+type HandlePatternSpecChangeEvent = (
+    handlePatternSpecChangeEventParameters: HandlePatternSpecChangeEventParameters,
+) => void
 
-interface HandleSongSpecSubmitParameters {
+interface HandlePatternSpecSubmitParameters {
     dispatch: Dispatch,
-    songId: SongId,
-    songSpecKey: string,
-    songSpecValue: string,
+    patternId: PatternId,
+    patternSpecKey: string,
+    patternSpecValue: string,
     threads: ImmutableThreads,
     ui: ImmutableUi,
 }
-interface HandleSongSpecSubmitEventParameters {
+interface HandlePatternSpecSubmitEventParameters {
     event: React.KeyboardEvent,
-    songId: SongId,
-    songSpecKey: string,
+    patternId: PatternId,
+    patternSpecKey: string,
     threads: ImmutableThreads,
     ui: ImmutableUi,
 }
-type HandleSongSpecSubmitEvent = (handleSongSpecSubmitEventParameters: HandleSongSpecSubmitEventParameters) => void
+type HandlePatternSpecSubmitEvent = (
+    handlePatternSpecSubmitEventParameters: HandlePatternSpecSubmitEventParameters,
+) => void
 
-interface HandleSongChangeParameters {
+interface HandlePatternChangeParameters {
     dispatch: Dispatch,
-    songId: SongId,
+    patternId: PatternId,
     threads: ImmutableThreads,
 }
-interface HandleSongChangeEventParameters {
+interface HandlePatternChangeEventParameters {
     event: React.SyntheticEvent<HTMLSelectElement>,
     threads: ImmutableThreads,
 }
-type HandleSongChangeEvent = (handleSongChangeEventParameters: HandleSongChangeEventParameters) => void
+type HandlePatternChangeEvent = (handlePatternChangeEventParameters: HandlePatternChangeEventParameters) => void
 
-interface HandleSongSpecBlurParameters {
+interface HandlePatternSpecBlurParameters {
     dispatch: Dispatch,
-    songSpecKey: string,
-    songSpecValue: string,
+    patternSpecKey: string,
+    patternSpecValue: string,
     ui: ImmutableUi,
 }
-interface HandleSongSpecBlurEventParameters {
+interface HandlePatternSpecBlurEventParameters {
     event: React.SyntheticEvent<HTMLInputElement>,
-    songSpecKey: string,
+    patternSpecKey: string,
     ui: ImmutableUi,
 }
-type HandleSongSpecBlurEvent = (handleSongSpecBlurEventParameters: HandleSongSpecBlurEventParameters) => void
+type HandlePatternSpecBlurEvent = (handlePatternSpecBlurEventParameters: HandlePatternSpecBlurEventParameters) => void
 
-type PartialSongs = {[key in Partial<SongId>]: Song}
+type PartialPatterns = {[key in Partial<PatternId>]: Pattern}
 
-type SongsFilter = (songs: Songs) => PartialSongs
+type PatternsFilter = (patterns: Patterns) => PartialPatterns
 
 interface RecompileAndRestartParameters {
     dispatch: Dispatch,
-    songId: SongId,
-    songSpec: SongSpec,
+    patternId: PatternId,
+    patternSpec: PatternSpec,
 }
 
 export {
-    HandleSongSpecChangeEvent,
-    HandleSongSpecChangeEventParameters,
-    HandleSongSpecChangeParameters,
-    HandleSongSpecSubmitEvent,
-    HandleSongSpecSubmitEventParameters,
-    HandleSongSpecSubmitParameters,
-    HandleSongChangeEvent,
-    HandleSongChangeEventParameters,
-    HandleSongChangeParameters,
-    HandleSongSpecBlurEvent,
-    HandleSongSpecBlurEventParameters,
-    HandleSongSpecBlurParameters,
-    PartialSongs,
-    SongsFilter,
+    HandlePatternSpecChangeEvent,
+    HandlePatternSpecChangeEventParameters,
+    HandlePatternSpecChangeParameters,
+    HandlePatternSpecSubmitEvent,
+    HandlePatternSpecSubmitEventParameters,
+    HandlePatternSpecSubmitParameters,
+    HandlePatternChangeEvent,
+    HandlePatternChangeEventParameters,
+    HandlePatternChangeParameters,
+    HandlePatternSpecBlurEvent,
+    HandlePatternSpecBlurEventParameters,
+    HandlePatternSpecBlurParameters,
+    PartialPatterns,
+    PatternsFilter,
     RecompileAndRestartParameters,
 }

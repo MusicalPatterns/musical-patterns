@@ -7,13 +7,13 @@ import { mockThread } from '../../support'
 describe('reducer', () => {
     it('sets threads', async (done: DoneFn) => {
         const state: ImmutableRootState = immutablize({
-            songId: null,
+            patternId: null,
             threads: fromJS([]),
             ui: immutablize({
-                displayedSongSpec: {},
-                invalidSongSpecInputs: {},
-                submittedSongSpec: {},
-                unsubmittedSongSpecInputs: {},
+                displayedPatternSpec: {},
+                invalidPatternSpecInputs: {},
+                submittedPatternSpec: {},
+                unsubmittedPatternSpecInputs: {},
             }),
         })
 
@@ -26,13 +26,13 @@ describe('reducer', () => {
         const newState: ImmutableRootState = rootReducer(state, action)
 
         const expectedState: ImmutableRootState = immutablize({
-            songId: null,
+            patternId: null,
             threads: fromJS([ mockThread ]),
             ui: immutablize({
-                displayedSongSpec: {},
-                invalidSongSpecInputs: {},
-                submittedSongSpec: {},
-                unsubmittedSongSpecInputs: {},
+                displayedPatternSpec: {},
+                invalidPatternSpecInputs: {},
+                submittedPatternSpec: {},
+                unsubmittedPatternSpecInputs: {},
             }),
         })
         expect(newState.toJS())

@@ -1,11 +1,11 @@
-export { songs } from './songs'
-export { SongId } from './songId'
-export { filteredSongsRegistry } from './filteredSongsRegistry'
+export { patterns } from './patterns'
+export { PatternId } from './patternId'
+export { filteredPatternsRegistry } from './filteredPatternsRegistry'
 
 export {
-    SongSpec,
-    SongMaterial,
-    SongMetadata,
-    Song,
-    Songs,
+    PatternSpec,
+    PatternMaterial,
+    PatternMetadata,
+    Pattern,
+    Patterns,
 } from './types'

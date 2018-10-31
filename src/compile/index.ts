@@ -10,5 +10,5 @@ export {
     Part,
 } from './types'
 export {
-    compileSong,
-} from './compileSong'
+    compilePattern,
+} from './compilePattern'
