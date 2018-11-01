@@ -27,6 +27,7 @@ export {
     SumOfIndices,
     Scalar,
     Block,
+    Power,
     Count,
     Index,
     to,

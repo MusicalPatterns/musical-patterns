@@ -22,13 +22,14 @@ export {
     applyCycle,
     deepEqual,
     applyOffset,
-    raise,
+    applyPower,
     offsetFromOneIndexedToZeroIndexed,
     repeatCall,
 } from './utilities'
 export {
     Base,
     Block,
+    Power,
     Scalar,
     Offset,
     to,

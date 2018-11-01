@@ -1,7 +1,7 @@
 import { OCTAVE } from './constants'
 import { from, Power, Scalar, to } from './nominal'
 import { Scale } from './types'
-import { DictionaryOf, numbers, offsetFromOneIndexedToZeroIndexed, raise } from './utilities'
+import { applyPower, DictionaryOf, numbers, offsetFromOneIndexedToZeroIndexed } from './utilities'
 
 const buildStandardScales: () => DictionaryOf<Scale> =
     (): DictionaryOf<Scale> => {
@@ -19,7 +19,7 @@ const buildStandardScales: () => DictionaryOf<Scale> =
             scalars: numbers
                 .map(to.Power)
                 .map((power: Power): Scalar =>
-                    raise(
+                    applyPower(
                         OCTAVE,
                         to.Power(from.Index(offsetFromOneIndexedToZeroIndexed(to.Index(from.Power(power))))),
                     ),

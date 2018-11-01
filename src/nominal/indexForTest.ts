@@ -7,6 +7,7 @@ export {
 
 export {
     Block,
+    Power,
     SumOfScalars,
     Scalar,
     Cents,

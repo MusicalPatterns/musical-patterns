@@ -6,6 +6,7 @@ enum PatternId {
     XELT = 'XELT',
     ZDAUBYAOS = 'ZDAUBYAOS',
     STEPWISE = 'STEPWISE',
+    TEMPLATE = 'TEMPLATE',
 }
 
 export {
