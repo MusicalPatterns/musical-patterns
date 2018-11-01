@@ -30,5 +30,3 @@ global.XMLHttpRequest = () => ({
 })
 
 global.self = { postMessage: () => {} }
-
-global.requestAnimationFrame = () => {}

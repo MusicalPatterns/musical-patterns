@@ -1,4 +1,7 @@
-// tslint:disable:no-any
+// tslint:disable:no-require-imports no-var-requires no-any no-unsafe-any no-default-export
+// @ts-ignore
+const requestAnimationFrame: any = require('raf')
+
 const worker: Worker = self as any
 
 let initialTimestamp: number = 0
@@ -14,5 +17,4 @@ const mainLoop: (timestamp: number) => void =
 
 requestAnimationFrame(mainLoop)
 
-// tslint:disable-next-line:no-default-export
 export default ((): void => undefined) as any
