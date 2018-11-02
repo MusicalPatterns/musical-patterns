@@ -1,33 +1,43 @@
 // tslint:disable:no-any no-unsafe-any
 
-const deepEqual: (a: any, b: any) => boolean =
+const deepEqualArray: (a: any, b: any) => boolean =
+    (a: any, b: any): boolean =>
+        a instanceof Array && b.every((el: any, index: number): boolean => deepEqual(el, a[ index ]))
+
+const deepEqualObject: (a: any, b: any) => boolean =
     (a: any, b: any): boolean => {
-        if (a === b) {
-            return true
-        }
-        else if (a instanceof Array) {
-            if (b instanceof Array) {
-                return a.every((el: any, index: number): boolean => deepEqual(el, b[ index ]))
-            }
-            else {
-                return false
-            }
+        let equal: boolean = false
+
+        if (a instanceof Array) {
+            equal = false
         }
         else if (typeof a === 'object') {
-            if (b instanceof Array) {
-                return false
-            }
-            else if (typeof b === 'object') {
-                return Object.entries(a)
-                    .every(([ key, value ]: [ string, any ]): boolean =>
-                        deepEqual(value, b[ key ]))
-            }
-            else {
-                return false
-            }
+            equal = Object.entries(b)
+                .every(([ key, value ]: [ string, any ]): boolean =>
+                    deepEqual(value, a[ key ]))
+        }
+        else {
+            equal = false
         }
 
-        return false
+        return equal
+    }
+
+const deepEqual: (a: any, b: any) => boolean =
+    (a: any, b: any): boolean => {
+        let equal: boolean = false
+
+        if (a === b) {
+            equal = true
+        }
+        else if (a instanceof Array) {
+            equal = deepEqualArray(b, a)
+        }
+        else if (typeof a === 'object') {
+            equal = deepEqualObject(b, a)
+        }
+
+        return equal
     }
 
 export {

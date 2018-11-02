@@ -8,6 +8,7 @@
     "lint"
   ],
   "rules": {
+    "cyclomatic-complexity": [true, 5],
     "no-constant-condition": true,
     "semicolon": false,
     "type-literal-delimiter": false,
