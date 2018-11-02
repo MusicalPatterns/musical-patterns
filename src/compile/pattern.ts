@@ -1,6 +1,6 @@
 import { PatternMaterial } from '../../patterns'
 import { Scale, Thread } from '../types'
-import { compileThreads } from './compileThreads'
+import { compileThreads } from './threads'
 import { CompilePatternParameters, Entity } from './types'
 
 const compilePattern: (compilePatternParameters: CompilePatternParameters) => Promise<Thread[]> =

@@ -11,4 +11,4 @@ export {
 } from './types'
 export {
     compilePattern,
-} from './compilePattern'
+} from './pattern'

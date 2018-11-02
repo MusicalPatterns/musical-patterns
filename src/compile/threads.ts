@@ -1,5 +1,5 @@
 import { Thread } from '../types'
-import { compileThread } from './compileThread'
+import { compileThread } from './thread'
 import { CompileThreadsParameters, Entity } from './types'
 
 const compileThreads: (compileThreadsParameters: CompileThreadsParameters) => Thread[] =
