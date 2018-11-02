@@ -1,4 +1,6 @@
+import { OCTAVE } from '../constants'
 import { Cents, Frequency, from, Scalar, to } from '../nominal'
+import { applyPower } from './applyPower'
 import { applyScale } from './applyScale'
 import { CENTS_PER_OCTAVE } from './constants'
 
@@ -18,7 +20,7 @@ const pitchToCents: (pitch: Scalar) => Cents =
 
 const centsToPitch: (cents: Cents) => Scalar =
     (cents: Cents): Scalar =>
-        to.Scalar(Math.pow(2, from.Cents(cents) / 1200))
+        applyPower(OCTAVE, to.Power(from.Cents(cents) / from.Cents(CENTS_PER_OCTAVE)))
 
 export {
     centsToShiftFromOneFrequencyToAnother,

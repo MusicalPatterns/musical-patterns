@@ -26,12 +26,11 @@ const load: (timbre: SampleName) => void =
         request.open('GET', url, true)
         request.responseType = 'arraybuffer'
 
-        request.onload = (): void => {
+        request.onload = async (): Promise<void> => {
             const audioData: ArrayBuffer = request.response as ArrayBuffer
-            context
-                .decodeAudioData(audioData, (buffer: AudioBuffer): void => {
-                    samples[ timbre ] = buffer
-                })
+            await context.decodeAudioData(audioData, (buffer: AudioBuffer): void => {
+                samples[ timbre ] = buffer
+            })
         }
         request.send()
     }
