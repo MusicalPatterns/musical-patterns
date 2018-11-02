@@ -5,10 +5,11 @@ import { createStore, Store } from 'redux'
 // tslint:disable-next-line:no-import-side-effect no-reaching-imports
 import '../styles/main.scss'
 import { App } from './components'
-import { loadAllSamples } from './perform'
+import { activateContextInMobileBrowserEnvironments, loadAllSamples } from './perform'
 import { rootReducer } from './state'
 
 loadAllSamples()
+activateContextInMobileBrowserEnvironments()
 
 const root: HTMLDivElement = document.createElement('div')
 document.body.appendChild(root)
