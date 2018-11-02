@@ -26,14 +26,20 @@ const compileSampleVoice: (compileSampleVoiceParameters: CompileSampleVoiceParam
             const pitchShift: Cents = pitchToCents(pitch)
             const sampleShift: Cents = sampleData[ timbre ].centsAdjustment || to.Cents(0)
 
-            source.detune.value = from.Cents(sampleShift) + from.Cents(pitchShift)
+            if (source.detune) {
+                source.detune.value = from.Cents(sampleShift) + from.Cents(pitchShift)
+            }
 
             source.start()
         }
 
         const stopNote: StopNote = (): void => {
             if (source) {
-                source.stop()
+                try {
+                    source.stop()
+                }
+                // tslint:disable-next-line:no-empty
+                catch (e) {}
             }
         }
 
