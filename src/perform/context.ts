@@ -5,7 +5,7 @@ interface AudioContextConstructor {
 }
 
 // @ts-ignore
-const AudioContext: AudioContextConstructor = AudioContext || webkitAudioContext || false
+const AudioContext: AudioContextConstructor = global.AudioContext || global.webkitAudioContext || false
 
 let context: AudioContext
 if (AudioContext) {
