@@ -4,7 +4,7 @@ export { deepEqual } from './deepEqual'
 export { repeat } from './repeat'
 export { repeatCall } from './repeatCall'
 export { applyCycle } from './applyCycle'
-export { centsToShiftFromOneFrequencyToAnother, pitchToCents } from './cents'
+export { centsToPitch, centsToShiftFromOneFrequencyToAnother, pitchToCents } from './cents'
 
 export {
     Maybe,

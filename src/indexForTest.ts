@@ -14,6 +14,7 @@ export {
     applyOffset,
     applyScale,
     Maybe,
+    centsToPitch,
     centsToShiftFromOneFrequencyToAnother,
     pitchToCents,
     deepEqual,

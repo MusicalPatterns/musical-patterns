@@ -32,8 +32,6 @@ const load: (timbre: SampleName) => void =
                 .decodeAudioData(audioData, (buffer: AudioBuffer): void => {
                     samples[ timbre ] = buffer
                 })
-                .then()
-                .catch()
         }
         request.send()
     }

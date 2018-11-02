@@ -1,6 +1,6 @@
 export { applyOffset } from './applyOffset'
 export { applyScale } from './applyScale'
-export { pitchToCents } from './cents'
+export { centsToPitch, pitchToCents } from './cents'
 export { deepEqual } from './deepEqual'
 export { numbers } from './numbers'
 export { repeat } from './repeat'

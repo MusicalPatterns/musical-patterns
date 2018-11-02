@@ -1,4 +1,12 @@
-import { Cents, centsToShiftFromOneFrequencyToAnother, pitchToCents, to } from '../../../src/indexForTest'
+import {
+    Cents,
+    centsToPitch,
+    centsToShiftFromOneFrequencyToAnother,
+    pitchToCents,
+    Scalar,
+    to,
+} from '../../../src/indexForTest'
+import { testIsCloseTo } from '../../support'
 
 describe('cents', () => {
     describe('#pitchToCents', () => {
@@ -16,6 +24,15 @@ describe('cents', () => {
 
             expect(actual)
                 .toEqual(to.Cents(3600))
+        })
+    })
+
+    describe('#centsToPitch', () => {
+        it('gives the pitch ratio equivalent to the cents amount', () => {
+            const actual: Scalar = centsToPitch(to.Cents(701.955001))
+
+            expect(testIsCloseTo(actual, to.Scalar(3 / 2)))
+                .toBe(true)
         })
     })
 })

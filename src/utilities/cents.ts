@@ -16,7 +16,12 @@ const pitchToCents: (pitch: Scalar) => Cents =
         return applyScale(CENTS_PER_OCTAVE, octaveRepeatingPitchSpaceLogarithmicScalar)
     }
 
+const centsToPitch: (cents: Cents) => Scalar =
+    (cents: Cents): Scalar =>
+        to.Scalar(Math.pow(2, from.Cents(cents) / 1200))
+
 export {
     centsToShiftFromOneFrequencyToAnother,
     pitchToCents,
+    centsToPitch,
 }

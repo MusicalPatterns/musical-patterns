@@ -1,8 +1,8 @@
-import { Cents, from, Scalar, to } from '../nominal'
+import { from, Scalar, to } from '../nominal'
 import { buildSampleData, context, NoteToPlay, SampleDatas, samples, StartNote, StopNote } from '../perform'
 import { Voice } from '../types'
-import { applyScale, pitchToCents } from '../utilities'
-import { AVERAGE_SAMPLE_PITCH_OF_C5, BASE_SAMPLE_GAIN } from './constants'
+import { applyScale, centsToPitch } from '../utilities'
+import { BASE_SAMPLE_GAIN, STANDARDIZED_SAMPLE_PITCH_OF_C5 } from './constants'
 import { CompileSampleVoiceParameters } from './types'
 
 let sampleData: SampleDatas
@@ -22,13 +22,9 @@ const compileSampleVoice: (compileSampleVoiceParameters: CompileSampleVoiceParam
             source.connect(gainNode)
             gainNode.gain.value = from.Scalar(applyScale(gain, BASE_SAMPLE_GAIN))
 
-            const pitch: Scalar = to.Scalar(from.Frequency(frequency) / from.Frequency(AVERAGE_SAMPLE_PITCH_OF_C5))
-            const pitchShift: Cents = pitchToCents(pitch)
-            const sampleShift: Cents = sampleData[ timbre ].centsAdjustment || to.Cents(0)
-
-            if (source.detune) {
-                source.detune.value = from.Cents(sampleShift) + from.Cents(pitchShift)
-            }
+            const pitch: Scalar = to.Scalar(from.Frequency(frequency) / from.Frequency(STANDARDIZED_SAMPLE_PITCH_OF_C5))
+            const samplePitchAdjustment: Scalar = centsToPitch(sampleData[ timbre ].centsAdjustment || to.Cents(0))
+            source.playbackRate.value = from.Scalar(pitch) * from.Scalar(samplePitchAdjustment)
 
             source.start()
         }
