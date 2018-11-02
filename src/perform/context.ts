@@ -1,4 +1,4 @@
-// tslint:disable:no-type-definitions-outside-types-modules variable-name
+// tslint:disable:no-type-definitions-outside-types-modules variable-name no-unsafe-any
 
 interface AudioContextConstructor {
     new (): AudioContext;
