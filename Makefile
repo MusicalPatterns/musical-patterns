@@ -21,3 +21,6 @@ pull:
 
 lint:
 	./bin/lint.sh
+
+snapshot:
+	./bin/snapshot.sh

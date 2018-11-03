@@ -7,12 +7,12 @@
 [submodule "patterns/stepwise"]
 	path = patterns/stepwise
 	url = git@github.com:MusicalPatterns/stepwise.git
-[submodule "patterns/xelt-dleudef-aet-naelnaemeugz"]
-	path = patterns/xelt-dleudef-aet-naelnaemeugz
-	url = git@github.com:MusicalPatterns/xelt-dleudef-aet-naelnaemeugz.git
 [submodule "patterns/zdaubyaos"]
 	path = patterns/zdaubyaos
 	url = git@github.com:MusicalPatterns/zdaubyaos.git
 [submodule "patterns/template"]
 	path = patterns/template
 	url = git@github.com:MusicalPatterns/template.git
+[submodule "patterns/xelt"]
+	path = patterns/xelt
+	url = git@github.com:MusicalPatterns/xelt

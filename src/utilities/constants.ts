@@ -6,7 +6,7 @@ const CENTS_PER_OCTAVE: Cents = to.Cents(1200)
 const DECIMAL: number = 10
 const HALF: Scalar = to.Scalar(1 / 2)
 const DEFAULT_PRECISION: number = 2
-const A_SUFFICIENT_COUNT_OF_NUMBERS: Count = to.Count(Math.pow(2, 16))
+const A_SUFFICIENT_COUNT_OF_NUMBERS: Count = to.Count(Math.pow(2, 8))
 
 export {
     CENTS_PER_OCTAVE,
