@@ -12,15 +12,15 @@ interface AppProps {
     patternId: Maybe<PatternId>,
 }
 
-interface PatternSelectPropsFromState {
+interface PatternListPropsFromState {
     threads: ImmutableThreads,
 }
 
-interface PatternSelectPropsFromDispatch {
+interface PatternListPropsFromDispatch {
     handlePatternChangeEvent: HandlePatternChangeEvent,
 }
 
-interface PatternSelectProps extends PatternSelectPropsFromState, PatternSelectPropsFromDispatch {
+interface PatternListProps extends PatternListPropsFromState, PatternListPropsFromDispatch {
 }
 
 interface PatternSpecInputsPropsFromState {
@@ -54,7 +54,7 @@ export {
     PatternSpecInputsPropsFromState,
     PatternSpecInputsPropsFromDispatch,
     PatternSpecInputProps,
-    PatternSelectProps,
-    PatternSelectPropsFromState,
-    PatternSelectPropsFromDispatch,
+    PatternListProps,
+    PatternListPropsFromState,
+    PatternListPropsFromDispatch,
 }

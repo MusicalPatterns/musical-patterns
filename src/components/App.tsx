@@ -2,7 +2,7 @@ import * as React from 'react'
 import { connect } from 'react-redux'
 import { Pattern, PatternId, PatternMetadata, patterns } from '../../patterns'
 import { ImmutableRootState, RootStateKeys } from '../state'
-import PatternSelector from './PatternSelect'
+import PatternList from './PatternList'
 import PatternSpecInputs from './PatternSpecInputs'
 import { AppProps } from './types'
 
@@ -25,7 +25,7 @@ const App: (appProps: AppProps) => JSX.Element =
         (
             <div>
                 <h1>Musical Patterns</h1>
-                <PatternSelector/>
+                <PatternList/>
 
                 {patternId && <div>
                     <div>{patternDescription(patternId)}</div>

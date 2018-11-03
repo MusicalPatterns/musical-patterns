@@ -5,3 +5,11 @@ input.invalid {
 input.unsubmitted {
   box-shadow: 0 0 1.5px 1px yellow
 }
+
+ul {
+  list-style: none;
+}
+
+li:hover {
+  cursor: pointer;
+}

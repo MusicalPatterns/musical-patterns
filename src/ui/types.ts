@@ -43,7 +43,7 @@ interface HandlePatternChangeParameters {
     threads: ImmutableThreads,
 }
 interface HandlePatternChangeEventParameters {
-    event: React.SyntheticEvent<HTMLSelectElement>,
+    event: React.SyntheticEvent<HTMLLIElement>,
     threads: ImmutableThreads,
 }
 type HandlePatternChangeEvent = (handlePatternChangeEventParameters: HandlePatternChangeEventParameters) => void
