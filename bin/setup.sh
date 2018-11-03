@@ -72,4 +72,4 @@ else
 fi
 
 npm i -g webpack-cli
-npm i
+npm ci

@@ -11,7 +11,7 @@ function pull_if_needed {
 export -f pull_if_needed
 
 pull_if_needed
-npm i || true
+npm ci || true
 
 git submodule update --init --recursive
 git submodule foreach git checkout master
