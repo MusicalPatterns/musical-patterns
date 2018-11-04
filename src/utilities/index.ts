@@ -12,6 +12,7 @@ export { applyCycle } from './applyCycle'
 export { offsetFromOneIndexedToZeroIndexed } from './offsetFromOneIndexedToZeroIndexed'
 export { repeatCall } from './repeatCall'
 export { scaleFromScalarsAndScalar } from './scaleFromScalarsAndScalar'
+export { logMessageToScreen } from './logMessageToScreen'
 
 export {
     Maybe,
