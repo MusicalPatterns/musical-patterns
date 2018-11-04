@@ -8,7 +8,7 @@ import { AppProps } from './types'
 
 const mapStateToProps: (state: ImmutableRootState) => AppProps =
     (state: ImmutableRootState): AppProps => ({
-        patternId: state.get(RootStateKeys.SONG_ID),
+        patternId: state.get(RootStateKeys.PATTERN_ID),
     })
 
 const patternDescription: (patternId: PatternId) => string =

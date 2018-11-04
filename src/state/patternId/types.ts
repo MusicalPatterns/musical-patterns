@@ -1,12 +1,12 @@
 import { PatternId } from '../../../patterns'
 
 enum PatternIdActionType {
-    SET_SONG_ID = 'SET_SONG_ID',
+    SET_PATTERN_ID = 'SET_PATTERN_ID',
 }
 
 interface SetPatternId {
     data: PatternId,
-    type: PatternIdActionType.SET_SONG_ID,
+    type: PatternIdActionType.SET_PATTERN_ID,
 }
 
 type PatternIdAction =

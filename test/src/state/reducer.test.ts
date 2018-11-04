@@ -10,6 +10,7 @@ describe('reducer', () => {
             patternId: null,
             threads: fromJS([]),
             ui: immutablize({
+                disabledPatternSpecButtons: {},
                 displayedPatternSpec: {},
                 invalidPatternSpecInputs: {},
                 submittedPatternSpec: {},
@@ -29,6 +30,7 @@ describe('reducer', () => {
             patternId: null,
             threads: fromJS([ mockThread ]),
             ui: immutablize({
+                disabledPatternSpecButtons: {},
                 displayedPatternSpec: {},
                 invalidPatternSpecInputs: {},
                 submittedPatternSpec: {},

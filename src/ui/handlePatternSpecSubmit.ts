@@ -4,12 +4,17 @@ import { deepEqual } from '../utilities'
 import { destringifyPatternSpec } from './destringifyPatternSpec'
 import { recompileAndRestart } from './recompileAndRestart'
 import { stopThreads } from './stopThreads'
-import { HandlePatternSpecSubmitParameters } from './types'
+import { PatternSpecEventHandler, PatternSpecEventHandlerParameters } from './types';
 
-const handlePatternSpecSubmit: (handlePatternSpecSubmitParameters: HandlePatternSpecSubmitParameters) => Promise<void> =
-    async (handlePatternSpecSubmitParameters: HandlePatternSpecSubmitParameters): Promise<void> => {
-        const { patternSpecKey, patternSpecValue, dispatch, patternId, threads, ui } = handlePatternSpecSubmitParameters
-        const { invalidPatternSpecInputs, submittedPatternSpec, unsubmittedPatternSpecInputs }: Ui = ui.toJS()
+const handlePatternSpecSubmit: PatternSpecEventHandler =
+    async (patternSpecHandlerParameters: PatternSpecEventHandlerParameters): Promise<void> => {
+        const { patternSpecKey, patternSpecValue, dispatch, patternId, threads, ui } = patternSpecHandlerParameters
+        const {
+            disabledPatternSpecButtons,
+            invalidPatternSpecInputs,
+            submittedPatternSpec,
+            unsubmittedPatternSpecInputs,
+        }: Ui = ui.toJS()
 
         const updatedPatternSpec: StringifiedPatternSpec = {
             ...submittedPatternSpec,
@@ -25,13 +30,20 @@ const handlePatternSpecSubmit: (handlePatternSpecSubmitParameters: HandlePattern
                 ...destringifyPatternSpec(updatedPatternSpec),
             }
             stopThreads(threads)
-            dispatch({ type: ActionType.SET_SUBMITTED_SONG_SPEC, data: updatedPatternSpec })
 
             const updatedUnsubmittedInputs: StringifiedPatternSpecInputStates = {
                 ...unsubmittedPatternSpecInputs,
                 [ patternSpecKey ]: false,
             }
-            dispatch({ type: ActionType.SET_UNSUBMITTED_SONG_SPEC_INPUTS, data: updatedUnsubmittedInputs })
+
+            const updatedDisabledButtons: StringifiedPatternSpecInputStates = {
+                ...disabledPatternSpecButtons,
+                [ patternSpecKey ]: true,
+            }
+
+            dispatch({ type: ActionType.SET_SUBMITTED_PATTERN_SPEC, data: updatedPatternSpec })
+            dispatch({ type: ActionType.SET_UNSUBMITTED_PATTERN_SPEC_INPUTS, data: updatedUnsubmittedInputs })
+            dispatch({ type: ActionType.SET_DISABLED_PATTERN_SPEC_BUTTONS, data: updatedDisabledButtons })
 
             await recompileAndRestart({ patternSpec, dispatch, patternId })
         }
@@ -40,7 +52,7 @@ const handlePatternSpecSubmit: (handlePatternSpecSubmitParameters: HandlePattern
                 ...invalidPatternSpecInputs,
                 [ patternSpecKey ]: true,
             }
-            dispatch({ type: ActionType.SET_INVALID_SONG_SPEC_INPUTS, data: updatedInvalidInputs })
+            dispatch({ type: ActionType.SET_INVALID_PATTERN_SPEC_INPUTS, data: updatedInvalidInputs })
         }
     }
 

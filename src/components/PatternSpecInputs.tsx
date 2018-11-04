@@ -3,12 +3,10 @@ import { connect } from 'react-redux'
 import { Dispatch } from 'redux'
 import { ImmutableRootState, RootStateKeys, StringifiedPatternSpec, UiStateKeys } from '../state'
 import {
+    buildPatternSpecEventExtractor,
     handlePatternSpecBlur,
-    HandlePatternSpecBlurEventParameters,
     handlePatternSpecChange,
-    HandlePatternSpecChangeEventParameters,
     handlePatternSpecSubmit,
-    HandlePatternSpecSubmitEventParameters,
 } from '../ui'
 import PatternSpecInput from './PatternSpecInput'
 import {
@@ -17,8 +15,6 @@ import {
     PatternSpecInputsPropsFromDispatch,
     PatternSpecInputsPropsFromState,
 } from './types'
-
-const SUBMIT: string = 'Enter'
 
 const mapStateToProps: (state: ImmutableRootState) => PatternSpecInputsPropsFromState =
     (state: ImmutableRootState): PatternSpecInputsPropsFromState =>
@@ -29,38 +25,30 @@ const mapStateToProps: (state: ImmutableRootState) => PatternSpecInputsPropsFrom
 
 const mapDispatchToProps: (dispatch: Dispatch) => PatternSpecInputsPropsFromDispatch =
     (dispatch: Dispatch): PatternSpecInputsPropsFromDispatch => ({
-        handlePatternSpecBlurEvent: async (parameters: HandlePatternSpecBlurEventParameters): Promise<void> => {
-            const { event, ...otherParameters } = parameters
-            const target: HTMLInputElement = event.target as HTMLInputElement
-            const patternSpecValue: string = target.value
-
-            handlePatternSpecBlur({ patternSpecValue, dispatch, ...otherParameters })
-        },
-        handlePatternSpecChangeEvent: (parameters: HandlePatternSpecChangeEventParameters): void => {
-            const { event, ...otherParameters } = parameters
-            const target: HTMLInputElement = event.target as HTMLInputElement
-            const patternSpecValue: string = target.value
-
-            handlePatternSpecChange({ dispatch, patternSpecValue, ...otherParameters })
-        },
-        handlePatternSpecSubmitEvent: async (parameters: HandlePatternSpecSubmitEventParameters): Promise<void> => {
-            const { event, ...otherParameters } = parameters
-
-            if (event.key !== SUBMIT) {
-                return
-            }
-            const target: HTMLInputElement = event.target as HTMLInputElement
-            const patternSpecValue: string = target.value
-
-            await handlePatternSpecSubmit({ ...otherParameters, patternSpecValue, dispatch })
-        },
+        handlePatternSpecBlur: buildPatternSpecEventExtractor({
+            dispatch,
+            patternSpecEventHandler: handlePatternSpecBlur,
+        }),
+        handlePatternSpecButtonSubmit: buildPatternSpecEventExtractor({
+            dispatch,
+            patternSpecEventHandler: handlePatternSpecSubmit,
+        }),
+        handlePatternSpecChange: buildPatternSpecEventExtractor({
+            dispatch,
+            patternSpecEventHandler: handlePatternSpecChange,
+        }),
+        handlePatternSpecKeyboardSubmit: buildPatternSpecEventExtractor({
+            abortIfNotSubmitting: true,
+            dispatch,
+            patternSpecEventHandler: handlePatternSpecSubmit,
+        }),
     })
 
 const PatternSpecInputs: (patternSpecInputsProps: PatternSpecInputsProps) => JSX.Element =
     (patternSpecInputsProps: PatternSpecInputsProps): JSX.Element => {
         const { ui }: PatternSpecInputsProps = patternSpecInputsProps
         const displayedPatternSpec: StringifiedPatternSpec = ui
-            .get(UiStateKeys.DISPLAYED_SONG_SPEC)
+            .get(UiStateKeys.DISPLAYED_PATTERN_SPEC)
         const patternSpecInputs: JSX.Element[] = Object.keys(displayedPatternSpec)
             .sort()
             .map(

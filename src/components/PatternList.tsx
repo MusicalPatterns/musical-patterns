@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Dispatch } from 'redux'
 import { Pattern, PatternId, patterns } from '../../patterns'
 import { ImmutableRootState, RootStateKeys } from '../state'
-import { handlePatternChange, HandlePatternChangeEventParameters, PartialPatterns, patternsFilter } from '../ui'
+import { handlePatternChange, PartialPatterns, PatternChangeEventExtractorParameters, patternsFilter } from '../ui'
 import { PatternListProps, PatternListPropsFromDispatch, PatternListPropsFromState } from './types'
 
 const mapStateToProps: (state: ImmutableRootState) => PatternListPropsFromState =
@@ -13,7 +13,7 @@ const mapStateToProps: (state: ImmutableRootState) => PatternListPropsFromState 
 
 const mapDispatchToProps: (dispatch: Dispatch) => PatternListPropsFromDispatch =
     (dispatch: Dispatch): PatternListPropsFromDispatch => ({
-        handlePatternChangeEvent: async ({ event, threads }: HandlePatternChangeEventParameters): Promise<void> => {
+        handlePatternChangeEvent: async ({ event, threads }: PatternChangeEventExtractorParameters): Promise<void> => {
             const target: HTMLLIElement = event.target as HTMLLIElement
             const patternId: PatternId = target.id as PatternId
 
@@ -25,8 +25,8 @@ const PatternList: (PatternListProps: PatternListProps) => JSX.Element =
     ({ handlePatternChangeEvent, threads }: PatternListProps): JSX.Element => {
         const filteredPatterns: PartialPatterns = patternsFilter(patterns)
 
-        const onClick: (event: React.SyntheticEvent<HTMLLIElement>) => void =
-            (event: React.SyntheticEvent<HTMLLIElement>): void => {
+        const onClick: (event: React.SyntheticEvent) => void =
+            (event: React.SyntheticEvent): void => {
                 handlePatternChangeEvent({ event, threads })
             }
 

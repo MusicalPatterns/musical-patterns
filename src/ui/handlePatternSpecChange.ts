@@ -1,22 +1,40 @@
 import { ActionType, StringifiedPatternSpec, StringifiedPatternSpecInputStates, Ui } from '../state'
-import { HandlePatternSpecChangeParameters } from './types'
+import { PatternSpecEventHandler, PatternSpecEventHandlerParameters } from './types';
 
-const handlePatternSpecChange: (handlePatternSpecChangeParameters: HandlePatternSpecChangeParameters) => void =
-    (parameters: HandlePatternSpecChangeParameters): void => {
-        const { dispatch, patternSpecKey, patternSpecValue, ui }: HandlePatternSpecChangeParameters = parameters
-        const { displayedPatternSpec, invalidPatternSpecInputs }: Ui = ui.toJS()
+const handlePatternSpecChange: PatternSpecEventHandler =
+    (patternSpecHandlerParameters: PatternSpecEventHandlerParameters): void => {
+        const {
+            dispatch,
+            patternSpecKey,
+            patternSpecValue,
+            ui,
+        }: PatternSpecEventHandlerParameters = patternSpecHandlerParameters
+        const {
+            disabledPatternSpecButtons,
+            displayedPatternSpec,
+            invalidPatternSpecInputs,
+            submittedPatternSpec,
+        }: Ui = ui.toJS()
 
         const updatedStringifiedPatternSpec: StringifiedPatternSpec = {
             ...displayedPatternSpec,
             [ patternSpecKey ]: patternSpecValue,
         }
-        dispatch({ type: ActionType.SET_DISPLAYED_SONG_SPEC, data: updatedStringifiedPatternSpec })
 
         const updatedInvalidInputs: StringifiedPatternSpecInputStates = {
             ...invalidPatternSpecInputs,
             [ patternSpecKey ]: false,
         }
-        dispatch({ type: ActionType.SET_INVALID_SONG_SPEC_INPUTS, data: updatedInvalidInputs })
+
+        const currentPatternSpecValue: string = submittedPatternSpec[ patternSpecKey ]
+        const updatedDisabledButtons: StringifiedPatternSpecInputStates = {
+            ...disabledPatternSpecButtons,
+            [ patternSpecKey ]: currentPatternSpecValue === patternSpecValue,
+        }
+
+        dispatch({ type: ActionType.SET_DISPLAYED_PATTERN_SPEC, data: updatedStringifiedPatternSpec })
+        dispatch({ type: ActionType.SET_INVALID_PATTERN_SPEC_INPUTS, data: updatedInvalidInputs })
+        dispatch({ type: ActionType.SET_DISABLED_PATTERN_SPEC_BUTTONS, data: updatedDisabledButtons })
     }
 
 export {

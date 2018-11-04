@@ -5,13 +5,13 @@ import { ImmutableThreads } from './threads'
 import { ImmutableUi, StringifiedPatternSpec, StringifiedPatternSpecInputStates } from './ui'
 
 enum RootStateKeys {
-    SONG_ID = 'patternId',
+    PATTERN_ID = 'patternId',
     THREADS = 'threads',
     UI = 'ui',
 }
 
 interface RootState {
-    [ RootStateKeys.SONG_ID ]: Maybe<PatternId>,
+    [ RootStateKeys.PATTERN_ID ]: Maybe<PatternId>,
     [ RootStateKeys.THREADS ]: ImmutableThreads,
     [ RootStateKeys.UI ]: ImmutableUi,
 }

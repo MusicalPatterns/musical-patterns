@@ -1,11 +1,6 @@
 import { PatternId } from '../../patterns'
 import { ImmutableThreads, ImmutableUi } from '../state'
-import {
-    HandlePatternChangeEvent,
-    HandlePatternSpecBlurEvent,
-    HandlePatternSpecChangeEvent,
-    HandlePatternSpecSubmitEvent,
-} from '../ui'
+import { PatternChangeEventExtractor, PatternSpecEventExtractor } from '../ui'
 import { Maybe } from '../utilities'
 
 interface AppProps {
@@ -17,7 +12,7 @@ interface PatternListPropsFromState {
 }
 
 interface PatternListPropsFromDispatch {
-    handlePatternChangeEvent: HandlePatternChangeEvent,
+    handlePatternChangeEvent: PatternChangeEventExtractor,
 }
 
 interface PatternListProps extends PatternListPropsFromState, PatternListPropsFromDispatch {
@@ -29,9 +24,10 @@ interface PatternSpecInputsPropsFromState {
 }
 
 interface PatternSpecInputsPropsFromDispatch {
-    handlePatternSpecBlurEvent: HandlePatternSpecBlurEvent,
-    handlePatternSpecChangeEvent: HandlePatternSpecChangeEvent,
-    handlePatternSpecSubmitEvent: HandlePatternSpecSubmitEvent,
+    handlePatternSpecBlur: PatternSpecEventExtractor,
+    handlePatternSpecButtonSubmit: PatternSpecEventExtractor,
+    handlePatternSpecChange: PatternSpecEventExtractor,
+    handlePatternSpecKeyboardSubmit: PatternSpecEventExtractor,
 }
 
 interface PatternSpecInputsPropsFromParent {

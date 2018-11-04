@@ -6,7 +6,7 @@ import { PatternIdAction, PatternIdActionType } from './types'
 const patternIdReducer: (patternId: Maybe<PatternId>, action: PatternIdAction) => Maybe<PatternId> =
     (patternId: Maybe<PatternId> = initialPatternId, action: PatternIdAction): Maybe<PatternId> => {
         switch (action.type) {
-            case PatternIdActionType.SET_SONG_ID: {
+            case PatternIdActionType.SET_PATTERN_ID: {
                 return action.data
             }
 
