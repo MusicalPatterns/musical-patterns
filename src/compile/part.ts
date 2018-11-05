@@ -1,5 +1,7 @@
+import { DEFAULT_OFFSET_FOR_ALMOST_FULL_SUSTAIN } from '../constants'
 import { Frequency, Scalar, Time, to } from '../nominal'
 import { Note } from '../types'
+import { applyOffset } from '../utilities'
 import { compileNoteProperty } from './noteProperty'
 import { CompileNotesOptions, NotePropertySpec, NoteSpec, Part } from './types'
 
@@ -22,7 +24,11 @@ const compilePart: (part: Part, compileNotesOptions: CompileNotesOptions) => Not
             const duration: Time = compileNoteProperty(durationSpec, { scales }) as Time
             const gain: Scalar = compileNoteProperty(gainSpec, { scales }) as Scalar
             const frequency: Frequency = compileNoteProperty(pitchSpec, { scales }) as Frequency
-            const sustain: Time = compileNoteProperty(sustainSpec, { scales }) as Time
+            const sustainAttempt: Time = compileNoteProperty(sustainSpec, { scales }) as Time
+
+            const sustain: Time = sustainAttempt < duration ?
+                sustainAttempt :
+                applyOffset(duration, DEFAULT_OFFSET_FOR_ALMOST_FULL_SUSTAIN)
 
             return { duration, gain, frequency, sustain }
         })

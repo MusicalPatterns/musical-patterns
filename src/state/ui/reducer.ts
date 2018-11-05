@@ -2,6 +2,7 @@ import { initialUi } from './state'
 import { ImmutableUi, UiAction, UiActionType, UiStateKeys } from './types'
 
 const uiReducer: (ui: ImmutableUi, action: UiAction) => ImmutableUi =
+    // tslint:disable-next-line:cyclomatic-complexity
     (ui: ImmutableUi = initialUi, action: UiAction): ImmutableUi => {
         switch (action.type) {
             case UiActionType.SET_DISABLED_PATTERN_SPEC_BUTTONS: {
