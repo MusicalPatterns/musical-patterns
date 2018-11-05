@@ -1,3 +1,4 @@
+export { applyCount } from './applyCount'
 export { applyOffset } from './applyOffset'
 export { applyScale } from './applyScale'
 export { centsToPitch, pitchToCents } from './cents'

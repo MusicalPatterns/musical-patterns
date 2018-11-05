@@ -20,6 +20,7 @@ export {
     absoluteRatio,
     sequence,
     applyCycle,
+    applyCount,
     deepEqual,
     applyOffset,
     applyPower,
