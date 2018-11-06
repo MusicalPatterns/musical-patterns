@@ -21,6 +21,8 @@ const elementExists = selector => page.evaluate(selector => !!document.querySele
 
 const elementValue = selector => page.evaluate(selector => document.querySelector(selector).value, selector)
 
+const elementInnerText = selector => page.evaluate(selector => document.querySelector(selector).innerText, selector)
+
 describe('ui integration', () => {
     beforeEach(async () => {
         await selectAnExamplePattern()
@@ -31,26 +33,44 @@ describe('ui integration', () => {
         done()
     })
 
-    xit('does not immediately submit when you type into a pattern spec input', async done => {
-        // not sure how to check for recompiling or not recompiling
+    it('does not immediately submit when you type into a pattern spec input', async done => {
+        const input = await findElement(tab, 'input#patternPitchScalar')
+        await fillInElement(input, '2')
+
+        expect(await elementInnerText('.secret-submitted#patternPitchScalar'))
+            .toBe('4186')
 
         done()
     })
 
     describe('submitting pattern spec changes', () => {
-        xit('submits a pattern spec input when you press enter', async done => {
+        it('submits a pattern spec input when you press enter', async done => {
+            const input = await findElement(tab, 'input#patternPitchScalar')
+            await fillInElement(input, '2')
+
+            await clickElement(input)
+            await page.keyboard.press('Enter')
+
+            expect(await elementInnerText('.secret-submitted#patternPitchScalar'))
+                .toBe('41862')
+
+            done()
+        })
+
+        it('submits a pattern spec input when you press the submit button', async done => {
             const input = await findElement(tab, 'input#patternPitchScalar')
             await fillInElement(input, '2')
 
             const button = await findElement(tab, 'button#patternPitchScalar')
             await clickElement(button)
 
-            // not sure how to check for recompiling or not recompiling
+            expect(await elementInnerText('.secret-submitted#patternPitchScalar'))
+                .toBe('41862')
 
             done()
         })
 
-        xit('does not submit all the pattern spec inputs when you press enter (only the one you are focused on)', async done => {
+        it('does not submit all the pattern spec inputs when you press enter (only the one you are focused on)', async done => {
             const input = await findElement(tab, 'input#patternPitchScalar')
             await fillInElement(input, '2')
 
@@ -60,12 +80,15 @@ describe('ui integration', () => {
             await clickElement(input)
             await page.keyboard.press('Enter')
 
-            // not sure how to check for recompiling or not recompiling
+            expect(await elementInnerText('.secret-submitted#patternPitchScalar'))
+                .toBe('41862')
+            expect(await elementInnerText('.secret-submitted#patternDurationScalar'))
+                .toBe('1')
 
             done()
         })
 
-        xit('does not submit all the pattern spec inputs when you press a submit button (only the one the button is for)', async done => {
+        it('does not submit all the pattern spec inputs when you press a submit button (only the one the button is for)', async done => {
             const input = await findElement(tab, 'input#patternPitchScalar')
             await fillInElement(input, '2')
 
@@ -75,12 +98,15 @@ describe('ui integration', () => {
             const button = await findElement(tab, 'button#patternPitchScalar')
             await clickElement(button)
 
-            // not sure how to check for recompiling or not recompiling
+            expect(await elementInnerText('.secret-submitted#patternPitchScalar'))
+                .toBe('41862')
+            expect(await elementInnerText('.secret-submitted#patternDurationScalar'))
+                .toBe('1')
 
             done()
         })
 
-        xit('preserves earlier pattern spec changes you have made when you submit a second pattern spec input', async done => {
+        it('preserves earlier pattern spec changes you have made when you submit a second pattern spec input', async done => {
             const input = await findElement(tab, 'input#patternPitchScalar')
             await fillInElement(input, '2')
             await clickElement(input)
@@ -91,10 +117,10 @@ describe('ui integration', () => {
             await clickElement(otherInput)
             await page.keyboard.press('Enter')
 
-            expect(await elementValue('input#patternPitchScalar'))
+            expect(await elementInnerText('.secret-submitted#patternPitchScalar'))
                 .toBe('41862')
-
-            // not sure how to check for recompiling or not recompiling
+            expect(await elementInnerText('.secret-submitted#patternDurationScalar'))
+                .toBe('12')
 
             done()
         })
@@ -110,7 +136,7 @@ describe('ui integration', () => {
             done()
         })
 
-        xit('marks a pattern spec input as invalid when you submit invalid data, and it does not crash or recompile', async done => {
+        it('marks a pattern spec input as invalid when you submit invalid data, and it does not crash or recompile', async done => {
             const input = await findElement(tab, 'input#patternPitchScalar')
             await fillInElement(input, 'sdiojg')
 
@@ -119,7 +145,8 @@ describe('ui integration', () => {
 
             await findElement(tab, 'input#patternPitchScalar.invalid')
 
-            // not sure how to check for recompiling or not recompiling
+            expect(await elementInnerText('.secret-submitted#patternPitchScalar'))
+                .toBe('4186')
 
             done()
         })

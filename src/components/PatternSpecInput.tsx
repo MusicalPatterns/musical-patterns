@@ -21,12 +21,14 @@ const PatternSpecInput: (patternSpecInputProps: PatternSpecInputProps) => JSX.El
             invalidPatternSpecInputs,
             disabledPatternSpecButtons,
             unsubmittedPatternSpecInputs,
+            submittedPatternSpec,
         }: Ui = ui.toJS()
 
         const patternSpecValue: string = displayedPatternSpec[ patternSpecKey ]
         const invalid: boolean = invalidPatternSpecInputs[ patternSpecKey ]
         const unsubmitted: boolean = unsubmittedPatternSpecInputs[ patternSpecKey ]
         const disabled: boolean = disabledPatternSpecButtons[ patternSpecKey ]
+        const submittedPatternSpecValue: string = submittedPatternSpec[ patternSpecKey ]
 
         const patternSpecEventParameters: PatternSpecEventParameters = { patternSpecKey, ui, patternId, threads }
 
@@ -54,6 +56,7 @@ const PatternSpecInput: (patternSpecInputProps: PatternSpecInputProps) => JSX.El
                 {patternSpecKey}
                 <input {...{ onChange, onKeyPress, value: patternSpecValue, className, onBlur, id: patternSpecKey }}/>
                 <button {...{ onClick, disabled, value: patternSpecValue, id: patternSpecKey }}>submit</button>
+                <span {...{ className: 'secret-submitted', id: patternSpecKey }}>{submittedPatternSpecValue}</span>
             </div>
         )
     }
