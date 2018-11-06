@@ -62,7 +62,9 @@ const PatternSpecInputs: (patternSpecInputsProps: PatternSpecInputsProps) => JSX
         return (
             <div>
                 <h3>pattern spec</h3>
-                {patternSpecInputs}
+                <div {...{ id: 'pattern-spec-inputs' }}>
+                    {patternSpecInputs}
+                </div>
             </div>
         )
     }

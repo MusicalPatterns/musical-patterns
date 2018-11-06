@@ -1,11 +1,11 @@
-import * as React from 'react';
-import { SUBMIT } from './constants';
+import * as React from 'react'
+import { SUBMIT } from './constants'
 import {
     BuildPatternSpecEventExtractor,
     BuildPatternSpecEventExtractorParameters,
     PatternSpecEventExtractor,
     PatternSpecEventExtractorParameters,
-} from './types';
+} from './types'
 
 const extractValueFromEvent: (event: React.SyntheticEvent | React.KeyboardEvent) => string =
     (event: React.SyntheticEvent | React.KeyboardEvent): string => {

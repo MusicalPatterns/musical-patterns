@@ -31,7 +31,7 @@ function walk(ctx: Lint.WalkContext<string[]>) {
 	for (const name of findImports(ctx.sourceFile, ImportKind.All)) {
 		if (isSubmodulePath(name.text)) {
 
-			const fix = new Lint.Replacement(name.getStart(), name.getWidth(), fixedSubmodulePath(name.text));
+			const fix = new Lint.Replacement(name.getStart(), name.getWidth(), fixedSubmodulePath(name.text))
 
 			ctx.addFailureAtNode(name, Rule.FAILURE_STRING, fix)
 		}

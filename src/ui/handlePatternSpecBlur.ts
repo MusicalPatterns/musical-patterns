@@ -1,5 +1,5 @@
 import { ActionType, StringifiedPatternSpecInputStates, Ui } from '../state'
-import { PatternSpecEventHandler, PatternSpecEventHandlerParameters } from './types';
+import { PatternSpecEventHandler, PatternSpecEventHandlerParameters } from './types'
 
 const handlePatternSpecBlur: PatternSpecEventHandler =
     (patternSpecHandlerParameters: PatternSpecEventHandlerParameters): void => {
