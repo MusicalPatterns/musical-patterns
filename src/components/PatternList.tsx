@@ -34,7 +34,7 @@ const PatternList: (PatternListProps: PatternListProps) => JSX.Element =
             .map(([ patternId, pattern ]: [ string, Pattern ], key: number): JSX.Element =>
                 (
                     <li {...{ key, onClick, id: patternId }} >
-                        {pattern.metadata.formattedName}
+                        {pattern.metadata.musicalIdeaIllustrated}
                     </li>
                 ))
 

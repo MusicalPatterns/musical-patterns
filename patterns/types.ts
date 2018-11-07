@@ -9,6 +9,7 @@ interface PatternMaterial {
 interface PatternMetadata {
     description: string,
     formattedName: string,
+    musicalIdeaIllustrated: string,
 }
 
 interface PatternSpec {

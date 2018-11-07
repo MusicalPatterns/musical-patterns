@@ -16,7 +16,7 @@ const patternDescription: (patternId: PatternId) => string =
         const pattern: Pattern = patterns[patternId]
         const patternMetadata: PatternMetadata = pattern.metadata
 
-        return patternMetadata.description
+        return `${patternMetadata.formattedName}: ${patternMetadata.description}`
     }
 
 const App: (appProps: AppProps) => JSX.Element =
