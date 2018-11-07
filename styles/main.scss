@@ -25,3 +25,15 @@ li:hover {
 .secret-submitted {
   opacity: 0;
 }
+
+#pattern-spec-inputs div {
+  span {
+    width: 150px;
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  input {
+    margin-right: 10px;
+  }
+}

@@ -14,6 +14,7 @@ export { offsetFromOneIndexedToZeroIndexed } from './offsetFromOneIndexedToZeroI
 export { repeatCall } from './repeatCall'
 export { scaleFromScalarsAndScalar } from './scaleFromScalarsAndScalar'
 export { logMessageToScreen } from './logMessageToScreen'
+export { unCamelCase } from './unCamelCase'
 
 export {
     Maybe,

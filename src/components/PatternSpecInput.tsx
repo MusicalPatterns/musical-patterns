@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Ui } from '../state'
 import { buildPatternSpecEventAttacher, PatternSpecEventAttacher, PatternSpecEventParameters } from '../ui'
+import { unCamelCase } from '../utilities'
 import { PatternSpecInputProps } from './types'
 
 const PatternSpecInput: (patternSpecInputProps: PatternSpecInputProps) => JSX.Element =
@@ -53,7 +54,7 @@ const PatternSpecInput: (patternSpecInputProps: PatternSpecInputProps) => JSX.El
 
         return (
             <div>
-                {patternSpecKey}
+                <span>{unCamelCase(patternSpecKey)}</span>
                 <input {...{ onChange, onKeyPress, value: patternSpecValue, className, onBlur, id: patternSpecKey }}/>
                 <button {...{ onClick, disabled, value: patternSpecValue, id: patternSpecKey }}>submit</button>
                 <span {...{ className: 'secret-submitted', id: patternSpecKey }}>{submittedPatternSpecValue}</span>
