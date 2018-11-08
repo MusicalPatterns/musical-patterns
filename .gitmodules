@@ -16,3 +16,6 @@
 [submodule "patterns/xelt"]
 	path = patterns/xelt
 	url = git@github.com:MusicalPatterns/xelt
+[submodule "patterns/houndstoothtopia-theme"]
+	path = patterns/houndstoothtopia-theme
+	url = git@github.com:MusicalPatterns/houndstoothtopia-theme.git
