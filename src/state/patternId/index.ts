@@ -1,2 +1,6 @@
 export { patternIdReducer } from './reducer'
-export { PatternIdActionType } from './types'
+
+export {
+    PatternIdStateAction,
+    PatternIdStateActionType,
+} from './types'

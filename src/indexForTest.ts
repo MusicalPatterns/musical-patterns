@@ -37,7 +37,7 @@ export {
 } from './nominal/indexForTest'
 export {
     ActionType,
-    ThreadsAction,
+    PerformanceStateAction,
     immutablize,
     rootReducer,
     ImmutableRootState,

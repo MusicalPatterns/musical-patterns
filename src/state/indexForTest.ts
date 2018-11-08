@@ -3,5 +3,5 @@
 export { ActionType } from './actions'
 export { immutablize } from './immutablize'
 export { ImmutableRootState } from './types'
-export { rootReducer } from './rootReducer'
-export { ThreadsAction } from  './threads/indexForTest'
+export { rootReducer } from './store'
+export { PerformanceStateAction } from './performance/indexForTest'

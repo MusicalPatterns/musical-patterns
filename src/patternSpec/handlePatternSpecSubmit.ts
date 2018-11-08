@@ -1,20 +1,27 @@
-import { patterns, PatternSpec } from '../../patterns'
-import { ActionType, StringifiedPatternSpec, StringifiedPatternSpecInputStates, Ui } from '../state'
+import { BatchAction, batchActions } from 'redux-batched-actions'
+import {
+    ActionType,
+    PatternSpecState,
+    StringifiedPatternSpec,
+    StringifiedPatternSpecInputStates,
+} from '../state'
 import { deepEqual } from '../utilities'
-import { destringifyPatternSpec } from './destringifyPatternSpec'
-import { recompileAndRestart } from './recompileAndRestart'
-import { stopThreads } from './stopThreads'
-import { PatternSpecEventHandler, PatternSpecEventHandlerParameters } from './types';
+import { PatternSpecEventHandler, PatternSpecEventHandlerParameters } from './types'
+
+const validateValueByThrowingIfUnparsable: (patternSpecValue: string) => void =
+    (patternSpecValue: string): void => {
+        JSON.parse(patternSpecValue)
+    }
 
 const handlePatternSpecSubmit: PatternSpecEventHandler =
     async (patternSpecHandlerParameters: PatternSpecEventHandlerParameters): Promise<void> => {
-        const { patternSpecKey, patternSpecValue, dispatch, patternId, threads, ui } = patternSpecHandlerParameters
+        const { patternSpecKey, patternSpecValue, dispatch, patternSpecState } = patternSpecHandlerParameters
         const {
             disabledPatternSpecButtons,
             invalidPatternSpecInputs,
             submittedPatternSpec,
             unsubmittedPatternSpecInputs,
-        }: Ui = ui.toJS()
+        }: PatternSpecState = patternSpecState.toJS()
 
         const updatedPatternSpec: StringifiedPatternSpec = {
             ...submittedPatternSpec,
@@ -25,11 +32,7 @@ const handlePatternSpecSubmit: PatternSpecEventHandler =
         }
 
         try {
-            const patternSpec: PatternSpec = {
-                ...patterns[patternId].spec,
-                ...destringifyPatternSpec(updatedPatternSpec),
-            }
-            stopThreads(threads)
+            validateValueByThrowingIfUnparsable(patternSpecValue)
 
             const updatedUnsubmittedInputs: StringifiedPatternSpecInputStates = {
                 ...unsubmittedPatternSpecInputs,
@@ -41,11 +44,13 @@ const handlePatternSpecSubmit: PatternSpecEventHandler =
                 [ patternSpecKey ]: true,
             }
 
-            dispatch({ type: ActionType.SET_SUBMITTED_PATTERN_SPEC, data: updatedPatternSpec })
-            dispatch({ type: ActionType.SET_UNSUBMITTED_PATTERN_SPEC_INPUTS, data: updatedUnsubmittedInputs })
-            dispatch({ type: ActionType.SET_DISABLED_PATTERN_SPEC_BUTTONS, data: updatedDisabledButtons })
-
-            await recompileAndRestart({ patternSpec, dispatch, patternId })
+            // tslint:disable-next-line:no-unsafe-any
+            const batchedAction: BatchAction = batchActions([
+                { type: ActionType.SET_SUBMITTED_PATTERN_SPEC, data: updatedPatternSpec },
+                { type: ActionType.SET_UNSUBMITTED_PATTERN_SPEC_INPUTS, data: updatedUnsubmittedInputs },
+                { type: ActionType.SET_DISABLED_PATTERN_SPEC_BUTTONS, data: updatedDisabledButtons },
+            ])
+            dispatch(batchedAction)
         }
         catch (e) {
             const updatedInvalidInputs: StringifiedPatternSpecInputStates = {

@@ -5,6 +5,7 @@ export { handlePatternSpecSubmit } from './handlePatternSpecSubmit'
 export { patternsFilter } from './patternsFilter'
 export { buildPatternSpecEventExtractor } from './buildPatternSpecEventExtractor'
 export { buildPatternSpecEventAttacher } from './buildPatternSpecEventAttacher'
+export { destringifyPatternSpec } from './destringifyPatternSpec'
 
 export {
     PatternChangeEventExtractorParameters,

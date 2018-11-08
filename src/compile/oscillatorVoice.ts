@@ -1,5 +1,5 @@
 import { from } from '../nominal'
-import { context, NoteToPlay, StartNote, StopNote } from '../perform'
+import { context, NoteToPlay, StartNote, StopNote } from '../performance'
 import { Voice } from '../types'
 import { applyScale } from '../utilities'
 import { BASE_GAIN, SILENT_GAIN } from './constants'

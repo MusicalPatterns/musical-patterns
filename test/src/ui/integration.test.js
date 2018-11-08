@@ -1,4 +1,5 @@
 import {clickElement, closeBrowser, fillInElement, findElement, openChrome, openTab} from 'puppet-strings'
+import {sleep} from '../../support'
 
 let browser, tab, page
 
@@ -24,8 +25,9 @@ const elementValue = selector => page.evaluate(selector => document.querySelecto
 const elementInnerText = selector => page.evaluate(selector => document.querySelector(selector).innerText, selector)
 
 describe('ui integration', () => {
-    beforeEach(async () => {
+    beforeEach(async done => {
         await selectAnExamplePattern()
+        done()
     })
 
     it('shows a header for the pattern after you select it', async done => {
@@ -309,6 +311,95 @@ describe('ui integration', () => {
                 .toBe('1')
 
             done()
+        })
+    })
+
+    describe('time controls', () => {
+        it('starts off paused', async done => {
+            await sleep(100)
+            let secretTime = parseInt(await elementInnerText('#secret-timer'))
+            await sleep(100)
+            expect(parseInt(await elementInnerText('#secret-timer')))
+                .toBe(secretTime)
+
+            done()
+        })
+
+        it('pauses the music when you click pause after clicking play', async done => {
+            const play = await findElement(tab, '#play')
+            await clickElement(play)
+
+            await sleep(100)
+
+            const pause = await findElement(tab, '#pause')
+            await clickElement(pause)
+
+            const secretTime = parseInt(await elementInnerText('#secret-timer'))
+            await sleep(100)
+            expect(parseInt(await elementInnerText('#secret-timer')))
+                .toBe(secretTime)
+
+            done()
+        })
+
+        describe('after pressing play', () => {
+            beforeEach(async done => {
+                const play = await findElement(tab, '#play')
+                await clickElement(play)
+                done()
+            })
+
+            afterEach(async done => {
+                const pause = await findElement(tab, '#pause')
+                await clickElement(pause)
+                done()
+            })
+
+            it('begins incrementing the time', async done => {
+                const secretTime = parseInt(await elementInnerText('#secret-timer'))
+                await sleep(100)
+                expect(parseInt(await elementInnerText('#secret-timer')))
+                    .toBeGreaterThan(secretTime)
+
+                done()
+            })
+
+            it('resets the time to the beginning but keeps playing when you select a new song', async done => {
+                await sleep(1000)
+                const secretTime = parseInt(await elementInnerText('#secret-timer'))
+
+                await selectAnExamplePattern()
+                await sleep(100)
+
+                let secretTimeAfterResetting = parseInt(await elementInnerText('#secret-timer'))
+                expect(secretTimeAfterResetting)
+                    .toBeLessThan(secretTime)
+                await sleep(100)
+                expect(parseInt(await elementInnerText('#secret-timer')))
+                    .toBeGreaterThan(secretTimeAfterResetting)
+
+                done()
+            })
+
+            it('resets the time to the beginning but keeps playing when you select new pattern spec', async done => {
+                await sleep(1000)
+                const secretTime = parseInt(await elementInnerText('#secret-timer'))
+
+                const input = await findElement(tab, 'input#patternPitchScalar')
+                await fillInElement(input, '2')
+                await clickElement(input)
+                await page.keyboard.press('Enter')
+                await sleep(100)
+
+                let secretTimeAfterResetting = parseInt(await elementInnerText('#secret-timer'))
+                expect(secretTimeAfterResetting)
+                    .toBeLessThan(secretTime)
+                await sleep(100)
+                expect(parseInt(await elementInnerText('#secret-timer')))
+                    .toBeGreaterThan(secretTimeAfterResetting)
+
+                done()
+            })
         })
     })
 })

@@ -1,21 +1,22 @@
 export {
+    Action,
     ImmutableRootState,
     RootStateKeys,
 } from './types'
 export {
-    Ui,
+    PatternSpecState,
     StringifiedPatternSpec,
-    ImmutableUi,
+    ImmutablePatternSpecState,
     StringifiedPatternSpecEntry,
     StringifiedPatternSpecInputStates,
-    UiStateKeys,
-} from './ui'
+    PatternSpecStateKeys,
+} from './patternSpec'
 export {
-    ImmutableThreads,
-} from './threads'
+    PerformanceState,
+    ImmutablePerformanceState,
+    PerformanceStateKeys,
+} from './performance'
 export {
     ActionType,
 } from './actions'
-export {
-    rootReducer,
-} from './rootReducer'
+export { store } from './store'

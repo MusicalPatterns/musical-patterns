@@ -1,27 +1,44 @@
 import { Map } from 'immutable'
 import { PatternId } from '../../patterns'
+import { Time } from '../nominal'
+import { Thread } from '../types'
 import { Maybe } from '../utilities'
-import { ImmutableThreads } from './threads'
-import { ImmutableUi, StringifiedPatternSpec, StringifiedPatternSpecInputStates } from './ui'
+import { PatternIdStateAction } from './patternId'
+import {
+    ImmutablePatternSpecState,
+    PatternSpecStateAction,
+    StringifiedPatternSpec,
+    StringifiedPatternSpecInputStates,
+} from './patternSpec'
+import { ImmutablePerformanceState, PerformanceStateAction } from './performance'
+
+type Action = PatternIdStateAction |
+    PerformanceStateAction |
+    PatternSpecStateAction
 
 enum RootStateKeys {
     PATTERN_ID = 'patternId',
-    THREADS = 'threads',
-    UI = 'ui',
+    PATTERN_SPEC = 'patternSpec',
+    PERFORMANCE = 'performance',
 }
 
 interface RootState {
     [ RootStateKeys.PATTERN_ID ]: Maybe<PatternId>,
-    [ RootStateKeys.THREADS ]: ImmutableThreads,
-    [ RootStateKeys.UI ]: ImmutableUi,
+    [ RootStateKeys.PERFORMANCE ]: ImmutablePerformanceState,
+    [ RootStateKeys.PATTERN_SPEC ]: ImmutablePatternSpecState,
 }
 
 type ImmutableRootState = TypedMap<RootState>
 
 type AllowedValue =
     undefined |
-    ImmutableThreads |
-    ImmutableUi |
+    boolean |
+    string |
+    Time |
+    Worker |
+    Thread[] |
+    ImmutablePatternSpecState |
+    ImmutablePerformanceState |
     Maybe<PatternId> |
     StringifiedPatternSpecInputStates |
     StringifiedPatternSpec
@@ -43,4 +60,5 @@ export {
     TypedMap,
     MapTypeAllowedData,
     RootStateKeys,
+    Action,
 }

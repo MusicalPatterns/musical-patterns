@@ -7,7 +7,7 @@ type StringifiedPatternSpecInputStates = DictionaryOf<boolean>
 
 type StringifiedPatternSpecEntry = [ string, string ]
 
-enum UiStateKeys {
+enum PatternSpecStateKeys {
     DISABLED_PATTERN_SPEC_BUTTONS = 'disabledPatternSpecButtons',
     DISPLAYED_PATTERN_SPEC = 'displayedPatternSpec',
     INVALID_PATTERN_SPEC_INPUTS = 'invalidPatternSpecInputs',
@@ -15,17 +15,17 @@ enum UiStateKeys {
     UNSUBMITTED_PATTERN_SPEC_INPUTS = 'unsubmittedPatternSpecInputs',
 }
 
-interface Ui {
-    [ UiStateKeys.DISABLED_PATTERN_SPEC_BUTTONS ]: StringifiedPatternSpecInputStates,
-    [ UiStateKeys.DISPLAYED_PATTERN_SPEC ]: StringifiedPatternSpec,
-    [ UiStateKeys.INVALID_PATTERN_SPEC_INPUTS ]: StringifiedPatternSpecInputStates,
-    [ UiStateKeys.SUBMITTED_PATTERN_SPEC ]: StringifiedPatternSpec,
-    [ UiStateKeys.UNSUBMITTED_PATTERN_SPEC_INPUTS ]: StringifiedPatternSpecInputStates,
+interface PatternSpecState {
+    [ PatternSpecStateKeys.DISABLED_PATTERN_SPEC_BUTTONS ]: StringifiedPatternSpecInputStates,
+    [ PatternSpecStateKeys.DISPLAYED_PATTERN_SPEC ]: StringifiedPatternSpec,
+    [ PatternSpecStateKeys.INVALID_PATTERN_SPEC_INPUTS ]: StringifiedPatternSpecInputStates,
+    [ PatternSpecStateKeys.SUBMITTED_PATTERN_SPEC ]: StringifiedPatternSpec,
+    [ PatternSpecStateKeys.UNSUBMITTED_PATTERN_SPEC_INPUTS ]: StringifiedPatternSpecInputStates,
 }
 
-type ImmutableUi = TypedMap<Ui>
+type ImmutablePatternSpecState = TypedMap<PatternSpecState>
 
-enum UiActionType {
+enum PatternSpecStateActionType {
     SET_DISABLED_PATTERN_SPEC_BUTTONS = 'set disabled pattern spec buttons',
     SET_SUBMITTED_PATTERN_SPEC = 'set submitted pattern spec',
     SET_DISPLAYED_PATTERN_SPEC = 'set displayed pattern spec',
@@ -35,30 +35,30 @@ enum UiActionType {
 
 interface SetDisabledSongSpecButtons {
     data: StringifiedPatternSpecInputStates,
-    type: UiActionType.SET_DISABLED_PATTERN_SPEC_BUTTONS,
+    type: PatternSpecStateActionType.SET_DISABLED_PATTERN_SPEC_BUTTONS,
 }
 
 interface SetSubmittedPatternSpec {
     data: StringifiedPatternSpec,
-    type: UiActionType.SET_SUBMITTED_PATTERN_SPEC,
+    type: PatternSpecStateActionType.SET_SUBMITTED_PATTERN_SPEC,
 }
 
 interface SetDisplayedPatternSpec {
     data: StringifiedPatternSpec,
-    type: UiActionType.SET_DISPLAYED_PATTERN_SPEC,
+    type: PatternSpecStateActionType.SET_DISPLAYED_PATTERN_SPEC,
 }
 
 interface SetInvalidPatternSpecInputs {
     data: StringifiedPatternSpecInputStates,
-    type: UiActionType.SET_INVALID_PATTERN_SPEC_INPUTS,
+    type: PatternSpecStateActionType.SET_INVALID_PATTERN_SPEC_INPUTS,
 }
 
 interface SetUnsubmittedPatternSpecInputs {
     data: StringifiedPatternSpecInputStates,
-    type: UiActionType.SET_UNSUBMITTED_PATTERN_SPEC_INPUTS,
+    type: PatternSpecStateActionType.SET_UNSUBMITTED_PATTERN_SPEC_INPUTS,
 }
 
-type UiAction =
+type PatternSpecStateAction =
     SetDisabledSongSpecButtons |
     SetSubmittedPatternSpec |
     SetDisplayedPatternSpec |
@@ -69,9 +69,9 @@ export {
     StringifiedPatternSpecInputStates,
     StringifiedPatternSpec,
     StringifiedPatternSpecEntry,
-    Ui,
-    ImmutableUi,
-    UiStateKeys,
-    UiAction,
-    UiActionType,
+    PatternSpecState,
+    ImmutablePatternSpecState,
+    PatternSpecStateKeys,
+    PatternSpecStateAction,
+    PatternSpecStateActionType,
 }

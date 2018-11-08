@@ -1,4 +1,5 @@
-import { ActionType, StringifiedPatternSpec, StringifiedPatternSpecInputStates, Ui } from '../state'
+import { BatchAction, batchActions } from 'redux-batched-actions'
+import { ActionType, PatternSpecState, StringifiedPatternSpec, StringifiedPatternSpecInputStates } from '../state'
 import { PatternSpecEventHandler, PatternSpecEventHandlerParameters } from './types'
 
 const handlePatternSpecChange: PatternSpecEventHandler =
@@ -7,14 +8,14 @@ const handlePatternSpecChange: PatternSpecEventHandler =
             dispatch,
             patternSpecKey,
             patternSpecValue,
-            ui,
+            patternSpecState,
         }: PatternSpecEventHandlerParameters = patternSpecHandlerParameters
         const {
             disabledPatternSpecButtons,
             displayedPatternSpec,
             invalidPatternSpecInputs,
             submittedPatternSpec,
-        }: Ui = ui.toJS()
+        }: PatternSpecState = patternSpecState.toJS()
 
         const updatedStringifiedPatternSpec: StringifiedPatternSpec = {
             ...displayedPatternSpec,
@@ -32,9 +33,13 @@ const handlePatternSpecChange: PatternSpecEventHandler =
             [ patternSpecKey ]: currentPatternSpecValue === patternSpecValue,
         }
 
-        dispatch({ type: ActionType.SET_DISPLAYED_PATTERN_SPEC, data: updatedStringifiedPatternSpec })
-        dispatch({ type: ActionType.SET_INVALID_PATTERN_SPEC_INPUTS, data: updatedInvalidInputs })
-        dispatch({ type: ActionType.SET_DISABLED_PATTERN_SPEC_BUTTONS, data: updatedDisabledButtons })
+        // tslint:disable-next-line:no-unsafe-any
+        const batchedAction: BatchAction = batchActions([
+            { type: ActionType.SET_DISPLAYED_PATTERN_SPEC, data: updatedStringifiedPatternSpec },
+            { type: ActionType.SET_INVALID_PATTERN_SPEC_INPUTS, data: updatedInvalidInputs },
+            { type: ActionType.SET_DISABLED_PATTERN_SPEC_BUTTONS, data: updatedDisabledButtons },
+        ])
+        dispatch(batchedAction)
     }
 
 export {

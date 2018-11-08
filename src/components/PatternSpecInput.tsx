@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { Ui } from '../state'
-import { buildPatternSpecEventAttacher, PatternSpecEventAttacher, PatternSpecEventParameters } from '../ui'
+import { buildPatternSpecEventAttacher, PatternSpecEventAttacher, PatternSpecEventParameters } from '../patternSpec'
+import { PatternSpecState } from '../state'
 import { unCamelCase } from '../utilities'
 import { PatternSpecInputProps } from './types'
 
@@ -8,13 +8,11 @@ const PatternSpecInput: (patternSpecInputProps: PatternSpecInputProps) => JSX.El
     (patternSpecInputProps: PatternSpecInputProps): JSX.Element => {
         const { patternSpecKey, patternSpecInputsProps } = patternSpecInputProps
         const {
-            patternId,
             handlePatternSpecChange,
             handlePatternSpecKeyboardSubmit,
             handlePatternSpecButtonSubmit,
             handlePatternSpecBlur,
-            threads,
-            ui,
+            patternSpecState,
         } = patternSpecInputsProps
 
         const {
@@ -23,7 +21,7 @@ const PatternSpecInput: (patternSpecInputProps: PatternSpecInputProps) => JSX.El
             disabledPatternSpecButtons,
             unsubmittedPatternSpecInputs,
             submittedPatternSpec,
-        }: Ui = ui.toJS()
+        }: PatternSpecState = patternSpecState.toJS()
 
         const patternSpecValue: string = displayedPatternSpec[ patternSpecKey ]
         const invalid: boolean = invalidPatternSpecInputs[ patternSpecKey ]
@@ -31,7 +29,7 @@ const PatternSpecInput: (patternSpecInputProps: PatternSpecInputProps) => JSX.El
         const disabled: boolean = disabledPatternSpecButtons[ patternSpecKey ]
         const submittedPatternSpecValue: string = submittedPatternSpec[ patternSpecKey ]
 
-        const patternSpecEventParameters: PatternSpecEventParameters = { patternSpecKey, ui, patternId, threads }
+        const patternSpecEventParameters: PatternSpecEventParameters = { patternSpecKey, patternSpecState }
 
         const onChange: PatternSpecEventAttacher = buildPatternSpecEventAttacher({
             patternSpecEventExtractor: handlePatternSpecChange,

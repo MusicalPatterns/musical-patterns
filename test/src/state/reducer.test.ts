@@ -1,25 +1,30 @@
 // tslint:disable:no-null-keyword no-unsafe-any
 
-import { fromJS } from 'immutable'
-import { ActionType, ImmutableRootState, immutablize, rootReducer, ThreadsAction } from '../../../src/indexForTest'
+import { ActionType, ImmutableRootState, immutablize, PerformanceStateAction, rootReducer, to } from '../../../src/indexForTest'
 import { mockThread } from '../../support'
 
 describe('reducer', () => {
     it('sets threads', async (done: DoneFn) => {
         const state: ImmutableRootState = immutablize({
             patternId: null,
-            threads: fromJS([]),
-            ui: immutablize({
+            patternSpec: immutablize({
                 disabledPatternSpecButtons: {},
                 displayedPatternSpec: {},
                 invalidPatternSpecInputs: {},
                 submittedPatternSpec: {},
                 unsubmittedPatternSpecInputs: {},
             }),
+            performance: immutablize({
+                atomicTime: to.Time(0),
+                clock: undefined,
+                paused: false,
+                rawTime: to.Time(0),
+                threads: [],
+            }),
         })
 
-        const action: ThreadsAction = {
-            data: fromJS([ mockThread ]),
+        const action: PerformanceStateAction = {
+            data: [ mockThread ],
             type: ActionType.SET_THREADS,
         }
 
@@ -28,13 +33,19 @@ describe('reducer', () => {
 
         const expectedState: ImmutableRootState = immutablize({
             patternId: null,
-            threads: fromJS([ mockThread ]),
-            ui: immutablize({
+            patternSpec: immutablize({
                 disabledPatternSpecButtons: {},
                 displayedPatternSpec: {},
                 invalidPatternSpecInputs: {},
                 submittedPatternSpec: {},
                 unsubmittedPatternSpecInputs: {},
+            }),
+            performance: immutablize({
+                atomicTime: to.Time(0),
+                clock: undefined,
+                paused: false,
+                rawTime: to.Time(0),
+                threads: [ mockThread ],
             }),
         })
         expect(newState.toJS())

@@ -1,9 +1,9 @@
-import { PatternIdActionType } from './patternId'
-import { ThreadsActionType } from './threads'
-import { UiActionType } from './ui'
+import { PatternIdStateActionType } from './patternId'
+import { PatternSpecStateActionType } from './patternSpec'
+import { PerformanceStateActionType } from './performance'
 
 // tslint:disable-next-line:variable-name typedef
-const ActionType = { ...PatternIdActionType, ...ThreadsActionType, ...UiActionType }
+const ActionType = { ...PatternIdStateActionType, ...PatternSpecStateActionType, ...PerformanceStateActionType }
 
 export {
     ActionType,

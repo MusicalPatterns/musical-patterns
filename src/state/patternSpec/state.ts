@@ -1,7 +1,7 @@
 import { immutablize } from '../immutablize'
-import { ImmutableUi } from './types'
+import { ImmutablePatternSpecState } from './types'
 
-const initialUi: ImmutableUi = immutablize({
+const initialPatternSpecState: ImmutablePatternSpecState = immutablize({
     disabledPatternSpecButtons: {},
     displayedPatternSpec: {},
     invalidPatternSpecInputs: {},
@@ -10,5 +10,5 @@ const initialUi: ImmutableUi = immutablize({
 })
 
 export {
-    initialUi,
+    initialPatternSpecState,
 }

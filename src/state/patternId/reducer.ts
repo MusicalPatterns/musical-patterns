@@ -1,17 +1,17 @@
 import { PatternId } from '../../../patterns'
 import { Maybe } from '../../utilities'
 import { initialPatternId } from './state'
-import { PatternIdAction, PatternIdActionType } from './types'
+import { PatternIdStateAction, PatternIdStateActionType } from './types'
 
-const patternIdReducer: (patternId: Maybe<PatternId>, action: PatternIdAction) => Maybe<PatternId> =
-    (patternId: Maybe<PatternId> = initialPatternId, action: PatternIdAction): Maybe<PatternId> => {
+const patternIdReducer: (patternIdState: Maybe<PatternId>, action: PatternIdStateAction) => Maybe<PatternId> =
+    (patternIdState: Maybe<PatternId> = initialPatternId, action: PatternIdStateAction): Maybe<PatternId> => {
         switch (action.type) {
-            case PatternIdActionType.SET_PATTERN_ID: {
+            case PatternIdStateActionType.SET_PATTERN_ID: {
                 return action.data
             }
 
             default: {
-                return patternId
+                return patternIdState
             }
         }
     }

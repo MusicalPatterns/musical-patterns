@@ -4,14 +4,14 @@ const requestAnimationFrame: any = require('raf')
 
 const worker: Worker = self as any
 
-let initialTimestamp: number = 0
+let previousTimestamp: number
 
 const mainLoop: (timestamp: number) => void =
     (timestamp: number): void => {
-        if (!initialTimestamp) {
-            initialTimestamp = timestamp
+        if (previousTimestamp) {
+            worker.postMessage(timestamp - previousTimestamp)
         }
-        worker.postMessage(timestamp - initialTimestamp)
+        previousTimestamp = timestamp
         requestAnimationFrame(mainLoop)
     }
 

@@ -1,5 +1,5 @@
 // tslint:disable:no-reaching-imports
 
 export {
-    ThreadsAction,
+    PerformanceStateAction,
 } from './types'

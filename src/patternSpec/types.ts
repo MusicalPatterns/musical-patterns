@@ -1,19 +1,17 @@
 import * as React from 'react'
 import { Dispatch } from 'redux'
-import { Pattern, PatternId, Patterns, PatternSpec } from '../../patterns'
-import { ImmutableThreads, ImmutableUi } from '../state'
+import { Pattern, PatternId, Patterns } from '../../patterns'
+import { ImmutablePatternSpecState } from '../state'
 
 interface PatternChangeEventHandlerParameters {
     dispatch: Dispatch,
     patternId: PatternId,
-    threads: ImmutableThreads,
 }
 
 type PatternChangeEventHandler = (parameters: PatternChangeEventHandlerParameters) => Promise<void>
 
 interface PatternChangeEventExtractorParameters {
     event: React.SyntheticEvent,
-    threads: ImmutableThreads,
 }
 
 type PatternChangeEventExtractor = (parameters: PatternChangeEventExtractorParameters) => void
@@ -25,19 +23,9 @@ type PatternsFilter = (patterns: Patterns) => PartialPatterns
 type PatternSpecEvent = React.SyntheticEvent | React.KeyboardEvent
 
 interface PatternSpecEventParameters {
-    patternId: PatternId,
     patternSpecKey: string,
-    threads: ImmutableThreads,
-    ui: ImmutableUi,
+    patternSpecState: ImmutablePatternSpecState,
 }
-
-interface RecompileAndRestartParameters {
-    dispatch: Dispatch,
-    patternId: PatternId,
-    patternSpec: PatternSpec,
-}
-
-type RecompileAndRestart = (recompileAndRestartParameters: RecompileAndRestartParameters) => Promise<void>
 
 interface PatternSpecEventHandlerParameters extends PatternSpecEventParameters {
     dispatch: Dispatch,
@@ -78,8 +66,6 @@ export {
     PatternChangeEventHandlerParameters,
     PartialPatterns,
     PatternsFilter,
-    RecompileAndRestart,
-    RecompileAndRestartParameters,
     PatternSpecEvent,
     PatternSpecEventParameters,
     PatternSpecEventHandler,

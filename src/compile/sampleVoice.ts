@@ -1,5 +1,5 @@
 import { from, Scalar, to } from '../nominal'
-import { buildSampleData, context, NoteToPlay, SampleDatas, samples, StartNote, StopNote } from '../perform'
+import { buildSampleData, context, NoteToPlay, SampleDatas, samples, StartNote, StopNote } from '../performance'
 import { Voice } from '../types'
 import { applyScale, centsToPitch } from '../utilities'
 import { BASE_SAMPLE_GAIN, STANDARDIZED_SAMPLE_PITCH_OF_C5 } from './constants'

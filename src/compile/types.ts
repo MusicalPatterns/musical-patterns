@@ -1,6 +1,5 @@
-import { PatternMaterial, PatternSpec } from '../../patterns'
 import { Frequency, Index, Offset, Scalar, Time } from '../nominal'
-import { OscillatorName, SampleName } from '../perform'
+import { OscillatorName, SampleName } from '../performance'
 import { Scale, VoiceType } from '../types'
 import { DictionaryOf } from '../utilities'
 
@@ -24,11 +23,6 @@ interface Entity {
 type BuildEntitiesFunction = (patternSpec?: any) => Entity[]
 // tslint:disable-next-line:no-any
 type BuildScalesFunction = (patternSpec?: any) => Scale[]
-
-interface CompilePatternParameters {
-    patternMaterial: PatternMaterial,
-    patternSpec: PatternSpec,
-}
 
 interface CompileThreadParameters {
     entity: Entity,
@@ -80,7 +74,6 @@ interface CompileSampleVoiceParameters {
 export {
     Entity,
     TimeType,
-    CompilePatternParameters,
     CompileThreadParameters,
     CompileThreadsParameters,
     BuildEntitiesFunction,

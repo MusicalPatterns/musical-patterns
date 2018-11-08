@@ -1,13 +1,13 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
 import { Dispatch } from 'redux'
-import { ImmutableRootState, RootStateKeys, StringifiedPatternSpec, UiStateKeys } from '../state'
 import {
     buildPatternSpecEventExtractor,
     handlePatternSpecBlur,
     handlePatternSpecChange,
     handlePatternSpecSubmit,
-} from '../ui'
+} from '../patternSpec'
+import { ImmutableRootState, PatternSpecStateKeys, RootStateKeys, StringifiedPatternSpec } from '../state'
 import PatternSpecInput from './PatternSpecInput'
 import {
     PatternSpecInputProps,
@@ -17,11 +17,9 @@ import {
 } from './types'
 
 const mapStateToProps: (state: ImmutableRootState) => PatternSpecInputsPropsFromState =
-    (state: ImmutableRootState): PatternSpecInputsPropsFromState =>
-        ({
-            threads: state.get(RootStateKeys.THREADS),
-            ui: state.get(RootStateKeys.UI),
-        })
+    (state: ImmutableRootState): PatternSpecInputsPropsFromState => ({
+        patternSpecState: state.get(RootStateKeys.PATTERN_SPEC),
+    })
 
 const mapDispatchToProps: (dispatch: Dispatch) => PatternSpecInputsPropsFromDispatch =
     (dispatch: Dispatch): PatternSpecInputsPropsFromDispatch => ({
@@ -46,9 +44,9 @@ const mapDispatchToProps: (dispatch: Dispatch) => PatternSpecInputsPropsFromDisp
 
 const PatternSpecInputs: (patternSpecInputsProps: PatternSpecInputsProps) => JSX.Element =
     (patternSpecInputsProps: PatternSpecInputsProps): JSX.Element => {
-        const { ui }: PatternSpecInputsProps = patternSpecInputsProps
-        const displayedPatternSpec: StringifiedPatternSpec = ui
-            .get(UiStateKeys.DISPLAYED_PATTERN_SPEC)
+        const { patternSpecState }: PatternSpecInputsProps = patternSpecInputsProps
+        const displayedPatternSpec: StringifiedPatternSpec = patternSpecState
+            .get(PatternSpecStateKeys.DISPLAYED_PATTERN_SPEC)
         const patternSpecInputs: JSX.Element[] = Object.keys(displayedPatternSpec)
             .sort()
             .map(

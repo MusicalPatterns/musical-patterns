@@ -2,32 +2,31 @@ import * as React from 'react'
 import { connect } from 'react-redux'
 import { Dispatch } from 'redux'
 import { Pattern, PatternId, patterns } from '../../patterns'
-import { ImmutableRootState, RootStateKeys } from '../state'
-import { handlePatternChange, PartialPatterns, PatternChangeEventExtractorParameters, patternsFilter } from '../ui'
-import { PatternListProps, PatternListPropsFromDispatch, PatternListPropsFromState } from './types'
+import {
+    handlePatternChange,
+    PartialPatterns,
+    PatternChangeEventExtractorParameters,
+    patternsFilter,
+} from '../patternSpec'
+import { PatternListProps } from './types'
 
-const mapStateToProps: (state: ImmutableRootState) => PatternListPropsFromState =
-    (state: ImmutableRootState): PatternListPropsFromState => ({
-        threads: state.get(RootStateKeys.THREADS),
-    })
-
-const mapDispatchToProps: (dispatch: Dispatch) => PatternListPropsFromDispatch =
-    (dispatch: Dispatch): PatternListPropsFromDispatch => ({
-        handlePatternChangeEvent: async ({ event, threads }: PatternChangeEventExtractorParameters): Promise<void> => {
+const mapDispatchToProps: (dispatch: Dispatch) => PatternListProps =
+    (dispatch: Dispatch): PatternListProps => ({
+        handlePatternChangeEvent: async ({ event }: PatternChangeEventExtractorParameters): Promise<void> => {
             const target: HTMLLIElement = event.target as HTMLLIElement
             const patternId: PatternId = target.id as PatternId
 
-            await handlePatternChange({ dispatch, patternId, threads })
+            await handlePatternChange({ dispatch, patternId })
         },
     })
 
 const PatternList: (PatternListProps: PatternListProps) => JSX.Element =
-    ({ handlePatternChangeEvent, threads }: PatternListProps): JSX.Element => {
+    ({ handlePatternChangeEvent }: PatternListProps): JSX.Element => {
         const filteredPatterns: PartialPatterns = patternsFilter(patterns)
 
         const onClick: (event: React.SyntheticEvent) => void =
             (event: React.SyntheticEvent): void => {
-                handlePatternChangeEvent({ event, threads })
+                handlePatternChangeEvent({ event })
             }
 
         const options: JSX.Element[] = Object.entries(filteredPatterns)
@@ -51,4 +50,4 @@ const PatternList: (PatternListProps: PatternListProps) => JSX.Element =
         )
     }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PatternList)
+export default connect(undefined, mapDispatchToProps)(PatternList)

@@ -1,18 +1,18 @@
 import { PatternId } from '../../../patterns'
 
-enum PatternIdActionType {
+enum PatternIdStateActionType {
     SET_PATTERN_ID = 'SET_PATTERN_ID',
 }
 
 interface SetPatternId {
     data: PatternId,
-    type: PatternIdActionType.SET_PATTERN_ID,
+    type: PatternIdStateActionType.SET_PATTERN_ID,
 }
 
-type PatternIdAction =
+type PatternIdStateAction =
     SetPatternId
 
 export {
-    PatternIdAction,
-    PatternIdActionType,
+    PatternIdStateAction,
+    PatternIdStateActionType,
 }

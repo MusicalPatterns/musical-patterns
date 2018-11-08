@@ -42,7 +42,7 @@ export {
 export {
     OscillatorName,
     SampleName,
-} from './perform'
+} from './performance'
 export {
     EVEN,
     FULL_GAIN,

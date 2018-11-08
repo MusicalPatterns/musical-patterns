@@ -1,4 +1,4 @@
-import { ActionType, StringifiedPatternSpecInputStates, Ui } from '../state'
+import { ActionType, PatternSpecState, StringifiedPatternSpecInputStates } from '../state'
 import { PatternSpecEventHandler, PatternSpecEventHandlerParameters } from './types'
 
 const handlePatternSpecBlur: PatternSpecEventHandler =
@@ -7,9 +7,9 @@ const handlePatternSpecBlur: PatternSpecEventHandler =
             patternSpecKey,
             patternSpecValue,
             dispatch,
-            ui,
+            patternSpecState,
         }: PatternSpecEventHandlerParameters = patternSpecHandlerParameters
-        const { submittedPatternSpec, unsubmittedPatternSpecInputs }: Ui = ui.toJS()
+        const { submittedPatternSpec, unsubmittedPatternSpecInputs }: PatternSpecState = patternSpecState.toJS()
         const currentPatternSpecValue: string = submittedPatternSpec[ patternSpecKey ]
 
         const updatedUnsubmittedInputs: StringifiedPatternSpecInputStates = {
