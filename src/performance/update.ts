@@ -15,7 +15,6 @@ const update: (thread: Thread, rawTime: Time, atomicTime: Time) => void =
         }
 
         if (from.Index(thread.noteIndex) === thread.notes.length) {
-            // console.log('loop')
             thread.noteIndex = to.Index(0)
         }
 
