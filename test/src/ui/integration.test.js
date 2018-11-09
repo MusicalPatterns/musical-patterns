@@ -1,6 +1,8 @@
 import {clickElement, closeBrowser, fillInElement, findElement, openChrome, openTab} from 'puppet-strings'
 import {sleep} from '../../support'
 
+jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000
+
 let browser, tab, page
 
 const selectAnExamplePattern = async () => {
