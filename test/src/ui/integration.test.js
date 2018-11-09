@@ -1,6 +1,8 @@
 import {clickElement, closeBrowser, fillInElement, findElement, openChrome, openTab} from 'puppet-strings'
 import {sleep} from '../../support'
 
+let browser, tab, page
+
 const selectAnExamplePattern = async () => {
     const exampleSong = await findElement(tab, 'li#STEPWISE')
     await clickElement(exampleSong)
@@ -13,7 +15,6 @@ const elementValue = selector => page.evaluate(selector => document.querySelecto
 const elementInnerText = selector => page.evaluate(selector => document.querySelector(selector).innerText, selector)
 
 describe('ui integration', () => {
-    let browser, tab, page
     beforeAll(async () => {
         browser = await openChrome()
         tab = await openTab(browser, 'http://localhost:8080')
