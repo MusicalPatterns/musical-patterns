@@ -10,7 +10,7 @@ function pull_if_needed {
 
 export -f pull_if_needed
 
-pull_if_needed
+git pull -r
 npm ci || true
 
 git submodule update --init --recursive
