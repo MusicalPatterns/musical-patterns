@@ -1,3 +1,4 @@
+export { applyLogarithm } from './applyLogarithm'
 export { applyCount } from './applyCount'
 export { applyOffset } from './applyOffset'
 export { applyScale } from './applyScale'
@@ -15,6 +16,7 @@ export { repeatCall } from './repeatCall'
 export { scaleFromScalarsAndScalar } from './scaleFromScalarsAndScalar'
 export { logMessageToScreen } from './logMessageToScreen'
 export { unCamelCase } from './unCamelCase'
+export { wrapWithin } from './wrapWithin'
 
 export {
     Maybe,

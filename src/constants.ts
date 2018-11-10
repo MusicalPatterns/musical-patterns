@@ -1,6 +1,6 @@
 // tslint:disable no-magic-numbers
 
-import { Index, Offset, Scalar, to } from './nominal'
+import { Count, Index, Offset, Power, Scalar, to } from './nominal'
 
 const FULL_GAIN: Scalar = to.Scalar(1)
 
@@ -8,6 +8,12 @@ const DEFAULT_SCALAR_FOR_ALMOST_FULL_SUSTAIN: Scalar = to.Scalar(0.9)
 const DEFAULT_OFFSET_FOR_ALMOST_FULL_SUSTAIN: Offset = to.Offset(-0.1)
 
 const EVEN: number = 2
+
+const ONCE: Count = to.Count(1)
+const TWICE: Count = to.Count(2)
+
+const SQUARED: Power = to.Power(2)
+const SQUARE_ROOT: Power = to.Power(1 / 2)
 
 const INITIAL: Index = to.Index(0)
 
@@ -37,4 +43,8 @@ export {
     EVERY_OTHER,
     INCLUSIVE,
     INITIAL,
+    ONCE,
+    TWICE,
+    SQUARED,
+    SQUARE_ROOT,
 }

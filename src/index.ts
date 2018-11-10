@@ -15,6 +15,7 @@ export {
     numbers,
     repeat,
     Maybe,
+    applyLogarithm,
     isCloseTo,
     applyScale,
     absoluteRatio,
@@ -26,6 +27,7 @@ export {
     applyPower,
     offsetFromOneIndexedToZeroIndexed,
     repeatCall,
+    wrapWithin,
 } from './utilities'
 export {
     Base,
@@ -57,6 +59,10 @@ export {
     TRITAVE,
     INITIAL,
     INCLUSIVE,
+    ONCE,
+    TWICE,
+    SQUARED,
+    SQUARE_ROOT,
 } from './constants'
 
 export {
