@@ -8,6 +8,9 @@ Gemfile text eol=lf
 *.erb text eol=lf
 *.jbuilder text eol=lf
 *.yml text eol=lf
+*.ts text eol=lf
+*.jsx text eol=lf
+*.tsx text eol=lf
 
 *.mp3 binary
 *.wav binary
