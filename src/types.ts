@@ -34,6 +34,8 @@ interface Scale extends Adjustable {
 
 type Segment = Part[]
 
+type ContourElement = [ Index, Index ]
+
 export {
     Voice,
     Note,
@@ -41,4 +43,5 @@ export {
     VoiceType,
     Scale,
     Segment,
+    ContourElement,
 }

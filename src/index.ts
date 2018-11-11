@@ -64,9 +64,13 @@ export {
     SQUARED,
     SQUARE_ROOT,
 } from './constants'
+export {
+    unpackContourElement,
+} from './contours'
 
 export {
     VoiceType,
     Scale,
     Segment,
+    ContourElement,
 } from './types'
