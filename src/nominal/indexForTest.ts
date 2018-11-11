@@ -15,4 +15,5 @@ export {
     SumOfIndices,
     Time,
     Index,
+    ContourPiece,
 } from './types'

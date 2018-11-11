@@ -1,9 +1,12 @@
 // tslint:disable:variable-name no-any
 
+import { ContourElement } from '../types'
 import {
     Base,
     Block,
     Cents,
+    ContourPiece,
+    ContourWhole,
     Count,
     Frequency,
     Index,
@@ -56,6 +59,14 @@ const Index: (index: number) => Index =
 const SumOfIndices: (sumOfIndices: number) => SumOfIndices =
     (sumOfIndices: number): SumOfIndices => sumOfIndices as any
 
+const ContourPiece: (contour: Array<number[] | ContourElement>) => ContourPiece =
+    (contour: Array<number[] | ContourElement>): ContourPiece =>
+        contour.map((contourElement: number[] | ContourElement): ContourElement => contourElement as any) as any
+
+const ContourWhole: (contour: Array<number[] | ContourElement>) => ContourWhole =
+    (contour: Array<number[] | ContourElement>): ContourWhole =>
+        contour.map((contourElement: number[] | ContourElement): ContourElement => contourElement as any) as any
+
 export {
     Base,
     Block,
@@ -70,4 +81,6 @@ export {
     Index,
     SumOfScalars,
     SumOfIndices,
+    ContourPiece,
+    ContourWhole,
 }

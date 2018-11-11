@@ -40,6 +40,8 @@ export {
     Count,
     Time,
     Index,
+    ContourPiece,
+    ContourWhole,
 } from './nominal'
 export {
     OscillatorName,
@@ -64,9 +66,7 @@ export {
     SQUARED,
     SQUARE_ROOT,
 } from './constants'
-export {
-    unpackContourElement,
-} from './contours'
+export { unpackContourElement, calculateTotalContourDuration, rest } from './contours'
 
 export {
     VoiceType,

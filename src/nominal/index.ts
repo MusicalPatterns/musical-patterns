@@ -17,4 +17,6 @@ export {
     Semitones,
     Power,
     Count,
+    ContourPiece,
+    ContourWhole,
 } from './types'

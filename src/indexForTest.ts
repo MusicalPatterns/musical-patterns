@@ -36,6 +36,7 @@ export {
     Cents,
     Time,
     from,
+    ContourPiece,
 } from './nominal/indexForTest'
 export {
     ActionType,
@@ -47,6 +48,10 @@ export {
 export {
     App,
 } from './components/indexForTest'
+export {
+    calculateTotalContourDuration,
+} from './contours'
+
 export {
     Thread,
     Scale,

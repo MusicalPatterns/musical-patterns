@@ -1,3 +1,5 @@
+import { ContourElement } from '../types'
+
 interface Cents extends Number {
     _CentsBrand: string,
 }
@@ -49,6 +51,12 @@ interface Power extends Number {
 enum _BlockBrand {}
 type Block = _BlockBrand & Index[]
 
+enum _ContourPieceBrand {}
+type ContourPiece = _ContourPieceBrand & ContourElement[]
+
+enum _ContourWholeBrand {}
+type ContourWhole = _ContourWholeBrand & ContourElement[]
+
 export {
     Base,
     Cents,
@@ -63,4 +71,6 @@ export {
     SumOfIndices,
     SumOfScalars,
     Block,
+    ContourPiece,
+    ContourWhole,
 }
