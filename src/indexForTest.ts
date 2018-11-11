@@ -5,6 +5,7 @@ export {
     NoteSpec,
     Entity,
     compileThread,
+    compileNoteProperty,
     Part,
 } from './compile/indexForTest'
 export {
@@ -33,6 +34,7 @@ export {
     Index,
     to,
     Cents,
+    Time,
     from,
 } from './nominal/indexForTest'
 export {

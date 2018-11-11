@@ -13,5 +13,6 @@ export {
     Cents,
     Count,
     SumOfIndices,
+    Time,
     Index,
 } from './types'

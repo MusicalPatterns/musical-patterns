@@ -1,4 +1,5 @@
 export { compileThread } from './thread'
+export { compileNoteProperty } from './noteProperty'
 export {
     NotePropertySpec,
     NoteSpec,
