@@ -1,6 +1,7 @@
-const wrapWithin: (n: number, within: number) => number =
-    (n: number, within: number): number => {
-        let newN: number = n
+const wrapWithin: <T>(n: T, within: number) => T =
+    <T>(n: T, within: number): T => {
+        // @ts-ignore
+        let newN: number = n as number
 
         while (newN < 0) {
             newN += within
@@ -9,7 +10,8 @@ const wrapWithin: (n: number, within: number) => number =
             newN -= within
         }
 
-        return newN
+        // @ts-ignore
+        return newN as T
     }
 
 export {
