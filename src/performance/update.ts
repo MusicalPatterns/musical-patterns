@@ -1,14 +1,14 @@
 import { TimeType } from '../compile'
 import { from, Time, to } from '../nominal'
 import { Note, Thread } from '../types'
-import { applyOffset, applyScale } from '../utilities'
+import { applyOffset, applyScale, dereference } from '../utilities'
 import { BASE_DURATION } from './constants'
 
 const update: (thread: Thread, rawTime: Time, atomicTime: Time) => void =
     (thread: Thread, rawTime: Time, atomicTime: Time): void => {
         const time: Time = thread.timeType === TimeType.RAW ? rawTime : atomicTime
 
-        const note: Note = thread.notes[ from.Index(thread.noteIndex) ]
+        const note: Note = dereference(thread.notes, thread.noteIndex)
 
         if (time > thread.nextEnd) {
             thread.voice.stopNote()

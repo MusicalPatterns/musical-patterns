@@ -5,6 +5,7 @@ export { repeat } from './repeat'
 export { repeatCall } from './repeatCall'
 export { applyCycle } from './applyCycle'
 export { sequence } from './sequence'
+export { dereference } from './dereference'
 export { centsToPitch, centsToShiftFromOneFrequencyToAnother, pitchToCents } from './cents'
 
 export {

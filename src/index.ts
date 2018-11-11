@@ -28,6 +28,7 @@ export {
     offsetFromOneIndexedToZeroIndexed,
     repeatCall,
     wrapWithin,
+    dereference,
 } from './utilities'
 export {
     Base,

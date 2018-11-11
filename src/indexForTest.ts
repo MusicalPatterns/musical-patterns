@@ -24,6 +24,7 @@ export {
     applyCycle,
     DictionaryOf,
     sequence,
+    dereference,
 } from './utilities/indexForTest'
 export {
     SumOfScalars,
