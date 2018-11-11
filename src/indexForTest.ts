@@ -23,6 +23,7 @@ export {
     repeatCall,
     applyCycle,
     DictionaryOf,
+    sequence,
 } from './utilities/indexForTest'
 export {
     SumOfScalars,

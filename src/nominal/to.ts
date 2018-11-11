@@ -59,13 +59,13 @@ const Index: (index: number) => Index =
 const SumOfIndices: (sumOfIndices: number) => SumOfIndices =
     (sumOfIndices: number): SumOfIndices => sumOfIndices as any
 
-const ContourPiece: (contour: Array<number[] | ContourElement>) => ContourPiece =
-    (contour: Array<number[] | ContourElement>): ContourPiece =>
-        contour.map((contourElement: number[] | ContourElement): ContourElement => contourElement as any) as any
+const ContourPiece: (contourPiece: Array<number[] | ContourElement>) => ContourPiece =
+    (contourPiece: Array<number[] | ContourElement>): ContourPiece =>
+        contourPiece.map((contourElement: number[] | ContourElement): ContourElement => contourElement as any) as any
 
-const ContourWhole: (contour: Array<number[] | ContourElement>) => ContourWhole =
-    (contour: Array<number[] | ContourElement>): ContourWhole =>
-        contour.map((contourElement: number[] | ContourElement): ContourElement => contourElement as any) as any
+const ContourWhole: (contourWhole: Array<number[] | ContourElement>) => ContourWhole =
+    (contourWhole: Array<number[] | ContourElement>): ContourWhole =>
+        contourWhole.map((contourElement: number[] | ContourElement): ContourElement => contourElement as any) as any
 
 export {
     Base,
