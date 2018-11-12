@@ -1,4 +1,4 @@
-import { calculateTotalContourDuration, ContourPiece, from, to } from '../../src/indexForTest'
+import { calculateTotalContourDuration, ContourPiece, to } from '../../src/indexForTest'
 
 describe('calculate total contour duration', () => {
     it('totals the durations of the contour', () => {
@@ -6,7 +6,7 @@ describe('calculate total contour duration', () => {
             [ 1, 3 ], [ 0, 4 ], [ 7, 3 ],
         ])
 
-        expect(from.Index(calculateTotalContourDuration(contour)))
+        expect(calculateTotalContourDuration(contour))
             .toBe(10)
     })
 })

@@ -26,9 +26,14 @@ const buildStandardScales: () => DictionaryOf<Scale> =
                 ),
         }
 
+        const nonScale: Scale = {
+            scalars: [ to.Scalar(1) ],
+        }
+
         return {
             flatDurationsScale,
             harmonicSeriesScale,
+            nonScale,
             octaveSeriesScale,
             subharmonicSeriesScale,
         }
