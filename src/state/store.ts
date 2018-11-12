@@ -1,7 +1,7 @@
 // tslint:disable:no-any no-unsafe-any
 
 import { Map } from 'immutable'
-import { applyMiddleware, createStore, Reducer, Store } from 'redux'
+import { applyMiddleware, compose, createStore, Reducer, Store } from 'redux'
 import { batchDispatchMiddleware, enableBatching } from 'redux-batched-actions'
 import { combineReducers } from 'redux-immutable'
 import { patternIdReducer } from './patternId'
@@ -16,7 +16,14 @@ const rootReducer: Reducer = combineReducers({
     performance: performanceReducer,
 } as any)
 
-const store: Store = createStore(enableBatching(rootReducer), initialState, applyMiddleware(batchDispatchMiddleware))
+// @ts-ignore
+const composeEnhancers: any = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+
+const store: Store = createStore(
+    enableBatching(rootReducer),
+    initialState,
+    composeEnhancers(applyMiddleware(batchDispatchMiddleware)),
+)
 
 export {
     store,
