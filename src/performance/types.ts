@@ -1,8 +1,9 @@
-import { Cents, Frequency, Scalar } from '../nominal'
+import { Cents, Coordinate, Frequency, Scalar } from '../nominal'
 
 interface NoteToPlay {
     frequency: Frequency,
     gain: Scalar,
+    position: Coordinate
 }
 
 type StartNote = (note: NoteToPlay) => void

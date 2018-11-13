@@ -57,6 +57,12 @@ type ContourPiece = _ContourPieceBrand & ContourElement[]
 enum _ContourWholeBrand {}
 type ContourWhole = _ContourWholeBrand & ContourElement[]
 
+interface CoordinateElement extends Number {
+    _CoordinateElementBrand: string,
+}
+
+type Coordinate = CoordinateElement[]
+
 export {
     Base,
     Cents,
@@ -73,4 +79,6 @@ export {
     Block,
     ContourPiece,
     ContourWhole,
+    CoordinateElement,
+    Coordinate,
 }

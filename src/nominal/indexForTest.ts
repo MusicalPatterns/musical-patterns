@@ -16,4 +16,5 @@ export {
     Time,
     Index,
     ContourPiece,
+    Coordinate,
 } from './types'

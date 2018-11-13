@@ -1,5 +1,5 @@
 import { DEFAULT_OFFSET_FOR_ALMOST_FULL_SUSTAIN } from '../constants'
-import { Frequency, Scalar, Time, to } from '../nominal'
+import { Coordinate, CoordinateElement, Frequency, Scalar, Time, to } from '../nominal'
 import { Note } from '../types'
 import { applyOffset } from '../utilities'
 import { compileNoteProperty } from './noteProperty'
@@ -18,11 +18,19 @@ const compilePart: (part: Part, compileNotesOptions: CompileNotesOptions) => Not
                 durationSpec = defaultNotePropertySpec,
                 gainSpec = defaultNotePropertySpec,
                 pitchSpec = defaultNotePropertySpec,
+                positionSpec = defaultNotePropertySpec,
                 sustainSpec = defaultNotePropertySpec,
             } = noteSpec
 
             const duration: Time = compileNoteProperty(durationSpec, { scales }) as Time
             const gain: Scalar = compileNoteProperty(gainSpec, { scales }) as Scalar
+            const position: Coordinate =
+                positionSpec instanceof Array ?
+                positionSpec.map(
+                    (positionElementSpec: NotePropertySpec): CoordinateElement =>
+                        compileNoteProperty(positionElementSpec, { scales }) as CoordinateElement)
+                :
+                [ compileNoteProperty(positionSpec, { scales }) as CoordinateElement ]
             const frequency: Frequency = compileNoteProperty(pitchSpec, { scales }) as Frequency
             const sustainAttempt: Time = compileNoteProperty(sustainSpec, { scales }) as Time
 
@@ -30,7 +38,7 @@ const compilePart: (part: Part, compileNotesOptions: CompileNotesOptions) => Not
                 sustainAttempt :
                 applyOffset(duration, DEFAULT_OFFSET_FOR_ALMOST_FULL_SUSTAIN)
 
-            return { duration, gain, frequency, sustain }
+            return { duration, gain, frequency, position, sustain }
         })
 
 export {

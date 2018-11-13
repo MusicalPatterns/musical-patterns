@@ -1,11 +1,12 @@
 import { Adjustable, Part, TimeType } from './compile'
-import { Frequency, Index, Scalar, Time } from './nominal'
+import { Coordinate, Frequency, Index, Scalar, Time } from './nominal'
 import { StartNote, StopNote } from './performance'
 
 interface Note {
     duration: Time,
     frequency: Frequency,
     gain: Scalar,
+    position: Coordinate,
     sustain: Time,
 }
 
@@ -28,6 +29,11 @@ enum VoiceType {
     SAMPLE = 'sample',
 }
 
+enum SpatializationType {
+    MONO = 'mono',
+    IMMERSIVE = 'immersive',
+}
+
 interface Scale extends Adjustable {
     scalars: Scalar[],
 }
@@ -44,4 +50,5 @@ export {
     Scale,
     Segment,
     ContourElement,
+    SpatializationType,
 }

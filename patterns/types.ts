@@ -1,4 +1,4 @@
-import { BuildEntitiesFunction, BuildScalesFunction, Scalar } from '../src'
+import { Entity, Scalar, Scale } from '../src'
 import { PatternId } from './patternId'
 
 interface PatternMaterial {
@@ -29,10 +29,17 @@ interface Pattern {
 
 type Patterns = {[index in PatternId]: Pattern}
 
+// tslint:disable-next-line:no-any
+type BuildEntitiesFunction = (patternSpec?: any) => Entity[]
+// tslint:disable-next-line:no-any
+type BuildScalesFunction = (patternSpec?: any) => Scale[]
+
 export {
     Pattern,
     Patterns,
     PatternMetadata,
     PatternMaterial,
     PatternSpec,
+    BuildEntitiesFunction,
+    BuildScalesFunction,
 }

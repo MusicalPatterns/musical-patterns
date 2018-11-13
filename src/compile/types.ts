@@ -1,9 +1,10 @@
-import { Frequency, Index, Offset, Scalar, Time } from '../nominal'
+import { Coordinate, CoordinateElement, Frequency, Index, Offset, Scalar, Time } from '../nominal'
 import { OscillatorName, SampleName } from '../performance'
-import { Scale, VoiceType } from '../types'
+import { Scale, SpatializationType, VoiceType } from '../types'
 import { DictionaryOf } from '../utilities'
 
 interface VoiceSpec {
+    spatialization?: SpatializationType,
     timbre: SampleName | OscillatorName,
     voiceType: VoiceType,
 }
@@ -19,11 +20,6 @@ interface Entity {
     voiceSpec?: VoiceSpec,
 }
 
-// tslint:disable-next-line:no-any
-type BuildEntitiesFunction = (patternSpec?: any) => Entity[]
-// tslint:disable-next-line:no-any
-type BuildScalesFunction = (patternSpec?: any) => Scale[]
-
 interface CompileThreadParameters {
     entity: Entity,
     scales: Scale[]
@@ -38,6 +34,7 @@ interface NoteSpec {
     durationSpec?: NotePropertySpec,
     gainSpec?: NotePropertySpec,
     pitchSpec?: NotePropertySpec,
+    positionSpec?: NotePropertySpec | NotePropertySpec[],
     sustainSpec?: NotePropertySpec,
 }
 
@@ -53,7 +50,11 @@ interface NotePropertySpec extends Adjustable {
     scaleIndex?: Index,
 }
 
-type NoteProperty = Time | Scalar | Frequency
+type NoteProperty = Time |
+    Scalar |
+    Frequency |
+    Coordinate |
+    CoordinateElement
 
 interface CompileNotesOptions {
     scales: Scale[],
@@ -64,10 +65,12 @@ type EntityDictionary = DictionaryOf<Entity>
 type PartDictionary = DictionaryOf<Part>
 
 interface CompileOscillatorVoiceParameters {
+    spatialization?: SpatializationType,
     timbre: OscillatorType,
 }
 
 interface CompileSampleVoiceParameters {
+    spatialization?: SpatializationType,
     timbre: SampleName,
 }
 
@@ -76,8 +79,6 @@ export {
     TimeType,
     CompileThreadParameters,
     CompileThreadsParameters,
-    BuildEntitiesFunction,
-    BuildScalesFunction,
     VoiceSpec,
     NoteSpec,
     NotePropertySpec,

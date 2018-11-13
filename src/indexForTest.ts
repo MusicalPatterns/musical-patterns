@@ -39,6 +39,7 @@ export {
     Time,
     from,
     ContourPiece,
+    Coordinate,
 } from './nominal/indexForTest'
 export {
     ActionType,
@@ -53,6 +54,10 @@ export {
 export {
     calculateTotalContourDuration,
 } from './contours'
+export {
+    X_AXIS,
+    Y_AXIS,
+} from './constants'
 
 export {
     Thread,

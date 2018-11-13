@@ -29,6 +29,10 @@ const DEFAULT_PITCH_SCALE_INDEX: Index = to.Index(2)
 
 const INCLUSIVE: Offset = to.Offset(1)
 
+const X_AXIS: Index = to.Index(0)
+const Y_AXIS: Index = to.Index(1)
+const Z_AXIS: Index = to.Index(2)
+
 export {
     DEFAULT_SCALAR_FOR_ALMOST_FULL_SUSTAIN,
     DEFAULT_OFFSET_FOR_ALMOST_FULL_SUSTAIN,
@@ -47,4 +51,7 @@ export {
     TWICE,
     SQUARED,
     SQUARE_ROOT,
+    X_AXIS,
+    Y_AXIS,
+    Z_AXIS,
 }

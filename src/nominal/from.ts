@@ -4,6 +4,7 @@ import {
     Base,
     Block,
     Cents,
+    CoordinateElement,
     Count,
     Frequency,
     Index,
@@ -55,6 +56,9 @@ const Index: (index: Index) => number =
 const SumOfIndices: (sumOfIndices: SumOfIndices) => number =
     (sumOfIndices: SumOfIndices): number => sumOfIndices as any
 
+const CoordinateElement: (coordinateElement: CoordinateElement) => number =
+    (coordinateElement: CoordinateElement): number => coordinateElement as any
+
 export {
     Base,
     Block,
@@ -69,4 +73,5 @@ export {
     Index,
     SumOfIndices,
     SumOfScalars,
+    CoordinateElement,
 }

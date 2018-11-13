@@ -19,4 +19,6 @@ export {
     Count,
     ContourPiece,
     ContourWhole,
+    Coordinate,
+    CoordinateElement,
 } from './types'

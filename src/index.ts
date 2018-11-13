@@ -2,8 +2,6 @@ export {
     Entity,
     TimeType,
     NoteSpec,
-    BuildEntitiesFunction,
-    BuildScalesFunction,
     EntityDictionary,
     PartDictionary,
     Part,
@@ -43,6 +41,8 @@ export {
     Index,
     ContourPiece,
     ContourWhole,
+    Coordinate,
+    CoordinateElement,
 } from './nominal'
 export {
     OscillatorName,
@@ -66,6 +66,7 @@ export {
     TWICE,
     SQUARED,
     SQUARE_ROOT,
+    Z_AXIS,
 } from './constants'
 export { unpackContourElement, calculateTotalContourDuration, rest } from './contours'
 
@@ -74,4 +75,5 @@ export {
     Scale,
     Segment,
     ContourElement,
+    SpatializationType,
 } from './types'

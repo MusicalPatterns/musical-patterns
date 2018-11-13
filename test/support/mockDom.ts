@@ -1,5 +1,8 @@
 // tslint:disable
 
+// @ts-ignore
+require('browser-env')()
+
 declare const global: any
 
 const mockOscillator: any = {
