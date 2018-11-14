@@ -3,6 +3,14 @@
 // @ts-ignore
 require('browser-env')()
 
+global.requestAnimationFrame = function(callback: any) {
+    setTimeout(callback, 0)
+}
+
+global.cancelAnimationFrame = function(id: number) {
+    clearTimeout(id)
+}
+
 declare const global: any
 
 const mockOscillator: any = {
