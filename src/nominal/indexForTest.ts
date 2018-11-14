@@ -10,11 +10,11 @@ export {
     Power,
     SumOfScalars,
     Scalar,
-    Cents,
     Count,
     SumOfIndices,
     Time,
     Index,
     ContourPiece,
     Coordinate,
+    Segment,
 } from './types'

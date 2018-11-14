@@ -1,4 +1,13 @@
-import {clickElement, closeBrowser, fillInElement, findElement, openChrome, openTab} from 'puppet-strings'
+import {
+    clickElement,
+    closeBrowser,
+    evalInTab,
+    fillInElement,
+    findElement,
+    navigate,
+    openChrome,
+    openTab,
+} from 'puppet-strings'
 import {sleep} from '../../support'
 
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000
@@ -10,21 +19,29 @@ const selectAnExamplePattern = async () => {
     await clickElement(exampleSong)
 }
 
-const elementExists = selector => page.evaluate(selector => !!document.querySelector(selector), selector)
+const elementExists = selector => evalInTab(tab, [selector], `[selector] = arguments; return !!document.querySelector(selector)`)
 
-const elementValue = selector => page.evaluate(selector => document.querySelector(selector).value, selector)
+const elementValue = selector => evalInTab(tab, [selector], `[selector] = arguments; return document.querySelector(selector).value`)
 
-const elementInnerText = selector => page.evaluate(selector => document.querySelector(selector).innerText, selector)
+const elementInnerText = selector => evalInTab(tab, [selector], `[selector] = arguments; return document.querySelector(selector).innerText`)
 
 describe('ui integration', () => {
     beforeAll(async () => {
-        browser = await openChrome()
+        browser = await openChrome({headless: false})
         tab = await openTab(browser, 'http://localhost:8080')
         page = tab.puppeteer.page
     })
 
     afterAll(async () => {
         await closeBrowser(browser)
+    })
+
+    it('the time controls do not appear if you have not yet selected a pattern', async done => {
+        await navigate(tab, 'http://localhost:8080')
+        expect(await elementExists('#secret-timer'))
+            .toBeFalsy()
+
+        done()
     })
 
     beforeEach(async done => {

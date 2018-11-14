@@ -1,11 +1,3 @@
-export {
-    Entity,
-    TimeType,
-    NoteSpec,
-    EntityDictionary,
-    PartDictionary,
-    Part,
-} from './compile'
 export { buildStandardScales } from './scales'
 export {
     scaleFromScalarsAndScalar,
@@ -43,11 +35,9 @@ export {
     ContourWhole,
     Coordinate,
     CoordinateElement,
+    Segment,
+    ContourElement,
 } from './nominal'
-export {
-    OscillatorName,
-    SampleName,
-} from './performance'
 export {
     EVEN,
     FULL_GAIN,
@@ -69,11 +59,11 @@ export {
     Z_AXIS,
 } from './constants'
 export { unpackContourElement, calculateTotalContourDuration, rest } from './contours'
-
 export {
-    VoiceType,
+    Entity,
     Scale,
-    Segment,
-    ContourElement,
-    SpatializationType,
-} from './types'
+    NoteSpec,
+    Part,
+    EntityDictionary,
+    PartDictionary,
+} from './compile'

@@ -51,6 +51,9 @@ function walk(ctx) {
 }
 function isSubmodulePath(path) {
     var steps = path.split('/');
+    if (steps[0][0] === '@') {
+        return false;
+    }
     var badSteps = 0;
     steps.forEach(function (step) {
         if (step !== '..' && step !== '.') {

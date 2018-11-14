@@ -1,34 +1,25 @@
 // tslint:disable:variable-name no-any
 
-import { ContourElement } from '../types'
 import {
     Base,
     Block,
-    Cents,
+    ContourElement,
     ContourPiece,
     ContourWhole,
     Coordinate,
     CoordinateElement,
     Count,
-    Frequency,
     Index,
     Offset,
     Power,
     Scalar,
-    Semitones,
     SumOfIndices,
     SumOfScalars,
     Time,
 } from './types'
 
-const Cents: (cents: number) => Cents =
-    (cents: number): Cents => cents as any
 const Count: (count: number) => Count =
     (count: number): Count => count as any
-const Frequency: (frequency: number) => Frequency =
-    (frequency: number): Frequency => frequency as any
-const Semitones: (semitones: number) => Semitones =
-    (semitones: number): Semitones => semitones as any
 const Scalar: (scalar: number) => Scalar =
     (scalar: number): Scalar => scalar as any
 const SumOfScalars: (sumOfScalars: number) => SumOfScalars =
@@ -70,10 +61,7 @@ const Coordinate: (coordinate: Array<number | CoordinateElement>) => Coordinate 
 export {
     Base,
     Block,
-    Cents,
     Count,
-    Frequency,
-    Semitones,
     Scalar,
     Offset,
     Power,

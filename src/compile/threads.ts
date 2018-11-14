@@ -1,4 +1,4 @@
-import { Thread } from '../types'
+import { Thread } from '@musical-patterns/performer'
 import { compileThread } from './thread'
 import { CompileThreadsParameters, Entity } from './types'
 

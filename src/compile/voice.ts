@@ -1,5 +1,4 @@
-import { OscillatorName, SampleName } from '../performance'
-import { SpatializationType, Voice, VoiceType } from '../types'
+import { OscillatorName, SampleName, SpatializationType, Voice, VoiceType } from '@musical-patterns/performer'
 import { compileOscillatorVoice } from './oscillatorVoice'
 import { compileSampleVoice } from './sampleVoice'
 import { VoiceSpec } from './types'

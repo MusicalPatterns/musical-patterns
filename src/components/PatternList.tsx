@@ -50,4 +50,5 @@ const PatternList: (PatternListProps: PatternListProps) => JSX.Element =
         )
     }
 
-export default connect(undefined, mapDispatchToProps)(PatternList)
+// tslint:disable-next-line:no-any
+export default connect(undefined, mapDispatchToProps)(PatternList as any)

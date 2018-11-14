@@ -1,5 +1,4 @@
-import { ContourPiece, to } from './nominal'
-import { ContourElement } from './types'
+import { ContourElement, ContourPiece, to } from './nominal'
 import { DictionaryOf } from './utilities'
 
 const unpackContourElement: (contourElement: ContourElement) => DictionaryOf<number> =

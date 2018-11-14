@@ -1,7 +1,7 @@
+import { Thread } from '@musical-patterns/performer'
 import { Pattern, PatternMaterial } from '../../patterns'
-import { Scale, Thread } from '../types'
 import { compileThreads } from './threads'
-import { Entity } from './types'
+import { Entity, Scale } from './types'
 
 const compilePattern: (compilePatternParameters: Pattern) => Promise<Thread[]> =
     async ({ spec, material }: Pattern): Promise<Thread[]> => {

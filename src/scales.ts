@@ -1,6 +1,6 @@
+import { Scale } from './compile'
 import { OCTAVE } from './constants'
 import { from, Power, Scalar, to } from './nominal'
-import { Scale } from './types'
 import { applyPower, DictionaryOf, numbers, offsetFromOneIndexedToZeroIndexed } from './utilities'
 
 const buildStandardScales: () => DictionaryOf<Scale> =

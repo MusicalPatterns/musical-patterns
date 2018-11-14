@@ -40,7 +40,8 @@ function walk(ctx: Lint.WalkContext<string[]>) {
 
 function isSubmodulePath(path: string): boolean {
 	const steps = path.split('/')
-	let badSteps = 0
+    if (steps[0][0] === '@') return false
+    let badSteps = 0
 	steps.forEach(step => {
 		if (step !== '..' && step !== '.') {
 			badSteps += 1

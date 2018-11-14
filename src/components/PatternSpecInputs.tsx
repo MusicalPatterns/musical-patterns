@@ -67,4 +67,5 @@ const PatternSpecInputs: (patternSpecInputsProps: PatternSpecInputsProps) => JSX
         )
     }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PatternSpecInputs)
+// tslint:disable-next-line:no-any
+export default connect(mapStateToProps, mapDispatchToProps)(PatternSpecInputs as any)

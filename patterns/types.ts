@@ -17,7 +17,7 @@ interface PatternSpec {
     patternPitchScalar: Scalar,
 
     // tslint:disable-next-line:no-any
-    [index: string]: any,
+    [ index: string ]: any,
 }
 
 interface Pattern {
@@ -27,7 +27,7 @@ interface Pattern {
     spec: PatternSpec,
 }
 
-type Patterns = {[index in PatternId]: Pattern}
+type Patterns = { [index in PatternId]: Pattern }
 
 // tslint:disable-next-line:no-any
 type BuildEntitiesFunction = (patternSpec?: any) => Entity[]

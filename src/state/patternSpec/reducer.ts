@@ -1,3 +1,4 @@
+import { Reducer } from 'redux'
 import { initialPatternSpecState } from './state'
 import {
     ImmutablePatternSpecState,
@@ -6,10 +7,7 @@ import {
     PatternSpecStateKeys,
 } from './types'
 
-const patternSpecReducer: (
-    patternSpecState: ImmutablePatternSpecState,
-    action: PatternSpecStateAction,
-) => ImmutablePatternSpecState =
+const patternSpecReducer: Reducer<ImmutablePatternSpecState, PatternSpecStateAction> =
     // tslint:disable-next-line:cyclomatic-complexity
     (
         patternSpecState: ImmutablePatternSpecState = initialPatternSpecState,

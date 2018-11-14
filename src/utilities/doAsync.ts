@@ -1,8 +1,8 @@
-const doAfterThisRender: (fn: () => void) => void =
+const doAsync: (fn: () => void) => void =
     (fn: () => void): void => {
         setTimeout(fn, 0)
     }
 
 export {
-    doAfterThisRender,
+    doAsync,
 }

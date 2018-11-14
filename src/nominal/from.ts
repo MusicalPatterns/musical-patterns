@@ -3,15 +3,12 @@
 import {
     Base,
     Block,
-    Cents,
     CoordinateElement,
     Count,
-    Frequency,
     Index,
     Offset,
     Power,
     Scalar,
-    Semitones,
     SumOfIndices,
     SumOfScalars,
     Time,
@@ -20,17 +17,8 @@ import {
 const Block: (block: Array<Index | number> | Index[]) => number[] =
     (block: Array<Index | number> | Index[]): number[] => block as any
 
-const Cents: (cents: Cents) => number =
-    (cents: Cents): number => cents as any
-
 const Count: (count: Count) => number =
     (count: Count): number => count as any
-
-const Frequency: (frequency: Frequency) => number =
-    (frequency: Frequency): number => frequency as any
-
-const Semitones: (semitones: Semitones) => number =
-    (semitones: Semitones): number => semitones as any
 
 const Scalar: (scalar: Scalar) => number =
     (scalar: Scalar): number => scalar as any
@@ -62,10 +50,7 @@ const CoordinateElement: (coordinateElement: CoordinateElement) => number =
 export {
     Base,
     Block,
-    Cents,
     Count,
-    Frequency,
-    Semitones,
     Scalar,
     Offset,
     Power,

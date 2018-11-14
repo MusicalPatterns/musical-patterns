@@ -1,7 +1,6 @@
 import { to } from '../nominal'
-import { Scale } from '../types'
 import { applyOffset, applyScale, dereference, Maybe } from '../utilities'
-import { CompileNotesOptions, NoteProperty, NotePropertySpec } from './types'
+import { CompileNotesOptions, NoteProperty, NotePropertySpec, Scale } from './types'
 
 const compileNoteProperty: (notePropertySpec: NotePropertySpec, options: CompileNotesOptions) => NoteProperty =
     (notePropertySpec: NotePropertySpec, { scales }: CompileNotesOptions): NoteProperty => {

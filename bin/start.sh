@@ -2,4 +2,5 @@
 
 set -e
 
+rm -rf dist/
 ./node_modules/.bin/webpack-dev-server

@@ -3,6 +3,7 @@
 export {
     NotePropertySpec,
     NoteSpec,
+    Scale,
     Entity,
     compileThread,
     compileNoteProperty,
@@ -15,9 +16,6 @@ export {
     applyOffset,
     applyScale,
     Maybe,
-    centsToPitch,
-    centsToShiftFromOneFrequencyToAnother,
-    pitchToCents,
     deepEqual,
     repeat,
     repeatCall,
@@ -35,15 +33,14 @@ export {
     Count,
     Index,
     to,
-    Cents,
     Time,
     from,
     ContourPiece,
     Coordinate,
+    Segment,
 } from './nominal/indexForTest'
 export {
     ActionType,
-    PerformanceStateAction,
     immutablize,
     rootReducer,
     ImmutableRootState,
@@ -58,9 +55,3 @@ export {
     X_AXIS,
     Y_AXIS,
 } from './constants'
-
-export {
-    Thread,
-    Scale,
-    Segment,
-} from './types'

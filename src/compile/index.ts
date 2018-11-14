@@ -6,6 +6,7 @@ export {
     EntityDictionary,
     PartDictionary,
     Part,
+    Scale,
 } from './types'
 export {
     compilePattern,

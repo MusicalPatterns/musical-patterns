@@ -1,15 +1,7 @@
-import { ContourElement } from '../types'
-
-interface Cents extends Number {
-    _CentsBrand: string,
-}
+import { Part } from '../compile'
 
 interface Frequency extends Number {
     _FrequencyBrand: string,
-}
-
-interface Semitones extends Number {
-    _SemitonesBrand: string,
 }
 
 interface Scalar extends Number {
@@ -51,6 +43,8 @@ interface Power extends Number {
 enum _BlockBrand {}
 type Block = _BlockBrand & Index[]
 
+type ContourElement = [ number, number ]
+
 enum _ContourPieceBrand {}
 type ContourPiece = _ContourPieceBrand & ContourElement[]
 
@@ -63,12 +57,12 @@ interface CoordinateElement extends Number {
 
 type Coordinate = CoordinateElement[]
 
+type Segment = Part[]
+
 export {
     Base,
-    Cents,
     Count,
     Frequency,
-    Semitones,
     Scalar,
     Offset,
     Time,
@@ -77,6 +71,8 @@ export {
     SumOfIndices,
     SumOfScalars,
     Block,
+    ContourElement,
+    Segment,
     ContourPiece,
     ContourWhole,
     CoordinateElement,

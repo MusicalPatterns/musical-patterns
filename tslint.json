@@ -8,6 +8,8 @@
     "lint"
   ],
   "rules": {
+    "no-unused-variable": false,
+    "completed-docs": false,
     "cyclomatic-complexity": [true, 5],
     "no-constant-condition": true,
     "semicolon": false,

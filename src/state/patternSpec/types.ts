@@ -1,5 +1,5 @@
 import { DictionaryOf } from '../../utilities'
-import { TypedMap } from '../types'
+import { StateIndexSignature, TypedMap } from '../types'
 
 type StringifiedPatternSpec = DictionaryOf<string>
 
@@ -15,7 +15,7 @@ enum PatternSpecStateKeys {
     UNSUBMITTED_PATTERN_SPEC_INPUTS = 'unsubmittedPatternSpecInputs',
 }
 
-interface PatternSpecState {
+interface PatternSpecState extends StateIndexSignature {
     [ PatternSpecStateKeys.DISABLED_PATTERN_SPEC_BUTTONS ]: StringifiedPatternSpecInputStates,
     [ PatternSpecStateKeys.DISPLAYED_PATTERN_SPEC ]: StringifiedPatternSpec,
     [ PatternSpecStateKeys.INVALID_PATTERN_SPEC_INPUTS ]: StringifiedPatternSpecInputStates,

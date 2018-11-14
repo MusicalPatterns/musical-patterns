@@ -5,4 +5,5 @@ export {
     NoteSpec,
     Entity,
     Part,
+    Scale,
 } from './types'

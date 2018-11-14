@@ -12,11 +12,6 @@ export {
     PatternSpecStateKeys,
 } from './patternSpec'
 export {
-    PerformanceState,
-    ImmutablePerformanceState,
-    PerformanceStateKeys,
-} from './performance'
-export {
     ActionType,
 } from './actions'
 export { store } from './store'

@@ -19,7 +19,8 @@
       "react-redux"
     ],
     "skipLibCheck": true,
-    "jsx": "react"
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true
   },
   "exclude": [
     "test",

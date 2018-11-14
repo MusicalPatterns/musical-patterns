@@ -5,8 +5,7 @@ import { ImmutableRootState, RootStateKeys } from '../state'
 import PatternList from './PatternList'
 import PatternListener from './PatternListener'
 import PatternSpecInputs from './PatternSpecInputs'
-import ThreadsChangeListener from './ThreadsChangeListener'
-import TimeControls from './TimeControls'
+import Performer from './Performer'
 import { AppProps } from './types'
 
 const mapStateToProps: (state: ImmutableRootState) => AppProps =
@@ -22,7 +21,7 @@ const patternDescription: (patternId: PatternId) => string =
         return `${patternMetadata.formattedName}: ${patternMetadata.description}`
     }
 
-const App: (appProps: AppProps) => JSX.Element =
+const App: React.ComponentType<AppProps> =
     ({ patternId }: AppProps): JSX.Element => (
         <div>
             <h1>Musical Patterns</h1>
@@ -31,13 +30,11 @@ const App: (appProps: AppProps) => JSX.Element =
             {patternId && <div>
                 <div>{patternDescription(patternId)}</div>
                 <PatternSpecInputs/>
-
-                <TimeControls/>
-
                 <PatternListener {...{ patternId }}/>
-                <ThreadsChangeListener/>
+                <Performer/>
             </div>}
         </div>
     )
 
-export default connect(mapStateToProps)(App)
+// tslint:disable-next-line:no-any
+export default connect(mapStateToProps)(App as any)

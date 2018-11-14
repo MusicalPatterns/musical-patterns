@@ -10,5 +10,5 @@
   "helpers": [
     "test/support/mockDom.ts"
   ],
-  "stopSpecOnExpectationFailure": false
+  "oneFailurePerSpec": false
 }

@@ -1,8 +1,7 @@
+import { Note, OscillatorName, Thread, TimeType, Voice, VoiceType } from '@musical-patterns/performer'
 import { to } from '../nominal'
-import { OscillatorName } from '../performance'
-import { Note, Thread, Voice, VoiceType } from '../types'
 import { compilePart } from './part'
-import { CompileThreadParameters, TimeType } from './types'
+import { CompileThreadParameters } from './types'
 import { compileVoice } from './voice'
 
 const compileThread: (compileEntityParameters: CompileThreadParameters) => Thread =

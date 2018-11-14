@@ -1,7 +1,5 @@
 import { Map } from 'immutable'
 import { PatternId } from '../../patterns'
-import { Time } from '../nominal'
-import { Thread } from '../types'
 import { Maybe } from '../utilities'
 import { PatternIdStateAction } from './patternId'
 import {
@@ -10,40 +8,34 @@ import {
     StringifiedPatternSpec,
     StringifiedPatternSpecInputStates,
 } from './patternSpec'
-import { ImmutablePerformanceState, PerformanceStateAction } from './performance'
 
 type Action = PatternIdStateAction |
-    PerformanceStateAction |
     PatternSpecStateAction
 
 enum RootStateKeys {
     PATTERN_ID = 'patternId',
     PATTERN_SPEC = 'patternSpec',
-    PERFORMANCE = 'performance',
 }
 
-interface RootState {
+interface StateIndexSignature {
+    [index: string]: AllowedValue,
+}
+
+interface RootState extends StateIndexSignature {
     [ RootStateKeys.PATTERN_ID ]: Maybe<PatternId>,
-    [ RootStateKeys.PERFORMANCE ]: ImmutablePerformanceState,
     [ RootStateKeys.PATTERN_SPEC ]: ImmutablePatternSpecState,
+    [index: string]: AllowedValue,
 }
 
 type ImmutableRootState = TypedMap<RootState>
 
 type AllowedValue =
-    undefined |
-    boolean |
-    string |
-    Time |
-    Worker |
-    Thread[] |
     ImmutablePatternSpecState |
-    ImmutablePerformanceState |
     Maybe<PatternId> |
     StringifiedPatternSpecInputStates |
     StringifiedPatternSpec
 
-type MapTypeAllowedData<T> = {
+type MapTypeAllowedData<T> = StateIndexSignature & {
     [K in keyof T]: AllowedValue
 }
 
@@ -56,6 +48,7 @@ interface TypedMap<T extends MapTypeAllowedData<T>> extends Map<string, AllowedV
 }
 
 export {
+    StateIndexSignature,
     ImmutableRootState,
     TypedMap,
     MapTypeAllowedData,
