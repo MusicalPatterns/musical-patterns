@@ -1,3 +1,4 @@
-# Musical Patterns
+# Musical Patterns Lab
 
-a project implementing some of my ideas for musical patterns
+an interface for experimenting on some musical patterns
+

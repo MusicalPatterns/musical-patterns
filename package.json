@@ -1,5 +1,5 @@
 {
-  "name": "musical-patterns",
+  "name": "@musical-patterns/lab",
   "devDependencies": {
     "@musical-patterns/performer": "^1.0.1",
     "@types/jasmine": "^2.8.11",
