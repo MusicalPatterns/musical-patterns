@@ -18,7 +18,6 @@ const handlePatternChange: PatternChangeEventHandler =
             { type: ActionType.SET_DISPLAYED_PATTERN_SPEC, data: stringifiedPatternSpec },
             { type: ActionType.SET_DISABLED_PATTERN_SPEC_BUTTONS, data: initialDisabledButtons },
         ]
-        // tslint:disable-next-line:no-unsafe-any
         const batchedAction: BatchAction = batchActions(actions)
         dispatch(batchedAction)
     }

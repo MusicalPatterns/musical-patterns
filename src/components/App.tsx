@@ -36,5 +36,4 @@ const App: React.ComponentType<AppProps> =
         </div>
     )
 
-// tslint:disable-next-line:no-any
-export default connect(mapStateToProps)(App as any)
+export default connect(mapStateToProps)(App)

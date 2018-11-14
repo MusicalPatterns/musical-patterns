@@ -33,7 +33,6 @@ const handlePatternSpecChange: PatternSpecEventHandler =
             [ patternSpecKey ]: currentPatternSpecValue === patternSpecValue,
         }
 
-        // tslint:disable-next-line:no-unsafe-any
         const batchedAction: BatchAction = batchActions([
             { type: ActionType.SET_DISPLAYED_PATTERN_SPEC, data: updatedStringifiedPatternSpec },
             { type: ActionType.SET_INVALID_PATTERN_SPEC_INPUTS, data: updatedInvalidInputs },

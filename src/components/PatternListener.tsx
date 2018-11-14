@@ -27,5 +27,4 @@ const PatternListener: (patternListenerProps: PatternListenerProps) => JSX.Eleme
         return <div/>
     }
 
-// tslint:disable-next-line:no-any
-export default connect(mapStateToProps)(PatternListener as any)
+export default connect(mapStateToProps)(PatternListener)

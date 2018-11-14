@@ -44,7 +44,6 @@ const handlePatternSpecSubmit: PatternSpecEventHandler =
                 [ patternSpecKey ]: true,
             }
 
-            // tslint:disable-next-line:no-unsafe-any
             const batchedAction: BatchAction = batchActions([
                 { type: ActionType.SET_SUBMITTED_PATTERN_SPEC, data: updatedPatternSpec },
                 { type: ActionType.SET_UNSUBMITTED_PATTERN_SPEC_INPUTS, data: updatedUnsubmittedInputs },
