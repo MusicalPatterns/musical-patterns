@@ -24,3 +24,6 @@ lint:
 
 snapshot:
 	./bin/snapshot.sh
+
+build:
+	./bin/build.sh
