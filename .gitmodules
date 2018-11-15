@@ -1,21 +1,21 @@
-[submodule "patterns/beaten-path"]
+[submodule "beaten-path"]
 	path = patterns/beaten-path
-	url = git@github.com:MusicalPatterns/beaten-path.git
-[submodule "patterns/hafuhafu"]
+	url = git@github.com:MusicalPatterns/pattern-beaten-path.git
+[submodule "hafuhafu"]
 	path = patterns/hafuhafu
-	url = git@github.com:MusicalPatterns/hafuhafu.git
-[submodule "patterns/stepwise"]
+	url = git@github.com:MusicalPatterns/pattern-hafuhafu.git
+[submodule "stepwise"]
 	path = patterns/stepwise
-	url = git@github.com:MusicalPatterns/stepwise.git
-[submodule "patterns/zdaubyaos"]
+	url = git@github.com:MusicalPatterns/pattern-stepwise.git
+[submodule "zdaubyaos"]
 	path = patterns/zdaubyaos
-	url = git@github.com:MusicalPatterns/zdaubyaos.git
-[submodule "patterns/template"]
+	url = git@github.com:MusicalPatterns/pattern-zdaubyaos.git
+[submodule "template"]
 	path = patterns/template
-	url = git@github.com:MusicalPatterns/template.git
-[submodule "patterns/xelt"]
+	url = git@github.com:MusicalPatterns/pattern-template.git
+[submodule "xelt"]
 	path = patterns/xelt
-	url = git@github.com:MusicalPatterns/xelt
-[submodule "patterns/houndstoothtopia-theme"]
+	url = git@github.com:MusicalPatterns/pattern-xelt
+[submodule "houndstoothtopia-theme"]
 	path = patterns/houndstoothtopia-theme
-	url = git@github.com:MusicalPatterns/houndstoothtopia-theme.git
+	url = git@github.com:MusicalPatterns/pattern-houndstoothtopia-theme.git
