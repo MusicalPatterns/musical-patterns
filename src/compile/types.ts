@@ -1,4 +1,4 @@
-import { OscillatorName, SampleName, SpatializationType, TimeType, VoiceType } from '@musical-patterns/performer'
+import { OscillatorName, SampleName, SpatializationType, VoiceType } from '@musical-patterns/performer'
 import { Coordinate, CoordinateElement, Frequency, Index, Offset, Scalar, Time } from '../nominal'
 import { DictionaryOf } from '../utilities'
 
@@ -10,7 +10,6 @@ interface VoiceSpec {
 
 interface Entity {
     part?: Part,
-    timeType?: TimeType,
     voiceSpec?: VoiceSpec,
 }
 
@@ -64,7 +63,6 @@ type PartDictionary = DictionaryOf<Part>
 
 export {
     Entity,
-    TimeType,
     CompileThreadParameters,
     CompileThreadsParameters,
     VoiceSpec,

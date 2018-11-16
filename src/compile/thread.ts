@@ -1,4 +1,4 @@
-import { Note, OscillatorName, Thread, TimeType, Voice, VoiceType } from '@musical-patterns/performer'
+import { Note, OscillatorName, Thread, Voice, VoiceType } from '@musical-patterns/performer'
 import { to } from '../nominal'
 import { compilePart } from './part'
 import { CompileThreadParameters } from './types'
@@ -8,7 +8,6 @@ const compileThread: (compileEntityParameters: CompileThreadParameters) => Threa
     ({ entity, scales }: CompileThreadParameters): Thread => {
         const {
             part = [],
-            timeType = TimeType.ATOMIC,
             voiceSpec = { voiceType: VoiceType.OSCILLATOR, timbre: OscillatorName.SQUARE },
         } = entity
 
@@ -20,7 +19,6 @@ const compileThread: (compileEntityParameters: CompileThreadParameters) => Threa
             nextStart: to.Time(0),
             noteIndex: to.Index(0),
             notes,
-            timeType,
             voice,
         }
     }

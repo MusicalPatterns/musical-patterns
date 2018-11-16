@@ -1,5 +1,4 @@
 export {
-    TimeType,
     NoteSpec,
     Adjustable,
     Entity,

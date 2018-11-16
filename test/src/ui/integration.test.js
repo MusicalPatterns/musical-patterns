@@ -104,7 +104,7 @@ describe('ui integration', () => {
             expect(await elementInnerText('.secret-submitted#patternPitchScalar'))
                 .toBe('41862')
             expect(await elementInnerText('.secret-submitted#patternDurationScalar'))
-                .toBe('1')
+                .toBe('15')
 
             done()
         })
@@ -122,7 +122,7 @@ describe('ui integration', () => {
             expect(await elementInnerText('.secret-submitted#patternPitchScalar'))
                 .toBe('41862')
             expect(await elementInnerText('.secret-submitted#patternDurationScalar'))
-                .toBe('1')
+                .toBe('15')
 
             done()
         })
@@ -141,7 +141,7 @@ describe('ui integration', () => {
             expect(await elementInnerText('.secret-submitted#patternPitchScalar'))
                 .toBe('41862')
             expect(await elementInnerText('.secret-submitted#patternDurationScalar'))
-                .toBe('12')
+                .toBe('152')
 
             done()
         })
@@ -327,7 +327,7 @@ describe('ui integration', () => {
             expect(await elementValue('input#patternPitchScalar'))
                 .toBe('4186')
             expect(await elementValue('input#patternDurationScalar'))
-                .toBe('1')
+                .toBe('15')
 
             done()
         })
