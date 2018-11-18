@@ -6,12 +6,14 @@ import { batchDispatchMiddleware, enableBatching } from 'redux-batched-actions'
 import { combineReducers } from 'redux-immutable'
 import { patternIdReducer } from './patternId'
 import { patternSpecReducer } from './patternSpec'
+import { performerReducer } from './performer'
 
 const initialState: any = Map()
 
 const rootReducer: Reducer = combineReducers({
     patternId: patternIdReducer,
     patternSpec: patternSpecReducer,
+    performer: performerReducer,
 } as any)
 
 // @ts-ignore

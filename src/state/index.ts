@@ -12,6 +12,10 @@ export {
     PatternSpecStateKeys,
 } from './patternSpec'
 export {
+    PerformerStateKeys,
+    ImmutablePerformerState,
+} from './performer'
+export {
     ActionType,
 } from './actions'
 export { store } from './store'

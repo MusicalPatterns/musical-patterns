@@ -1,4 +1,5 @@
 import { PatternId } from '../../patterns'
+import { Time } from '../nominal'
 import { PatternChangeEventExtractor, PatternSpecEventExtractor } from '../patternSpec'
 import { ImmutablePatternSpecState, StringifiedPatternSpec } from '../state'
 import { Maybe } from '../utilities'
@@ -41,7 +42,22 @@ interface PatternListenerPropsFromParent {
 interface PatternListenerProps extends PatternListenerPropsFromState, PatternListenerPropsFromParent {
 }
 
+interface TimeControlsPropsFromState {
+    paused: boolean,
+    time: Time,
+}
+
+interface TimeControlsPropsFromDispatch {
+    onClick: () => void,
+}
+
+interface TimeControlsProps extends TimeControlsPropsFromState, TimeControlsPropsFromDispatch {
+}
+
 export {
+    TimeControlsProps,
+    TimeControlsPropsFromDispatch,
+    TimeControlsPropsFromState,
     AppProps,
     PatternSpecInputsProps,
     PatternSpecInputsPropsFromState,
