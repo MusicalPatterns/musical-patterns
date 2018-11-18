@@ -1,4 +1,4 @@
-import { Part } from '../compile'
+import { PartSpec } from '../compile'
 
 interface Frequency extends Number {
     _FrequencyBrand: string,
@@ -57,7 +57,7 @@ interface CoordinateElement extends Number {
 
 type Coordinate = CoordinateElement[]
 
-type Segment = Part[]
+type Segment = PartSpec[]
 
 export {
     Base,

@@ -1,9 +1,9 @@
-export { compileThread } from './thread'
+export { compilePattern } from './pattern'
 export { compileNoteProperty } from './noteProperty'
 export {
     NotePropertySpec,
     NoteSpec,
     Entity,
-    Part,
+    PartSpec,
     Scale,
 } from './types'

@@ -1,8 +1,8 @@
-import { from, NoteSpec, Part, Scalar, SumOfScalars, to } from '../../src/indexForTest'
+import { from, NoteSpec, PartSpec, Scalar, SumOfScalars, to } from '../../src/indexForTest'
 
-const calculatePartTotalScalarDuration: (part: Part) => SumOfScalars =
-    (part: Part): SumOfScalars =>
-        part.reduce(
+const calculatePartTotalScalarDuration: (partSpec: PartSpec) => SumOfScalars =
+    (partSpec: PartSpec): SumOfScalars =>
+        partSpec.reduce(
             (accumulator: SumOfScalars, { durationSpec }: NoteSpec) => {
                 const durationScalar: Scalar = durationSpec && durationSpec.scalar || to.Scalar(0)
 

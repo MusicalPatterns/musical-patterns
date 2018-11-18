@@ -1,15 +1,8 @@
-import { OscillatorName, SampleName, SpatializationType, VoiceType } from '@musical-patterns/performer'
+import { VoiceSpec } from '@musical-patterns/performer'
 import { Coordinate, CoordinateElement, Frequency, Index, Offset, Scalar, Time } from '../nominal'
-import { DictionaryOf } from '../utilities'
-
-interface VoiceSpec {
-    spatialization?: SpatializationType,
-    timbre: SampleName | OscillatorName,
-    voiceType: VoiceType,
-}
 
 interface Entity {
-    part?: Part,
+    partSpec?: PartSpec,
     voiceSpec?: VoiceSpec,
 }
 
@@ -35,7 +28,7 @@ interface NoteSpec {
     sustainSpec?: NotePropertySpec,
 }
 
-type Part = NoteSpec[]
+type PartSpec = NoteSpec[]
 
 interface Adjustable {
     offset?: Offset,
@@ -57,10 +50,6 @@ interface CompileNotesOptions {
     scales: Scale[],
 }
 
-type EntityDictionary = DictionaryOf<Entity>
-
-type PartDictionary = DictionaryOf<Part>
-
 export {
     Entity,
     CompileThreadParameters,
@@ -70,9 +59,7 @@ export {
     NotePropertySpec,
     NoteProperty,
     CompileNotesOptions,
-    EntityDictionary,
-    PartDictionary,
     Adjustable,
-    Part,
+    PartSpec,
     Scale,
 }

@@ -1,9 +1,9 @@
-import { Note } from '@musical-patterns/performer'
+import { Note, Part } from '@musical-patterns/performer'
 import { DEFAULT_OFFSET_FOR_ALMOST_FULL_SUSTAIN } from '../constants'
 import { Coordinate, CoordinateElement, Frequency, Scalar, Time, to } from '../nominal'
 import { applyOffset } from '../utilities'
 import { compileNoteProperty } from './noteProperty'
-import { CompileNotesOptions, NotePropertySpec, NoteSpec, Part } from './types'
+import { CompileNotesOptions, NotePropertySpec, NoteSpec, PartSpec } from './types'
 
 const defaultNotePropertySpec: NotePropertySpec = {
     index: to.Index(0),
@@ -11,9 +11,9 @@ const defaultNotePropertySpec: NotePropertySpec = {
     scaleIndex: to.Index(0),
 }
 
-const compilePart: (part: Part, compileNotesOptions: CompileNotesOptions) => Note[] =
-    (part: Part, { scales }: CompileNotesOptions): Note[] =>
-        part.map((noteSpec: NoteSpec): Note => {
+const compilePart: (partSpec: PartSpec, compileNotesOptions: CompileNotesOptions) => Part =
+    (partSpec: PartSpec, { scales }: CompileNotesOptions): Part =>
+        partSpec.map((noteSpec: NoteSpec): Note => {
             const {
                 durationSpec = defaultNotePropertySpec,
                 gainSpec = defaultNotePropertySpec,

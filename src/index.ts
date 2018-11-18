@@ -62,7 +62,6 @@ export {
     Entity,
     Scale,
     NoteSpec,
-    Part,
-    EntityDictionary,
-    PartDictionary,
+    PartSpec,
+    compilePattern,
 } from './compile'

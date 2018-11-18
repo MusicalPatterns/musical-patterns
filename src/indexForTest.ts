@@ -5,9 +5,9 @@ export {
     NoteSpec,
     Scale,
     Entity,
-    compileThread,
+    compilePattern,
     compileNoteProperty,
-    Part,
+    PartSpec,
 } from './compile/indexForTest'
 export {
     buildStandardScales,

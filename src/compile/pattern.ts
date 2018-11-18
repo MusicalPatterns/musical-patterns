@@ -1,18 +1,16 @@
-import { Thread } from '@musical-patterns/performer'
+import { ThreadSpec } from '@musical-patterns/performer'
 import { Pattern, PatternMaterial } from '../../patterns'
-import { compileThreads } from './threads'
+import { compileThreadSpecs } from './threads'
 import { Entity, Scale } from './types'
 
-const compilePattern: (compilePatternParameters: Pattern) => Promise<Thread[]> =
-    async ({ spec, material }: Pattern): Promise<Thread[]> => {
+const compilePattern: (compilePatternParameters: Pattern) => Promise<ThreadSpec[]> =
+    async ({ spec, material }: Pattern): Promise<ThreadSpec[]> => {
         const { buildEntitiesFunction, buildScalesFunction }: PatternMaterial = material
 
         const entities: Entity[] = buildEntitiesFunction(spec)
         const scales: Scale[] = buildScalesFunction(spec)
 
-        const threads: Thread[] = compileThreads({ entities, scales })
-
-        return threads
+        return compileThreadSpecs({ entities, scales })
     }
 
 export {

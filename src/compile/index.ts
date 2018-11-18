@@ -2,9 +2,7 @@ export {
     NoteSpec,
     Adjustable,
     Entity,
-    EntityDictionary,
-    PartDictionary,
-    Part,
+    PartSpec,
     Scale,
 } from './types'
 export {
