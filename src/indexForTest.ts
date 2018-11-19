@@ -13,16 +13,13 @@ export {
     buildStandardScales,
 } from './scales'
 export {
-    applyOffset,
-    applyScale,
     Maybe,
     deepEqual,
     repeat,
     repeatCall,
-    applyCycle,
+    cycle,
     DictionaryOf,
     sequence,
-    dereference,
 } from './utilities/indexForTest'
 export {
     Block,

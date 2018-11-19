@@ -1,7 +1,6 @@
 import { Note, Part } from '@musical-patterns/performer'
-import { Coordinate, CoordinateElement, Frequency, Scalar, Time, to } from '@musical-patterns/utilities'
+import { apply, Coordinate, CoordinateElement, Frequency, Scalar, Time, to } from '@musical-patterns/utilities'
 import { DEFAULT_OFFSET_FOR_ALMOST_FULL_SUSTAIN } from '../constants'
-import { applyOffset } from '../utilities'
 import { compileNoteProperty } from './noteProperty'
 import { CompileNotesOptions, NotePropertySpec, NoteSpec, PartSpec } from './types'
 
@@ -36,7 +35,7 @@ const compilePart: (partSpec: PartSpec, compileNotesOptions: CompileNotesOptions
 
             const sustain: Time = sustainAttempt < duration ?
                 sustainAttempt :
-                applyOffset(duration, DEFAULT_OFFSET_FOR_ALMOST_FULL_SUSTAIN)
+                apply.Offset(duration, DEFAULT_OFFSET_FOR_ALMOST_FULL_SUSTAIN)
 
             return { duration, gain, frequency, position, sustain }
         })

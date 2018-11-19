@@ -1,6 +1,6 @@
 // tslint:disable:no-any
 
-import { applyScale } from './applyScale'
+import { apply } from '@musical-patterns/utilities'
 import { DECIMAL, DEFAULT_PRECISION, HALF } from './constants'
 
 const isCloseTo: <T>(numberOne: T, numberTwo: T) => boolean =
@@ -12,7 +12,7 @@ const isCloseTo: <T>(numberOne: T, numberTwo: T) => boolean =
 
         const pow: number = Math.pow(DECIMAL, precision + 1)
         const delta: number = Math.abs(numberOneAsNumber - numberTwoAsNumber)
-        const maxDelta: number = applyScale(Math.pow(DECIMAL, -precision), HALF)
+        const maxDelta: number = apply.Scalar(Math.pow(DECIMAL, -precision), HALF)
 
         return Math.round(delta * pow) / pow <= maxDelta
     }

@@ -1,5 +1,5 @@
-import { to } from '@musical-patterns/utilities'
-import { applyOffset, applyScale, dereference, Maybe } from '../utilities'
+import { apply, to } from '@musical-patterns/utilities'
+import { Maybe } from '../utilities'
 import { CompileNotesOptions, NoteProperty, NotePropertySpec, Scale } from './types'
 
 const compileNoteProperty: (notePropertySpec: NotePropertySpec, options: CompileNotesOptions) => NoteProperty =
@@ -11,21 +11,21 @@ const compileNoteProperty: (notePropertySpec: NotePropertySpec, options: Compile
             scaleIndex = to.Index(0),
         }: NotePropertySpec = notePropertySpec
 
-        const scale: Scale = dereference(scales, scaleIndex)
+        const scale: Scale = apply.Index(scales, scaleIndex)
         const {
             offset: scaleOffset = to.Offset(0),
             scalar: scaleScalar = to.Scalar(1),
             scalars = [],
         }: Scale = scale
 
-        const scaleElement: Maybe<NoteProperty> = dereference(scalars, index)
+        const scaleElement: Maybe<NoteProperty> = apply.Index(scalars, index)
         let noteProperty: NoteProperty = scaleElement || to.Scalar(1)
 
-        noteProperty = applyScale(noteProperty, noteScalar)
-        noteProperty = applyScale(noteProperty, scaleScalar)
+        noteProperty = apply.Scalar(noteProperty, noteScalar)
+        noteProperty = apply.Scalar(noteProperty, scaleScalar)
 
-        noteProperty = applyOffset(noteProperty, noteOffset)
-        noteProperty = applyOffset(noteProperty, scaleOffset)
+        noteProperty = apply.Offset(noteProperty, noteOffset)
+        noteProperty = apply.Offset(noteProperty, scaleOffset)
 
         return noteProperty as NoteProperty
     }
