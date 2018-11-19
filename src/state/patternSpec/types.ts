@@ -8,11 +8,11 @@ type StringifiedPatternSpecInputStates = DictionaryOf<boolean>
 type StringifiedPatternSpecEntry = [ string, string ]
 
 enum PatternSpecStateKeys {
-    DISABLED_PATTERN_SPEC_BUTTONS = 'disabledPatternSpecButtons',
-    DISPLAYED_PATTERN_SPEC = 'displayedPatternSpec',
-    INVALID_PATTERN_SPEC_INPUTS = 'invalidPatternSpecInputs',
-    SUBMITTED_PATTERN_SPEC = 'submittedPatternSpec',
-    UNSUBMITTED_PATTERN_SPEC_INPUTS = 'unsubmittedPatternSpecInputs',
+    DISABLED_PATTERN_SPEC_BUTTONS = 'DISABLED_PATTERN_SPEC_BUTTONS',
+    DISPLAYED_PATTERN_SPEC = 'DISPLAYED_PATTERN_SPEC',
+    INVALID_PATTERN_SPEC_INPUTS = 'INVALID_PATTERN_SPEC_INPUTS',
+    SUBMITTED_PATTERN_SPEC = 'SUBMITTED_PATTERN_SPEC',
+    UNSUBMITTED_PATTERN_SPEC_INPUTS = 'UNSUBMITTED_PATTERN_SPEC_INPUTS',
 }
 
 interface PatternSpecState extends StateIndexSignature {
@@ -26,11 +26,11 @@ interface PatternSpecState extends StateIndexSignature {
 type ImmutablePatternSpecState = TypedMap<PatternSpecState>
 
 enum PatternSpecStateActionType {
-    SET_DISABLED_PATTERN_SPEC_BUTTONS = 'set disabled pattern spec buttons',
-    SET_SUBMITTED_PATTERN_SPEC = 'set submitted pattern spec',
-    SET_DISPLAYED_PATTERN_SPEC = 'set displayed pattern spec',
-    SET_INVALID_PATTERN_SPEC_INPUTS = 'set invalid pattern spec inputs',
-    SET_UNSUBMITTED_PATTERN_SPEC_INPUTS = 'set unsubmitted pattern spec inputs',
+    SET_DISABLED_PATTERN_SPEC_BUTTONS = 'SET_DISABLED_PATTERN_SPEC_BUTTONS',
+    SET_SUBMITTED_PATTERN_SPEC = 'SET_SUBMITTED_PATTERN_SPEC',
+    SET_DISPLAYED_PATTERN_SPEC = 'SET_DISPLAYED_PATTERN_SPEC',
+    SET_INVALID_PATTERN_SPEC_INPUTS = 'SET_INVALID_PATTERN_SPEC_INPUTS',
+    SET_UNSUBMITTED_PATTERN_SPEC_INPUTS = 'SET_UNSUBMITTED_PATTERN_SPEC_INPUTS',
 }
 
 interface SetDisabledSongSpecButtons {

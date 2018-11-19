@@ -15,9 +15,9 @@ type Action = PatternIdStateAction |
     PatternSpecStateAction
 
 enum RootStateKeys {
-    PATTERN_ID = 'patternId',
-    PATTERN_SPEC = 'patternSpec',
-    PERFORMER = 'performer',
+    PATTERN_ID = 'PATTERN_ID',
+    PATTERN_SPEC = 'PATTERN_SPEC',
+    PERFORMER = 'PERFORMER',
 }
 
 interface StateIndexSignature {
