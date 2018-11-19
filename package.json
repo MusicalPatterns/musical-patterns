@@ -2,6 +2,7 @@
   "name": "@musical-patterns/lab",
   "devDependencies": {
     "@musical-patterns/performer": "^1.0.5",
+    "@musical-patterns/utilities": "^1.0.4",
     "@types/jasmine": "^2.8.11",
     "@types/react": "^16.7.3",
     "@types/react-dom": "^16.0.9",

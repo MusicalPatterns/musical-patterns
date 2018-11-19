@@ -1,6 +1,6 @@
+import { Time } from '@musical-patterns/utilities'
 import { Map } from 'immutable'
 import { PatternId } from '../../patterns'
-import { Time } from '../nominal'
 import { Maybe } from '../utilities'
 import { PatternIdStateAction } from './patternId'
 import {

@@ -1,4 +1,4 @@
-import { Count, from } from '../nominal'
+import { Count, from } from '@musical-patterns/utilities'
 
 const repeat: <T>(array: T[], count: Count) => T[] =
     <T>(array: T[], count: Count): T[] => {

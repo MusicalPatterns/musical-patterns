@@ -1,4 +1,5 @@
-import { applyCycle, to } from '../../../src/indexForTest'
+import { to } from '@musical-patterns/utilities'
+import { applyCycle } from '../../../src/indexForTest'
 
 describe('applyCycle', () => {
     it('rotates a array cyclically, to the left', () => {

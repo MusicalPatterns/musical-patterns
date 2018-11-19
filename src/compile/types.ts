@@ -1,5 +1,5 @@
 import { VoiceSpec } from '@musical-patterns/performer'
-import { Coordinate, CoordinateElement, Frequency, Index, Offset, Scalar, Time } from '../nominal'
+import { Coordinate, CoordinateElement, Frequency, Index, Offset, Scalar, Time } from '@musical-patterns/utilities'
 
 interface Entity {
     partSpec?: PartSpec,

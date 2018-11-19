@@ -1,4 +1,4 @@
-import { Count, from } from '../nominal'
+import { Count, from } from '@musical-patterns/utilities'
 
 const applyCount: <T>(value: T, count: Count) => T =
     <T>(value: T, count: Count): T =>

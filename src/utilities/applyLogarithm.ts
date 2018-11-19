@@ -1,4 +1,4 @@
-import { Base } from '../nominal'
+import { Base } from '@musical-patterns/utilities'
 
 const applyLogarithm: <T>(value: T, base: Base) => T =
     <T>(value: T, base: Base): T =>

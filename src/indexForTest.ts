@@ -25,18 +25,10 @@ export {
     dereference,
 } from './utilities/indexForTest'
 export {
-    SumOfScalars,
-    SumOfIndices,
-    Scalar,
     Block,
-    Power,
-    Count,
-    Index,
     to,
-    Time,
     from,
     ContourPiece,
-    Coordinate,
     Segment,
 } from './nominal/indexForTest'
 export {

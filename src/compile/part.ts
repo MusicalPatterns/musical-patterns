@@ -1,6 +1,6 @@
 import { Note, Part } from '@musical-patterns/performer'
+import { Coordinate, CoordinateElement, Frequency, Scalar, Time, to } from '@musical-patterns/utilities'
 import { DEFAULT_OFFSET_FOR_ALMOST_FULL_SUSTAIN } from '../constants'
-import { Coordinate, CoordinateElement, Frequency, Scalar, Time, to } from '../nominal'
 import { applyOffset } from '../utilities'
 import { compileNoteProperty } from './noteProperty'
 import { CompileNotesOptions, NotePropertySpec, NoteSpec, PartSpec } from './types'

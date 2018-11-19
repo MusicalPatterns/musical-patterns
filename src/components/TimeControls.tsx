@@ -1,8 +1,8 @@
 import { togglePaused } from '@musical-patterns/performer'
+import { from } from '@musical-patterns/utilities'
 import * as React from 'react'
 import { connect } from 'react-redux'
 import { Dispatch } from 'redux'
-import { from } from '../nominal'
 import { ActionType, ImmutablePerformerState, ImmutableRootState, PerformerStateKeys, RootStateKeys } from '../state'
 import { TimeControlsProps, TimeControlsPropsFromDispatch, TimeControlsPropsFromState } from './types'
 

@@ -1,4 +1,4 @@
-import { to } from '../nominal'
+import { to } from '@musical-patterns/utilities'
 import { applyOffset, applyScale, dereference, Maybe } from '../utilities'
 import { CompileNotesOptions, NoteProperty, NotePropertySpec, Scale } from './types'
 

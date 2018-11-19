@@ -7,14 +7,6 @@ export {
 
 export {
     Block,
-    Power,
-    SumOfScalars,
-    Scalar,
-    Count,
-    SumOfIndices,
-    Time,
-    Index,
     ContourPiece,
-    Coordinate,
     Segment,
 } from './types'

@@ -1,4 +1,4 @@
-import { Count, from } from '../nominal'
+import { Count, from } from '@musical-patterns/utilities'
 
 const repeatCall: <T>(arrayFunction: () => T[], count: Count) => T[] =
     <T>(arrayFunction: () => T[], count: Count): T[] => {

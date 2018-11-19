@@ -1,5 +1,5 @@
+import { to } from '@musical-patterns/utilities'
 import { PatternSpec } from '../../patterns'
-import { to } from '../nominal'
 import { StringifiedPatternSpec, StringifiedPatternSpecEntry } from '../state'
 
 const patternSpecDefaults: PatternSpec = {

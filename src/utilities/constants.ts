@@ -1,6 +1,6 @@
 // tslint:disable no-magic-numbers
 
-import { Count, Scalar, to } from '../nominal'
+import { Count, Scalar, to } from '@musical-patterns/utilities'
 
 const DECIMAL: number = 10
 const HALF: Scalar = to.Scalar(1 / 2)

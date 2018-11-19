@@ -21,20 +21,11 @@ export {
     dereference,
 } from './utilities'
 export {
-    Base,
     Block,
-    Power,
-    Scalar,
-    Offset,
     to,
     from,
-    Count,
-    Time,
-    Index,
     ContourPiece,
     ContourWhole,
-    Coordinate,
-    CoordinateElement,
     Segment,
     ContourElement,
 } from './nominal'

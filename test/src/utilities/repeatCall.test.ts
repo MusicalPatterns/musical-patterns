@@ -1,4 +1,5 @@
-import { repeatCall, to } from '../../../src/indexForTest'
+import { to } from '@musical-patterns/utilities'
+import { repeatCall } from '../../../src/indexForTest'
 
 describe('repeat call', () => {
     it('concats x copies of the array a function returns together', () => {

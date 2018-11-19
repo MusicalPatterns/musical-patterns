@@ -6,19 +6,9 @@ export {
 }
 
 export {
-    Base,
     Block,
-    Frequency,
-    Offset,
-    Index,
-    Scalar,
-    Time,
-    Power,
-    Count,
     ContourPiece,
     ContourWhole,
-    Coordinate,
-    CoordinateElement,
     ContourElement,
     Segment,
 } from './types'

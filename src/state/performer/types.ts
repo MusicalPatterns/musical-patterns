@@ -1,4 +1,4 @@
-import { Time } from '../../nominal'
+import { Time } from '@musical-patterns/utilities'
 import { StateIndexSignature, TypedMap } from '../types'
 
 enum PerformerStateActionType {

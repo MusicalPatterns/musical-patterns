@@ -1,4 +1,5 @@
-import { repeat, to } from '../../../src/indexForTest'
+import { to } from '@musical-patterns/utilities'
+import { repeat } from '../../../src/indexForTest'
 
 describe('repeat', () => {
     it('concats x copies of an array together', () => {

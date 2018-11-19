@@ -1,4 +1,4 @@
-import { Count, from, Index, Offset, to } from '../nominal'
+import { Count, from, Index, Offset, to } from '@musical-patterns/utilities'
 import { applyOffset } from './applyOffset'
 import { wrapWithin } from './wrapWithin'
 
