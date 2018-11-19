@@ -24,6 +24,7 @@ module.exports = {
     },
     resolve: {
         extensions: ['.ts', '.tsx', '.js'],
+        mainFields: ['patternModule', 'browser', 'module', 'main'],
     },
     devServer: {
         contentBase: path.join(__dirname, './dist'),
