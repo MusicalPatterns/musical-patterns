@@ -1,3 +1,5 @@
+// tslint:disable:variable-name file-name-casing no-default-export
+
 import { restart, ThreadSpec } from '@musical-patterns/performer'
 import * as React from 'react'
 import { connect } from 'react-redux'

@@ -2,8 +2,6 @@
 
 set -e
 
-./node_modules/.bin/tslint '**/*.ts{,x}' -e **/node_modules/** --fix --project tsconfig.json
+./node_modules/.bin/musical-patterns lint
 
-./node_modules/.bin/tslint 'test/**/*.ts' --fix --project test/tsconfig.json
-
-./node_modules/.bin/tslint 'patterns/**/*.ts' --fix --project patterns/tsconfig.json
+git submodule foreach ./node_modules/.bin/musical-patterns lint

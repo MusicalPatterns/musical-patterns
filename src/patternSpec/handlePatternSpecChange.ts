@@ -1,5 +1,5 @@
 import { BatchAction, batchActions } from 'redux-batched-actions'
-import { ActionType, PatternSpecState, StringifiedPatternSpec, StringifiedPatternSpecInputStates } from '../state'
+import { ActionType, PatternSpecStateKeys, StringifiedPatternSpec, StringifiedPatternSpecInputStates } from '../state'
 import { PatternSpecEventHandler, PatternSpecEventHandlerParameters } from './types'
 
 const handlePatternSpecChange: PatternSpecEventHandler =
@@ -10,12 +10,14 @@ const handlePatternSpecChange: PatternSpecEventHandler =
             patternSpecValue,
             patternSpecState,
         }: PatternSpecEventHandlerParameters = patternSpecHandlerParameters
-        const {
-            disabledPatternSpecButtons,
-            displayedPatternSpec,
-            invalidPatternSpecInputs,
-            submittedPatternSpec,
-        }: PatternSpecState = patternSpecState.toJS()
+        const displayedPatternSpec: StringifiedPatternSpec =
+            patternSpecState.get(PatternSpecStateKeys.DISPLAYED_PATTERN_SPEC)
+        const invalidPatternSpecInputs: StringifiedPatternSpecInputStates =
+            patternSpecState.get(PatternSpecStateKeys.INVALID_PATTERN_SPEC_INPUTS)
+        const disabledPatternSpecButtons: StringifiedPatternSpecInputStates =
+            patternSpecState.get(PatternSpecStateKeys.DISABLED_PATTERN_SPEC_BUTTONS)
+        const submittedPatternSpec: StringifiedPatternSpec =
+            patternSpecState.get(PatternSpecStateKeys.SUBMITTED_PATTERN_SPEC)
 
         const updatedStringifiedPatternSpec: StringifiedPatternSpec = {
             ...displayedPatternSpec,

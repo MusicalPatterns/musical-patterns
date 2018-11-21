@@ -1,6 +1,8 @@
+// tslint:disable:variable-name file-name-casing no-default-export
+
 import * as React from 'react'
 import { buildPatternSpecEventAttacher, PatternSpecEventAttacher, PatternSpecEventParameters } from '../patternSpec'
-import { PatternSpecState } from '../state'
+import { PatternSpecStateKeys, StringifiedPatternSpec, StringifiedPatternSpecInputStates } from '../state'
 import { unCamelCase } from '../utilities'
 import { PatternSpecInputProps } from './types'
 
@@ -15,13 +17,16 @@ const PatternSpecInput: (patternSpecInputProps: PatternSpecInputProps) => JSX.El
             patternSpecState,
         } = patternSpecInputsProps
 
-        const {
-            displayedPatternSpec,
-            invalidPatternSpecInputs,
-            disabledPatternSpecButtons,
-            unsubmittedPatternSpecInputs,
-            submittedPatternSpec,
-        }: PatternSpecState = patternSpecState.toJS()
+        const displayedPatternSpec: StringifiedPatternSpec =
+            patternSpecState.get(PatternSpecStateKeys.DISPLAYED_PATTERN_SPEC)
+        const invalidPatternSpecInputs: StringifiedPatternSpecInputStates =
+            patternSpecState.get(PatternSpecStateKeys.INVALID_PATTERN_SPEC_INPUTS)
+        const disabledPatternSpecButtons: StringifiedPatternSpecInputStates =
+            patternSpecState.get(PatternSpecStateKeys.DISABLED_PATTERN_SPEC_BUTTONS)
+        const unsubmittedPatternSpecInputs: StringifiedPatternSpecInputStates =
+            patternSpecState.get(PatternSpecStateKeys.UNSUBMITTED_PATTERN_SPEC_INPUTS)
+        const submittedPatternSpec: StringifiedPatternSpec =
+            patternSpecState.get(PatternSpecStateKeys.SUBMITTED_PATTERN_SPEC)
 
         const patternSpecValue: string = displayedPatternSpec[ patternSpecKey ]
         const invalid: boolean = invalidPatternSpecInputs[ patternSpecKey ]

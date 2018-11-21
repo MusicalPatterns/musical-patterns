@@ -1,3 +1,5 @@
+// tslint:disable:variable-name file-name-casing no-default-export
+
 import { togglePaused } from '@musical-patterns/performer'
 import { from } from '@musical-patterns/utilities'
 import * as React from 'react'
