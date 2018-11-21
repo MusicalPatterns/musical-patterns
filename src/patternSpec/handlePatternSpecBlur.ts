@@ -1,10 +1,4 @@
-import {
-    ActionType,
-    PatternSpecState,
-    PatternSpecStateKeys,
-    StringifiedPatternSpec,
-    StringifiedPatternSpecInputStates,
-} from '../state'
+import { ActionType, PatternSpecStateKeys, StringifiedPatternSpec, StringifiedPatternSpecInputStates } from '../state'
 import { PatternSpecEventHandler, PatternSpecEventHandlerParameters } from './types'
 
 const handlePatternSpecBlur: PatternSpecEventHandler =

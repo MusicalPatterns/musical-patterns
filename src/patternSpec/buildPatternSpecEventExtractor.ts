@@ -34,5 +34,5 @@ const buildPatternSpecEventExtractor: BuildPatternSpecEventExtractor =
     }
 
 export {
-        buildPatternSpecEventExtractor,
-    }
+    buildPatternSpecEventExtractor,
+}

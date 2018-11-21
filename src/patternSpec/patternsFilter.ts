@@ -14,7 +14,7 @@ const patternsFilter: PatternsFilter =
         return filteredPatternIds
             .reduce(
                 (filteredPatterns: PartialPatterns, patternId: PatternId): PartialPatterns =>
-                    ({ ...filteredPatterns, [patternId]: patterns[patternId] }),
+                    ({ ...filteredPatterns, [ patternId ]: patterns[ patternId ] }),
                 // tslint:disable-next-line:no-object-literal-type-assertion
                 {} as PartialPatterns,
             )

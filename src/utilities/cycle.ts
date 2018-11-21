@@ -9,7 +9,7 @@ const cycle: <T>(array: T[], rotationOffset: Offset) => T[] =
         for (let i: Index = to.Index(0); i < to.Index(from.Count(cellCount)); i = apply.Offset(i, to.Offset(1))) {
             let index: Index = apply.Offset(i, rotationOffset)
             index = to.Index(wrapWithin(from.Index(index), from.Count(cellCount)))
-            cycledArray.push(array[from.Index(index)])
+            cycledArray.push(array[ from.Index(index) ])
         }
 
         return cycledArray

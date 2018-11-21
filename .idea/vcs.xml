@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/patterns/beaten-path" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/patterns/hafuhafu" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/patterns/houndstoothtopia-theme" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/patterns/stepwise" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/patterns/template" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/patterns/xelt" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/patterns/zdaubyaos" vcs="Git" />
+  </component>
+</project>

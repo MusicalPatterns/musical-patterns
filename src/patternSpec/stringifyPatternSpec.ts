@@ -1,8 +1,7 @@
 import { PatternSpec } from '../../patterns'
 import { StringifiedPatternSpec } from '../state'
 
-const displayedPatternSpecDefaults: StringifiedPatternSpec = {
-}
+const displayedPatternSpecDefaults: StringifiedPatternSpec = {}
 
 const stringifyPatternSpec: (patternSpec: PatternSpec) => StringifiedPatternSpec =
     (patternSpec: PatternSpec): StringifiedPatternSpec =>
@@ -11,9 +10,9 @@ const stringifyPatternSpec: (patternSpec: PatternSpec) => StringifiedPatternSpec
             .reduce(
                 (
                     stringifiedPatternSpec: StringifiedPatternSpec,
-                    [ key, val ]: [string, string],
+                    [ key, val ]: [ string, string ],
                 ): StringifiedPatternSpec =>
-                    ({ ...stringifiedPatternSpec, [key]: JSON.stringify(val) }),
+                    ({ ...stringifiedPatternSpec, [ key ]: JSON.stringify(val) }),
                 displayedPatternSpecDefaults,
             )
 

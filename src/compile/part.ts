@@ -25,11 +25,11 @@ const compilePart: (partSpec: PartSpec, compileNotesOptions: CompileNotesOptions
             const gain: Scalar = compileNoteProperty(gainSpec, { scales }) as Scalar
             const position: Coordinate =
                 positionSpec instanceof Array ?
-                positionSpec.map(
-                    (positionElementSpec: NotePropertySpec): CoordinateElement =>
-                        compileNoteProperty(positionElementSpec, { scales }) as CoordinateElement)
-                :
-                [ compileNoteProperty(positionSpec, { scales }) as CoordinateElement ]
+                    positionSpec.map(
+                        (positionElementSpec: NotePropertySpec): CoordinateElement =>
+                            compileNoteProperty(positionElementSpec, { scales }) as CoordinateElement)
+                    :
+                    [ compileNoteProperty(positionSpec, { scales }) as CoordinateElement ]
             const frequency: Frequency = compileNoteProperty(pitchSpec, { scales }) as Frequency
             const sustainAttempt: Time = compileNoteProperty(sustainSpec, { scales }) as Time
 

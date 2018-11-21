@@ -16,7 +16,7 @@ interface PatternChangeEventExtractorParameters {
 
 type PatternChangeEventExtractor = (parameters: PatternChangeEventExtractorParameters) => void
 
-type PartialPatterns = {[key in Partial<PatternId>]: Pattern}
+type PartialPatterns = { [key in Partial<PatternId>]: Pattern }
 
 type PatternsFilter = (patterns: Patterns) => PartialPatterns
 

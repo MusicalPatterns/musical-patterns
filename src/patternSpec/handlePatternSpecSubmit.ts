@@ -1,10 +1,5 @@
 import { BatchAction, batchActions } from 'redux-batched-actions'
-import {
-    ActionType,
-    PatternSpecState,
-    StringifiedPatternSpec,
-    StringifiedPatternSpecInputStates,
-} from '../state'
+import { ActionType, PatternSpecState, StringifiedPatternSpec, StringifiedPatternSpecInputStates } from '../state'
 import { deepEqual } from '../utilities'
 import { PatternSpecEventHandler, PatternSpecEventHandlerParameters } from './types'
 

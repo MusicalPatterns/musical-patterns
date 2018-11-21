@@ -3,11 +3,11 @@
 // @ts-ignore
 require('browser-env')()
 
-global.requestAnimationFrame = function(callback: any) {
+global.requestAnimationFrame = (callback: any) => {
     setTimeout(callback, 0)
 }
 
-global.cancelAnimationFrame = function(id: number) {
+global.cancelAnimationFrame = (id: number) => {
     clearTimeout(id)
 }
 
@@ -41,4 +41,7 @@ global.XMLHttpRequest = () => ({
     },
 })
 
-global.self = { postMessage: () => {} }
+global.self = {
+    postMessage: () => {
+    },
+}

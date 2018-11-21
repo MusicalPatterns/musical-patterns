@@ -13,7 +13,7 @@ const destringifyPatternSpec: (displayedPatternSpec: StringifiedPatternSpec) => 
             .entries(displayedPatternSpec)
             .reduce(
                 (destringifiedPatternSpec: PatternSpec, [ key, val ]: StringifiedPatternSpecEntry): PatternSpec =>
-                    ({ ...destringifiedPatternSpec, [key]: JSON.parse(val) }),
+                    ({ ...destringifiedPatternSpec, [ key ]: JSON.parse(val) }),
                 patternSpecDefaults,
             )
 

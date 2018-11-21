@@ -8,7 +8,7 @@ import {
     openChrome,
     openTab,
 } from 'puppet-strings'
-import {sleep} from '../../support'
+import { sleep } from '../../support'
 
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000
 
@@ -19,15 +19,15 @@ const selectAnExamplePattern = async () => {
     await clickElement(exampleSong)
 }
 
-const elementExists = selector => evalInTab(tab, [selector], `[selector] = arguments; return !!document.querySelector(selector)`)
+const elementExists = selector => evalInTab(tab, [ selector ], `[selector] = arguments; return !!document.querySelector(selector)`)
 
-const elementValue = selector => evalInTab(tab, [selector], `[selector] = arguments; return document.querySelector(selector).value`)
+const elementValue = selector => evalInTab(tab, [ selector ], `[selector] = arguments; return document.querySelector(selector).value`)
 
-const elementInnerText = selector => evalInTab(tab, [selector], `[selector] = arguments; return document.querySelector(selector).innerText`)
+const elementInnerText = selector => evalInTab(tab, [ selector ], `[selector] = arguments; return document.querySelector(selector).innerText`)
 
 describe('ui integration', () => {
     beforeAll(async () => {
-        browser = await openChrome({headless: false})
+        browser = await openChrome({ headless: false })
         tab = await openTab(browser, 'http://localhost:8080')
         page = tab.puppeteer.page
     })
@@ -222,7 +222,7 @@ describe('ui integration', () => {
             Array.from(document.querySelectorAll('#pattern-spec-inputs input')).map(element => element.id),
         )
         expect(inputIds)
-            .toEqual(['patternDurationScalar', 'patternPitchScalar'])
+            .toEqual([ 'patternDurationScalar', 'patternPitchScalar' ])
 
         const input = await findElement(tab, 'input#patternPitchScalar')
         await fillInElement(input, '3464')
@@ -231,7 +231,7 @@ describe('ui integration', () => {
             Array.from(document.querySelectorAll('#pattern-spec-inputs input')).map(element => element.id),
         )
         expect(inputIds)
-            .toEqual(['patternDurationScalar', 'patternPitchScalar'])
+            .toEqual([ 'patternDurationScalar', 'patternPitchScalar' ])
 
         done()
     })
