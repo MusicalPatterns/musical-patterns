@@ -1,10 +1,10 @@
 import { to } from '@musical-patterns/utilities'
 import { immutablize } from '../immutablize'
-import { ImmutablePerformerState } from './types'
+import { ImmutablePerformerState, PerformerStateKeys } from './types'
 
 const initialPerformerState: ImmutablePerformerState = immutablize({
-    paused: true,
-    time: to.Time(0),
+    [ PerformerStateKeys.PAUSED ]: true,
+    [ PerformerStateKeys.TIME ]: to.Time(0),
 })
 
 export {

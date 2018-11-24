@@ -14,5 +14,3 @@ const updateSnapshot = async patternName => {
 
 const patternNames = readdirSync('./patterns').filter(f => statSync(join('./patterns', f)).isDirectory())
 patternNames.forEach(updateSnapshot)
-
-process.exit()

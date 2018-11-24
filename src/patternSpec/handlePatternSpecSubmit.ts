@@ -1,5 +1,5 @@
 import { BatchAction, batchActions } from 'redux-batched-actions'
-import { ActionType, PatternSpecState, StringifiedPatternSpec, StringifiedPatternSpecInputStates } from '../state'
+import { ActionType, PatternSpecStateKeys, StringifiedPatternSpec, StringifiedPatternSpecInputStates } from '../state'
 import { deepEqual } from '../utilities'
 import { PatternSpecEventHandler, PatternSpecEventHandlerParameters } from './types'
 
@@ -11,12 +11,14 @@ const validateValueByThrowingIfUnparsable: (patternSpecValue: string) => void =
 const handlePatternSpecSubmit: PatternSpecEventHandler =
     async (patternSpecHandlerParameters: PatternSpecEventHandlerParameters): Promise<void> => {
         const { patternSpecKey, patternSpecValue, dispatch, patternSpecState } = patternSpecHandlerParameters
-        const {
-            disabledPatternSpecButtons,
-            invalidPatternSpecInputs,
-            submittedPatternSpec,
-            unsubmittedPatternSpecInputs,
-        }: PatternSpecState = patternSpecState.toJS()
+        const unsubmittedPatternSpecInputs: StringifiedPatternSpecInputStates =
+            patternSpecState.get(PatternSpecStateKeys.UNSUBMITTED_PATTERN_SPEC_INPUTS)
+        const invalidPatternSpecInputs: StringifiedPatternSpecInputStates =
+            patternSpecState.get(PatternSpecStateKeys.INVALID_PATTERN_SPEC_INPUTS)
+        const disabledPatternSpecButtons: StringifiedPatternSpecInputStates =
+            patternSpecState.get(PatternSpecStateKeys.DISABLED_PATTERN_SPEC_BUTTONS)
+        const submittedPatternSpec: StringifiedPatternSpec =
+            patternSpecState.get(PatternSpecStateKeys.SUBMITTED_PATTERN_SPEC)
 
         const updatedPatternSpec: StringifiedPatternSpec = {
             ...submittedPatternSpec,
