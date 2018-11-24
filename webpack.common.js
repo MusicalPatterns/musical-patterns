@@ -4,7 +4,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
     entry: './src/app.tsx',
-    mode: 'none',
     module: {
         rules: [
             {
@@ -25,9 +24,6 @@ module.exports = {
     resolve: {
         extensions: ['.ts', '.tsx', '.js'],
         mainFields: ['patternModule', 'browser', 'module', 'main'],
-    },
-    devServer: {
-        contentBase: path.join(__dirname, './dist'),
     },
     plugins: [
         new HtmlWebpackPlugin({
