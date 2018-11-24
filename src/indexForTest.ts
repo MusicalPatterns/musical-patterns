@@ -13,12 +13,9 @@ export {
     buildStandardScales,
 } from './scales'
 export {
-    Maybe,
-    deepEqual,
     repeat,
     repeatCall,
     cycle,
-    DictionaryOf,
     sequence,
 } from './utilities/indexForTest'
 export {

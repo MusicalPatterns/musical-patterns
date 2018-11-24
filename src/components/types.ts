@@ -1,8 +1,7 @@
-import { Time } from '@musical-patterns/utilities'
+import { Maybe, Time } from '@musical-patterns/utilities'
 import { PatternId } from '../../patterns'
 import { PatternChangeEventExtractor, PatternSpecEventExtractor } from '../patternSpec'
 import { ImmutablePatternSpecState, StringifiedPatternSpec } from '../state'
-import { Maybe } from '../utilities'
 
 interface AppProps {
     patternId: Maybe<PatternId>,

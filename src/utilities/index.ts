@@ -1,4 +1,3 @@
-export { deepEqual } from './deepEqual'
 export { numbers } from './numbers'
 export { repeat } from './repeat'
 export { absoluteRatio } from './absoluteRatio'
@@ -11,8 +10,3 @@ export { scaleFromScalarsAndScalar } from './scaleFromScalarsAndScalar'
 export { unCamelCase } from './unCamelCase'
 export { wrapWithin } from './wrapWithin'
 export { doAsync } from './doAsync'
-
-export {
-    Maybe,
-    DictionaryOf,
-} from './types'

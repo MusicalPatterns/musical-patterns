@@ -20,7 +20,7 @@ pull:
 	./bin/pull.sh
 
 lint:
-	./bin/lint.sh
+	sh ./node_modules/.bin/musical-patterns lint
 
 snapshot:
 	./bin/snapshot.sh

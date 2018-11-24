@@ -1,6 +1,6 @@
+import { Maybe } from '@musical-patterns/utilities'
 import { Reducer } from 'redux'
 import { PatternId } from '../../../patterns'
-import { Maybe } from '../../utilities'
 import { initialPatternId } from './state'
 import { PatternIdStateAction, PatternIdStateActionType } from './types'
 

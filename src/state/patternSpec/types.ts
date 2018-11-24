@@ -1,4 +1,4 @@
-import { DictionaryOf } from '../../utilities'
+import { DictionaryOf } from '@musical-patterns/utilities'
 import { StateIndexSignature, TypedMap } from '../types'
 
 type StringifiedPatternSpec = DictionaryOf<string>

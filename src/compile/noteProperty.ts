@@ -1,5 +1,4 @@
-import { apply, to } from '@musical-patterns/utilities'
-import { Maybe } from '../utilities'
+import { apply, Maybe, to } from '@musical-patterns/utilities'
 import { CompileNotesOptions, NoteProperty, NotePropertySpec, Scale } from './types'
 
 const compileNoteProperty: (notePropertySpec: NotePropertySpec, options: CompileNotesOptions) => NoteProperty =
@@ -27,7 +26,7 @@ const compileNoteProperty: (notePropertySpec: NotePropertySpec, options: Compile
         noteProperty = apply.Offset(noteProperty, noteOffset)
         noteProperty = apply.Offset(noteProperty, scaleOffset)
 
-        return noteProperty as NoteProperty
+        return noteProperty
     }
 
 export {

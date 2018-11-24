@@ -1,15 +1,12 @@
 export { buildStandardScales } from './scales'
 export {
     scaleFromScalarsAndScalar,
-    DictionaryOf,
     numbers,
     repeat,
-    Maybe,
     isCloseTo,
     absoluteRatio,
     sequence,
     cycle,
-    deepEqual,
     offsetFromOneIndexedToZeroIndexed,
     repeatCall,
     wrapWithin,

@@ -1,6 +1,6 @@
+import { deepEqual } from '@musical-patterns/utilities'
 import { BatchAction, batchActions } from 'redux-batched-actions'
 import { ActionType, PatternSpecStateKeys, StringifiedPatternSpec, StringifiedPatternSpecInputStates } from '../state'
-import { deepEqual } from '../utilities'
 import { PatternSpecEventHandler, PatternSpecEventHandlerParameters } from './types'
 
 const validateValueByThrowingIfUnparsable: (patternSpecValue: string) => void =

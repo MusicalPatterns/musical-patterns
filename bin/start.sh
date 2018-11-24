@@ -3,4 +3,4 @@
 set -e
 
 rm -rf dist/
-./node_modules/.bin/webpack-dev-server
+./node_modules/.bin/webpack-dev-server --config webpack.dev.js
