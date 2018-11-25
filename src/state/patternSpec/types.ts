@@ -1,5 +1,4 @@
-import { DictionaryOf } from '@musical-patterns/utilities'
-import { StateIndexSignature, TypedMap } from '../types'
+import { DictionaryOf, TypedMap } from '@musical-patterns/utilities'
 
 type StringifiedPatternSpec = DictionaryOf<string>
 
@@ -15,7 +14,7 @@ enum PatternSpecStateKeys {
     UNSUBMITTED_PATTERN_SPEC_INPUTS = 'UNSUBMITTED_PATTERN_SPEC_INPUTS',
 }
 
-interface PatternSpecState extends StateIndexSignature {
+interface PatternSpecState {
     [ PatternSpecStateKeys.DISABLED_PATTERN_SPEC_BUTTONS ]: StringifiedPatternSpecInputStates,
     [ PatternSpecStateKeys.DISPLAYED_PATTERN_SPEC ]: StringifiedPatternSpec,
     [ PatternSpecStateKeys.INVALID_PATTERN_SPEC_INPUTS ]: StringifiedPatternSpecInputStates,
@@ -23,7 +22,11 @@ interface PatternSpecState extends StateIndexSignature {
     [ PatternSpecStateKeys.UNSUBMITTED_PATTERN_SPEC_INPUTS ]: StringifiedPatternSpecInputStates,
 }
 
-type ImmutablePatternSpecState = TypedMap<PatternSpecState>
+type PatternSpecStateValueTypes =
+    StringifiedPatternSpecInputStates |
+    StringifiedPatternSpec
+
+type ImmutablePatternSpecState = TypedMap<PatternSpecStateValueTypes, PatternSpecState>
 
 enum PatternSpecStateActionType {
     SET_DISABLED_PATTERN_SPEC_BUTTONS = 'SET_DISABLED_PATTERN_SPEC_BUTTONS',

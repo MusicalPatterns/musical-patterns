@@ -1,13 +1,7 @@
-import { Maybe, Time } from '@musical-patterns/utilities'
-import { Map } from 'immutable'
+import { Maybe, TypedMap } from '@musical-patterns/utilities'
 import { PatternId } from '../../patterns'
 import { PatternIdStateAction } from './patternId'
-import {
-    ImmutablePatternSpecState,
-    PatternSpecStateAction,
-    StringifiedPatternSpec,
-    StringifiedPatternSpecInputStates,
-} from './patternSpec'
+import { ImmutablePatternSpecState, PatternSpecStateAction } from './patternSpec'
 import { ImmutablePerformerState } from './performer'
 
 type Action = PatternIdStateAction |
@@ -19,46 +13,21 @@ enum RootStateKeys {
     PERFORMER = 'PERFORMER',
 }
 
-interface StateIndexSignature {
-    [ index: string ]: AllowedValue,
-}
-
-interface RootState extends StateIndexSignature {
+interface RootState {
     [ RootStateKeys.PATTERN_ID ]: Maybe<PatternId>,
     [ RootStateKeys.PATTERN_SPEC ]: ImmutablePatternSpecState,
     [ RootStateKeys.PERFORMER ]: ImmutablePerformerState,
-
-    [ index: string ]: AllowedValue,
 }
 
-type ImmutableRootState = TypedMap<RootState>
+type ImmutableRootState = TypedMap<RootStateValueTypes, RootState>
 
-type AllowedValue =
+type RootStateValueTypes =
     ImmutablePatternSpecState |
     ImmutablePerformerState |
-    Maybe<PatternId> |
-    StringifiedPatternSpecInputStates |
-    StringifiedPatternSpec |
-    Time |
-    boolean
-
-type MapTypeAllowedData<T> = StateIndexSignature & {
-    [K in keyof T]: AllowedValue
-}
-
-interface TypedMap<T extends MapTypeAllowedData<T>> extends Map<string, AllowedValue> {
-    get<K extends keyof T>(key: K, notSetValue?: T[K]): T[K]
-
-    set<K extends keyof T>(key: K, value: T[K]): this
-
-    toJS(): T
-}
+    Maybe<PatternId>
 
 export {
-    StateIndexSignature,
     ImmutableRootState,
-    TypedMap,
-    MapTypeAllowedData,
     RootStateKeys,
     Action,
 }

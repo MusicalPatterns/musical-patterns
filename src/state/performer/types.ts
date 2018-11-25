@@ -1,5 +1,4 @@
-import { Time } from '@musical-patterns/utilities'
-import { StateIndexSignature, TypedMap } from '../types'
+import { Time, TypedMap } from '@musical-patterns/utilities'
 
 enum PerformerStateActionType {
     SET_TIME = 'SET_TIME',
@@ -24,12 +23,16 @@ enum PerformerStateKeys {
     PAUSED = 'paused',
 }
 
-interface PerformerState extends StateIndexSignature {
+interface PerformerState {
     [ PerformerStateKeys.TIME ]: Time,
     [ PerformerStateKeys.PAUSED ]: boolean,
 }
 
-type ImmutablePerformerState = TypedMap<PerformerState>
+type PerformerStateValueTypes =
+    Time |
+    boolean
+
+type ImmutablePerformerState = TypedMap<PerformerStateValueTypes, PerformerState>
 
 export {
     ImmutablePerformerState,

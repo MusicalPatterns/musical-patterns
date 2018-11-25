@@ -1,8 +1,7 @@
-import { to } from '@musical-patterns/utilities'
-import { immutablize } from '../immutablize'
+import { to, typedMap } from '@musical-patterns/utilities'
 import { ImmutablePerformerState, PerformerStateKeys } from './types'
 
-const initialPerformerState: ImmutablePerformerState = immutablize({
+const initialPerformerState: ImmutablePerformerState = typedMap({
     [ PerformerStateKeys.PAUSED ]: true,
     [ PerformerStateKeys.TIME ]: to.Time(0),
 })

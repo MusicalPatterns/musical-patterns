@@ -1,7 +1,7 @@
-import { immutablize } from '../immutablize'
+import { typedMap } from '@musical-patterns/utilities'
 import { ImmutablePatternSpecState, PatternSpecStateKeys } from './types'
 
-const initialPatternSpecState: ImmutablePatternSpecState = immutablize({
+const initialPatternSpecState: ImmutablePatternSpecState = typedMap({
     [ PatternSpecStateKeys.DISABLED_PATTERN_SPEC_BUTTONS ]: {},
     [ PatternSpecStateKeys.DISPLAYED_PATTERN_SPEC ]: {},
     [ PatternSpecStateKeys.INVALID_PATTERN_SPEC_INPUTS ]: {},

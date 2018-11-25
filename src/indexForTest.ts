@@ -27,7 +27,6 @@ export {
 } from './nominal/indexForTest'
 export {
     ActionType,
-    immutablize,
     rootReducer,
     ImmutableRootState,
 } from './state/indexForTest'
