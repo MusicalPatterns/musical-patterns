@@ -1,6 +1,6 @@
 // tslint:disable no-magic-numbers
 
-import { Count, Index, Offset, Power, Scalar, to } from '@musical-patterns/utilities'
+import { Count, Index, Offset, Scalar, to } from '@musical-patterns/utilities'
 
 const FULL_GAIN: Scalar = to.Scalar(1)
 
@@ -11,9 +11,6 @@ const EVEN: number = 2
 
 const ONCE: Count = to.Count(1)
 const TWICE: Count = to.Count(2)
-
-const SQUARED: Power = to.Power(2)
-const SQUARE_ROOT: Power = to.Power(1 / 2)
 
 const INITIAL: Index = to.Index(0)
 
@@ -27,10 +24,6 @@ const DEFAULT_DURATIONS_SCALE_INDEX: Index = to.Index(1)
 const DEFAULT_PITCH_SCALE_INDEX: Index = to.Index(2)
 
 const INCLUSIVE: Offset = to.Offset(1)
-
-const X_AXIS: Index = to.Index(0)
-const Y_AXIS: Index = to.Index(1)
-const Z_AXIS: Index = to.Index(2)
 
 export {
     DEFAULT_SCALAR_FOR_ALMOST_FULL_SUSTAIN,
@@ -47,9 +40,4 @@ export {
     INITIAL,
     ONCE,
     TWICE,
-    SQUARED,
-    SQUARE_ROOT,
-    X_AXIS,
-    Y_AXIS,
-    Z_AXIS,
 }

@@ -28,7 +28,3 @@ export {
 export {
     App,
 } from './components/indexForTest'
-export {
-    X_AXIS,
-    Y_AXIS,
-} from './constants'

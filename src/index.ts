@@ -29,9 +29,6 @@ export {
     INCLUSIVE,
     ONCE,
     TWICE,
-    SQUARED,
-    SQUARE_ROOT,
-    Z_AXIS,
 } from './constants'
 export {
     Entity,
