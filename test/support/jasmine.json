@@ -3,9 +3,11 @@
     "test/src/**/*.test.ts",
     "test/src/**/*.test.js",
     "test/src/**/*.test.tsx",
+    "test/src/**/*.test.jsx",
     "patterns/**/*.test.ts",
     "patterns/**/*.test.js",
-    "patterns/**/*.test.tsx"
+    "patterns/**/*.test.tsx",
+    "patterns/**/*.test.jsx"
   ],
   "helpers": [
     "test/support/mockDom.ts"

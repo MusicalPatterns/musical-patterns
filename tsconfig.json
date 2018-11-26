@@ -1,28 +1,10 @@
 {
+  "extends": "./tsconfig-common.json",
   "compilerOptions": {
-    "moduleResolution": "node",
-    "module": "esnext",
-    "target": "es5",
-    "downlevelIteration": true,
-    "lib": [
-      "es2017",
-      "dom"
-    ],
-    "noImplicitReturns": true,
-    "strict": true,
-    "pretty": true,
-    "sourceMap": true,
-    "types": [
-      "jasmine",
-      "react",
-      "react-dom",
-      "react-redux"
-    ],
-    "skipLibCheck": true,
-    "jsx": "react",
-    "allowSyntheticDefaultImports": true
+    "module": "commonjs"
   },
   "exclude": [
+    "dist",
     "test",
     "patterns/**/test"
   ]

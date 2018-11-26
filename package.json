@@ -1,8 +1,8 @@
 {
   "name": "@musical-patterns/lab",
   "devDependencies": {
-    "@musical-patterns/performer": "^1.0.18",
-    "@musical-patterns/utilities": "^1.0.34",
+    "@musical-patterns/performer": "^1.0.22",
+    "@musical-patterns/utilities": "^1.0.38",
     "@types/jasmine": "^2.8.11",
     "@types/react": "^16.7.3",
     "@types/react-dom": "^16.0.9",
