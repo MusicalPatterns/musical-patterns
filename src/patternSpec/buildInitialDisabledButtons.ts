@@ -1,4 +1,4 @@
-import { PatternSpec } from '../../patterns'
+import { PatternSpec } from '../patterns'
 import { StringifiedPatternSpecInputStates } from '../state'
 
 const buildInitialDisabledButtons: (patternSpec: PatternSpec) => StringifiedPatternSpecInputStates =

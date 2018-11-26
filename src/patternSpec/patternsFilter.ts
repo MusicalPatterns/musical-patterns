@@ -1,4 +1,4 @@
-import { filteredPatternsRegistry, PatternId, Patterns } from '../../patterns'
+import { filteredPatternsRegistry, PatternId, Patterns } from '../patterns'
 import { PartialPatterns, PatternsFilter } from './types'
 
 const patternsFilter: PatternsFilter =

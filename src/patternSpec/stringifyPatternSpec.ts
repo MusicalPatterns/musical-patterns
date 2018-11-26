@@ -1,4 +1,4 @@
-import { PatternSpec } from '../../patterns'
+import { PatternSpec } from '../patterns'
 import { StringifiedPatternSpec } from '../state'
 
 const displayedPatternSpecDefaults: StringifiedPatternSpec = {}

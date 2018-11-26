@@ -1,5 +1,5 @@
 import { Scalar } from '@musical-patterns/utilities'
-import { Entity, Scale } from '../src'
+import { Entity, Scale } from '../compile'
 import { PatternId } from './patternId'
 
 interface PatternMaterial {

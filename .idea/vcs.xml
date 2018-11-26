@@ -2,12 +2,12 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/patterns/beaten-path" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/patterns/hafuhafu" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/patterns/houndstoothtopia-theme" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/patterns/stepwise" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/patterns/template" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/patterns/xelt" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/patterns/zdaubyaos" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/patterns/beaten-path" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/patterns/hafuhafu" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/patterns/houndstoothtopia-theme" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/patterns/stepwise" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/patterns/template" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/patterns/xelt" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/patterns/zdaubyaos" vcs="Git" />
   </component>
 </project>

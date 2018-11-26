@@ -1,5 +1,5 @@
 import { ThreadSpec } from '@musical-patterns/performer'
-import { Pattern, PatternMaterial } from '../../patterns'
+import { Pattern, PatternMaterial } from '../patterns'
 import { compileThreadSpecs } from './threads'
 import { Entity, Scale } from './types'
 

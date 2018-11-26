@@ -3,7 +3,7 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
 import { Dispatch } from 'redux'
-import { Pattern, PatternId, patterns } from '../../patterns'
+import { Pattern, PatternId, patterns } from '../patterns'
 import {
     handlePatternChange,
     PartialPatterns,

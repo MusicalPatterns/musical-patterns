@@ -11,7 +11,7 @@ deploy:
 	./bin/deploy.sh
 
 test:
-	./bin/test.sh
+	musical-patterns test && git submodule foreach make test
 
 push:
 	./bin/push.sh
@@ -20,10 +20,10 @@ pull:
 	./bin/pull.sh
 
 lint:
-	sh ./node_modules/.bin/musical-patterns lint
+	musical-patterns lint && git submodule foreach make lint
 
 snapshot:
 	./bin/snapshot.sh
 
 build:
-	./bin/build.sh
+	musical-patterns build --command "webpack --config webpack.prod.js"

@@ -1,5 +1,5 @@
 import { BatchAction, batchActions } from 'redux-batched-actions'
-import { patterns, PatternSpec } from '../../patterns'
+import { patterns, PatternSpec } from '../patterns'
 import { Action, ActionType, StringifiedPatternSpec, StringifiedPatternSpecInputStates } from '../state'
 import { buildInitialDisabledButtons } from './buildInitialDisabledButtons'
 import { stringifyPatternSpec } from './stringifyPatternSpec'

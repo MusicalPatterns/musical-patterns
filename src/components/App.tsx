@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import { connect } from 'react-redux'
-import { Pattern, PatternId, PatternMetadata, patterns } from '../../patterns'
+import { Pattern, PatternId, PatternMetadata, patterns } from '../patterns'
 import { ImmutableRootState, RootStateKeys } from '../state'
 import PatternList from './PatternList'
 import PatternListener from './PatternListener'
