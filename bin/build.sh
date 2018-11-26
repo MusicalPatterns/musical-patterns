@@ -3,4 +3,4 @@
 set -e
 
 rm -rf dist/
-./node_modules/.bin/webpack
+./node_modules/.bin/webpack --config webpack.prod.js
