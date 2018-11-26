@@ -1,4 +1,4 @@
-import { from, Scalar, SumOfScalars, to } from '@musical-patterns/utilities'
+import { from, Scalar, SumOfScalars, to } from '@musical-patterns/shared'
 import { NoteSpec, PartSpec } from '../../src/indexForTest'
 
 const calculatePartTotalScalarDuration: (partSpec: PartSpec) => SumOfScalars =

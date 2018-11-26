@@ -1,4 +1,4 @@
-import { Maybe, TypedMap } from '@musical-patterns/utilities'
+import { Maybe, TypedMap } from '@musical-patterns/shared'
 import { PatternId } from '../patterns'
 import { PatternIdStateAction } from './patternId'
 import { ImmutablePatternSpecState, PatternSpecStateAction } from './patternSpec'

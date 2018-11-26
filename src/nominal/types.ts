@@ -1,4 +1,4 @@
-import { Index } from '@musical-patterns/utilities'
+import { Index } from '@musical-patterns/shared'
 
 enum _BlockBrand {}
 

@@ -1,4 +1,4 @@
-import { Maybe, Time } from '@musical-patterns/utilities'
+import { Maybe, Time } from '@musical-patterns/shared'
 import { PatternId } from '../patterns'
 import { PatternChangeEventExtractor, PatternSpecEventExtractor } from '../patternSpec'
 import { ImmutablePatternSpecState, StringifiedPatternSpec } from '../state'

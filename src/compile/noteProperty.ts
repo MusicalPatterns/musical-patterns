@@ -1,4 +1,4 @@
-import { apply, Maybe, to } from '@musical-patterns/utilities'
+import { apply, Maybe, to } from '@musical-patterns/shared'
 import { CompileNotesOptions, NoteProperty, NotePropertySpec, Scale } from './types'
 
 const compileNoteProperty: (notePropertySpec: NotePropertySpec, options: CompileNotesOptions) => NoteProperty =

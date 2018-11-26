@@ -7,7 +7,7 @@ import {
     Power,
     Scalar,
     to,
-} from '@musical-patterns/utilities'
+} from '@musical-patterns/shared'
 import { Scale } from '../compile'
 import { OCTAVE } from '../constants'
 

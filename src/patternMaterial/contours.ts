@@ -1,4 +1,4 @@
-import { DictionaryOf } from '@musical-patterns/utilities'
+import { DictionaryOf } from '@musical-patterns/shared'
 import { ContourElement, ContourPiece, to } from '../nominal'
 
 const unpackContourElement: (contourElement: ContourElement) => DictionaryOf<number> =

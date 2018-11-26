@@ -1,4 +1,4 @@
-import { Scalar } from '@musical-patterns/utilities'
+import { Scalar } from '@musical-patterns/shared'
 import { Entity, Scale } from '../compile'
 import { PatternId } from './patternId'
 

@@ -1,4 +1,4 @@
-import { Time, TypedMap } from '@musical-patterns/utilities'
+import { Time, TypedMap } from '@musical-patterns/shared'
 
 enum PerformerStateActionType {
     SET_TIME = 'SET_TIME',

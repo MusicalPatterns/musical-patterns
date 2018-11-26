@@ -1,4 +1,4 @@
-import { DictionaryOf, TypedMap } from '@musical-patterns/utilities'
+import { DictionaryOf, TypedMap } from '@musical-patterns/shared'
 
 type StringifiedPatternSpec = DictionaryOf<string>
 

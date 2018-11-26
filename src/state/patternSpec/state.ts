@@ -1,4 +1,4 @@
-import { typedMap } from '@musical-patterns/utilities'
+import { typedMap } from '@musical-patterns/shared'
 import { ImmutablePatternSpecState, PatternSpecStateKeys } from './types'
 
 const initialPatternSpecState: ImmutablePatternSpecState = typedMap({

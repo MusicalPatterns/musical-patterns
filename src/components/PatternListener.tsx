@@ -1,7 +1,7 @@
 // tslint:disable:variable-name file-name-casing no-default-export
 
 import { restart, ThreadSpec } from '@musical-patterns/performer'
-import { doAsync } from '@musical-patterns/utilities'
+import { doAsync } from '@musical-patterns/shared'
 import * as React from 'react'
 import { connect } from 'react-redux'
 import { compilePattern } from '../compile'

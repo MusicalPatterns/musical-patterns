@@ -1,5 +1,5 @@
 import { OnUpdate } from '@musical-patterns/performer'
-import { Time } from '@musical-patterns/utilities'
+import { Time } from '@musical-patterns/shared'
 import { ActionType, store } from '../state'
 
 const onPerformerUpdate: OnUpdate =
