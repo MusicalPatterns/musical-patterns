@@ -1,7 +1,15 @@
-import { apply, DictionaryOf, from, Power, Scalar, to } from '@musical-patterns/utilities'
-import { Scale } from './compile'
-import { OCTAVE } from './constants'
-import { numbers, offsetFromOneIndexedToZeroIndexed } from './utilities'
+import {
+    apply,
+    DictionaryOf,
+    from,
+    numbers,
+    offsetFromOneIndexedToZeroIndexed,
+    Power,
+    Scalar,
+    to,
+} from '@musical-patterns/utilities'
+import { Scale } from '../compile'
+import { OCTAVE } from '../constants'
 
 const buildStandardScales: () => DictionaryOf<Scale> =
     (): DictionaryOf<Scale> => {

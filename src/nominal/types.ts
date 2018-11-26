@@ -1,5 +1,4 @@
 import { Index } from '@musical-patterns/utilities'
-import { PartSpec } from '../compile'
 
 enum _BlockBrand {}
 
@@ -15,12 +14,9 @@ enum _ContourWholeBrand {}
 
 type ContourWhole = _ContourWholeBrand & ContourElement[]
 
-type Segment = PartSpec[]
-
 export {
     Block,
     ContourElement,
-    Segment,
     ContourPiece,
     ContourWhole,
 }

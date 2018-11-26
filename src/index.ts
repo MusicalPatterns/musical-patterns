@@ -1,23 +1,17 @@
-export { buildStandardScales } from './scales'
 export {
+    buildStandardScales,
+    unpackContourElement,
+    calculateTotalContourDuration,
+    rest,
     scaleFromScalarsAndScalar,
-    numbers,
-    repeat,
-    isCloseTo,
-    absoluteRatio,
-    sequence,
-    cycle,
-    offsetFromOneIndexedToZeroIndexed,
-    repeatCall,
-    wrapWithin,
-} from './utilities'
+    Segment,
+} from './patternMaterial'
 export {
     Block,
     to,
     from,
     ContourPiece,
     ContourWhole,
-    Segment,
     ContourElement,
 } from './nominal'
 export {
@@ -39,7 +33,6 @@ export {
     SQUARE_ROOT,
     Z_AXIS,
 } from './constants'
-export { unpackContourElement, calculateTotalContourDuration, rest } from './contours'
 export {
     Entity,
     Scale,

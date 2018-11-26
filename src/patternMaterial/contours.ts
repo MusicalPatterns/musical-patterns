@@ -1,5 +1,5 @@
 import { DictionaryOf } from '@musical-patterns/utilities'
-import { ContourElement, ContourPiece, to } from './nominal'
+import { ContourElement, ContourPiece, to } from '../nominal'
 
 const unpackContourElement: (contourElement: ContourElement) => DictionaryOf<number> =
     (contourElement: ContourElement): DictionaryOf<number> => ({

@@ -11,5 +11,4 @@ export {
     ContourPiece,
     ContourWhole,
     ContourElement,
-    Segment,
 } from './types'

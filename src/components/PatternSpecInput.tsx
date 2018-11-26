@@ -1,9 +1,9 @@
 // tslint:disable:variable-name file-name-casing no-default-export
 
+import { unCamelCase } from '@musical-patterns/utilities'
 import * as React from 'react'
 import { buildPatternSpecEventAttacher, PatternSpecEventAttacher, PatternSpecEventParameters } from '../patternSpec'
 import { PatternSpecStateKeys, StringifiedPatternSpec, StringifiedPatternSpecInputStates } from '../state'
-import { unCamelCase } from '../utilities'
 import { PatternSpecInputProps } from './types'
 
 const PatternSpecInput: (patternSpecInputProps: PatternSpecInputProps) => JSX.Element =

@@ -1,4 +1,4 @@
-import { calculateTotalContourDuration, ContourPiece, to } from '../../src/indexForTest'
+import { calculateTotalContourDuration, ContourPiece, to } from '../../../src/indexForTest'
 
 describe('calculate total contour duration', () => {
     it('totals the durations of the contour', () => {

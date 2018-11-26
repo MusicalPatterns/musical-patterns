@@ -1,13 +1,13 @@
 // tslint:disable:variable-name file-name-casing no-default-export
 
 import { restart, ThreadSpec } from '@musical-patterns/performer'
+import { doAsync } from '@musical-patterns/utilities'
 import * as React from 'react'
 import { connect } from 'react-redux'
 import { Pattern, patterns, PatternSpec } from '../../patterns'
 import { compilePattern } from '../compile'
 import { destringifyPatternSpec } from '../patternSpec'
 import { ImmutableRootState, PatternSpecStateKeys, RootStateKeys } from '../state'
-import { doAsync } from '../utilities'
 import { PatternListenerProps, PatternListenerPropsFromState } from './types'
 
 const mapStateToProps: (state: ImmutableRootState) => PatternListenerPropsFromState =

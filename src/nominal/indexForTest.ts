@@ -9,5 +9,4 @@ export {
 export {
     Block,
     ContourPiece,
-    Segment,
 } from './types'
