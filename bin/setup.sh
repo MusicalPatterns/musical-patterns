@@ -23,3 +23,9 @@ git pull -r
 
 npm i -g webpack-cli
 npm i
+
+gcloud config configurations create musical-patterns
+gcloud config set project musical-patterns
+gcloud config set account kingwoodchuckii@gmail.com
+
+gcloud auth application-default login
