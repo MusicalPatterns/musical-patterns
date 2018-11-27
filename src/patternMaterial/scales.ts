@@ -3,13 +3,13 @@ import {
     DictionaryOf,
     from,
     numbers,
+    OCTAVE,
     offsetFromOneIndexedToZeroIndexed,
     Power,
     Scalar,
     to,
 } from '@musical-patterns/shared'
 import { Scale } from '../compile'
-import { OCTAVE } from '../constants'
 
 const buildStandardScales: () => DictionaryOf<Scale> =
     (): DictionaryOf<Scale> => {
