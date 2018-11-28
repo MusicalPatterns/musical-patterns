@@ -1,15 +1,6 @@
 // tslint:disable:no-reaching-imports
 
 export {
-    NotePropertySpec,
-    NoteSpec,
-    Scale,
-    Entity,
-    compilePattern,
-    compileNoteProperty,
-    PartSpec,
-} from './compile/indexForTest'
-export {
     calculateTotalContourDuration,
     buildStandardScales,
     Segment,
@@ -17,14 +8,5 @@ export {
 export {
     Block,
     to,
-    from,
     ContourPiece,
 } from './nominal/indexForTest'
-export {
-    ActionType,
-    rootReducer,
-    ImmutableRootState,
-} from './state/indexForTest'
-export {
-    App,
-} from './components/indexForTest'

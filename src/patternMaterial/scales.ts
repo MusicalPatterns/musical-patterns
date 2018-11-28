@@ -7,9 +7,9 @@ import {
     offsetFromOneIndexedToZeroIndexed,
     Power,
     Scalar,
+    Scale,
     to,
 } from '@musical-patterns/shared'
-import { Scale } from '../compile'
 
 const buildStandardScales: () => DictionaryOf<Scale> =
     (): DictionaryOf<Scale> => {

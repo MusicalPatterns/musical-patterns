@@ -1,46 +1,7 @@
-import { Scalar } from '@musical-patterns/shared'
-import { Entity, Scale } from '../compile'
-import { PatternId } from './patternId'
+import { AllPatterns, Pattern, PatternId, Patterns } from '@musical-patterns/shared'
 
-interface PatternMaterial {
-    buildEntitiesFunction: BuildEntitiesFunction,
-    buildScalesFunction: BuildScalesFunction,
-}
-
-interface PatternMetadata {
-    description: string,
-    formattedName: string,
-    musicalIdeaIllustrated: string,
-}
-
-interface PatternSpec {
-    patternDurationScalar: Scalar,
-    patternPitchScalar: Scalar,
-
-    // tslint:disable-next-line:no-any
-    [ index: string ]: any,
-}
-
-interface Pattern {
-    material: PatternMaterial,
-    metadata: PatternMetadata,
-    patternId: PatternId,
-    spec: PatternSpec,
-}
-
-type Patterns = { [index in PatternId]: Pattern }
-
-// tslint:disable-next-line:no-any
-type BuildEntitiesFunction = (patternSpec?: any) => Entity[]
-// tslint:disable-next-line:no-any
-type BuildScalesFunction = (patternSpec?: any) => Scale[]
+type PatternsFilter = (patterns: AllPatterns) => Patterns
 
 export {
-    Pattern,
-    Patterns,
-    PatternMetadata,
-    PatternMaterial,
-    PatternSpec,
-    BuildEntitiesFunction,
-    BuildScalesFunction,
+    PatternsFilter,
 }

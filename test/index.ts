@@ -1,3 +1,0 @@
-export {
-    calculatePartTotalScalarDuration,
-} from './support'

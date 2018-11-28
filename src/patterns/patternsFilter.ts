@@ -1,8 +1,9 @@
-import { filteredPatternsRegistry, PatternId, Patterns } from '../patterns'
-import { PartialPatterns, PatternsFilter } from './types'
+import { AllPatterns, PatternId, Patterns } from '@musical-patterns/shared'
+import { filteredPatternsRegistry } from '../patterns'
+import { PatternsFilter } from './types'
 
 const patternsFilter: PatternsFilter =
-    (patterns: Patterns): PartialPatterns => {
+    (patterns: AllPatterns): Patterns => {
         const patternIds: PatternId[] = Object.keys(patterns) as PatternId[]
         const filteredPatternIds: PatternId[] = patternIds
             .sort()
@@ -13,10 +14,10 @@ const patternsFilter: PatternsFilter =
 
         return filteredPatternIds
             .reduce(
-                (filteredPatterns: PartialPatterns, patternId: PatternId): PartialPatterns =>
+                (filteredPatterns: Patterns, patternId: PatternId): Patterns =>
                     ({ ...filteredPatterns, [ patternId ]: patterns[ patternId ] }),
                 // tslint:disable-next-line:no-object-literal-type-assertion
-                {} as PartialPatterns,
+                {} as Patterns,
             )
     }
 

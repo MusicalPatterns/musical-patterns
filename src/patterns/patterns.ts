@@ -1,14 +1,14 @@
+import { AllPatterns, Pattern } from '@musical-patterns/shared'
 import * as patternsRegistry from './patternsRegistry'
-import { Pattern, Patterns } from './types'
 
-const patternsAccumulator: Partial<Patterns> = {}
+const patternsAccumulator: Partial<AllPatterns> = {}
 
-const patterns: Patterns = Object.values(patternsRegistry)
+const patterns: AllPatterns = Object.values(patternsRegistry)
     .reduce(
-        (patternsSoFar: Partial<Patterns>, nextPattern: Pattern): Partial<Patterns> =>
+        (patternsSoFar: Partial<AllPatterns>, nextPattern: Pattern): Partial<AllPatterns> =>
             ({ ...patternsSoFar, [ nextPattern.patternId ]: nextPattern }),
         patternsAccumulator,
-    ) as Patterns
+    ) as AllPatterns
 
 export {
     patterns,

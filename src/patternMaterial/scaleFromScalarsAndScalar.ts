@@ -1,5 +1,4 @@
-import { Scalar } from '@musical-patterns/shared'
-import { Scale } from '../compile'
+import { Scalar, Scale } from '@musical-patterns/shared'
 
 const scaleFromScalarsAndScalar: (scalars: Scalar[], patternPitchScalar: Scalar) => Scale =
     (scalars: Scalar[], patternPitchScalar: Scalar): Scale => ({

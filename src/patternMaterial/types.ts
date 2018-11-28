@@ -1,4 +1,4 @@
-import { PartSpec } from '../compile'
+import { PartSpec } from '@musical-patterns/shared'
 
 type Segment = PartSpec[]
 
