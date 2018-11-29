@@ -1,4 +1,4 @@
-import { AllPatterns, Pattern, PatternId, Patterns } from '@musical-patterns/shared'
+import { AllPatterns, Patterns } from '@musical-patterns/shared'
 
 type PatternsFilter = (patterns: AllPatterns) => Patterns
 

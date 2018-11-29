@@ -26,4 +26,4 @@ snapshot:
 	./bin/snapshot.sh
 
 build:
-	musical-patterns build --command "webpack --config webpack.prod.js"
+	musical-patterns build "webpack --config webpack.prod.js"

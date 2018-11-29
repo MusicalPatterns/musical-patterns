@@ -2,8 +2,8 @@
 
 set -e
 
-cp ./node_modules/@musical-patterns/shared/tsconfig-common.json .
-cp ./node_modules/@musical-patterns/shared/tsconfig.json .
+cp ./node_modules/@musical-patterns/cli/tsconfig-common.json .
+cp ./node_modules/@musical-patterns/cli/tsconfig.json .
 
 trap ctrl_c INT
 function ctrl_c() {
