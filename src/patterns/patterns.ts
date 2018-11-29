@@ -1,4 +1,4 @@
-import { AllPatterns, Pattern } from '@musical-patterns/shared'
+import { AllPatterns, Pattern } from '@musical-patterns/utilities'
 import * as patternsRegistry from './patternsRegistry'
 
 const patternsAccumulator: Partial<AllPatterns> = {}

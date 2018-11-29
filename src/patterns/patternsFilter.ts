@@ -1,5 +1,5 @@
 import { PatternId } from '@musical-patterns/registry'
-import { AllPatterns, Patterns } from '@musical-patterns/shared'
+import { AllPatterns, Patterns } from '@musical-patterns/utilities'
 import { filteredPatternsRegistry } from '../patterns'
 import { PatternsFilter } from './types'
 

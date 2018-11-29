@@ -9,7 +9,7 @@ import {
     Scalar,
     Scale,
     to,
-} from '@musical-patterns/shared'
+} from '@musical-patterns/utilities'
 
 const buildStandardScales: () => DictionaryOf<Scale> =
     (): DictionaryOf<Scale> => {

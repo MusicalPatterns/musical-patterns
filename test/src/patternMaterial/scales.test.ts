@@ -1,4 +1,4 @@
-import { DictionaryOf, Scale, to } from '@musical-patterns/shared'
+import { DictionaryOf, Scale, to } from '@musical-patterns/utilities'
 import { buildStandardScales } from '../../../src/indexForTest'
 
 describe('standard scales', () => {

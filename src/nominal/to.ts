@@ -1,6 +1,6 @@
 // tslint:disable:variable-name no-any
 
-import { Index } from '@musical-patterns/shared'
+import { Index } from '@musical-patterns/utilities'
 import { Block, ContourElement, ContourPiece, ContourWhole } from './types'
 
 const Block: (block: Array<number | Index>) => Block =
