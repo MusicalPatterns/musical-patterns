@@ -13,7 +13,6 @@ module.exports = {
     },
     resolve: {
         extensions: ['.ts', '.js'],
-        mainFields: ['patternModule', 'browser', 'module', 'main'],
     },
     plugins: [
         new HtmlWebpackPlugin({

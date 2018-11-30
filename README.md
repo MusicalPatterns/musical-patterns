@@ -1,3 +1,5 @@
 # Musical Patterns Lab
 
-an interface for experimenting on some musical patterns
+A place to submodule all the musical patterns to develop on them together.
+
+Uses the playroom to let you hear them.

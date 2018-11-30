@@ -1,9 +1,9 @@
-import { AllPatterns, Pattern } from '@musical-patterns/utilities'
-import * as patternsRegistry from './patternsRegistry'
+import { AllPatterns, Pattern } from '@musical-patterns/pattern'
+import * as patternSubmodules from './patternSubmodules'
 
 const patternsAccumulator: Partial<AllPatterns> = {}
 
-const patterns: AllPatterns = Object.values(patternsRegistry)
+const patterns: AllPatterns = Object.values(patternSubmodules)
     .reduce(
         (patternsSoFar: Partial<AllPatterns>, nextPattern: Pattern): Partial<AllPatterns> =>
             ({ ...patternsSoFar, [ nextPattern.patternId ]: nextPattern }),

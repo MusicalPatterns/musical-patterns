@@ -11,7 +11,7 @@ deploy:
 	./bin/deploy.sh
 
 test:
-	musical-patterns test && git submodule foreach make test
+	musical-patterns test
 
 push:
 	./bin/push.sh
@@ -20,7 +20,7 @@ pull:
 	./bin/pull.sh
 
 lint:
-	musical-patterns lint && git submodule foreach make lint
+	musical-patterns lint
 
 snapshot:
 	./bin/snapshot.sh

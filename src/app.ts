@@ -1,5 +1,6 @@
+import { patternsFilter } from '@musical-patterns/pattern'
 import { setupPlayroom } from '@musical-patterns/playroom'
-import { patterns, patternsFilter } from './patterns'
+import { patterns } from './patterns'
 
 const playroom: HTMLDivElement = setupPlayroom(patternsFilter(patterns))
 
