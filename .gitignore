@@ -6,6 +6,3 @@ node_modules
 .module-cache
 *.log*
 dist
-patterns/**/node_modules
-tsconfig.json
-tsconfig-common.json
