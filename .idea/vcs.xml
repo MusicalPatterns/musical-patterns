@@ -5,6 +5,7 @@
     <mapping directory="$PROJECT_DIR$/src/beaten-path" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/hafuhafu" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/houndstoothtopia-theme" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/houndstoothtopia-theme/src/custom/coordinates/houndstoothOutline" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/stepwise" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/template" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/xelt" vcs="Git" />

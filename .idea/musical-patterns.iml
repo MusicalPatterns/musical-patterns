@@ -4,6 +4,13 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/.idea" />
       <excludeFolder url="file://$MODULE_DIR$/.tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/src/beaten-path/package/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/src/hafuhafu/package/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/src/houndstoothtopia-theme/package/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/src/stepwise/package/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/src/template/package/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/src/xelt/package/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/src/zdaubyaos/package/dist" />
       <excludeFolder url="file://$MODULE_DIR$/temp" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
     </content>

@@ -6,3 +6,7 @@ node_modules
 .module-cache
 *.log*
 dist
+
+# Because these two stick around as long as the dev server is running
+tsconfig.json
+tsconfig-common.json

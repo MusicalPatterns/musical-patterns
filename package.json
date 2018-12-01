@@ -1,7 +1,7 @@
 {
   "name": "@musical-patterns/lab",
   "devDependencies": {
-    "@musical-patterns/cli": "^1.0.1",
+    "@musical-patterns/cli": "^1.0.4",
     "@musical-patterns/compiler": "^1.0.10",
     "@musical-patterns/pattern": "^1.0.3",
     "@musical-patterns/performer": "^1.0.41",
