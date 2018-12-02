@@ -29,3 +29,5 @@ gcloud config set project musical-patterns
 gcloud config set account kingwoodchuckii@gmail.com
 
 gcloud auth application-default login
+
+npm config set git-tag-version=false
