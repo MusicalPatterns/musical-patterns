@@ -1,4 +1,6 @@
 #!/usr/bin/env sh
 
-node_modules/.bin/tsc -p test/tsconfig.json
-node_modules/.bin/ts-node -P test/tsconfig.json ./bin/snapshot.js
+node_modules/.bin/tsc -p tsconfig-node.json
+if [[ $? == 0 ]] ; then
+	node_modules/.bin/ts-node -P tsconfig-node.json ./bin/snapshot.js
+fi
