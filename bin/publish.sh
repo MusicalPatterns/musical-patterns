@@ -5,7 +5,7 @@ PATTERN_DIR=src/${PATTERN}
 
 export PATH=${PATH}:./node_modules/.bin/
 
-cp bin/tsconfig.json ${PATTERN_DIR}
+cp bin/tsconfig-pattern-publish.json ${PATTERN_DIR}/tsconfig.json
 
 cd ${PATTERN_DIR}
 
