@@ -1,11 +1,11 @@
 {
   "name": "@musical-patterns/lab",
   "devDependencies": {
-    "@musical-patterns/cli": "^1.0.17",
-    "@musical-patterns/compiler": "^1.0.18",
-    "@musical-patterns/pattern": "^1.0.6",
-    "@musical-patterns/playroom": "^1.0.10",
-    "@musical-patterns/utilities": "^1.0.75",
+    "@musical-patterns/cli": "^1.0.24",
+    "@musical-patterns/compiler": "^1.0.20",
+    "@musical-patterns/pattern": "^1.0.8",
+    "@musical-patterns/playroom": "^1.0.11",
+    "@musical-patterns/utilities": "^1.0.82",
     "awesome-typescript-loader": "^5.2.1",
     "copy-webpack-plugin": "^4.6.0",
     "html-webpack-plugin": "^3.2.0",

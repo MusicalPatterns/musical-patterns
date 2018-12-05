@@ -1,29 +1,32 @@
 .PHONY: lint
 .PHONY: test
 
-setup:
-	./bin/setup.sh
-
-start:
-	./bin/start.sh
-
 deploy:
 	./bin/deploy.sh
 
-test:
-	musical-patterns test
-
-push:
-	./bin/push.sh
-
-pull:
-	./bin/pull.sh
-
-lint:
-	musical-patterns lint
+setup:
+	./bin/setup.sh
 
 snapshot:
 	./bin/snapshot.sh
 
+start:
+	./bin/start.sh
+
 build:
 	musical-patterns build "webpack --config webpack.prod.js"
+
+lint:
+	musical-patterns lint
+
+publish:
+	musical-patterns publish
+
+pull:
+	musical-patterns pull
+
+push:
+	musical-patterns push
+
+test:
+	musical-patterns test
