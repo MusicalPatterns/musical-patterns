@@ -1,11 +1,17 @@
 #!/usr/bin/env sh
 
-PATTERN="$1"
+set -e
+
 PATTERN_DIR=src/${PATTERN}
+
+if [[ ${PATTERN} == "" ]] ; then
+	printf "Please specify a pattern to publish with 'PATTERN=my-pattern'"
+	exit 1
+fi
 
 export PATH=${PATH}:./node_modules/.bin/
 
-cp bin/tsconfig-pattern-publish.json ${PATTERN_DIR}/tsconfig.json
+cp bin/pattern/tsconfig.json ${PATTERN_DIR}
 
 cd ${PATTERN_DIR}
 

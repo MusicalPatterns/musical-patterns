@@ -1,0 +1,17 @@
+add_pattern:
+	./bin/pattern/add.sh
+
+deploy:
+	./bin/deploy.sh
+
+publish_pattern:
+	./bin/pattern/publish.sh
+
+setup:
+	./bin/setup.sh
+
+snapshot_pattern:
+	./bin/pattern/snapshot.sh
+
+start:
+	./bin/start.sh

@@ -1,20 +1,10 @@
 .PHONY: lint
 .PHONY: test
 
-deploy:
-	./bin/deploy.sh
-
-setup:
-	./bin/setup.sh
-
-snapshot:
-	./bin/snapshot.sh
-
-start:
-	./bin/start.sh
+-include Makefile.*
 
 build:
-	musical-patterns build "webpack --config webpack.prod.js"
+	musical-patterns build
 
 lint:
 	musical-patterns lint
@@ -28,5 +18,14 @@ pull:
 push:
 	musical-patterns push
 
+ship:
+	musical-patterns ship
+
+switch_back_to_remote:
+	musical-patterns switch_back_to_remote
+
 test:
 	musical-patterns test
+
+use_latest_local:
+	musical-patterns use_latest_local

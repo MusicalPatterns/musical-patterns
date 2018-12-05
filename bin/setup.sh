@@ -21,7 +21,6 @@ git submodule foreach git checkout master
 git submodule foreach git pull -r
 git pull -r
 
-npm i -g webpack-cli
 npm i
 
 gcloud config configurations create musical-patterns
