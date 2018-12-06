@@ -8,11 +8,11 @@ Uses the playroom to let you hear them.
 
 ```
 
-make add_pattern PATTERN=my-new-pattern
+make add PATTERN=my-new-pattern
 
-make snapshot_pattern PATTERN=some-pattern
+make snapshot PATTERN=some-pattern
 
-make snapshot_pattern PATTERN=ALL
+make snapshot PATTERN=ALL
 
 make publish_pattern PATTERN=some-pattern
 

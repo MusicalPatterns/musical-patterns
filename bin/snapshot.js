@@ -1,5 +1,5 @@
 const rootRelativeFromRoot = '.'
-const rootRelativeFromThisModule = '../..'
+const rootRelativeFromThisModule = '../'
 
 require(`${rootRelativeFromThisModule}/test/mockDom`)
 const {appendFileSync, existsSync, readdirSync, statSync, unlinkSync} = require('fs')
