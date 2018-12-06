@@ -1,12 +1,12 @@
 import { compilePattern } from '@musical-patterns/compiler'
-import { Pattern } from '@musical-patterns/pattern'
+import { Pattern, patternsFilter } from '@musical-patterns/pattern'
 import { patterns } from '../../src/indexForTest'
 
 // tslint:disable-next-line:no-any
 declare const require: any
 
 describe('snapshot', () => {
-    Object.entries(patterns)
+    Object.entries(patternsFilter(patterns))
         .forEach(([ patternName, pattern ]: [ string, Pattern ]): void => {
             it(`${patternName} stays locked down`, async (done: DoneFn) => {
                 expect(JSON.stringify(await compilePattern(pattern), undefined, 2))
