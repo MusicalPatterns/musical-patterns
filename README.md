@@ -1,8 +1,10 @@
-# Musical Patterns Lab
+# Musical Patterns - lab
 
-A place to submodule all the musical patterns to develop on them together.
+A place to submodule all the musical patterns to develop on them all together.
 
 Uses the playroom to let you hear them.
+
+Uses the compiler for testing purposes (snapshotting patterns).
 
 ## development
 
