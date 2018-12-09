@@ -1,8 +1,14 @@
 add:
-	./bin/add.sh
+	bin/add.sh
 
 publish_pattern:
-	./bin/publish.sh
+	bin/publish.sh
 
 snapshot:
-	./bin/snapshot.sh
+	bin/snapshot.sh
+
+build:
+	webpack --config webpack.prod.js
+
+ship:
+	bin/ship.sh
