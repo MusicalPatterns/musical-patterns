@@ -5,6 +5,6 @@ set -e
 make test
 make lint
 
-make commit_recursively
+make commit
 
 make push
