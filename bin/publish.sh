@@ -1,7 +1,5 @@
 #!/usr/bin/env sh
 
-set -e
-
 PATTERN_DIR=src/${PATTERN}
 
 if [[ ${PATTERN} == "" ]] ; then
@@ -15,9 +13,12 @@ cp bin/pattern/tsconfig.json ${PATTERN_DIR}
 
 cd ${PATTERN_DIR}
 
+rm -rf package/dist
+
 tsc
 
 pushd package
+	npm version patch
 	npm publish --access public
 popd
 
