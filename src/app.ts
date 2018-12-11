@@ -6,3 +6,4 @@ setupPlayroom(patternsFilter(patterns))
     .then((playroom: HTMLDivElement) => {
         document.body.appendChild(playroom)
     })
+    .catch()
