@@ -7,8 +7,8 @@
   },
   "devDependencies": {
     "@musical-patterns/cli": "^1.0.60",
-    "@musical-patterns/compiler": "^1.0.29",
-    "@musical-patterns/pattern": "^1.0.17",
+    "@musical-patterns/compiler": "^1.0.30",
+    "@musical-patterns/pattern": "^1.0.19",
     "@musical-patterns/playroom": "^1.0.22",
     "@musical-patterns/utilities": "^1.0.96",
     "awesome-typescript-loader": "^5.2.1",
