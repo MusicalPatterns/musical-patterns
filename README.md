@@ -16,7 +16,9 @@ make snapshot PATTERN=some-pattern
 
 make snapshot PATTERN=ALL
 
-make publish_pattern PATTERN=some-pattern
+make publish PATTERN=some-pattern
+
+make publish PATTERN=ALL
 
 make update PATTERN=some-pattern
 
