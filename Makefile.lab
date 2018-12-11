@@ -12,3 +12,6 @@ build:
 
 ship:
 	bin/ship.sh
+
+update:
+	bin/update.sh

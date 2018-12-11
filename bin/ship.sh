@@ -2,6 +2,8 @@
 
 set -e
 
+make update PATTERN=ALL
+
 make test
 make lint
 

@@ -18,4 +18,8 @@ make snapshot PATTERN=ALL
 
 make publish_pattern PATTERN=some-pattern
 
+make update PATTERN=some-pattern
+
+make update PATTERN=ALL
+
 ```
