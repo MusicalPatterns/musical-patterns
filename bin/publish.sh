@@ -3,7 +3,7 @@
 publish_pattern() {
 	cp ../../bin/pattern/tsconfig.json .
 
-	rm package/dist/*
+	rm -r package/dist/*
 	touch package/dist/.gitkeep
 	tsc
 
