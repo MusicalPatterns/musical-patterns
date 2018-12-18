@@ -4,8 +4,7 @@ set -e
 
 update_package() {
 	pushd package
-		npm i
-		npm update
+		make update
 	popd
 }
 export -f update_package
