@@ -20,7 +20,7 @@ const patternNames = readdirSync(`${rootRelativeFromRoot}/src`)
     .filter(f => statSync(join(`${rootRelativeFromRoot}/src`, f)).isDirectory())
 if (patternName === 'ALL') {
     patternNames.forEach(updateSnapshot)
-} else if (patternName in patternNames){
+} else if (patternNames.includes(patternName)){
     updateSnapshot(patternName)
 } else if (!patternName) {
     console.log(`Please specify a pattern to snapshot, or use "PATTERN=ALL".`)
