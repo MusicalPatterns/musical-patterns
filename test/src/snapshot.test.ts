@@ -31,10 +31,13 @@ if (process.env.PATTERN_NAME) {
     }
 }
 else {
-    const templateEntry: PatternEntry = [ PatternId.TEMPLATE, patterns[ PatternId.TEMPLATE ] ]
+    const patternsUnwantedToBeFilteredForSnapshotTesting: PatternEntry[] = [
+        [ PatternId.PLAYROOM_TEST, patterns[ PatternId.PLAYROOM_TEST ] ],
+        [ PatternId.TEMPLATE, patterns[ PatternId.TEMPLATE ] ],
+    ]
 
     describe('snapshot', () => {
-        [ templateEntry ].concat(Object.entries(patternsFilter(patterns)))
+        patternsUnwantedToBeFilteredForSnapshotTesting.concat(Object.entries(patternsFilter(patterns)))
             .forEach(([ patternName, pattern ]: PatternEntry): void => {
                 snapshotTestPattern(patternName, pattern)
                     .then()

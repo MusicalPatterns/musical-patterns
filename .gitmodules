@@ -19,3 +19,6 @@
 [submodule "zdaubyaos"]
 	path = src/zdaubyaos
 	url = git@github.com:MusicalPatterns/pattern-zdaubyaos.git
+[submodule "playroomTest"]
+	path = src/playroomTest
+	url = git@github.com:MusicalPatterns/pattern-playroomTest.git

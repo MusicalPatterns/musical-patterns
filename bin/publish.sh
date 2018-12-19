@@ -5,7 +5,7 @@ make snapshot
 publish_pattern() {
 	cp ../../bin/pattern/tsconfig.json .
 
-	rm -r package/dist/*
+	rm -r package/dist/* || true
 	touch package/dist/.gitkeep
 	tsc
 
