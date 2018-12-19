@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+make snapshot
+
 publish_pattern() {
 	cp ../../bin/pattern/tsconfig.json .
 
