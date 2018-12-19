@@ -35,6 +35,7 @@ else
 	if [[ ${PATTERN} == "ALL" ]] ; then
 		git submodule foreach ship_pattern
 	else
+		make update PATTERN=${PATTERN}
 		cd src/${PATTERN}
 		ship_pattern
 	fi
