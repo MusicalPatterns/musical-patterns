@@ -2,10 +2,10 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/beaten-path" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/beatenPath" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/hafuhafu" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/houndstoothtopia-theme" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/houndstoothtopia-theme/src/custom/coordinates/houndstoothOutline" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/houndstoothtopiaTheme" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/houndstoothtopiaTheme/src/custom/coordinates/houndstoothOutline" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/stepwise" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/template" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/xelt" vcs="Git" />

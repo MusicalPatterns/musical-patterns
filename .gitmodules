@@ -1,12 +1,12 @@
-[submodule "beaten-path"]
-	path = src/beaten-path
-	url = git@github.com:MusicalPatterns/pattern-beaten-path.git
+[submodule "beatenPath"]
+	path = src/beatenPath
+	url = git@github.com:MusicalPatterns/pattern-beatenPath.git
 [submodule "hafuhafu"]
 	path = src/hafuhafu
 	url = git@github.com:MusicalPatterns/pattern-hafuhafu.git
-[submodule "houndstoothtopia-theme"]
-	path = src/houndstoothtopia-theme
-	url = git@github.com:MusicalPatterns/pattern-houndstoothtopia-theme.git
+[submodule "houndstoothtopiaTheme"]
+	path = src/houndstoothtopiaTheme
+	url = git@github.com:MusicalPatterns/pattern-houndstoothtopiaTheme.git
 [submodule "stepwise"]
 	path = src/stepwise
 	url = git@github.com:MusicalPatterns/pattern-stepwise.git

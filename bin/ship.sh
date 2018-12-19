@@ -20,8 +20,8 @@ ship_pattern() {
 	rm tsconfig.json
 
 	git add .
-	make commit MSG="${VERSION}: ${MSG}"
-	make push
+	git commit -m "${VERSION}: ${MSG}"
+	git push
 }
 export -f ship_pattern
 
