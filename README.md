@@ -2,30 +2,48 @@
 
 A place to submodule all the musical patterns to develop on them all together.
 
-Uses the playroom to let you hear them.
+Uses the `@musical-patterns/playroom` to let you hear them.
 
-Uses the compiler for testing purposes (snapshotting patterns).
+Uses the `@musical-patterns/compiler` for testing purposes (snapshotting patterns).
+
+If you'd like to provide a whitelist of patterns to work with in the lab, you can do so in `src/selectedPatterns.ts`.
+This will override the pattern filter from the `@musical-patterns/pattern` repo.
 
 ## development
 
-```
+`make add PATTERN=my-new-pattern`
 
-make add PATTERN=my-new-pattern
+Install a new pattern repo as a submodule.
 
-make snapshot PATTERN=some-pattern
+`make snapshot PATTERN=some-pattern`
 
-make snapshot PATTERN=ALL
+Update the snapshot for a pattern. This snapshot is used by the snapshot test to ensure the pattern stays locked down unless you mean to change it.
+It is also accessed as the default export of the pattern when importing it as a package.
 
-make publish PATTERN=some-pattern
+`make snapshot PATTERN=ALL`
 
-make publish PATTERN=ALL
+Update the snapshot for all patterns.
 
-make ship PATTERN=some-pattern MSG="some message"
+`make publish PATTERN=some-pattern`
 
-make ship PATTERN=ALL MSG="some message"
+Publish a pattern to npm.
 
-make update PATTERN=some-pattern
+`make publish PATTERN=ALL`
 
-make update PATTERN=ALL
+Publish all patterns to npm.
 
-```
+`make ship PATTERN=some-pattern MSG="some message"`
+
+Publish a pattern to npm and commit and push it to GitHub, if it passes its tests and lint check after updating dependencies.
+
+`make ship PATTERN=ALL MSG="some message"`
+
+Ship all patterns, per above.
+
+`make update PATTERN=some-pattern`
+
+Update dependencies for a pattern.
+
+`make update PATTERN=ALL`
+
+Update all patterns' dependencies.

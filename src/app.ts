@@ -1,8 +1,7 @@
-import { patternsFilter } from '@musical-patterns/pattern'
 import { setupPlayroom } from '@musical-patterns/playroom'
-import { patterns } from './patterns'
+import { selectedPatterns } from './selectedPatterns'
 
-setupPlayroom(patternsFilter(patterns))
+setupPlayroom(selectedPatterns)
     .then((playroom: HTMLDivElement) => {
         document.body.appendChild(playroom)
     })
