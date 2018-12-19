@@ -20,6 +20,10 @@ make publish PATTERN=some-pattern
 
 make publish PATTERN=ALL
 
+make ship PATTERN=some-pattern MSG="some message"
+
+make ship PATTERN=ALL MSG="some message"
+
 make update PATTERN=some-pattern
 
 make update PATTERN=ALL
