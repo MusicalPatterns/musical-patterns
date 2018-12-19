@@ -10,14 +10,10 @@ update_package() {
 }
 export -f update_package
 
-if [[ ${PATTERN} == "" ]] ; then
-	sh node_modules/@musical-patterns/cli/bin/update.sh
+if [[ ${PATTERN} == "ALL" ]] ; then
+	git submodule foreach update_package
 else
-	if [[ ${PATTERN} == "ALL" ]] ; then
-		git submodule foreach update_package
-	else
-		PATTERN_DIR=src/${PATTERN}
-		cd ${PATTERN_DIR}
-		update_package
-	fi
+	PATTERN_DIR=src/${PATTERN}
+	cd ${PATTERN_DIR}
+	update_package
 fi
