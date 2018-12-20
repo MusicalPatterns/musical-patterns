@@ -5,7 +5,7 @@ set -e
 . ./bin/pattern/publish_pattern.sh
 
 if [[ ${PATTERN} == "" ]] ; then
-	make update PATTERN=ALL
+	make update
 	make test
 	make lint
 	make commit
