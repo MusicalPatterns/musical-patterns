@@ -1,17 +1,17 @@
 add:
-	bin/add.sh
+	@bin/add.sh
 
 publish:
-	bin/publish.sh
+	@bin/publish.sh
 
 snapshot:
-	bin/snapshot.sh
+	@bin/snapshot.sh
 
 build:
-	webpack --config webpack.prod.js
+	@webpack --config webpack.prod.js
 
 ship:
-	bin/ship.sh
+	@bin/ship.sh
 
 update:
-	bin/update.sh
+	@bin/update.sh
