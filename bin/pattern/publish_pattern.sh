@@ -8,7 +8,7 @@ publish_pattern() {
 	tsc
 
 	pushd package
-		npm version patch
+		export VERSION=$(npm version patch)
 		npm publish --access public
 	popd
 
