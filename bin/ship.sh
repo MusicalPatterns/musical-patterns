@@ -12,7 +12,12 @@ if [[ ${PATTERN} == "" ]] ; then
 	make push
 else
 	if [[ ${PATTERN} == "ALL" ]] ; then
+		git submodule foreach make test
+		git submodule foreach make lint
 		git submodule foreach publish_pattern
+		git submodule foreach git add .
+		git submodule foreach git commit -m "${VERSION}: ${MSG}"
+		git submodule foreach push
 	else
 		make update PATTERN=${PATTERN}
 		pushd src/${PATTERN}
