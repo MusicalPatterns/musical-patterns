@@ -3,15 +3,6 @@
 set -e
 
 . ./bin/pattern/publish_pattern.sh
+. ./bin/pattern/do_for_self_all_or_one.sh
 
-if [[ ${PATTERN} == "" ]] ; then
-	publish_pattern
-else
-	if [[ ${PATTERN} == "ALL" ]] ; then
-		git submodule foreach publish_pattern
-	else
-		pushd src/${PATTERN}
-			publish_pattern
-		popd
-	fi
-fi
+do_for_self_all_or_one publish_pattern

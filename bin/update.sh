@@ -2,22 +2,23 @@
 
 set -e
 
-update_package() {
-	pushd package
-		npm i
-		npm update
-	popd
-}
-export -f update_package
+. ./bin/pattern/do_for_self_all_or_one.sh
 
-if [[ ${PATTERN} == "" ]] ; then
+update_with_latest_knowledge() {
+	npm i
 	npm update
-else
-	if [[ ${PATTERN} == "ALL" ]] ; then
-		git submodule foreach update_package
+}
+export -f update_with_latest_knowledge
+
+update() {
+	if [[ ${PATTERN} == "" ]] ; then
+		update_with_latest_knowledge
 	else
-		PATTERN_DIR=src/${PATTERN}
-		cd ${PATTERN_DIR}
-		update_package
+		pushd package
+			update_with_latest_knowledge
+		popd
 	fi
-fi
+}
+export -f update
+
+do_for_self_all_or_one update

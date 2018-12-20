@@ -3,6 +3,7 @@
 set -e
 
 . ./bin/pattern/publish_pattern.sh
+. ./bin/pattern/do_for_self_all_or_one.sh
 
 ship() {
 	make update || return
@@ -14,14 +15,4 @@ ship() {
 }
 export -f ship
 
-if [[ ${PATTERN} == "" ]] ; then
-	ship
-else
-	if [[ ${PATTERN} == "ALL" ]] ; then
-		git submodule foreach ship
-	else
-		pushd src/${PATTERN}
-			ship
-		popd
-	fi
-fi
+do_for_self_all_or_one ship
