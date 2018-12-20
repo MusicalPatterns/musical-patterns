@@ -24,6 +24,8 @@ if (patternName === 'ALL') {
     updateSnapshot(patternName)
 } else if (!patternName) {
     console.log(`Please specify a pattern to snapshot, or use "PATTERN=ALL".`)
+    process.exit(1)
 } else {
     console.log(`Sorry, I don't see that pattern.`)
+    process.exit(1)
 }
