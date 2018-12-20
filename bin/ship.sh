@@ -15,6 +15,7 @@ else
 		git submodule foreach publish_pattern
 	else
 		make update PATTERN=${PATTERN}
+		make snapshot PATTERN=${PATTERN}
 		pushd src/${PATTERN}
 			make test
 			make lint
