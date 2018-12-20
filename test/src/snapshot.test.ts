@@ -1,5 +1,6 @@
 import { compilePattern } from '@musical-patterns/compiler'
 import { Pattern, PatternId, patternsFilter } from '@musical-patterns/pattern'
+import { camelCaseToConstantCase } from '@musical-patterns/utilities'
 import { patterns } from '../../src/indexForTest'
 
 // tslint:disable-next-line:no-any
@@ -16,9 +17,9 @@ const snapshotTestPattern: (patternName: string, pattern: Pattern) => Promise<vo
         })
     }
 
-if (process.env.PATTERN_NAME) {
-    const patternName: string = process.env.PATTERN_NAME
-    const pattern: Pattern = patterns[ patternName as PatternId ]
+if (process.env.PATTERN) {
+    const patternName: PatternId = camelCaseToConstantCase(process.env.PATTERN) as PatternId
+    const pattern: Pattern = patterns[ patternName ]
 
     if (pattern) {
         snapshotTestPattern(patternName, pattern)
