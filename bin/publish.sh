@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-make snapshot
+set -e
 
 . ./bin/pattern/publish_pattern.sh
 
