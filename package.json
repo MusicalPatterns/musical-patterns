@@ -11,6 +11,7 @@
     "@musical-patterns/pattern": "^1.0.29",
     "@musical-patterns/playroom": "^1.0.33",
     "@musical-patterns/utilities": "^1.0.106",
+    "@types/webpack-env": "^1.13.6",
     "awesome-typescript-loader": "^5.2.1",
     "copy-webpack-plugin": "^4.6.0",
     "favicons-webpack-plugin": "0.0.9",

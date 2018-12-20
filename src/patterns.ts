@@ -1,9 +1,12 @@
 import { AllPatterns, Pattern } from '@musical-patterns/pattern'
-import * as patternSubmodules from './patternSubmodules'
+import RequireContext = __WebpackModuleApi.RequireContext
+
+const patternContext: RequireContext = require.context('.', true, /\.\/[^\/]*\/$/)
 
 const patternsAccumulator: Partial<AllPatterns> = {}
 
-const patterns: AllPatterns = Object.values(patternSubmodules)
+const patterns: AllPatterns = patternContext.keys()
+    .map((key: string): Pattern => patternContext(key).pattern)
     .reduce(
         (patternsSoFar: Partial<AllPatterns>, nextPattern: Pattern): Partial<AllPatterns> =>
             ({ ...patternsSoFar, [ nextPattern.patternId ]: nextPattern }),
