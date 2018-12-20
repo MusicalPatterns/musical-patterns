@@ -18,7 +18,7 @@ Install a new pattern repo as a submodule.
 `make snapshot PATTERN=some-pattern`
 
 Update the snapshot for a pattern. This snapshot is used by the snapshot test to ensure the pattern stays locked down unless you mean to change it.
-It is also accessed as the default export of the pattern when importing it as a package.
+When you import a published pattern, you can import either the snapshot, or the pattern if you want to customize it before performing by configuring its spec and recompiling it.
 
 `make snapshot PATTERN=ALL`
 

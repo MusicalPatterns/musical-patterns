@@ -7,6 +7,7 @@
       <excludeFolder url="file://$MODULE_DIR$/src/beatenPath/package/dist" />
       <excludeFolder url="file://$MODULE_DIR$/src/hafuhafu/package/dist" />
       <excludeFolder url="file://$MODULE_DIR$/src/houndstoothtopiaTheme/package/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/src/performerQa/package/dist" />
       <excludeFolder url="file://$MODULE_DIR$/src/playroomTest/package/dist" />
       <excludeFolder url="file://$MODULE_DIR$/src/stepwise/package/dist" />
       <excludeFolder url="file://$MODULE_DIR$/src/template/package/dist" />

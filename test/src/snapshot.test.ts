@@ -32,6 +32,7 @@ if (process.env.PATTERN_NAME) {
 }
 else {
     const patternsUnwantedToBeFilteredForSnapshotTesting: PatternEntry[] = [
+        [ PatternId.PERFORMER_QA, patterns[ PatternId.PERFORMER_QA ] ],
         [ PatternId.PLAYROOM_TEST, patterns[ PatternId.PLAYROOM_TEST ] ],
         [ PatternId.TEMPLATE, patterns[ PatternId.TEMPLATE ] ],
     ]

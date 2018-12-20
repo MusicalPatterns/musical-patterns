@@ -22,3 +22,6 @@
 [submodule "playroomTest"]
 	path = src/playroomTest
 	url = git@github.com:MusicalPatterns/pattern-playroomTest.git
+[submodule "performerQa"]
+	path = src/performerQa
+	url = git@github.com:MusicalPatterns/pattern-performerQa.git
