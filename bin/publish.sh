@@ -5,8 +5,7 @@ set -e
 . ./bin/pattern/publish_pattern.sh
 
 if [[ ${PATTERN} == "" ]] ; then
-	printf "Please specify a pattern to publish with 'PATTERN=my-pattern'"
-	exit 1
+	publish_pattern
 else
 	if [[ ${PATTERN} == "ALL" ]] ; then
 		git submodule foreach publish_pattern
