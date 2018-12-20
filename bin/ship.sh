@@ -17,7 +17,7 @@ else
 		git submodule foreach publish_pattern
 		git submodule foreach git add .
 		git submodule foreach git commit -m "${VERSION}: ${MSG}"
-		git submodule foreach push
+		git submodule foreach git push
 	else
 		make update PATTERN=${PATTERN}
 		pushd src/${PATTERN}
