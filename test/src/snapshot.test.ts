@@ -1,7 +1,6 @@
 import { compilePattern } from '@musical-patterns/compiler'
 import { Pattern, PatternId, patternsFilter } from '@musical-patterns/pattern'
 import { patterns } from '../../src/indexForTest'
-import { PatternEntry } from '../support'
 
 // tslint:disable-next-line:no-any
 declare const require: any
@@ -31,15 +30,9 @@ if (process.env.PATTERN_NAME) {
     }
 }
 else {
-    const patternsUnwantedToBeFilteredForSnapshotTesting: PatternEntry[] = [
-        [ PatternId.PERFORMER_QA, patterns[ PatternId.PERFORMER_QA ] ],
-        [ PatternId.PLAYROOM_TEST, patterns[ PatternId.PLAYROOM_TEST ] ],
-        [ PatternId.TEMPLATE, patterns[ PatternId.TEMPLATE ] ],
-    ]
-
-    describe('snapshot', () => {
-        patternsUnwantedToBeFilteredForSnapshotTesting.concat(Object.entries(patternsFilter(patterns)))
-            .forEach(([ patternName, pattern ]: PatternEntry): void => {
+     describe('snapshot', () => {
+        Object.entries(patternsFilter(patterns))
+            .forEach(([ patternName, pattern ]: [ string, Pattern ]): void => {
                 snapshotTestPattern(patternName, pattern)
                     .then()
                     .catch()
