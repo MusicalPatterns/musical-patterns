@@ -4,33 +4,24 @@ set -e
 
 . ./bin/pattern/publish_pattern.sh
 
+ship() {
+	make update || return
+	make test || return
+	make lint || return
+	[[ ${PATTERN} == "" ]] || publish_pattern || return
+	make commit || return
+	make push || return
+}
+export -f ship
+
 if [[ ${PATTERN} == "" ]] ; then
-	make update
-	make test
-	make lint
-	make commit
-	make push
+	ship
 else
 	if [[ ${PATTERN} == "ALL" ]] ; then
-		make update PATTERN=ALL
-		git submodule foreach make test
-		git submodule foreach make lint
-		git submodule foreach publish_pattern
-		git submodule foreach git add .
-		git submodule foreach git commit -m "${VERSION}: ${MSG}"
-		git submodule foreach git push
+		git submodule foreach ship
 	else
-		make update PATTERN=${PATTERN}
 		pushd src/${PATTERN}
-			make test
-			make lint
-			publish_pattern
-			git add .
-			git commit -m "${VERSION}: ${MSG}"
-			git push
+			ship
 		popd
 	fi
 fi
-
-
-

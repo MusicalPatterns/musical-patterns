@@ -11,7 +11,7 @@ update_package() {
 export -f update_package
 
 if [[ ${PATTERN} == "" ]] ; then
-	sh node_modules/@musical-patterns/cli/bin/update.sh
+	npm update
 else
 	if [[ ${PATTERN} == "ALL" ]] ; then
 		git submodule foreach update_package
