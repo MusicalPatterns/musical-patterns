@@ -6,6 +6,7 @@ set -e
 . ./bin/pattern/do_for_self_all_or_one.sh
 
 ship() {
+	[[ ${PATTERN} == "" ]] || make share || return
 	make update || return
 	make test || return
 	make lint || return

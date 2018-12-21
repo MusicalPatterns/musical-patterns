@@ -10,6 +10,9 @@ build:
 publish:
 	@bin/publish.sh
 
+share:
+	@bin/share.sh
+
 ship:
 	@bin/ship.sh
 
