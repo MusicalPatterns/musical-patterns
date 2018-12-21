@@ -17,7 +17,6 @@ share_pattern_files() {
 	mkdir -p test
 
 	share_pattern_file .gitattributes
-	share_pattern_file .gitignore
 	share_pattern_file LICENSE
 	share_pattern_file Makefile
 	share_pattern_file tsconfig.json
