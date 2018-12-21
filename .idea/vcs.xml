@@ -12,6 +12,7 @@
     <mapping directory="$PROJECT_DIR$/src/stepwise" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/template" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/xelt" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/xenharmonicSeries" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/zdaubyaos" vcs="Git" />
   </component>
 </project>
