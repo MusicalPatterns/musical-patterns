@@ -22,7 +22,7 @@ const getPattern: (patternName: string) => Pattern =
         // tslint:disable-next-line:no-var-requires no-unsafe-any
         require(`../../src/${patternName}`).pattern
 
-if (!!process.env.PATTERN) {
+if (!!process.env.PATTERN && process.env.PATTERN !== 'ALL') {
     const patternName: string = process.env.PATTERN
     const pattern: Pattern = getPattern(patternName)
 
