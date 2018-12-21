@@ -15,6 +15,14 @@ This will override the pattern filter from the `@musical-patterns/pattern` repo.
 
 Install a new pattern repo as a submodule.
 
+`make publish PATTERN=some-pattern`
+
+Publish a pattern to npm.
+
+`make publish PATTERN=ALL`
+
+Publish all patterns to npm.
+
 `make share PATTERN=some-pattern`
 
 Replace the basic configuration files in a pattern repo with the standards.
@@ -22,6 +30,14 @@ Replace the basic configuration files in a pattern repo with the standards.
 `make share PATTERN=ALL`
 
 Replace the basic configuration files in all pattern repos with the standards.
+
+`make ship PATTERN=some-pattern MSG="some message"`
+
+Publish a pattern to npm and commit and push it to GitHub, if it passes its tests and lint check after updating dependencies and standardizing config.
+
+`make ship PATTERN=ALL MSG="some message"`
+
+Ship all patterns, per above.
 
 `make snapshot PATTERN=some-pattern`
 
@@ -31,22 +47,6 @@ When you import a published pattern, you can import either the snapshot, or the 
 `make snapshot PATTERN=ALL`
 
 Update the snapshot for all patterns.
-
-`make publish PATTERN=some-pattern`
-
-Publish a pattern to npm.
-
-`make publish PATTERN=ALL`
-
-Publish all patterns to npm.
-
-`make ship PATTERN=some-pattern MSG="some message"`
-
-Publish a pattern to npm and commit and push it to GitHub, if it passes its tests and lint check after updating dependencies and standardizing config.
-
-`make ship PATTERN=ALL MSG="some message"`
-
-Ship all patterns, per above.
 
 `make update PATTERN=some-pattern`
 
