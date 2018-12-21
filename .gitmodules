@@ -25,3 +25,6 @@
 [submodule "performerQa"]
 	path = src/performerQa
 	url = git@github.com:MusicalPatterns/pattern-performerQa.git
+[submodule "omnizonk"]
+	path = src/omnizonk
+	url = git@github.com:MusicalPatterns/pattern-omnizonk.git
