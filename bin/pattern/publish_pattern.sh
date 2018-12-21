@@ -8,14 +8,7 @@ publish_pattern() {
 
 	cp ../../bin/pattern/tsconfig.json .
 
-	rm -r package/dist/* || true
-	touch package/dist/.gitkeep
-	tsc
-
-	pushd package
-		export VERSION=$(npm version patch)
-		npm publish --access public
-	popd
+	make publish
 
 	rm tsconfig.json
 }
