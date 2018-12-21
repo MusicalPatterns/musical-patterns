@@ -23,11 +23,11 @@ Publish a pattern to npm.
 
 Publish all patterns to npm.
 
-`make share PATTERN=some-pattern`
+`make share_config PATTERN=some-pattern`
 
 Replace the basic configuration files in a pattern repo with the standards.
 
-`make share PATTERN=ALL`
+`make share_config PATTERN=ALL`
 
 Replace the basic configuration files in all pattern repos with the standards.
 
