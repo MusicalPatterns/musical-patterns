@@ -28,3 +28,6 @@
 [submodule "omnizonk"]
 	path = src/omnizonk
 	url = git@github.com:MusicalPatterns/pattern-omnizonk.git
+[submodule "xenharmonicSeries"]
+	path = src/xenharmonicSeries
+	url = git@github.com:MusicalPatterns/pattern-xenharmonicSeries.git

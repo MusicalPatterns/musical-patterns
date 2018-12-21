@@ -11,6 +11,7 @@
       <excludeFolder url="file://$MODULE_DIR$/src/playroomTest/package/dist" />
       <excludeFolder url="file://$MODULE_DIR$/src/stepwise/package/dist" />
       <excludeFolder url="file://$MODULE_DIR$/src/template/package/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/src/xenharmonicSeries/package/dist" />
       <excludeFolder url="file://$MODULE_DIR$/src/omnizonk/package/dist" />
       <excludeFolder url="file://$MODULE_DIR$/src/xelt/package/dist" />
       <excludeFolder url="file://$MODULE_DIR$/src/zdaubyaos/package/dist" />

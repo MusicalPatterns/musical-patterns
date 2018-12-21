@@ -4,7 +4,7 @@
 
 share_pattern_file() {
 	FILE="$1"
-	cp ../../pattern/${FILE} ${FILE}
+	cp ../../src/template/${FILE} ${FILE} || true
 }
 export -f share_pattern_file
 

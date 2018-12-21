@@ -6,10 +6,10 @@
     "url": "https://github.com/MusicalPatterns/lab.git"
   },
   "devDependencies": {
-    "@musical-patterns/cli": "^1.0.115",
+    "@musical-patterns/cli": "^1.0.116",
     "@musical-patterns/compiler": "^1.0.36",
-    "@musical-patterns/pattern": "^1.0.31",
-    "@musical-patterns/playroom": "^1.0.34",
+    "@musical-patterns/pattern": "^1.0.32",
+    "@musical-patterns/playroom": "^1.0.35",
     "@musical-patterns/utilities": "^1.0.107",
     "@types/webpack-env": "^1.13.6",
     "awesome-typescript-loader": "^5.2.1",
