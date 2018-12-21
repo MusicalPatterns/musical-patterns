@@ -10,7 +10,7 @@ export -f share_pattern_file
 
 share_pattern_files() {
 	if [[ ${PATTERN} == "" ]] ; then
-		printf "Please specify a pattern to share config with 'PATTERN=my-pattern'"
+		echo "Please specify a pattern to share config with 'PATTERN=my-pattern'."
 		exit 1
 	fi
 
