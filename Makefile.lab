@@ -4,17 +4,17 @@ Makefile.lab:
 add:
 	@bin/add.sh
 
-publish:
-	@bin/publish.sh
-
-snapshot:
-	@bin/snapshot.sh
-
 build:
 	@musical-patterns build "webpack --config webpack.prod.js"
 
+publish:
+	@bin/publish.sh
+
 ship:
 	@bin/ship.sh
+
+snapshot:
+	@bin/snapshot.sh
 
 update:
 	@bin/update.sh
