@@ -5,7 +5,7 @@ set -e
 . ./bin/pattern/do_for_self_all_or_one.sh
 
 update_with_latest_knowledge() {
-	npm i
+	npm i || return
 	npm update
 }
 export -f update_with_latest_knowledge
