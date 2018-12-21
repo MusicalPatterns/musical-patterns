@@ -1,7 +1,7 @@
 const ROOT_RELATIVE_FROM_ROOT = '.'
 const ROOT_RELATIVE_FROM_THIS_MODULE = '../'
 
-export {
+module.exports = {
     ROOT_RELATIVE_FROM_ROOT,
     ROOT_RELATIVE_FROM_THIS_MODULE,
 }
