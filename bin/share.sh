@@ -14,6 +14,8 @@ share_pattern_files() {
 		exit 1
 	fi
 
+	mkdir -p test
+
 	share_pattern_file .gitattributes
 	share_pattern_file .gitignore
 	share_pattern_file LICENSE
