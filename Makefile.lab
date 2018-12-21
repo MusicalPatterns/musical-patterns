@@ -11,7 +11,7 @@ snapshot:
 	@bin/snapshot.sh
 
 build:
-	@webpack --config webpack.prod.js
+	@musical-patterns build "webpack --config webpack.prod.js"
 
 ship:
 	@bin/ship.sh
