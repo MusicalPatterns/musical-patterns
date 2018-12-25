@@ -6,7 +6,7 @@
     "url": "https://github.com/MusicalPatterns/lab.git"
   },
   "devDependencies": {
-    "@musical-patterns/cli": "^1.0.118",
+    "@musical-patterns/cli": "^1.0.120",
     "@musical-patterns/compiler": "^1.0.36",
     "@musical-patterns/pattern": "^1.0.33",
     "@musical-patterns/playroom": "^1.0.35",
