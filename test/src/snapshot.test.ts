@@ -3,9 +3,6 @@ import { Pattern } from '@musical-patterns/pattern'
 // @ts-ignore
 import { collectPatternNames } from '../../bin'
 
-// tslint:disable-next-line:no-any
-declare const require: any
-
 const snapshotTestPattern: (patternName: string, pattern: Pattern) => Promise<void> =
     async (patternName: string, pattern: Pattern): Promise<void> => {
         it(`${patternName} stays locked down`, async (done: DoneFn) => {
