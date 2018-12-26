@@ -1,8 +1,7 @@
 import { AllPatterns, Pattern } from '@musical-patterns/pattern'
 import RequireContext = __WebpackModuleApi.RequireContext
-import { ONLY_INCLUDE_DIRECTORIES } from './constants'
 
-const patternContext: RequireContext = require.context('.', true, ONLY_INCLUDE_DIRECTORIES)
+const patternContext: RequireContext = require.context('./', true, /\.\/[^\/]*\/$/)
 
 const patternsAccumulator: Partial<AllPatterns> = {}
 
