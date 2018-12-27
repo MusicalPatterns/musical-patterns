@@ -1,33 +1,43 @@
 [submodule "beatenPath"]
 	path = src/beatenPath
 	url = git@github.com:MusicalPatterns/pattern-beatenPath.git
+	ignore = all
 [submodule "hafuhafu"]
 	path = src/hafuhafu
 	url = git@github.com:MusicalPatterns/pattern-hafuhafu.git
+	ignore = all
 [submodule "houndstoothtopiaTheme"]
 	path = src/houndstoothtopiaTheme
 	url = git@github.com:MusicalPatterns/pattern-houndstoothtopiaTheme.git
+	ignore = all
 [submodule "stepwise"]
 	path = src/stepwise
 	url = git@github.com:MusicalPatterns/pattern-stepwise.git
+	ignore = all
 [submodule "template"]
 	path = src/template
 	url = git@github.com:MusicalPatterns/pattern-template.git
 [submodule "xelt"]
 	path = src/xelt
 	url = git@github.com:MusicalPatterns/pattern-xelt.git
+	ignore = all
 [submodule "zdaubyaos"]
 	path = src/zdaubyaos
 	url = git@github.com:MusicalPatterns/pattern-zdaubyaos.git
+	ignore = all
 [submodule "playroomTest"]
 	path = src/playroomTest
 	url = git@github.com:MusicalPatterns/pattern-playroomTest.git
+	ignore = all
 [submodule "performerQa"]
 	path = src/performerQa
 	url = git@github.com:MusicalPatterns/pattern-performerQa.git
+	ignore = all
 [submodule "omnizonk"]
 	path = src/omnizonk
 	url = git@github.com:MusicalPatterns/pattern-omnizonk.git
+	ignore = all
 [submodule "xenharmonicSeries"]
 	path = src/xenharmonicSeries
 	url = git@github.com:MusicalPatterns/pattern-xenharmonicSeries.git
+	ignore = all
