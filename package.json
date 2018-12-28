@@ -9,7 +9,7 @@
     "@musical-patterns/cli": "^1.0.132",
     "@musical-patterns/compiler": "^1.0.39",
     "@musical-patterns/pattern": "^1.0.35",
-    "@musical-patterns/playroom": "^1.0.40",
+    "@musical-patterns/playroom": "^1.0.41",
     "@musical-patterns/utilities": "^1.0.111",
     "@types/webpack-env": "^1.13.6",
     "awesome-typescript-loader": "^5.2.1",
