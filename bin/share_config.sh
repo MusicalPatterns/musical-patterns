@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 . ./bin/pattern/do_for_self_all_or_one.sh
 

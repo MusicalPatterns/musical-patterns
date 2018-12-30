@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 do_for_self_all_or_one() {
 	export CMD="${1}"
