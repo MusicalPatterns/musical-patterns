@@ -22,6 +22,7 @@ share_pattern_files() {
 	share_pattern_file tsconfig.json
 	share_pattern_file test/tslint.json
 	share_pattern_file test/jasmine.js
+	share_pattern_file .travis.yml
 }
 export -f share_pattern_files
 

@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/MusicalPatterns/lab.svg?branch=master)](https://travis-ci.com/MusicalPatterns/lab)
+
 # Musical Patterns - lab
 
 A place to submodule all the musical patterns to develop on them all together.
