@@ -25,14 +25,6 @@ Publish a pattern to npm.
 
 Publish all patterns to npm.
 
-`make share_config PATTERN=some-pattern`
-
-Replace the basic configuration files in a pattern repo with the standards.
-
-`make share_config PATTERN=ALL`
-
-Replace the basic configuration files in all pattern repos with the standards.
-
 `make ship PATTERN=some-pattern MSG="some message"`
 
 Publish a pattern to npm and commit and push it to GitHub, if it passes its tests and lint check after updating dependencies and standardizing config.

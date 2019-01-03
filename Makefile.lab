@@ -10,9 +10,6 @@ build:
 publish:
 	@bin/publish.sh
 
-share_config:
-	@bin/share_config.sh
-
 ship:
 	@bin/ship.sh
 
