@@ -1,4 +1,4 @@
-import { filter, PatternId, Patterns } from '@musical-patterns/registry'
+import { buildPatterns, filter, PatternId, Patterns } from '@musical-patterns/registry'
 import { patterns } from './patterns'
 
 let selectedPatterns: Patterns = filter(patterns)
@@ -13,8 +13,7 @@ if (whitelist.length) {
                 ...whitelistedPatterns,
                 [ patternId ]: patterns[ patternId ],
             }),
-        // tslint:disable-next-line:no-object-literal-type-assertion
-        {} as Patterns,
+        buildPatterns({}),
     )
 }
 
