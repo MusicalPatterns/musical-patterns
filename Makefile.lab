@@ -1,20 +1,14 @@
 Makefile.lab:
 	@:
 
-add:
-	@bin/add.sh
-
 build:
 	@musical-patterns build "webpack --config webpack.prod.js"
 
+lint:
+	@:
+
 publish:
-	@bin/publish.sh
+	@:
 
-ship:
-	@bin/ship.sh
-
-snapshot:
-	@bin/snapshot.sh
-
-update:
-	@bin/update.sh
+test:
+	@:

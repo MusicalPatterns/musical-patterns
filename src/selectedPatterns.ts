@@ -1,4 +1,4 @@
-import { filter, PatternId, Patterns } from '@musical-patterns/pattern'
+import { filter, PatternId, Patterns } from '@musical-patterns/registry'
 import { patterns } from './patterns'
 
 let selectedPatterns: Patterns = filter(patterns)

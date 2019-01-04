@@ -1,4 +1,4 @@
-import { AllPatterns, Pattern } from '@musical-patterns/pattern'
+import { AllPatterns, Pattern } from '@musical-patterns/registry'
 import RequireContext = __WebpackModuleApi.RequireContext
 
 const patternContext: RequireContext = require.context('./', true, /\.\/[^\/]*\/$/)
