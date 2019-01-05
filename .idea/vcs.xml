@@ -2,17 +2,5 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/beatenPath" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/hafuhafu" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/houndstoothtopiaTheme" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/houndstoothtopiaTheme/src/custom/coordinates/houndstoothOutline" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/omnizonk" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/performerQa" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/playroomTest" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/stepwise" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/template" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/xelt" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/xenharmonicSeries" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/zdaubyaos" vcs="Git" />
   </component>
 </project>

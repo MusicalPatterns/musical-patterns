@@ -1,7 +1,9 @@
-import { buildPatterns, filter, PatternId, Patterns } from '@musical-patterns/registry'
-import { patterns } from './patterns'
+import { AllPatterns, buildPatterns, filter, PatternId, Patterns } from '@musical-patterns/registry'
+import * as patterns from './patterns'
 
-let selectedPatterns: Patterns = filter(patterns)
+const allPatterns: AllPatterns = patterns as AllPatterns
+
+let selectedPatterns: Patterns = filter(allPatterns)
 
 const whitelist: PatternId[] = []
 
@@ -10,7 +12,7 @@ if (whitelist.length) {
         (whitelistedPatterns: Patterns, patternId: PatternId): Patterns =>
             ({
                 ...whitelistedPatterns,
-                [ patternId ]: patterns[ patternId ],
+                [ patternId ]: selectedPatterns[ patternId ],
             }),
         buildPatterns({}),
     )

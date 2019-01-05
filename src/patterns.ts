@@ -1,19 +1,11 @@
-import { AllPatterns, Pattern } from '@musical-patterns/registry'
-import RequireContext = __WebpackModuleApi.RequireContext
-
-const patternContext: RequireContext = require.context('./', true, /\.\/[^\/]*\/$/)
-
-const patternsAccumulator: Partial<AllPatterns> = {}
-
-const patterns: AllPatterns = patternContext.keys()
-// tslint:disable-next-line:no-unsafe-any
-    .map((key: string): Pattern => patternContext(key).pattern)
-    .reduce(
-        (patternsSoFar: Partial<AllPatterns>, nextPattern: Pattern): Partial<AllPatterns> =>
-            ({ ...patternsSoFar, [ nextPattern.patternId ]: nextPattern }),
-        patternsAccumulator,
-    ) as AllPatterns
-
-export {
-    patterns,
-}
+export { pattern as BEATEN_PATH } from '@musical-patterns/pattern-beaten-path'
+export { pattern as HAFUHAFU } from '@musical-patterns/pattern-hafuhafu'
+export { pattern as HOUNDSTOOTHTOPIA_THEME } from '@musical-patterns/pattern-houndstoothtopia-theme'
+export { pattern as OMNIZONK } from '@musical-patterns/pattern-omnizonk'
+export { pattern as PERFORMER_QA } from '@musical-patterns/pattern-performer-qa'
+export { pattern as PLAYROOM_TEST } from '@musical-patterns/pattern-playroom-test'
+export { pattern as STEPWISE } from '@musical-patterns/pattern-stepwise'
+export { pattern as TEMPLATE } from '@musical-patterns/pattern-template'
+export { pattern as XELT } from '@musical-patterns/pattern-xelt'
+export { pattern as XENHARMONIC_SERIES } from '@musical-patterns/pattern-xenharmonic-series'
+export { pattern as ZDAUBYAOS } from '@musical-patterns/pattern-zdaubyaos'
