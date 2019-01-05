@@ -15,17 +15,17 @@ module.exports = {
         ],
     },
     resolve: {
-        extensions: ['.ts', '.js', '.json'],
+        extensions: [ '.ts', '.js', '.json' ],
     },
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Musical Patterns',
         }),
-        new CopyWebpackPlugin([{
+        new CopyWebpackPlugin([ {
             from: 'node_modules/@musical-patterns/playroom/dist/*.wav',
             to: path.join(__dirname, './dist'),
             flatten: true,
-        }]),
-        new FaviconsWebpackPlugin('./assets/favicon.png')
+        } ]),
+        new FaviconsWebpackPlugin('./assets/favicon.png'),
     ],
 }

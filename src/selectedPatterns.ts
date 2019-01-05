@@ -3,8 +3,7 @@ import { patterns } from './patterns'
 
 let selectedPatterns: Patterns = filter(patterns)
 
-const whitelist: PatternId[] = [
-]
+const whitelist: PatternId[] = []
 
 if (whitelist.length) {
     selectedPatterns = whitelist.reduce(
