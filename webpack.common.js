@@ -1,10 +1,10 @@
 const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 module.exports = {
-    entry: './src/app.ts',
+    entry: './src/playroom.ts',
     module: {
         rules: [
             {
@@ -12,10 +12,18 @@ module.exports = {
                 loader: 'awesome-typescript-loader',
                 exclude: /test/,
             },
+            {
+                test: /\.scss$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'sass-loader',
+                ],
+            },
         ],
     },
     resolve: {
-        extensions: [ '.ts', '.js', '.json' ],
+        extensions: [ '.ts', '.tsx', '.js', '.json' ],
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -26,6 +34,6 @@ module.exports = {
             to: path.join(__dirname, './dist'),
             flatten: true,
         } ]),
-        new FaviconsWebpackPlugin('./assets/favicon.png'),
+        new FaviconsWebpackPlugin('./node_modules/@musical-patterns/playroom/assets/favicon.png'),
     ],
 }

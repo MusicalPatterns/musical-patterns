@@ -2,9 +2,6 @@
 
 # Musical Patterns - Lab
 
-A place to submodule all the musical patterns to develop on them all together.
+The actual final web app which gets deployed.
 
-Uses the `@musical-patterns/playroom` to let you hear them.
-
-If you'd like to provide a whitelist of patterns to work with in the lab, you can do so in `src/selectedPatterns.ts`.
-This will override the pattern filter from the `@musical-patterns/registry` repo.
+It gathers all of the musical patterns and uses a `@musical-patterns/playroom` to let you hear & experiment with them.
