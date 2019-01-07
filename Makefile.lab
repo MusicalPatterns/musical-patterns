@@ -2,7 +2,7 @@ Makefile.lab:
 	@:
 
 build:
-	@musical-patterns build "webpack --config webpack.lab.js"
+	@musical-patterns-cli build "webpack --config webpack.lab.js"
 
 lint:
 	@:
