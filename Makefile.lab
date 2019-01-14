@@ -4,6 +4,9 @@ Makefile.lab:
 build:
 	@musical-patterns-cli build "webpack --config webpack.lab.js"
 
+deploy:
+	@pushd ../..; make deploy; popd
+
 lint:
 	@:
 
