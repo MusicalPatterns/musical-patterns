@@ -12,13 +12,13 @@
     "@musical-patterns/pattern-houndstoothtopia-theme": "^1.0.60",
     "@musical-patterns/pattern-omnizonk": "^1.0.29",
     "@musical-patterns/pattern-performer-qa": "^1.0.42",
-    "@musical-patterns/pattern-playroom-test": "^1.0.52",
+    "@musical-patterns/pattern-playroom-test": "^1.0.55",
     "@musical-patterns/pattern-stepwise": "^1.0.40",
     "@musical-patterns/pattern-template": "^1.0.47",
     "@musical-patterns/pattern-xelt": "^1.0.40",
     "@musical-patterns/pattern-xenharmonic-series": "^1.0.24",
     "@musical-patterns/pattern-zdaubyaos": "^1.0.44",
-    "@musical-patterns/playroom": "^1.0.113",
+    "@musical-patterns/playroom": "^1.0.114",
     "@musical-patterns/registry": "^1.0.21",
     "typescript": "^3.2.2"
   }
