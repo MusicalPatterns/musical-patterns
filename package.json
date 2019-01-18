@@ -18,8 +18,8 @@
     "@musical-patterns/pattern-xelt": "^1.0.43",
     "@musical-patterns/pattern-xenharmonic-series": "^1.0.27",
     "@musical-patterns/pattern-zdaubyaos": "^1.0.47",
-    "@musical-patterns/playroom": "^1.0.127",
+    "@musical-patterns/playroom": "^1.0.130",
     "@musical-patterns/registry": "^1.0.24",
-    "typescript": "^3.2.2"
+    "typescript": "^3.2.4"
   }
 }
