@@ -1,4 +1,4 @@
-import { filter, Patterns } from '@musical-patterns/registry'
+import { filter, Patterns } from '@musical-patterns/pattern'
 import * as allPatterns from './allPatterns'
 
 // tslint:disable-next-line:no-any
