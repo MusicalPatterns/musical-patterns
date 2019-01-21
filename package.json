@@ -6,7 +6,7 @@
     "url": "https://github.com/MusicalPatterns/lab.git"
   },
   "devDependencies": {
-    "@musical-patterns/cli": "^1.0.283",
+    "@musical-patterns/cli": "^1.0.287",
     "@musical-patterns/pattern": "^1.0.117",
     "@musical-patterns/pattern-beaten-path": "^1.0.101",
     "@musical-patterns/pattern-hafuhafu": "^1.0.65",
@@ -19,7 +19,7 @@
     "@musical-patterns/pattern-xelt": "^1.0.57",
     "@musical-patterns/pattern-xenharmonic-series": "^1.0.45",
     "@musical-patterns/pattern-zdaubyaos": "^1.0.61",
-    "@musical-patterns/playroom": "^1.0.153",
+    "@musical-patterns/playroom": "^1.0.154",
     "typescript": "^3.2.4"
   }
 }
