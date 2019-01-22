@@ -7,19 +7,19 @@
   },
   "devDependencies": {
     "@musical-patterns/cli": "^1.0.296",
-    "@musical-patterns/pattern": "^1.0.117",
+    "@musical-patterns/pattern": "^1.0.119",
     "@musical-patterns/pattern-beaten-path": "^1.0.101",
-    "@musical-patterns/pattern-hafuhafu": "^1.0.65",
+    "@musical-patterns/pattern-hafuhafu": "^1.0.68",
     "@musical-patterns/pattern-houndstoothtopia-theme": "^1.0.77",
     "@musical-patterns/pattern-omnizonk": "^1.0.47",
     "@musical-patterns/pattern-performer-qa": "^1.0.59",
-    "@musical-patterns/pattern-playroom-test": "^1.0.92",
+    "@musical-patterns/pattern-playroom-test": "^1.0.95",
     "@musical-patterns/pattern-stepwise": "^1.0.57",
     "@musical-patterns/pattern-template": "^1.0.64",
     "@musical-patterns/pattern-xelt": "^1.0.57",
     "@musical-patterns/pattern-xenharmonic-series": "^1.0.46",
     "@musical-patterns/pattern-zdaubyaos": "^1.0.61",
-    "@musical-patterns/playroom": "^1.0.154",
+    "@musical-patterns/playroom": "^1.0.157",
     "typescript": "^3.2.4"
   }
 }
