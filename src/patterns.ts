@@ -1,8 +1,7 @@
 import { filter, Patterns } from '@musical-patterns/pattern'
 import * as allPatterns from './allPatterns'
 
-// tslint:disable-next-line:no-any
-const patterns: Patterns = filter(allPatterns as any)
+const patterns: Patterns = filter(allPatterns)
 
 export {
     patterns,
