@@ -28,3 +28,11 @@ tsconfig.json
 tsconfig.library.json
 tsconfig.node.json
 tslint.json
+Makefile.playroom
+src/playroom.ts
+webpack.browser.js
+webpack.common.js
+webpack.lab.js
+webpack.library.js
+webpack.local.js
+webpack.pattern.js
