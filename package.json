@@ -19,7 +19,7 @@
     "@musical-patterns/pattern-xelt": "^1.0.60",
     "@musical-patterns/pattern-xenharmonic-series": "^1.0.64",
     "@musical-patterns/pattern-zdaubyaos": "^1.0.70",
-    "@musical-patterns/playroom": "^1.0.187",
+    "@musical-patterns/playroom": "^1.0.189",
     "typescript": "^3.2.4"
   }
 }
