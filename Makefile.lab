@@ -7,9 +7,6 @@ build:
 deploy:
 	@pushd ../..; make deploy; popd
 
-lint:
-	@:
-
 publish:
 	@:
 
