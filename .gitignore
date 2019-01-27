@@ -35,7 +35,3 @@ webpack.local.js
 webpack.prod.js
 webpack.publish.js
 webpack.qa.js
-Makefile.playroom
-src/start.ts
-webpack.common.js
-webpack.port.js
