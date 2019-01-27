@@ -1,4 +1,4 @@
-Makefile.lab:
+Makefile.self:
 	@:
 
 build:
