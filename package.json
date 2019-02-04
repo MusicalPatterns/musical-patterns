@@ -5,6 +5,9 @@
     "type": "git",
     "url": "https://github.com/MusicalPatterns/lab.git"
   },
+  "resolutions": {
+    "terser": "3.14.1"
+  },
   "devDependencies": {
     "@musical-patterns/cli": "^1.0.424",
     "@musical-patterns/pattern": "^1.0.147",
