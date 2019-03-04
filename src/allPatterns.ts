@@ -10,3 +10,4 @@ export { pattern as XENHARMONIC_SERIES } from '@musical-patterns/pattern-xenharm
 export { pattern as ZDAUBYAOS } from '@musical-patterns/pattern-zdaubyaos'
 export { pattern as TSRAXCFAUBDJ } from '@musical-patterns/pattern-tsraxcfaubdj'
 export { pattern as MOEOM } from '@musical-patterns/pattern-moeom'
+export { pattern as PROTOTYPER } from '@musical-patterns/pattern-prototyper'
