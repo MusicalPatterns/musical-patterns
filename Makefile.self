@@ -9,6 +9,3 @@ deploy:
 
 publish:
 	@:
-
-test:
-	@:
