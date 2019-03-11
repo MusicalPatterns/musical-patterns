@@ -6,23 +6,23 @@
     "url": "https://github.com/MusicalPatterns/lab.git"
   },
   "devDependencies": {
-    "@musical-patterns/cli": "^1.0.473",
-    "@musical-patterns/pattern": "^1.0.208",
-    "@musical-patterns/pattern-beaten-path": "^1.0.160",
+    "@musical-patterns/cli": "^1.0.474",
+    "@musical-patterns/pattern": "^1.0.209",
+    "@musical-patterns/pattern-beaten-path": "^1.0.161",
     "@musical-patterns/pattern-hafuhafu": "^1.0.122",
     "@musical-patterns/pattern-houndstoothtopia-theme": "^1.0.126",
     "@musical-patterns/pattern-moeom": "^1.0.47",
-    "@musical-patterns/pattern-omnizonk": "^1.0.101",
+    "@musical-patterns/pattern-omnizonk": "^1.0.102",
     "@musical-patterns/pattern-performer-qa": "^1.0.94",
     "@musical-patterns/pattern-playroom-test": "^1.0.163",
     "@musical-patterns/pattern-prototyper": "^1.0.13",
     "@musical-patterns/pattern-stepwise": "^1.0.96",
     "@musical-patterns/pattern-template": "^1.0.96",
-    "@musical-patterns/pattern-tsraxcfaubdj": "^1.0.61",
-    "@musical-patterns/pattern-xenharmonic-series": "^1.0.113",
-    "@musical-patterns/pattern-zdaubyaos": "^1.0.108",
-    "@musical-patterns/performer": "^1.0.201",
-    "@musical-patterns/playroom": "^1.0.300",
-    "@musical-patterns/utilities": "^1.0.326"
+    "@musical-patterns/pattern-tsraxcfaubdj": "^1.0.62",
+    "@musical-patterns/pattern-xenharmonic-series": "^1.0.114",
+    "@musical-patterns/pattern-zdaubyaos": "^1.0.109",
+    "@musical-patterns/performer": "^1.0.203",
+    "@musical-patterns/playroom": "^1.0.304",
+    "@musical-patterns/utilities": "^1.0.327"
   }
 }
