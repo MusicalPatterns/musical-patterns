@@ -7,7 +7,7 @@
   },
   "devDependencies": {
     "@musical-patterns/cli": "^1.0.486",
-    "@musical-patterns/pattern": "^1.0.230",
+    "@musical-patterns/pattern": "^1.0.231",
     "@musical-patterns/pattern-beaten-path": "^1.0.168",
     "@musical-patterns/pattern-hafuhafu": "^1.0.130",
     "@musical-patterns/pattern-houndstoothtopia-theme": "^1.0.133",
