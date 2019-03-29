@@ -22,7 +22,7 @@
     "@musical-patterns/pattern-xenharmonic-series": "^1.0.130",
     "@musical-patterns/pattern-zdaubyaos": "^1.0.123",
     "@musical-patterns/performer": "^1.0.221",
-    "@musical-patterns/playroom": "^1.0.343",
+    "@musical-patterns/playroom": "^1.0.350",
     "@musical-patterns/utilities": "^1.0.393"
   }
 }
