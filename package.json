@@ -23,6 +23,6 @@
     "@musical-patterns/pattern-zdaubyaos": "^1.0.128",
     "@musical-patterns/performer": "^1.0.241",
     "@musical-patterns/playroom": "^1.0.365",
-    "@musical-patterns/utilities": "^1.0.402"
+    "@musical-patterns/utilities": "^1.0.404"
   }
 }
