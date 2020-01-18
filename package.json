@@ -6,15 +6,15 @@
     "url": "https://github.com/MusicalPatterns/lab.git"
   },
   "devDependencies": {
-    "@musical-patterns/cli": "^1.0.567",
-    "@musical-patterns/id": "^1.0.10",
+    "@musical-patterns/cli": "^1.0.568",
+    "@musical-patterns/id": "^1.0.11",
     "@musical-patterns/material": "^1.0.108",
     "@musical-patterns/metadata": "^1.0.13",
-    "@musical-patterns/pattern": "^1.0.267",
+    "@musical-patterns/pattern": "^1.0.269",
     "@musical-patterns/pattern-bapbo": "^1.0.3",
     "@musical-patterns/pattern-beaten-path": "^1.0.253",
     "@musical-patterns/pattern-hafuhafu": "^1.0.205",
-    "@musical-patterns/pattern-houndstoothtopia-theme": "^1.0.189",
+    "@musical-patterns/pattern-houndstoothtopia-theme": "^1.0.191",
     "@musical-patterns/pattern-material-qa": "^1.0.165",
     "@musical-patterns/pattern-met-mos": "^1.0.1",
     "@musical-patterns/pattern-moeom": "^1.0.93",
@@ -28,6 +28,6 @@
     "@musical-patterns/pattern-zdaubyaos": "^1.0.171",
     "@musical-patterns/playroom": "^1.0.411",
     "@musical-patterns/spec": "^1.0.40",
-    "@musical-patterns/utilities": "^1.0.589"
+    "@musical-patterns/utilities": "^1.0.592"
   }
 }
